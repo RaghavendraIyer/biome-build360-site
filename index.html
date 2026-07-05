@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
+<meta property="og:image" content="https://build360.online/logo.jpg">
+<title>Build360.online — India's Premium Tile Adhesive & Grout Procurement Network</title>
+<meta name="description" content="Source premium tile adhesives, epoxy grouts, spot bonding systems, and tile cleaners in bulk. India's construction procurement network for contractors and tiling professionals.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Biome Build360 LLP">
+<meta property="og:title" content="Build360.online — Premium Tile Adhesives & Grouts Network">
+<meta property="og:description" content="Request. Quote. Build. Source premium tile adhesives, epoxy grouts, and tiling solutions. Transparent pricing, pan-India delivery, response in under 4 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://build360.online">
+<link rel="canonical" href="https://build360.online">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Biome Build360 LLP",
+  "alternateName": "Build360.online",
+  "url": "https://build360.online",
+  "description": "India's premium tile adhesive and grout procurement network for contractors and builders. Source polymer-modified adhesives, epoxy grouts, and stone cleaning solutions.",
+  "telephone": "+91-9032514441",
+  "email": "info@build360.online",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "addressCountry": "IN"
+  },
+  "areaServed": "India",
+  "openingHours": "Mo-Sa 09:00-19:00"
+}
+</script>
+<style>
+/* ─── DESIGN TOKENS — Modern Industrial Palette ─── */
+:root {
+  /* Primary Brand */
+  --color-primary:       #BC4A3C;
+  --color-primary-hover:  #963529;
+  --color-primary-10:    rgba(188,74,60,0.10);
+  --color-primary-18:    rgba(188,74,60,0.18);
+
+  /* Backgrounds — 60-30-10 distribution */
+  --color-bg-app:        #F8F9FA;   /* 60 % canvas */
+  --color-bg-surface:    #FFFFFF;   /* 30 % structure */
+  --color-bg-surface-alt:#F1F3F5;   /* Alternating rows / subtle panels */
+
+  /* Typography */
+  --color-text-main:     #1E252B;   /* Headers, primary */
+  --color-text-secondary:#4A5568;   /* Body, descriptions */
+  --color-text-muted:    #8899A6;   /* Captions, disabled */
+
+  /* Borders */
+  --color-border-muted:  #67747E;
+  --color-border-light:  rgba(103,116,126,0.20);
+  --color-border-subtle: rgba(103,116,126,0.10);
+
+  /* System — Accessibility: distinct from brand */
+  --color-success:       #16A34A;
+  --color-error:         #E11D48;   /* Crimson — never blends with terracotta */
+  --color-warning:       #D97706;
+  --color-info:          #2563EB;
+
+  /* Legacy aliases (keeps JS working without changes) */
+  --bg:        var(--color-bg-app);
+  --bg2:       var(--color-bg-surface);
+  --bg3:       var(--color-bg-surface-alt);
+  --panel:     var(--color-bg-surface);
+  --border:    var(--color-primary-18);
+  --border2:   var(--color-border-light);
+  --orange:    var(--color-primary);
+  --orange2:   var(--color-primary-hover);
+  --orange-dim: rgba(188,74,60,0.25);
+  --text:      var(--color-text-main);
+  --text2:     var(--color-text-secondary);
+  --text3:     var(--color-text-muted);
+
+  /* Typography stacks */
+  --mono:      'JetBrains Mono', monospace;
+  --display:   'Plus Jakarta Sans', 'Inter', sans-serif;
+  --body:      'Inter', 'Plus Jakarta Sans', sans-serif;
+
+  /* Layout */
+  --nav-h:     64px;
+  --gutter:    clamp(20px, 4vw, 48px);
+  --radius:    6px;
+  --shadow-sm: 0 1px 3px rgba(30,37,43,0.06), 0 1px 2px rgba(30,37,43,0.04);
+  --shadow-md: 0 4px 12px rgba(30,37,43,0.08), 0 2px 4px rgba(30,37,43,0.04);
+  --shadow-lg: 0 12px 40px rgba(30,37,43,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  font-feature-settings: 'cv11' 1, 'ss01' 1; /* Inter alternates */
+  background: var(--color-bg-app);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── SUBTLE TEXTURE (very light for alabaster bg) ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-app); }
+::-webkit-scrollbar-thumb { background: var(--color-border-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(30,37,43,0.04);
+}
+.nav-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--color-text-main);
+  text-decoration: none;
+  line-height: 1;
+}
+.logo em { color: var(--color-primary); font-style: normal; }
+.logo small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 3px;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--color-primary); }
+.nav-cta {
+  background: var(--color-primary) !important;
+  color: #FFFFFF !important;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  font-weight: 600 !important;
+  transition: all .2s !important;
+  box-shadow: 0 2px 8px rgba(188,74,60,0.25);
+}
+.nav-cta:hover { background: var(--color-primary-hover) !important; color: #FFFFFF !important; box-shadow: 0 4px 12px rgba(188,74,60,0.35); }
+
+/* ─── NAV DROPDOWN (Products) ─── */
+.nav-item-dropdown { position: relative; }
+.nav-item-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.nav-caret { font-size: 9px; transition: transform .2s; opacity: .7; }
+.nav-item-dropdown:hover .nav-caret { transform: rotate(180deg); }
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  min-width: 190px;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 50;
+}
+.nav-item-dropdown:hover .nav-dropdown-panel,
+.nav-item-dropdown:focus-within .nav-dropdown-panel {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -6px; left: 50%;
+  width: 12px; height: 12px;
+  background: var(--color-bg-surface);
+  border-left: 1px solid var(--color-border-light);
+  border-top: 1px solid var(--color-border-light);
+  transform: translateX(-50%) rotate(45deg);
+}
+.nav-dropdown-panel a {
+  display: block;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 9px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.nav-dropdown-panel a:hover { background: var(--color-primary-10); color: var(--color-primary); }
+.mob-sub { padding-left: 16px; display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }
+.mob-sub a { font-size: 13px !important; color: var(--color-text-muted) !important; }
+.mob-sub a::before { content: '— '; }
+
+/* ─── HAMBURGER ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-secondary);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border-light);
+  z-index: 99;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+  box-shadow: var(--shadow-lg);
+}
+.mobile-menu.open { max-height: 400px; }
+.mobile-menu ul {
+  list-style: none;
+  padding: 20px var(--gutter) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-menu ul li a {
+  display: block;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: color .2s;
+}
+.mobile-menu ul li a:hover { color: var(--color-primary); }
+.mobile-menu ul li:last-child a {
+  display: block;
+  margin-top: 12px;
+  background: var(--color-primary);
+  color: #FFFFFF !important;
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--radius);
+  border-bottom: none;
+  font-weight: 600;
+}
+
+/* ─── LAYOUT ─── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+section { position: relative; z-index: 1; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-app);
+}
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(188,74,60,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(188,74,60,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(188,74,60,.08) 0%, transparent 70%);
+  top: 10%; right: -100px;
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 100px var(--gutter) 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-18);
+  background: rgba(188,74,60,0.06);
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 36px;
+  animation: fadeUp .5s ease both;
+}
+.hero-tag::before { content: '◆'; font-size: 6px; }
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(48px, 7.5vw, 100px);
+  font-weight: 800;
+  line-height: .94;
+  letter-spacing: -.03em;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fadeUp .5s .1s ease both;
+}
+.hero h1 em { color: var(--color-primary); font-style: normal; display: block; }
+.hero-sub {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 52px;
+  animation: fadeUp .5s .2s ease both;
+}
+.hero-sub strong { color: var(--color-text-main); font-weight: 600; }
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp .5s .3s ease both;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s;
+  border: none;
+}
+.btn-primary { background: var(--color-primary); color: #FFFFFF; box-shadow: 0 2px 8px rgba(188,74,60,0.25); }
+.btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(188,74,60,0.35); }
+.btn-primary:disabled { background: rgba(103,116,126,0.40); color: #FFFFFF; cursor: not-allowed; box-shadow: none; transform: none; }
+.btn-ghost { background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border-light); }
+.btn-ghost:hover { border-color: var(--color-primary); color: var(--color-primary); background: rgba(188,74,60,0.04); }
+.btn-wa { background: #25D366; color: #FFFFFF; }
+.btn-wa:hover { background: #1da851; }
+
+/* ─── HERO STATS ─── */
+.hero-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--color-border-light);
+  margin-top: 80px;
+  animation: fadeUp .5s .4s ease both;
+}
+.hero-stat { flex: 1; padding: 28px 0; border-right: 1px solid var(--color-border-light); text-align: center; }
+.hero-stat:last-child { border-right: none; }
+.hero-stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat span {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--color-text-muted);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* ─── LIVE TICKER ─── */
+.ticker-bar {
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg-surface);
+  padding: 0;
+  overflow: hidden;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.ticker-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--color-success);
+  padding: 0 20px;
+  background: var(--color-bg-surface);
+  border-right: 1px solid var(--color-border-light);
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 2;
+  white-space: nowrap;
+}
+.live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s infinite;
+}
+.ticker-track-wrap {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.ticker-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 0;
+  will-change: transform;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 28px;
+  height: 100%;
+  border-right: 1px solid var(--color-border-light);
+  font-family: var(--mono);
+  font-size: 11px;
+  white-space: nowrap;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+.ticker-item:hover { background: rgba(188,74,60,.04); }
+.ticker-item .t-brand { color: var(--color-text-secondary); font-weight: 500; }
+.ticker-item .t-price { color: var(--color-text-main); font-weight: 500; }
+.ticker-item .t-delta { font-size: 10px; font-weight: 500; }
+.ticker-item .t-delta.up { color: var(--color-success); }
+.ticker-item .t-delta.dn { color: var(--color-error); }
+.ticker-item.flash { animation: tickerFlash .5s ease; }
+@keyframes tickerFlash {
+  0% { background: rgba(188,74,60,.0); }
+  40% { background: rgba(188,74,60,.08); }
+  100% { background: rgba(188,74,60,.0); }
+}
+
+/* ─── SECTION HEADER ─── */
+.section-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 800;
+  line-height: .96;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  color: var(--color-text-main);
+}
+.section-title em { color: var(--color-primary); font-style: normal; }
+.section-lead {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-top: 20px;
+}
+.section-pad { padding: 100px 0; }
+.section-pad-sm { padding: 64px 0; }
+.divider { width: 40px; height: 3px; background: var(--color-primary); margin: 28px 0; border-radius: 2px; }
+
+/* ─── AGENTS GRID (Steps / Cards) ─── */
+.agents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-border-light); border: 1px solid var(--color-border-light); border-radius: var(--radius); overflow: hidden; margin-top: 56px;
+}
+.agents-grid-steps { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+  .agents-grid-steps { grid-template-columns: 1fr; }
+}
+.agent-card {
+  background: var(--color-bg-surface);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s, box-shadow .3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.agent-card.visible { opacity: 1; transform: translateY(0); transition: opacity .5s ease, transform .5s ease; }
+.agent-card:hover { background: var(--color-bg-surface-alt); box-shadow: var(--shadow-sm); }
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s;
+}
+.agent-card:hover::before { transform: scaleX(1); }
+.agent-card.founder {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(188,74,60,.06) 0%, var(--color-bg-surface) 60%);
+  border-top: 3px solid var(--color-primary);
+}
+.agent-icon { font-size: 28px; margin-bottom: 20px; display: block; }
+.agent-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+.agent-name {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  color: var(--color-text-main);
+  margin-bottom: 14px;
+}
+.agent-desc { font-size: 14px; font-weight: 400; color: var(--color-text-secondary); line-height: 1.65; }
+.agent-badge {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: var(--radius);
+}
+
+/* ─── BRANDS ─── */
+.brands-section { background: var(--color-bg-surface); }
+.brands-category { margin-bottom: 48px; }
+.brands-cat-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.brands-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.brand-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-surface-alt);
+  border: 1px solid var(--color-border-light);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: all .2s;
+  cursor: default;
+  letter-spacing: .05em;
+}
+.brand-pill:hover { border-color: var(--color-primary); color: var(--color-primary); background: rgba(188,74,60,.04); }
+.brand-pill.primary { border-color: rgba(188,74,60,.35); color: var(--color-text-main); font-weight: 500; }
+
+/* ─── POLICY GRID ─── */
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 56px;
+}
+.policy-card {
+  background: var(--color-bg-surface);
+  padding: 40px 32px;
+  transition: background .25s, box-shadow .25s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.policy-card.visible { opacity: 1; transform: translateY(0); transition: opacity .5s ease, transform .5s ease; }
+.policy-card:hover { background: var(--color-bg-surface-alt); }
+.policy-num {
+  font-family: var(--display);
+  font-size: 52px;
+  font-weight: 800;
+  color: rgba(188,74,60,.12);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.policy-title {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
+}
+.policy-desc { font-size: 13px; font-weight: 400; color: var(--color-text-secondary); line-height: 1.65; }
+
+/* ─── ESTIMATOR ─── */
+.estimator-shell {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 56px;
+  box-shadow: var(--shadow-sm);
+}
+.estimator-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg-surface-alt);
+  overflow-x: auto;
+}
+.est-tab {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.est-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.est-tab:hover { color: var(--color-text-main); }
+.estimator-body { padding: 40px; }
+.est-panel { display: none; }
+.est-panel.active { display: block; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.form-group select, .form-group input {
+  padding: 12px 16px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  color: var(--color-text-main);
+  font-family: var(--mono);
+  font-size: 13px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  -webkit-appearance: none;
+}
+.form-group select:focus, .form-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(188,74,60,0.12);
+}
+.form-group select option { background: var(--color-bg-surface); }
+.calc-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(188,74,60,0.25);
+}
+.calc-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(188,74,60,0.35); }
+.est-result {
+  background: var(--color-bg-surface-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: none;
+}
+.est-result.show { display: block; }
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.result-row:last-child { border-bottom: none; }
+.result-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.result-val { font-family: var(--display); font-size: 20px; font-weight: 800; color: var(--color-primary); }
+.result-note {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--color-text-muted);
+  margin-top: 16px;
+  letter-spacing: .05em;
+  line-height: 1.5;
+}
+.bom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.bom-table th {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg-surface-alt);
+}
+.bom-table td {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.bom-table td.val { color: var(--color-primary); font-weight: 600; }
+.bom-table tr:last-child td { border-bottom: none; }
+.bom-table tr:hover td { background: rgba(188,74,60,0.02); }
+.result-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+/* ─── CTA ─── */
+.cta-section {
+  background: linear-gradient(135deg, rgba(188,74,60,.06) 0%, var(--color-bg-app) 50%);
+  border-top: 1px solid var(--color-primary-18);
+  border-bottom: 1px solid var(--color-primary-18);
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* ─── CONTACT ─── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.contact-item { display: flex; gap: 20px; margin-bottom: 32px; }
+.contact-icon {
+  width: 40px; height: 40px;
+  border: 1px solid var(--color-primary-18);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  background: rgba(188,74,60,0.06);
+}
+.contact-item h4 {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+.contact-item p { font-size: 15px; font-weight: 400; color: var(--color-text-secondary); }
+.contact-form {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.form-header {
+  background: var(--color-bg-surface-alt);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 16px 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.form-body { padding: 32px; }
+.form-body .form-group { margin-bottom: 20px; }
+.form-body input,
+.form-body select,
+.form-body textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  color: var(--color-text-main);
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  resize: vertical;
+}
+.form-body input:focus,
+.form-body select:focus,
+.form-body textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(188,74,60,0.12);
+}
+.form-body select option { background: var(--color-bg-surface); }
+.form-body textarea { min-height: 80px; }
+.form-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+  box-shadow: 0 2px 8px rgba(188,74,60,0.25);
+}
+.form-submit-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(188,74,60,0.35); }
+.form-submit-btn:disabled { background: rgba(103,116,126,0.40); cursor: not-allowed; box-shadow: none; }
+.form-success {
+  display: none;
+  padding: 32px;
+  text-align: center;
+}
+.form-success.show { display: block; }
+.form-success-inner {
+  background: var(--color-bg-surface-alt);
+  border: 1px solid rgba(22,163,74,.2);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+}
+.form-success-icon { font-size: 32px; margin-bottom: 16px; }
+.form-success-title {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-success);
+  margin-bottom: 8px;
+}
+.form-success-ref {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: var(--color-text-muted);
+  margin-top: 12px;
+}
+
+/* ─── WA FLOAT ─── */
+.wa-float {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 999;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 24px rgba(37,211,102,.3);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.45); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--color-text-main);
+  border-top: 1px solid var(--color-border-light);
+  padding: 64px 0 32px;
+  color: rgba(255,255,255,0.7);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px;
+}
+.footer-logo { display: inline-block; font-family: var(--display); font-size: 24px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px; text-decoration: none; }
+.footer-logo em { color: var(--color-primary); font-style: normal; }
+.footer-tagline {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+.footer-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 280px; }
+.footer-col h5 {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color .2s;
+  cursor: pointer;
+}
+.footer-col a:hover { color: var(--color-primary); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: .05em;
+}
+
+/* ─── HERO SLIDES ─── */
+.hero-slides { position: relative; z-index: 2; flex: 1; }
+.hero-slide { display: none; animation: fadeUp .6s ease both; }
+.hero-slide.active { display: block; }
+.hero { transition: background .8s ease; }
+.hero.bg-slide-0 {
+  background: linear-gradient(100deg, rgba(253, 244, 240, 0.85) 0%, rgba(248, 249, 250, 0.6) 50%, rgba(248, 249, 250, 0.15) 100%),
+              url('lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg') center/cover no-repeat;
+}
+.hero.bg-slide-1 {
+  background: linear-gradient(100deg, rgba(244, 247, 242, 0.85) 0%, rgba(248, 249, 250, 0.6) 50%, rgba(248, 249, 250, 0.15) 100%),
+              url('lucid-origin_A_panoramic_low-angle_cinematic_photograph_of_a_massive_ultra-organized_B2B_indu-0.jpg') center/cover no-repeat;
+}
+.hero.bg-slide-2 {
+  background: linear-gradient(100deg, rgba(241, 239, 234, 0.85) 0%, rgba(248, 249, 250, 0.6) 50%, rgba(253, 240, 232, 0.2) 100%),
+              url('lucid-origin_An_immense_well-organized_construction_logistics_yard_at_sunset_looking_like_an_-0.jpg') center/cover no-repeat;
+}
+.hero.bg-slide-0 .hero-grid-bg { background-image: linear-gradient(rgba(188,74,60,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(188,74,60,.05) 1px, transparent 1px); }
+.hero.bg-slide-1 .hero-grid-bg { background-image: linear-gradient(rgba(76,110,73,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(76,110,73,.045) 1px, transparent 1px); }
+.hero.bg-slide-2 .hero-grid-bg { background-image: linear-gradient(rgba(30,37,43,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(30,37,43,.05) 1px, transparent 1px); }
+.hero-dots {
+  position: absolute;
+  bottom: 132px;
+  left: var(--gutter);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  max-width: 1280px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 var(--gutter);
+  pointer-events: none;
+}
+.hero-dots-inner { display: flex; gap: 8px; pointer-events: all; }
+.hero-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-border-muted);
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+  padding: 0;
+  opacity: 0.4;
+}
+.hero-dot.active { background: var(--color-primary); width: 24px; border-radius: 4px; opacity: 1; }
+
+/* ─── 5-STEP PROCESS STRIP ─── */
+.process-strip {
+  background: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+.process-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.process-step {
+  padding: 36px 24px;
+  border-right: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  transition: background .25s;
+}
+.process-step:last-child { border-right: none; }
+.process-step:hover { background: var(--color-bg-surface-alt); }
+.process-step::after {
+  content: attr(data-num);
+  position: absolute;
+  bottom: 12px; right: 16px;
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 800;
+  color: rgba(188,74,60,.08);
+  line-height: 1;
+}
+.process-icon {
+  width: 48px; height: 48px;
+  border: 1px solid var(--color-primary-18);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: rgba(188,74,60,.06);
+}
+.process-label {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--color-text-main);
+  line-height: 1.2;
+}
+.process-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* ─── WHATSAPP BANNER ─── */
+.wa-banner {
+  background: linear-gradient(135deg, #f0fdf4 0%, var(--color-bg-surface) 100%);
+  border-top: 1px solid rgba(37,211,102,.15);
+  border-bottom: 1px solid rgba(37,211,102,.15);
+  padding: 28px 0;
+}
+.wa-banner-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.wa-banner-text {
+  font-family: var(--display);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+.wa-banner-text em { color: var(--color-success); font-style: normal; display: block; }
+
+/* ─── QR SECTION ─── */
+.qr-section {
+  background: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 80px 0;
+}
+.qr-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 80px;
+  align-items: center;
+}
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.qr-code-wrap {
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--color-primary-18);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-bg-surface-alt);
+}
+.qr-svg { width: 100%; height: 100%; }
+.qr-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+.qr-number {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: .02em;
+}
+@media (max-width: 900px) {
+  .qr-inner { grid-template-columns: 1fr; gap: 40px; }
+  .qr-box { margin: 0 auto; }
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.4); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+  .agents-grid { grid-template-columns: 1fr; }
+  .agent-card.founder { grid-column: 1; }
+  .policy-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { flex-wrap: wrap; }
+  .hero-stat { min-width: 50%; border-right: none; border-bottom: 1px solid var(--color-border-light); }
+  .form-row { grid-template-columns: 1fr; }
+  .estimator-body { padding: 24px 20px; }
+  .process-inner { grid-template-columns: repeat(2, 1fr); }
+  .process-step { border-bottom: 1px solid var(--color-border-light); }
+  .process-step:nth-child(2n) { border-right: none; }
+  .process-step:last-child { border-right: none; }
+  .wa-banner-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(40px, 12vw, 72px); }
+  .hero-inner { padding: 60px var(--gutter) 40px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#home">
+      <img src="logo.jpg" alt="Build360.online" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li class="nav-item-dropdown" tabindex="0">
+        <a href="adhesives.html">Our Products <span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown-panel">
+          <a href="adhesives.html">Tile Adhesives</a>
+        </div>
+      </li>
+      <li><a href="bid.html">Bid</a></li>
+      <li><a href="#estimator">Estimator</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="service-providers.html">Service Providers</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── MOBILE MENU ─── -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#how-it-works" class="mob-link">How It Works</a></li>
+    <li>
+      <a href="adhesives.html" class="mob-link">Our Products</a>
+      <div class="mob-sub"><a href="adhesives.html" class="mob-link">Tile Adhesives</a></div>
+    </li>
+    <li><a href="bid.html" class="mob-link">Bid</a></li>
+    <li><a href="#estimator" class="mob-link">Estimator</a></li>
+    <li><a href="#contact" class="mob-link">Contact</a></li>
+    <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
+    <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+  </ul>
+</div>
+
+<!-- ─── WA FLOAT ─── -->
+<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20B2B%20tile%20adhesive%20and%20grout%20pricing." target="_blank" title="WhatsApp Srikar">💬</a>
+
+<!-- ─── HERO ─── -->
+<section class="hero bg-slide-0" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <!-- Rotating slides -->
+  <div class="hero-slides">
+    <div class="hero-slide active">
+      <div class="hero-inner">
+        <div class="hero-tag">B2B Construction Materials Marketplace</div>
+        <h1>The Smarter Way<br>to Procure<br><em>Building Supplies.</em></h1>
+        <p class="hero-sub">
+          India's organized procurement network — connecting contractors, builders, and architects
+          to <strong>verified supplier partners</strong>.
+          <strong>Bulk pricing. Project delivery. Zero hassle.</strong>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20place%20a%20tile%20adhesive%20quote%20request." target="_blank">💬 Request a Quote</a>
+          <a class="btn btn-ghost" href="adhesives.html">Adhesives Range</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-inner">
+        <div class="hero-tag">Launching with Dry-Mix & Adhesives</div>
+        <h1>Verified Brands<br>For Every<br><em>Specialty Need.</em></h1>
+        <p class="hero-sub">
+          Starting with premium tile adhesives and epoxy grouts. Get competitive quotes for UltraTech and MYK Laticrete over WhatsApp.
+          <strong>Expanding soon to cement, steel, and blocks.</strong>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#estimator">Tiling Estimator</a>
+          <a class="btn btn-ghost" href="adhesives.html#shade-card">Grout Shade Card</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="hero-inner">
+        <div class="hero-tag">AI-Powered B2B Sourcing</div>
+        <h1>Procurement<br>As Simple As<br><em>Sending a Message.</em></h1>
+        <p class="hero-sub">
+          WhatsApp your material requirements and project site. Our smart engine matches you with the lowest verified bids in under 4 hours.
+          <strong>We handle the logistics — you focus on the build.</strong>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20WhatsApp%20my%20tile%20grout%20requirements." target="_blank">💬 WhatsApp Us Now</a>
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide indicators -->
+  <div class="hero-dots">
+    <div class="hero-dots-inner">
+      <button class="hero-dot active" onclick="goSlide(0)"></button>
+      <button class="hero-dot" onclick="goSlide(1)"></button>
+      <button class="hero-dot" onclick="goSlide(2)"></button>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <strong id="stat-mills">0</strong>
+      <span>Supply Partners</span>
+    </div>
+    <div class="hero-stat">
+      <strong>&lt;4 hrs</strong>
+      <span>Quote Response</span>
+    </div>
+    <div class="hero-stat">
+      <strong>PAN</strong>
+      <span>India Coverage</span>
+    </div>
+    <div class="hero-stat">
+      <strong>B2B+</strong>
+      <span>All Buyers Welcome</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LIVE TICKER ─── -->
+<div class="ticker-bar" id="tickerBar">
+  <div class="ticker-live-badge">
+    <div class="live-dot"></div>
+    Live Rates
+  </div>
+  <div class="ticker-track-wrap" id="tickerWrap">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</div>
+
+<!-- ─── 5-STEP PROCESS STRIP ─── -->
+<div class="process-strip">
+  <div class="process-inner">
+    <div class="process-step" data-num="1">
+      <div class="process-icon">💬</div>
+      <div class="process-label">WhatsApp<br>Your Needs</div>
+      <div class="process-desc">Send your material list, grade, quantity, and site location over WhatsApp. No forms, no logins.</div>
+    </div>
+    <div class="process-step" data-num="2">
+      <div class="process-icon">📍</div>
+      <div class="process-label">Share<br>Your Location</div>
+      <div class="process-desc">Tell us your delivery site. We confirm serviceability across India — metro cities and beyond.</div>
+    </div>
+    <div class="process-step" data-num="3">
+      <div class="process-icon">📋</div>
+      <div class="process-label">Choose<br>Your Product</div>
+      <div class="process-desc">We surface the best-matched brand, grade, and pricing for your project. Compare and confirm.</div>
+    </div>
+    <div class="process-step" data-num="4">
+      <div class="process-icon">✅</div>
+      <div class="process-label">Confirm<br>Your Order</div>
+      <div class="process-desc">Approve the quote and we raise the order with the supply partner. GST invoice included.</div>
+    </div>
+    <div class="process-step" data-num="5">
+      <div class="process-icon">🚛</div>
+      <div class="process-label">Material<br>Delivered</div>
+      <div class="process-desc">Your material arrives at site on the agreed schedule. We follow up until delivery is confirmed.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── WHATSAPP BANNER ─── -->
+<div class="wa-banner">
+  <div class="wa-banner-inner">
+    <div class="wa-banner-text">
+      Ordering construction materials is as simple as
+      <em>sending a WhatsApp message.</em>
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/919032514441?text=Hi%2C%20I%27d%20like%20to%20order%20construction%20materials." target="_blank" style="flex-shrink:0;">
+      💬 Order Now — +91 90325 14441
+    </a>
+  </div>
+</div>
+
+<!-- ─── QR SCAN TO ORDER ─── -->
+<section class="qr-section">
+  <div class="container">
+    <div class="qr-inner reveal">
+      <div class="qr-text">
+        <div class="section-eyebrow">// Instant Access</div>
+        <h2 class="section-title" style="font-size:clamp(28px,3.5vw,48px);">Ordering materials is as simple as<br><em>scanning a QR code.</em></h2>
+        <p class="section-lead" style="margin-top:16px;">Scan the QR code, send us your requirements on WhatsApp, and get a quote in under 4 hours. No app download. No sign-up. No friction.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%2C%20I%27d%20like%20to%20place%20a%20material%20order." target="_blank">💬 Open WhatsApp</a>
+          <a class="btn btn-ghost" href="#estimator">Calculate First →</a>
+        </div>
+      </div>
+      <div class="qr-box">
+        <div class="qr-code-wrap">
+          <img src="data:image/jpeg;base64,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" alt="Scan to chat with Build360.Online on WhatsApp" style="width:100%;height:100%;object-fit:contain;background:#fff;" loading="lazy">
+        </div>
+        <div class="qr-label">Scan to Order on WhatsApp</div>
+        <div class="qr-number">+91 90325 14441</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how-it-works" class="section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Simple Process</div>
+      <h2 class="section-title">Three Steps.<br><em>Zero Hassle.</em></h2>
+      <p class="section-lead">
+        We've eliminated the traditional complexities of construction material procurement. No tedious paperwork, no long approval cycles, no supply chain surprises.
+      </p>
+    </div>
+    <div class="agents-grid agents-grid-steps" style="margin-top:56px;">
+      <div class="agent-card">
+        <span class="agent-icon">📋</span>
+        <div class="agent-label">Step 01</div>
+        <div class="agent-name">Request</div>
+        <p class="agent-desc">Share your material requirements — product, grade, quantity, and delivery location. WhatsApp us or fill the enquiry form. Takes under 2 minutes.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-icon">💬</span>
+        <div class="agent-label">Step 02</div>
+        <div class="agent-name">Quote</div>
+        <p class="agent-desc">Receive a transparent, itemised quote within 4 hours. No hidden costs, no vague estimates. Compare brands and grades — we surface the best match for your project budget.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-icon">🏗️</span>
+        <div class="agent-label">Step 03</div>
+        <div class="agent-name">Build</div>
+        <p class="agent-desc">Confirm your order and we coordinate supply and delivery. Materials reach your site on schedule so your project timeline stays intact.</p>
+      </div>
+    </div>
+
+    <!-- WHY BUILD360 -->
+    <div style="margin-top:64px;" class="reveal">
+      <div class="section-eyebrow">// Why Build360</div>
+      <h2 class="section-title" style="margin-bottom:40px;">What Makes Us<br><em>Different.</em></h2>
+      <div class="policy-grid" style="margin-top:0;">
+        <div class="policy-card">
+          <div class="policy-num">01</div>
+          <div class="policy-title">Transparent Pricing</div>
+          <p class="policy-desc">No hidden markups. You see the brand, grade, and price per bag upfront. Compare options before you commit — always.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-num">02</div>
+          <div class="policy-title">Verified Supply Partners</div>
+          <p class="policy-desc">Every supplier on our network is verified. You deal with accountable partners — not anonymous middlemen with no skin in the game.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-num">03</div>
+          <div class="policy-title">Single Point of Contact</div>
+          <p class="policy-desc">One number, one relationship. No juggling multiple vendors across categories. One request, one relationship, all materials coordinated so you don't have to.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-num">04</div>
+          <div class="policy-title">WhatsApp-First Ordering</div>
+          <p class="policy-desc">Place orders, get updates, and confirm deliveries entirely over WhatsApp. No app downloads, no logins, no complicated procedures.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-num">05</div>
+          <div class="policy-title">Volume Pricing</div>
+          <p class="policy-desc">Competitive rates for every order size — from single-project homeowners to bulk-procurement contractors. The more you buy, the better the deal.</p>
+        </div>
+        <div class="policy-card">
+          <div class="policy-num">06</div>
+          <div class="policy-title">Pan-India Network</div>
+          <p class="policy-desc">From metro cities to Tier-2 towns — our supplier network covers India. Local knowledge, national reach, reliable delivery wherever you build.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BRANDS ─── -->
+<section id="brands" class="brands-section section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Our Range</div>
+      <h2 class="section-title">UltraTech Tilefixo.<br><em>Four Categories.</em></h2>
+      <p class="section-lead">We connect you to the complete UltraTech Tile &amp; Stone Fitting System. Verified B2B supply partners, direct billing, and project rates.</p>
+    </div>
+    <div class="divider"></div>
+
+    <div class="brands-category reveal">
+      <div class="brands-cat-label">// 01 — Grey Tile Adhesives</div>
+      <div class="brands-grid">
+        <div class="brand-pill primary">Tilefixo Sumo CT</div>
+        <div class="brand-pill primary">Tilefixo Sumo CT Plus</div>
+        <div class="brand-pill primary">Tilefixo Aqua Marine VT</div>
+        <div class="brand-pill primary">Tilefixo Aqua Marine VT Plus</div>
+        <div class="brand-pill">Tilefixo Royal NT</div>
+        <div class="brand-pill">Tilefixo Royal NT Plus</div>
+        <div class="brand-pill">Tilefixo Ultima</div>
+        <div class="brand-pill">Tilefixo Ultima Plus</div>
+      </div>
+    </div>
+
+    <div class="brands-category reveal">
+      <div class="brands-cat-label">// 02 — White Tile Adhesives</div>
+      <div class="brands-grid">
+        <div class="brand-pill primary">Tilefixo Sumo CT Plus White</div>
+        <div class="brand-pill primary">Tilefixo Aqua Marine VT Plus White</div>
+        <div class="brand-pill">Tilefixo Royal NT White</div>
+        <div class="brand-pill">Tilefixo Ultima White</div>
+      </div>
+    </div>
+
+    <div class="brands-category reveal">
+      <div class="brands-cat-label">// 03 — Epoxy &amp; Cementitious Grouts</div>
+      <div class="brands-grid">
+        <div class="brand-pill primary">Tilefixo STYLE 2K Epoxy Grout</div>
+        <div class="brand-pill primary">Tilefixo STYLE Epoxy Grout (3K)</div>
+        <div class="brand-pill">Tilefixo Grout CG (Cement-based)</div>
+        <div class="brand-pill">26 Attractive Swatch Colors</div>
+      </div>
+    </div>
+
+    <div class="brands-category reveal">
+      <div class="brands-cat-label">// 04 — Specialty Adhesives &amp; Maintenance</div>
+      <div class="brands-grid">
+        <div class="brand-pill primary">Tilefixo Rapid (Spot Bonding)</div>
+        <div class="brand-pill primary">Tilefixo PU 2K (Polyurethane)</div>
+        <div class="brand-pill">Tilefixo Sumo (Polymer Additive)</div>
+        <div class="brand-pill">Tilefixo Shine Tile Cleaner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SMART ESTIMATOR ─── -->
+<section id="estimator" class="section-pad" style="background:var(--bg2);">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Free Planning Tool</div>
+      <h2 class="section-title">Smart Tiling <em>Estimator.</em></h2>
+      <p class="section-lead">Calculate quantities for your project before you request a quote. Instant estimates across adhesives, joint grouts, cleaners, and shade swatches.</p>
+    </div>
+
+    <div class="estimator-shell reveal">
+      <div class="estimator-tabs">
+        <button class="est-tab active" onclick="switchTab('tile', this)">Tile Adhesive</button>
+        <button class="est-tab" onclick="switchTab('grout', this)">Grout Joint</button>
+        <button class="est-tab" onclick="switchTab('shade', this)">Shade Card</button>
+        <button class="est-tab" onclick="switchTab('cleaner', this)">Tile Cleaner</button>
+        <button class="est-tab" onclick="switchTab('bom', this)">Full Project BOM</button>
+      </div>
+      <div class="estimator-body">
+
+        <!-- TILE ADHESIVE -->
+        <div class="est-panel active" id="tab-tile">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Tile Area (Square Feet)</label>
+              <input type="number" id="t-area" placeholder="e.g. 500" min="1">
+            </div>
+            <div class="form-group">
+              <label>Application Type & Bed Thickness</label>
+              <select id="t-type">
+                <option value="floor">Floor Ceramic / Vitrified (5mm bed)</option>
+                <option value="wall">Wall Ceramic / Vitrified (3mm bed)</option>
+                <option value="large">Large Format Tile / Marble (6mm bed)</option>
+                <option value="cladding">Vertical Cladding / Heavy Stone (8mm bed)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Tilefixo Product</label>
+              <select id="t-product">
+                <option value="Sumo CT">Tilefixo Sumo CT (Dry indoor floor/wall)</option>
+                <option value="Sumo CT Plus">Tilefixo Sumo CT Plus (Small stone indoor)</option>
+                <option value="Aqua Marine VT">Tilefixo Aqua Marine VT (Wet indoor/bath)</option>
+                <option value="Aqua Marine VT Plus">Tilefixo Aqua Marine VT Plus (Balcony/terrace)</option>
+                <option value="Royal NT">Tilefixo Royal NT (Stone cladding)</option>
+                <option value="Ultima">Tilefixo Ultima (Deformable high strength)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Packaging Size</label>
+              <select id="t-bag">
+                <option value="20">20 kg bag (Standard)</option>
+              </select>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcTile()">Calculate Adhesive Bags →</button>
+          <div class="est-result" id="res-tile">
+            <div class="result-row">
+              <div class="result-label">Adhesive Bags Required (20kg)</div>
+              <div class="result-val" id="rv-tile-bags">—</div>
+            </div>
+            <div class="result-row">
+              <div class="result-label">Total Material Weight</div>
+              <div class="result-val" id="rv-tile-kg">—</div>
+            </div>
+            <div class="result-row">
+              <div class="result-label">Coverage Standard</div>
+              <div class="result-val" id="rv-tile-cov" style="font-size:14px;color:var(--text2)">—</div>
+            </div>
+            <div class="result-note">Estimates include a 5% wastage buffer. Suitable for UltraTech Tilefixo series.</div>
+            <div class="result-actions">
+              <a class="btn btn-primary" id="wa-tile" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
+              <a class="btn btn-ghost" href="adhesives.html" style="font-size:12px;padding:10px 20px;">View Specs</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUT & JOINT -->
+        <div class="est-panel" id="tab-grout">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Tile Length (mm)</label>
+              <input type="number" id="g-length" placeholder="e.g. 600" min="10" value="600">
+            </div>
+            <div class="form-group">
+              <label>Tile Width (mm)</label>
+              <input type="number" id="g-width" placeholder="e.g. 600" min="10" value="600">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Joint Width (mm)</label>
+              <select id="g-jwidth">
+                <option value="2">2 mm (Minimal joint)</option>
+                <option value="3" selected>3 mm (Standard joint)</option>
+                <option value="4">4 mm (Medium joint)</option>
+                <option value="5">5 mm (Wide joint)</option>
+                <option value="8">8 mm (Heavy masonry stone)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Joint Depth / Tile Thickness (mm)</label>
+              <input type="number" id="g-depth" placeholder="e.g. 5" min="1" max="30" value="5">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Total Tile Area (Square Feet)</label>
+              <input type="number" id="g-area" placeholder="e.g. 500" min="1">
+            </div>
+            <div class="form-group">
+              <label>Grout Type (Density)</label>
+              <select id="g-type">
+                <option value="epoxy">Tilefixo STYLE Epoxy Grout (1.75 g/cm³)</option>
+                <option value="cement">Tilefixo Grout CG Cementitious (1.55 g/cm³)</option>
+              </select>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcGrout()">Calculate Grout Quantity →</button>
+          <div class="est-result" id="res-grout">
+            <div class="result-row">
+              <div class="result-label">Grout Weight Required</div>
+              <div class="result-val" id="rv-grout-kg">—</div>
+            </div>
+            <div class="result-row">
+              <div class="result-label">Suggested Pack Quantity</div>
+              <div class="result-val" id="rv-grout-packs">—</div>
+            </div>
+            <div class="result-row">
+              <div class="result-label">Density Applied</div>
+              <div class="result-val" id="rv-grout-density" style="font-size:14px;color:var(--text2)">—</div>
+            </div>
+            <div class="result-note">Formula used: $\text{Grout Weight (kg/sqm)} = \text{Density} \times \frac{(L + W) \times W_j \times D_j}{L \times W}$. Includes a 10% safety buffer.</div>
+            <div class="result-actions">
+              <a class="btn btn-primary" id="wa-grout" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
+              <a class="btn btn-ghost" href="adhesives.html#shade-card" style="font-size:12px;padding:10px 20px;">Grout Colors</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHADE CARD -->
+        <div class="est-panel" id="tab-shade">
+          <style>
+            .shade-card-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; }
+            .swatch-group { margin-bottom: 20px; }
+            .swatch-group h4 { font-family: var(--display); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 12px; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 6px; }
+            .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 8px; }
+            .swatch-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--color-border-light); cursor: pointer; transition: transform 0.2s, border-color 0.2s; position: relative; padding: 0; box-shadow: var(--shadow-sm); }
+            .swatch-btn:hover, .swatch-btn.active { transform: scale(1.15); border-color: var(--color-primary); box-shadow: var(--shadow-md); z-index: 2; }
+            .swatch-btn::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: inherit; border: 1px solid rgba(0,0,0,0.1); }
+            .mock-tile-box { border: 1px solid var(--color-border-light); padding: 24px; background: var(--color-bg-app); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); }
+            .mock-tile-grid { display: grid; grid-template-columns: repeat(2, 110px); grid-template-rows: repeat(2, 110px); gap: 6px; background: #BC4A3C; padding: 6px; border-radius: 4px; box-shadow: var(--shadow-md); transition: background-color 0.3s; }
+            .mock-tile-item { background: #E5E7EB; border-radius: 2px; }
+            .mock-details { margin-top: 20px; text-align: center; width: 100%; }
+            .mock-details h4 { font-family: var(--display); font-size: 16px; color: var(--color-text-main); margin-bottom: 4px; }
+            .mock-details p { font-size: 12px; color: var(--color-text-secondary); font-family: var(--mono); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
+            @media (max-width: 768px) { .shade-card-container { grid-template-columns: 1fr; gap: 24px; } }
+          </style>
+          <div class="shade-card-container">
+            <div>
+              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px;">Select from 26 attractive colors (representing standard and special catalog shades). Click a swatch to visualize the grout line color on the mock tile layout.</p>
+              
+              <div class="swatch-group">
+                <h4>EG Shade Card Special Shades</h4>
+                <div class="swatch-grid" id="special-swatches"></div>
+              </div>
+              <div class="swatch-group" style="margin-top:24px;">
+                <h4>Standard Colors</h4>
+                <div class="swatch-grid" id="standard-swatches"></div>
+              </div>
+            </div>
+            
+            <div class="mock-tile-box">
+              <div class="mock-tile-grid" id="mockGroutJoints">
+                <div class="mock-tile-item"></div>
+                <div class="mock-tile-item"></div>
+                <div class="mock-tile-item"></div>
+                <div class="mock-tile-item"></div>
+              </div>
+              <div class="mock-details">
+                <h4 id="activeColorName">Terracotta</h4>
+                <p id="activeColorType">Standard Grout Color</p>
+                <a class="btn btn-primary" id="wa-shade" href="#" target="_blank" style="font-size:12px;padding:10px 20px;width:100%;justify-content:center;">💬 WhatsApp Quote for this Color</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TILE CLEANER -->
+        <div class="est-panel" id="tab-cleaner">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Cleaning Area (Square Feet)</label>
+              <input type="number" id="cl-area" placeholder="e.g. 1000" min="1">
+            </div>
+            <div class="form-group">
+              <label>Stain Severity / Dilution Rate</label>
+              <select id="cl-severity">
+                <option value="light">Light Stain / General Maintenance (1:5 dilution)</option>
+                <option value="medium" selected>Moderate Cement Stains / Post-tiling (1:3 dilution)</option>
+                <option value="heavy">Severe Hardwater / Paint Stain (Undiluted)</option>
+              </select>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcCleaner()">Calculate Cleaner Bottles →</button>
+          <div class="est-result" id="res-cleaner">
+            <div class="result-row">
+              <div class="result-label">Tile Cleaner Volume Required</div>
+              <div class="result-val" id="rv-cleaner-vol">—</div>
+            </div>
+            <div class="result-row">
+              <div class="result-label">Suggested Pack Size</div>
+              <div class="result-val" id="rv-cleaner-packs">—</div>
+            </div>
+            <div class="result-note">Calculated for UltraTech Tilefixo Shine Tile Cleaner. 1 Liter covers ~80-120 sqft depending on stain severity and substrate porosity.</div>
+            <div class="result-actions">
+              <a class="btn btn-primary" id="wa-cleaner" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FULL BOM -->
+        <div class="est-panel" id="tab-bom">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Total Built-Up Tiling Area (sqft)</label>
+              <input type="number" id="bom-area" placeholder="e.g. 2500" min="1">
+            </div>
+            <div class="form-group">
+              <label>Tiling Scope</label>
+              <select id="bom-scope">
+                <option value="normal" selected>Standard Flooring Only (5mm bed)</option>
+                <option value="premium">Flooring + Wet Area Wall cladding (Standard+Anti damp)</option>
+                <option value="heavy">Heavy Marble &amp; Granite External cladding (Large format)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Grout Joint Type</label>
+              <select id="bom-gtype">
+                <option value="epoxy">Epoxy Grout (Tilefixo STYLE 2K)</option>
+                <option value="cement">Cementitious Grout (Tilefixo Grout CG)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Average Tile Size</label>
+              <select id="bom-tsize">
+                <option value="600">600 × 600 mm (Standard Vitrified)</option>
+                <option value="300">300 × 300 mm (Bath Ceramic)</option>
+                <option value="1200">1200 × 600 mm (Large format slab)</option>
+              </select>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="calcBOM()">Generate Full Project BOM →</button>
+          <div class="est-result" id="res-bom">
+            <table class="bom-table">
+              <thead>
+                <tr>
+                  <th>Product Category</th>
+                  <th>Recommended Product</th>
+                  <th>Quantity Needed</th>
+                  <th>Packing Size</th>
+                  <th>Total Weight/Vol</th>
+                </tr>
+              </thead>
+              <tbody id="bom-tbody"></tbody>
+            </table>
+            <div class="result-note" id="bom-note"></div>
+            <div class="result-actions">
+              <a class="btn btn-primary" id="wa-bom" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
+              <button class="btn btn-ghost" onclick="window.print()" style="font-size:12px;padding:10px 20px;">🖨 Print BOM</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="text-align:center;">// Ready to Procure</div>
+      <h2 class="section-title" style="text-align:center;margin:16px 0 24px;">Your Project.<br><em>Our Intelligence.</em></h2>
+      <p style="font-size:15px;font-weight:300;color:var(--text2);max-width:480px;margin:0 auto 40px;line-height:1.7;text-align:center;">Share your vertical, quantity, and location. Our AI Concierge responds in under 4 minutes with pricing.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20B2B%20cement%20procurement%20pricing." target="_blank">💬 WhatsApp for Instant Quote</a>
+        <a class="btn btn-ghost" href="mailto:info@build360.online?subject=B2B%20Procurement%20Enquiry">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Get In Touch</div>
+      <h2 class="section-title">Let's Discuss<br><em>Your Project.</em></h2>
+    </div>
+    <div class="contact-grid" style="margin-top:56px;">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone / WhatsApp</h4>
+            <p>+91 90325 14441</p>
+            <p style="font-size:12px;color:var(--text3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">Srikar Jaji — Founder · Mon–Sat 9am–7pm</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>info@build360.online</p>
+            <p style="font-size:12px;color:var(--text3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">AI Concierge replies in &lt;4 minutes</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Hyderabad, Telangana</p>
+            <p style="font-size:12px;color:var(--text3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">Pan-India · Enquiries from across the country welcome</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-header">// Procurement Enquiry</div>
+        <div class="form-body" id="contactFormBody">
+          <div class="form-group">
+            <label>Company / Firm Name</label>
+            <input type="text" id="cf-company" placeholder="Your company name">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label>Material Category</label>
+              <select id="cf-material">
+                <option>Grey Tile Adhesives</option>
+                <option>White Tile Adhesives</option>
+                <option>Epoxy / Cement Grouts</option>
+                <option>Specialty Adhesives &amp; Cleaners</option>
+                <option>Multiple Tiling Categories</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Project Location &amp; Quantity</label>
+            <textarea id="cf-details" placeholder="e.g. Gachibowli — 200 bags Tilefixo Sumo CT, 50 kits STYLE 2K Epoxy Grout (Desert Yellow), delivery by 15 July"></textarea>
+          </div>
+          <button class="form-submit-btn" id="contactSubmitBtn" onclick="submitEnquiry()">Send Enquiry →</button>
+          <p style="font-family:var(--mono);font-size:9px;color:var(--text3);text-align:center;margin-top:12px;letter-spacing:.08em;">AI Concierge responds in &lt;4 min · info@build360.online</p>
+        </div>
+        <div class="form-success" id="contactSuccess">
+          <div class="form-success-inner">
+            <div class="form-success-icon">◆</div>
+            <div class="form-success-title">Enquiry Received</div>
+            <p style="font-size:13px;color:var(--text2);line-height:1.6;">Our AI Concierge will respond in under 4 minutes with pricing.</p>
+            <div class="form-success-ref" id="successRef"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="#home"><img src="logo.jpg" alt="Build360.online" class="footer-logo-img"></a>
+        <div class="footer-tagline" style="margin-top: 6px;">India's Premium Tiling Procurement Network</div>
+        <p class="footer-desc">Tile Adhesives · Epoxy Grouts · Cement Grouts · Specialty Cleaners. Request. Quote. Build — across India.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <a href="adhesives.html">Grey Tile Adhesives</a>
+        <a href="adhesives.html">White Tile Adhesives</a>
+        <a href="adhesives.html">Epoxy &amp; Cement Grouts</a>
+        <a href="adhesives.html">Specialty &amp; Cleaners</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#how-it-works">How It Works</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="#estimator">Smart Estimator</a>
+        <a href="service-providers.html">Service Providers</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
+      <span>info@build360.online · +91 90325 14441</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── PRINT STYLES ─── -->
+<style>
+@media print {
+  nav, .wa-float, .ticker-bar, .hero, .cta-section, footer,
+  #ai-agents, .brands-section, .result-actions { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  body::before { display: none !important; }
+  .bom-table th, .bom-table td { color: #000 !important; border-color: #ccc !important; }
+  .est-result { display: block !important; border: 1px solid #ccc; }
+  .bom-table td.val { color: #BC4A3C !important; }
+  section { padding: 20px 0 !important; }
+  .estimator-shell { border: 1px solid #ccc !important; }
+  .estimator-tabs, .calc-btn { display: none !important; }
+  .est-panel { display: block !important; }
+}
+</style>
+
+<script>
+/* ─── HERO SLIDER ─── */
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots   = document.querySelectorAll('.hero-dot');
+const heroEl = document.getElementById('home');
+let slideTimer;
+
+function goSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  if (heroEl) heroEl.classList.remove('bg-slide-' + currentSlide);
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+  if (heroEl) heroEl.classList.add('bg-slide-' + currentSlide);
+  clearInterval(slideTimer);
+  slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
+}
+
+slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
+
+/* ─── TICKER ─── */
+const TICKER_BRANDS = [
+  { brand: 'UltraTech OPC 53',     grade: 'Cement 50kg',  price: 360,  unit: 'bag' },
+  { brand: 'Ambuja PPC',           grade: 'Cement 50kg',  price: 345,  unit: 'bag' },
+  { brand: 'Tata Tiscon 550SD',    grade: 'TMT Steel',    price: 64,   unit: 'kg' },
+  { brand: 'JSW Neo Steel',        grade: 'TMT 550D',     price: 61,   unit: 'kg' },
+  { brand: 'Aerocon AAC Blocks',   grade: '600x200x150',  price: 65,   unit: 'pc' },
+  { brand: 'Birla Aerocon AAC',    grade: '600x200x200',  price: 85,   unit: 'pc' },
+  { brand: 'Tilefixo Sumo CT',     grade: 'Grey 20kg',    price: 290,  unit: 'bag' },
+  { brand: 'MYK Laticrete 335',    grade: 'Adhesive 20kg',price: 820,  unit: 'bag' },
+  { brand: 'Tilefixo STYLE 2K',    grade: 'Epoxy 1kg',    price: 950,  unit: 'kit' },
+  { brand: 'Saint-Gobain Gyproc',  grade: 'Gypsum Board', price: 420,  unit: 'sheet' },
+  { brand: 'JK Lakshmi PRO+',      grade: 'Cement 50kg',  price: 350,  unit: 'bag' },
+  { brand: 'Jindal Panther',       grade: 'TMT 550D',     price: 60,   unit: 'kg' }
+];
+
+let tickerPrices = TICKER_BRANDS.map(b => ({ ...b, prev: b.price }));
+let tickerPaused = false;
+let tickerX = 0;
+let tickerRAF;
+let tickerItemWidth = 0;
+let totalItems = 0;
+
+function buildTickerItems(prices) {
+  const doubled = [...prices, ...prices]; // seamless loop
+  return doubled.map((item, i) => {
+    const delta = item.price - item.prev;
+    const sign  = delta >= 0 ? '+' : '';
+    const cls   = delta >= 0 ? 'up' : 'dn';
+    const arrow = delta >= 0 ? '▲' : '▼';
+    return `<div class="ticker-item" data-idx="${i % prices.length}">
+      <span class="t-brand">${item.brand}</span>
+      <span class="t-price">₹${item.price}/${item.unit}</span>
+      <span class="t-delta ${cls}">${arrow} ${sign}${delta}</span>
+    </div>`;
+  }).join('');
+}
+
+function initTicker() {
+  const track = document.getElementById('tickerTrack');
+  track.innerHTML = buildTickerItems(tickerPrices);
+  const items = track.querySelectorAll('.ticker-item');
+  if (!items.length) return;
+  tickerItemWidth = items[0].offsetWidth;
+  totalItems = tickerPrices.length;
+  tickerX = 0;
+  animateTicker();
+
+  // Pause on hover
+  document.getElementById('tickerWrap').addEventListener('mouseenter', () => tickerPaused = true);
+  document.getElementById('tickerWrap').addEventListener('mouseleave', () => tickerPaused = false);
+}
+
+function animateTicker() {
+  if (!tickerPaused) {
+    tickerX -= 0.6;
+    const loopWidth = tickerItemWidth * totalItems;
+    if (Math.abs(tickerX) >= loopWidth) tickerX = 0;
+    document.getElementById('tickerTrack').style.transform = `translateX(${tickerX}px)`;
+  }
+  tickerRAF = requestAnimationFrame(animateTicker);
+}
+
+function updateTickerPrices() {
+  tickerPrices = tickerPrices.map(item => {
+    const prev  = item.price;
+    const delta = Math.round((Math.random() * 6 - 3));  // ±3 swing
+    const price = Math.max(prev + delta, 50);
+    return { ...item, prev, price };
+  });
+  const track = document.getElementById('tickerTrack');
+  const items = track.querySelectorAll('.ticker-item');
+  items.forEach((el, i) => {
+    const real = i % totalItems;
+    const item = tickerPrices[real];
+    const delta = item.price - item.prev;
+    const sign  = delta >= 0 ? '+' : '';
+    const cls   = delta >= 0 ? 'up' : 'dn';
+    const arrow = delta >= 0 ? '▲' : '▼';
+    if (delta !== 0) el.classList.add('flash');
+    setTimeout(() => el.classList.remove('flash'), 600);
+    el.querySelector('.t-price').textContent = `₹${item.price}/${item.unit}`;
+    el.querySelector('.t-delta').className   = `t-delta ${cls}`;
+    el.querySelector('.t-delta').textContent = `${arrow} ${sign}${delta}`;
+  });
+}
+
+/* ─── COUNT-UP ANIMATION ─── */
+function countUp(el, target, suffix, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = Math.floor(start) + suffix;
+  }, 16);
+}
+
+/* ─── SCROLL REVEAL ─── */
+function initReveal() {
+  const els = document.querySelectorAll('.reveal, .agent-card, .policy-card');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, idx) => {
+      if (e.isIntersecting) {
+        const delay = e.target.dataset.delay || 0;
+        setTimeout(() => e.target.classList.add('visible'), delay);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Stagger grid children
+  document.querySelectorAll('.agents-grid .agent-card').forEach((el, i) => {
+    el.dataset.delay = i * 80;
+  });
+  document.querySelectorAll('.policy-grid .policy-card').forEach((el, i) => {
+    el.dataset.delay = i * 60;
+  });
+
+  els.forEach(el => io.observe(el));
+
+  // Count-up for hero stats
+  const statMills = document.getElementById('stat-mills');
+  const heroIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        countUp(statMills, 15, '+', 1200);
+        heroIO.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  if (statMills) heroIO.observe(statMills.closest('.hero-stats'));
+}
+
+/* ─── HAMBURGER ─── */
+function initHamburger() {
+  const btn  = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mob-link').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    }
+  });
+}
+
+/* ─── TAB SWITCHING ─── */
+function switchTab(id, btn) {
+  document.querySelectorAll('.est-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.est-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+/* ─── CALCULATORS ─── */
+function waLink(msg) {
+  return 'https://wa.me/919032514441?text=' + encodeURIComponent(msg);
+}
+
+const GROUT_COLORS = [
+  { name: 'Desert Yellow', hex: '#E3B85B', type: 'Specialty (EG Shade Card)' },
+  { name: 'Oyster Beige', hex: '#E3D4B6', type: 'Specialty (EG Shade Card)' },
+  { name: 'Cobalt Blue', hex: '#1D4ED8', type: 'Specialty (EG Shade Card)' },
+  { name: 'Stone Brown', hex: '#78350F', type: 'Specialty (EG Shade Card)' },
+  { name: 'Terrific Black', hex: '#1F2937', type: 'Specialty (EG Shade Card)' },
+  { name: 'Lorent Green', hex: '#15803D', type: 'Specialty (EG Shade Card)' },
+  { name: 'Shining Gold', hex: '#D4AF37', type: 'Specialty (EG Shade Card)' },
+  { name: 'Shining Silver', hex: '#C0C0C0', type: 'Specialty (EG Shade Card)' },
+  { name: 'Shining Copper', hex: '#B87333', type: 'Specialty (EG Shade Card)' },
+  { name: 'Pure White', hex: '#FFFFFF', type: 'Standard' },
+  { name: 'Ivory', hex: '#FFFFF0', type: 'Standard' },
+  { name: 'Charcoal', hex: '#36454F', type: 'Standard' },
+  { name: 'Terracotta', hex: '#BC4A3C', type: 'Standard' },
+  { name: 'Burgundy', hex: '#800020', type: 'Standard' },
+  { name: 'Light Grey', hex: '#D3D3D3', type: 'Standard' },
+  { name: 'Dark Grey', hex: '#A9A9A9', type: 'Standard' },
+  { name: 'Sandstone', hex: '#C2B280', type: 'Standard' },
+  { name: 'Misty Grey', hex: '#BCC6CC', type: 'Standard' },
+  { name: 'Soft Pink', hex: '#FFC0CB', type: 'Standard' },
+  { name: 'Alpine Blue', hex: '#6495ED', type: 'Standard' },
+  { name: 'Teal', hex: '#008080', type: 'Standard' },
+  { name: 'Mint Green', hex: '#98FF98', type: 'Standard' },
+  { name: 'Chocolate', hex: '#7B3F00', type: 'Standard' },
+  { name: 'Peach', hex: '#FFDAB9', type: 'Standard' },
+  { name: 'Golden Yellow', hex: '#FFDF00', type: 'Standard' },
+  { name: 'Copper Dust', hex: '#8C5D3A', type: 'Standard' }
+];
+
+function selectGroutColor(name, hex, type) {
+  document.getElementById('mockGroutJoints').style.backgroundColor = hex;
+  document.getElementById('activeColorName').textContent = name;
+  document.getElementById('activeColorType').textContent = type;
+  
+  // Highlight active button
+  document.querySelectorAll('.swatch-btn').forEach(btn => {
+    if (btn.dataset.color === name) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+
+  const msg = `Hi Srikar, I'm interested in purchasing the UltraTech Epoxy Grout in the shade "${name}" (${type}) shown on build360.online. Please share pricing.`;
+  document.getElementById('wa-shade').href = waLink(msg);
+}
+
+function renderSwatches() {
+  const specGrid = document.getElementById('special-swatches');
+  const stdGrid = document.getElementById('standard-swatches');
+  if (!specGrid || !stdGrid) return;
+  
+  specGrid.innerHTML = '';
+  stdGrid.innerHTML = '';
+
+  GROUT_COLORS.forEach(color => {
+    const btn = document.createElement('button');
+    btn.className = 'swatch-btn';
+    btn.style.backgroundColor = color.hex;
+    btn.dataset.color = color.name;
+    btn.title = `${color.name} (${color.type})`;
+    btn.onclick = () => selectGroutColor(color.name, color.hex, color.type);
+    
+    if (color.type.includes('EG Shade Card')) {
+      specGrid.appendChild(btn);
+    } else {
+      stdGrid.appendChild(btn);
+    }
+  });
+
+  // Select default terracotta
+  selectGroutColor('Terracotta', '#BC4A3C', 'Standard Grout Color');
+}
+
+function calcTile() {
+  const area = parseFloat(document.getElementById('t-area').value);
+  const type = document.getElementById('t-type').value;
+  const prod = document.getElementById('t-product').value;
+  if (!area || area <= 0) { alert('Please enter a valid tile area.'); return; }
+  
+  const rates = { floor: 4.5, wall: 3.0, large: 6.0, cladding: 8.0 };
+  const labels = {
+    floor: '4.5 kg/sqm (5mm bed thickness)',
+    wall: '3.0 kg/sqm (3mm bed thickness)',
+    large: '6.0 kg/sqm (6mm bed thickness)',
+    cladding: '8.0 kg/sqm (8mm bed thickness)'
+  };
+
+  const areaSqm = area * 0.092903;
+  const kgNeeded = areaSqm * rates[type] * 1.05; // 5% buffer
+  const bags = Math.ceil(kgNeeded / 20);
+
+  document.getElementById('rv-tile-bags').textContent = bags + ' bags';
+  document.getElementById('rv-tile-kg').textContent = Math.ceil(kgNeeded).toLocaleString() + ' kg total';
+  document.getElementById('rv-tile-cov').textContent = labels[type];
+
+  const msg = `Hi Srikar, here's my Tile Adhesive estimate from build360.online:\nProduct: ${prod}\nArea: ${area} sqft\nRequired: ${bags} bags (20kg)\nPlease share best pricing.`;
+  document.getElementById('wa-tile').href = waLink(msg);
+  document.getElementById('res-tile').classList.add('show');
+}
+
+function calcGrout() {
+  const length = parseFloat(document.getElementById('g-length').value);
+  const width = parseFloat(document.getElementById('g-width').value);
+  const jwidth = parseFloat(document.getElementById('g-jwidth').value);
+  const depth = parseFloat(document.getElementById('g-depth').value);
+  const area = parseFloat(document.getElementById('g-area').value);
+  const type = document.getElementById('g-type').value;
+
+  if (!length || length <= 10) { alert('Please enter a valid tile length in mm.'); return; }
+  if (!width || width <= 10) { alert('Please enter a valid tile width in mm.'); return; }
+  if (!depth || depth <= 0) { alert('Please enter a valid tile thickness in mm.'); return; }
+  if (!area || area <= 0) { alert('Please enter a valid tiling area.'); return; }
+
+  const density = type === 'epoxy' ? 1.75 : 1.55;
+  const areaSqm = area * 0.092903;
+  
+  // Volumetric formula: kg/sqm = density * ((L+W)*jw*jd)/(L*W)
+  const kgPerSqm = density * ((length + width) * jwidth * depth) / (length * width);
+  const totalKg = Math.ceil(kgPerSqm * areaSqm * 1.10); // 10% safety buffer
+
+  let packText = '';
+  if (type === 'epoxy') {
+    const kits5kg = Math.ceil(totalKg / 5);
+    packText = `${kits5kg} x 5kg kit(s) or ${totalKg} x 1kg kit(s)`;
+  } else {
+    packText = `${totalKg} x 1kg pack(s)`;
+  }
+
+  document.getElementById('rv-grout-kg').textContent = totalKg + ' kg';
+  document.getElementById('rv-grout-packs').textContent = packText;
+  document.getElementById('rv-grout-density').textContent = `${density} g/cm³ (${type === 'epoxy' ? 'STYLE Epoxy' : 'Grout CG Cement'})`;
+
+  const typeName = type === 'epoxy' ? 'UltraTech STYLE Epoxy Grout' : 'UltraTech Grout CG (Cement)';
+  const msg = `Hi Srikar, here's my Grout estimate from build360.online:\nProduct: ${typeName}\nTile Size: ${length}x${width}mm (Joint: ${jwidth}x${depth}mm)\nArea: ${area} sqft\nRequired Grout: ${totalKg} kg (${packText})\nPlease share pricing.`;
+  document.getElementById('wa-grout').href = waLink(msg);
+  document.getElementById('res-grout').classList.add('show');
+}
+
+function calcCleaner() {
+  const area = parseFloat(document.getElementById('cl-area').value);
+  const severity = document.getElementById('cl-severity').value;
+  if (!area || area <= 0) { alert('Please enter a valid cleaning area.'); return; }
+
+  // Coverage per Litre: light = 100 sqft, medium = 80 sqft, heavy = 50 sqft
+  const covs = { light: 100, medium: 80, heavy: 50 };
+  const litres = Math.ceil(area / covs[severity]);
+
+  document.getElementById('rv-cleaner-vol').textContent = litres + ' Litres';
+  document.getElementById('rv-cleaner-packs').textContent = `${litres} x 1L bottle(s) or ${Math.ceil(litres/5)} x 5L jar(s)`;
+
+  const msg = `Hi Srikar, here's my Tile Cleaner estimate from build360.online:\nProduct: Tilefixo Shine Cleaner\nArea: ${area} sqft (${severity} stains)\nRequired: ${litres} Litres\nPlease share pricing.`;
+  document.getElementById('wa-cleaner').href = waLink(msg);
+  document.getElementById('res-cleaner').classList.add('show');
+}
+
+function calcBOM() {
+  const area = parseFloat(document.getElementById('bom-area').value);
+  const scope = document.getElementById('bom-scope').value;
+  const gtype = document.getElementById('bom-gtype').value;
+  const tsize = parseFloat(document.getElementById('bom-tsize').value);
+  
+  if (!area || area <= 0) { alert('Please enter a valid area.'); return; }
+
+  const areaSqm = area * 0.092903;
+
+  // 1. Adhesive bags (20kg)
+  const adRates = { normal: 4.5, premium: 5.5, heavy: 7.5 };
+  const adKgs = areaSqm * adRates[scope] * 1.05;
+  const adBags = Math.ceil(adKgs / 20);
+  const adProduct = scope === 'normal' ? 'Tilefixo Sumo CT' : scope === 'premium' ? 'Tilefixo Aqua Marine VT' : 'Tilefixo Royal NT';
+
+  // 2. Grout weight (kg)
+  // Assume joint width = 3mm, tile thickness / joint depth = 5mm (bath), 4mm (slab), 5mm (std)
+  const depth = tsize === 300 ? 6 : tsize === 600 ? 5 : 4;
+  const density = gtype === 'epoxy' ? 1.75 : 1.55;
+  const grKgsPerSqm = density * ((tsize + tsize) * 3 * depth) / (tsize * tsize);
+  const groutKg = Math.ceil(grKgsPerSqm * areaSqm * 1.10);
+  const groutProduct = gtype === 'epoxy' ? 'Tilefixo STYLE 2K Epoxy' : 'Tilefixo Grout CG';
+
+  // 3. Tile Cleaner bottles (1L)
+  const cleanerLitres = Math.ceil(area / 80);
+
+  const rows = [
+    { cat: 'Tile Adhesive', prod: adProduct, qty: `${adBags} Bags`, pack: '20 kg Bag', total: `${adBags * 20} kg` },
+    { cat: 'Tile Joint Grout', prod: groutProduct, qty: `${groutKg} kg`, pack: '1 kg / 5 kg Pack', total: `${groutKg} kg` },
+    { cat: 'Tile Cleaner', prod: 'Tilefixo Shine', qty: `${cleanerLitres} Bottles`, pack: '1 Litre Bottle', total: `${cleanerLitres} L` }
+  ];
+
+  let tbody = '';
+  let waMsg = `Hi Srikar, here's my Full Tiling BOM from build360.online:\nProject Area: ${area} sqft\n\n`;
+  
+  rows.forEach(r => {
+    tbody += `<tr>
+      <td style="font-weight:600;">${r.cat}</td>
+      <td>${r.prod}</td>
+      <td class="val" style="font-family:var(--mono);">${r.qty}</td>
+      <td>${r.pack}</td>
+      <td class="val">${r.total}</td>
+    </tr>`;
+    waMsg += `• ${r.cat}: ${r.qty} of ${r.prod}\n`;
+  });
+  
+  waMsg += `\nPlease share best quotation and delivery timeline.`;
+
+  document.getElementById('bom-tbody').innerHTML = tbody;
+  document.getElementById('bom-note').textContent = `Based on ${area.toLocaleString()} sqft tiling area. Standard 5% wastage for adhesive and 10% for grout included. Recommended products based on catalog application rules.`;
+  document.getElementById('wa-bom').href = waLink(waMsg);
+  document.getElementById('res-bom').classList.add('show');
+}
+
+/* ─── CONTACT FORM ─── */
+function submitEnquiry() {
+  const company  = document.getElementById('cf-company').value.trim();
+  const phone    = document.getElementById('cf-phone').value.trim();
+  const material = document.getElementById('cf-material').value;
+  const details  = document.getElementById('cf-details').value.trim();
+  const phoneDigits = phone.replace(/\D/g, '');
+
+  if (!company) { alert('Please enter your company name.'); return; }
+  if (phoneDigits.length < 10) { alert('Please enter a valid 10-digit phone number.'); return; }
+  if (!details) { alert('Please describe your project location and quantity.'); return; }
+
+  const btn = document.getElementById('contactSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Routing to Concierge...';
+
+  const msg = `Hi Srikar,\n\nNew enquiry from build360.online:\n\nCompany: ${company}\nPhone: ${phone}\nMaterial: ${material}\nDetails: ${details}\n\nPlease respond with pricing.`;
+
+  setTimeout(() => {
+    window.open(waLink(msg), '_blank');
+    document.getElementById('contactFormBody').style.display = 'none';
+    document.getElementById('contactSuccess').classList.add('show');
+    const ref = 'ENQ-' + Date.now().toString().slice(-6);
+    document.getElementById('successRef').textContent = '// Reference: ' + ref;
+  }, 1200);
+}
+
+/* ─── INIT ─── */
+window.addEventListener('DOMContentLoaded', () => {
+  initTicker();
+  initReveal();
+  initHamburger();
+  renderSwatches();
+  setInterval(updateTickerPrices, 300000); // update every 5 min
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07848c56c52557b',t:'MTc4MDc1ODAwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

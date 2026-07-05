@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
+<meta property="og:image" content="https://build360.online/logo.jpg">
+<title>Bid Platform — Build360.online | Vendor RFQ &amp; Bidding</title>
+<meta name="description" content="Build360.online's vendor bidding platform — verified suppliers compete on approved RFQs for tile adhesives and grouts across India.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://build360.online/bid.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── DEMO BANNER ─── */
+  .demo-banner {
+    background: #1A0D0B; border-bottom: 1px solid var(--color-primary-18);
+    padding: 10px 0; text-align: center;
+  }
+  .demo-banner span {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+    color: #E8B8AC;
+  }
+  .demo-banner strong { color: var(--color-primary); }
+
+  /* ─── AUTH TABS ─── */
+  .auth-shell {
+    max-width: 460px; margin: 0 auto;
+    background: var(--color-bg-surface); border: 1px solid var(--color-border-light);
+    border-radius: var(--radius); box-shadow: var(--shadow-md); overflow: hidden;
+  }
+  .auth-tabs { display: flex; border-bottom: 1px solid var(--color-border-light); }
+  .auth-tab {
+    flex: 1; padding: 16px; text-align: center; background: var(--color-bg-surface-alt);
+    border: none; cursor: pointer; font-family: var(--display); font-size: 13px;
+    font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--color-text-muted); transition: all .2s;
+  }
+  .auth-tab.active { background: var(--color-bg-surface); color: var(--color-primary); box-shadow: inset 0 -2px 0 var(--color-primary); }
+  .auth-body { padding: 32px; }
+  .auth-panel { display: none; }
+  .auth-panel.active { display: block; }
+  .auth-foot { text-align: center; margin-top: 16px; font-size: 12px; color: var(--color-text-muted); }
+  .auth-foot a { color: var(--color-primary); text-decoration: none; cursor: pointer; }
+
+  /* ─── DASHBOARD ─── */
+  #dashboard { display: none; }
+  #dashboard.active { display: block; }
+  #auth-section.hidden { display: none; }
+  .dash-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px; margin-bottom: 32px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--color-border-light);
+  }
+  .dash-vendor-name { font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--color-text-main); }
+  .dash-vendor-sub { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-muted); margin-top: 4px; }
+  .dash-stats { display: flex; gap: 12px; flex-wrap: wrap; }
+  .dash-stat { background: var(--color-bg-surface-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius); padding: 12px 18px; text-align: center; min-width: 100px; }
+  .dash-stat strong { display: block; font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--color-primary); }
+  .dash-stat span { font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-muted); }
+
+  /* ─── RFQ CARDS ─── */
+  .rfq-grid { display: flex; flex-direction: column; gap: 16px; }
+  .rfq-card {
+    background: var(--color-bg-surface); border: 1px solid var(--color-border-light);
+    border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm);
+    display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
+    transition: box-shadow .2s;
+  }
+  .rfq-card:hover { box-shadow: var(--shadow-md); }
+  .rfq-card.awarded { opacity: .65; }
+  .rfq-card.awarded::after { content: '✓ AWARDED'; }
+  .rfq-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .rfq-id { font-family: var(--mono); font-size: 10px; color: var(--color-text-muted); letter-spacing: .06em; }
+  .rfq-badge {
+    font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 10px; background: var(--color-primary-10); color: var(--color-primary);
+  }
+  .rfq-title { font-family: var(--display); font-size: 18px; font-weight: 700; color: var(--color-text-main); margin-bottom: 6px; }
+  .rfq-meta { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12.5px; color: var(--color-text-secondary); }
+  .rfq-meta b { color: var(--color-text-main); }
+  .rfq-right { text-align: right; min-width: 168px; }
+  .rfq-timer {
+    font-family: var(--mono); font-size: 20px; font-weight: 600; color: var(--color-primary);
+    margin-bottom: 4px;
+  }
+  .rfq-timer.urgent { color: #D6453C; animation: pulse-red 1s infinite; }
+  @keyframes pulse-red { 0%,100%{opacity:1} 50%{opacity:.5} }
+  .rfq-timer-label { font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 12px; }
+  .rfq-current-bid { font-family: var(--display); font-size: 15px; font-weight: 700; color: var(--color-text-main); margin-bottom: 2px; }
+  .rfq-current-bid-label { font-family: var(--mono); font-size: 8.5px; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 10px; }
+  .rfq-bidcount { font-size: 11px; color: var(--color-text-muted); margin-bottom: 10px; }
+
+  .bid-entry-row { display: none; gap: 8px; margin-top: 10px; }
+  .bid-entry-row.show { display: flex; }
+  .bid-entry-row input {
+    width: 130px; padding: 8px 10px; border: 1px solid var(--color-border-light);
+    border-radius: 4px; font-family: var(--mono); font-size: 13px; background: var(--color-bg-surface);
+    color: var(--color-text-main);
+  }
+
+  .bid-toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    background: var(--color-text-main); color: #fff; padding: 14px 22px;
+    border-radius: var(--radius); font-size: 13px; box-shadow: var(--shadow-md);
+    transform: translateY(20px); opacity: 0; transition: all .3s; max-width: 320px;
+  }
+  .bid-toast.show { transform: translateY(0); opacity: 1; }
+
+  .markup-note {
+    background: var(--color-bg-surface-alt); border-left: 3px solid var(--color-primary);
+    border-radius: 0 var(--radius) var(--radius) 0; padding: 10px 14px;
+    font-size: 11.5px; color: var(--color-text-secondary); margin-top: 14px;
+  }
+
+  /* Flow steps */
+  .flow-steps { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+  .flow-step { display: grid; grid-template-columns: 36px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--color-border-subtle); }
+  .flow-step:last-child { border-bottom: none; }
+  .flow-num { width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary-10); border: 1px solid var(--color-primary-18); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 700; color: var(--color-primary); font-size: 13px; }
+  .flow-text h4 { font-family: var(--display); font-size: 15px; font-weight: 700; color: var(--color-text-main); margin-bottom: 4px; }
+  .flow-text p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  @media (max-width: 700px) {
+    .rfq-card { grid-template-columns: 1fr; }
+    .rfq-right { text-align: left; }
+    .dash-topbar { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── DEMO BANNER ─── -->
+<div class="demo-banner">
+  <span>👁️ <strong>Interactive Preview</strong> — this dashboard demonstrates the vendor bidding workflow. Live multi-vendor data &amp; authentication launch in Phase 2.</span>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="logo.jpg" alt="Build360.online" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li class="nav-item-dropdown" tabindex="0">
+        <a href="adhesives.html">Our Products <span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown-panel">
+          <a href="adhesives.html">Tile Adhesives</a>
+        </div>
+      </li>
+      <li><a href="bid.html" style="color:var(--color-primary)">Bid</a></li>
+      <li><a href="index.html#estimator">Estimator</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="service-providers.html">Service Providers</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
+    <li><a href="adhesives.html" class="mob-link">Our Products</a></li>
+    <li><a href="bid.html" class="mob-link">Bid</a></li>
+    <li><a href="index.html#estimator" class="mob-link">Estimator</a></li>
+    <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
+    <li><a href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+  </ul>
+</div>
+<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20a%20vendor%20interested%20in%20joining%20the%20Build360%20Bid%20platform." target="_blank" title="WhatsApp Build360">💬</a>
+
+<!-- ─── PAGE HERO ─── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">// Vendor Bidding Platform</div>
+    <h1>Approved RFQs.<br><em>Lowest Price Wins.</em></h1>
+    <p>Verified buyer requirements flow into this dashboard. Registered supply partners compete by submitting their lowest all-inclusive supply price — Build360 awards the RFQ to the most competitive bid before the timer ends.</p>
+  </div>
+</section>
+
+<!-- ─── HOW BIDDING WORKS ─── -->
+<section class="section-pad-sm">
+  <div class="container">
+    <div class="section-eyebrow">// How It Works for Vendors</div>
+    <h2 class="section-title" style="font-size:clamp(26px,3.5vw,40px);">From RFQ to <em>Work Order.</em></h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-text"><h4>A buyer posts a requirement</h4><p>Material, quantity, and delivery location are submitted as a verified RFQ on Build360.</p></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-text"><h4>The RFQ goes live</h4><p>Once verified, the requirement is published to this vendor dashboard with a delivery-linked bidding window.</p></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-text"><h4>Vendors register &amp; log in</h4><p>Verified supply partners sign up once, then log in to view all currently open RFQs.</p></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-text"><h4>Accept &amp; submit your lowest price</h4><p>Accept the RFQ to participate, then enter the lowest all-inclusive supply price you can operate at to win the bid.</p></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <div class="flow-text"><h4>Build360 awards the RFQ</h4><p>When the countdown hits zero, Build360 reviews all bids and awards the work order to the vendor with the most competitive (lowest) price.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AUTH SECTION ─── -->
+<section id="auth-section" class="section-pad" style="background:var(--color-bg-surface-alt);">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">// Vendor Access</div>
+    <h2 class="section-title" style="text-align:center;font-size:clamp(26px,3.5vw,40px);margin-bottom:32px;">Sign Up or Log In<br><em>to View Live RFQs.</em></h2>
+
+    <div class="auth-shell">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchAuthTab('login', this)">Vendor Login</button>
+        <button class="auth-tab" onclick="switchAuthTab('signup', this)">Register</button>
+      </div>
+      <div class="auth-body">
+
+        <div class="auth-panel active" id="auth-login">
+          <div class="form-group" style="margin-bottom:18px;">
+            <label>Registered Mobile / Email</label>
+            <input type="text" id="login-id" placeholder="e.g. 98765 43210">
+          </div>
+          <div class="form-group" style="margin-bottom:22px;">
+            <label>Password</label>
+            <input type="password" id="login-pw" placeholder="••••••••">
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="demoLogin()">Log In to Dashboard →</button>
+          <div class="auth-foot">No account yet? <a onclick="switchAuthTabByName('signup')">Register as a vendor</a></div>
+        </div>
+
+        <div class="auth-panel" id="auth-signup">
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>Company / Vendor Name</label>
+            <input type="text" id="signup-name" placeholder="e.g. Sri Lakshmi Tile Traders">
+          </div>
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>Mobile Number</label>
+            <input type="text" id="signup-phone" placeholder="e.g. 98765 43210">
+          </div>
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>Category</label>
+            <select id="signup-category">
+              <option>Tile Adhesives</option>
+              <option>Epoxy &amp; Cement Grouts</option>
+              <option>Tile Adhesives + Grouts</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:22px;">
+            <label>Create Password</label>
+            <input type="password" id="signup-pw" placeholder="••••••••">
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="demoSignup()">Create Vendor Account →</button>
+          <div class="auth-foot">Already registered? <a onclick="switchAuthTabByName('login')">Log in</a></div>
+        </div>
+
+      </div>
+    </div>
+    <p style="text-align:center;font-family:var(--mono);font-size:10px;color:var(--color-text-muted);margin-top:18px;letter-spacing:.04em;">// This is a preview environment — any details entered here load the demo dashboard below, nothing is stored.</p>
+  </div>
+</section>
+
+<!-- ─── DASHBOARD ─── -->
+<section id="dashboard" class="section-pad">
+  <div class="container">
+    <div class="dash-topbar">
+      <div>
+        <div class="dash-vendor-name" id="dash-vendor-name">Vendor Dashboard</div>
+        <div class="dash-vendor-sub">Verified Supply Partner · Tile Adhesives &amp; Grouts</div>
+      </div>
+      <div class="dash-stats">
+        <div class="dash-stat"><strong id="stat-open">4</strong><span>Open RFQs</span></div>
+        <div class="dash-stat"><strong id="stat-bids">0</strong><span>Your Active Bids</span></div>
+        <div class="dash-stat"><strong>87%</strong><span>Win Rate (Demo)</span></div>
+      </div>
+      <button class="btn btn-ghost" onclick="logoutDemo()">Log Out</button>
+    </div>
+
+    <div class="section-eyebrow">// Open Requests for Quotation</div>
+    <h2 class="section-title" style="font-size:clamp(22px,3vw,32px);margin-bottom:24px;">Live RFQ Board</h2>
+
+    <div class="rfq-grid" id="rfq-grid"><!-- populated by JS --></div>
+
+    <div class="markup-note">
+      💡 Enter the <strong>lowest all-inclusive supply price</strong> you can profitably fulfil at. Build360 will award the RFQ to the most competitive bid when the timer ends.
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-eyebrow" style="text-align:center;">// Become a Supply Partner</div>
+      <h2 class="section-title" style="text-align:center;margin:16px 0 20px;">Not Registered<br><em>Yet?</em></h2>
+      <p style="font-size:15px;color:var(--color-text-secondary);max-width:460px;margin:0 auto 36px;line-height:1.7;">Reach out on WhatsApp and our team will get you set up as a verified vendor on the platform.</p>
+      <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27d%20like%20to%20register%20as%20a%20vendor%20on%20the%20Build360%20Bid%20platform." target="_blank">💬 Register as a Vendor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="index.html"><img src="logo.jpg" alt="Build360.online" class="footer-logo-img"></a>
+        <div class="footer-tagline" style="margin-top:6px;">India's Premium Tiling Procurement Network</div>
+        <p class="footer-desc">Tile Adhesives · Epoxy Grouts · Cement Grouts · Specialty Cleaners. Request. Quote. Build — across India.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <a href="adhesives.html">Grey Tile Adhesives</a>
+        <a href="adhesives.html">White Tile Adhesives</a>
+        <a href="adhesives.html">Epoxy &amp; Cement Grouts</a>
+        <a href="adhesives.html">Specialty &amp; Cleaners</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="index.html#estimator">Smart Estimator</a>
+        <a href="service-providers.html">Service Providers</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
+      <span>info@build360.online · +91 90325 14441</span>
+    </div>
+  </div>
+</footer>
+
+<div class="bid-toast" id="bidToast"></div>
+
+<script>
+function initHamburger(){const b=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('open');});document.addEventListener('click',e=>{if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});}
+
+/* ─── AUTH TABS ─── */
+function switchAuthTab(id, btn){
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.auth-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('auth-'+id).classList.add('active');
+}
+function switchAuthTabByName(id){
+  switchAuthTab(id, document.querySelector(`.auth-tab[onclick*="${id}"]`));
+}
+
+let vendorName = 'Vendor Dashboard';
+
+function demoLogin(){
+  const id = document.getElementById('login-id').value.trim();
+  vendorName = id ? `Welcome back${id.match(/^\d/) ? '' : ', '+id}` : 'Vendor Dashboard';
+  enterDashboard();
+}
+function demoSignup(){
+  const name = document.getElementById('signup-name').value.trim();
+  vendorName = name ? name : 'New Vendor Partner';
+  showToast('✓ Account created (demo). Logging you in...');
+  setTimeout(enterDashboard, 600);
+}
+function enterDashboard(){
+  document.getElementById('auth-section').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('active');
+  document.getElementById('dash-vendor-name').textContent = vendorName;
+  document.getElementById('dashboard').scrollIntoView({behavior:'smooth'});
+  buildRFQBoard();
+}
+function logoutDemo(){
+  document.getElementById('dashboard').classList.remove('active');
+  document.getElementById('auth-section').classList.remove('hidden');
+  document.getElementById('auth-section').scrollIntoView({behavior:'smooth'});
+}
+
+/* ─── TOAST ─── */
+function showToast(msg){
+  const t = document.getElementById('bidToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3200);
+}
+
+/* ─── DEMO RFQ DATA ─── */
+const RFQs = [
+  { id:'RFQ-2241', title:'Vitrified Floor Adhesive — 1,200 sqft', loc:'Gachibowli, Hyderabad', material:'Aqua Marine VT Plus · 20kg bags', qty:'58 bags', basePrice:780, seconds: 5*60+40, bids: 6, accepted:false, won:false },
+  { id:'RFQ-2242', title:'Epoxy Grout — Commercial Lobby', loc:'Madhapur, Hyderabad', material:'STYLE 2K Epoxy Grout · Terrific Black', qty:'14 kits (5kg)', basePrice:2150, seconds: 9*60+15, bids: 3, accepted:false, won:false },
+  { id:'RFQ-2243', title:'Large Format Stone Adhesive — Lobby Cladding', loc:'Kokapet, Hyderabad', material:'345 Super Flex · 20kg bags', qty:'40 bags', basePrice:945, seconds: 2*60+05, bids: 9, accepted:false, won:false },
+  { id:'RFQ-2244', title:'Bathroom Tile Adhesive — 36-Unit Villa Project', loc:'Shamshabad, Hyderabad', material:'Royal NT · 20kg bags', qty:'120 bags', basePrice:610, seconds: 14*60+30, bids: 2, accepted:false, won:false },
+];
+
+function fmtTime(s){
+  if (s <= 0) return '00:00';
+  const m = Math.floor(s/60), sec = s%60;
+  return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');
+}
+
+function buildRFQBoard(){
+  const grid = document.getElementById('rfq-grid');
+  grid.innerHTML = RFQs.map((r,i) => rfqCardHTML(r,i)).join('');
+  document.getElementById('stat-open').textContent = RFQs.filter(r=>!r.won).length;
+  startTimers();
+}
+
+function rfqCardHTML(r,i){
+  const lowestLabel = r.lowestBid ? `₹${r.lowestBid}/bag — lowest so far` : `₹${r.basePrice}/bag ref. price`;
+  return `
+  <div class="rfq-card${r.won ? ' awarded' : ''}" id="rfq-card-${i}">
+    <div>
+      <div class="rfq-top">
+        <span class="rfq-id">${r.id}</span>
+        <span class="rfq-badge">${r.material.split(' · ')[0]}</span>
+      </div>
+      <div class="rfq-title">${r.title}</div>
+      <div class="rfq-meta">
+        <span>📍 <b>${r.loc}</b></span>
+        <span>📦 <b>${r.qty}</b></span>
+        <span>🏷️ ${r.material}</span>
+      </div>
+      <div class="bid-entry-row" id="bid-entry-${i}">
+        <input type="number" id="bid-input-${i}" placeholder="₹ Your lowest price" min="1">
+        <button class="btn btn-primary btn-sm" style="font-size:11px;padding:9px 16px;" onclick="placeBid(${i})">Submit Bid</button>
+      </div>
+    </div>
+    <div class="rfq-right">
+      <div class="rfq-timer" id="rfq-timer-${i}">${fmtTime(r.seconds)}</div>
+      <div class="rfq-timer-label">${r.won ? 'Bidding Closed' : 'Time Remaining'}</div>
+      <div class="rfq-current-bid" id="rfq-bid-${i}">${lowestLabel}</div>
+      <div class="rfq-current-bid-label">${r.lowestBid ? 'Lowest Bid (Live)' : 'Reference Price'}</div>
+      <div class="rfq-bidcount" id="rfq-bidcount-${i}">${r.bids} vendor${r.bids !== 1 ? 's' : ''} bid so far</div>
+      <button class="btn ${r.accepted ? 'btn-ghost' : 'btn-outline'} btn-sm" style="font-size:11px;padding:9px 16px;width:100%;" id="rfq-accept-${i}" onclick="acceptRFQ(${i})" ${r.won ? 'disabled' : ''}>
+        ${r.won ? '✓ Awarded by Build360' : (r.accepted ? '✓ Accepted — Enter Price Below' : 'Accept &amp; Bid')}
+      </button>
+    </div>
+  </div>`;
+}
+
+function acceptRFQ(i){
+  RFQs[i].accepted = true;
+  document.getElementById(`bid-entry-${i}`).classList.add('show');
+  const btn = document.getElementById(`rfq-accept-${i}`);
+  btn.textContent = '✓ Accepted — Enter Price Below';
+  btn.classList.remove('btn-outline'); btn.classList.add('btn-ghost');
+  showToast(`✓ You've accepted ${RFQs[i].id}. Submit your lowest price before the timer ends.`);
+}
+
+function placeBid(i){
+  const input = document.getElementById(`bid-input-${i}`);
+  const val = parseFloat(input.value);
+  const r = RFQs[i];
+  if (!val || val <= 0) { showToast(`⚠️ Please enter a valid price.`); return; }
+  // Track lowest bid
+  if (!r.lowestBid || val < r.lowestBid) r.lowestBid = val;
+  r.bids += 1;
+  document.getElementById(`rfq-bid-${i}`).textContent = `₹${r.lowestBid}/bag — lowest so far`;
+  document.getElementById(`rfq-bidcount-${i}`).textContent = `${r.bids} vendor${r.bids !== 1 ? 's' : ''} bid so far`;
+  input.value = '';
+  document.getElementById('stat-bids').textContent = parseInt(document.getElementById('stat-bids').textContent) + 1;
+  showToast(`✓ Bid of ₹${val}/bag submitted on ${r.id}. Build360 will award the RFQ to the lowest price when the timer ends.`);
+}
+
+let timerInterval;
+function startTimers(){
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    let anyRunning = false;
+    RFQs.forEach((r, i) => {
+      if (r.won) return;
+      if (r.seconds > 0) {
+        r.seconds -= 1;
+        anyRunning = true;
+        const el = document.getElementById(`rfq-timer-${i}`);
+        if (el) {
+          el.textContent = fmtTime(r.seconds);
+          el.classList.toggle('urgent', r.seconds <= 60);
+        }
+      } else if (!r.won) {
+        r.won = true;
+        const card = document.getElementById(`rfq-card-${i}`);
+        if (card) {
+          card.classList.add('awarded');
+          document.querySelector(`#rfq-timer-${i}`).nextElementSibling.textContent = 'Bidding Closed';
+          const btn = document.getElementById(`rfq-accept-${i}`);
+          btn.textContent = '✓ Awarded'; btn.disabled = true;
+        }
+        showToast(`🏆 Bidding closed on ${r.id} — Build360 will award to the lowest bid.`);
+      }
+    });
+    if (!anyRunning) clearInterval(timerInterval);
+  }, 1000);
+}
+
+window.addEventListener('DOMContentLoaded', () => { initHamburger(); });
+</script>
+</body>
+</html>

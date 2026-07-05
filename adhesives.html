@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
+<meta property="og:image" content="https://build360.online/logo.jpg">
+<title>UltraTech Tilefixo Adhesives & Grouts — Build360.online</title>
+<meta name="description" content="Explore the complete range of UltraTech Tilefixo tile adhesives, epoxy grouts, spot bonding agents, and cleaners. Calculate grout joints and preview 26 colors.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Biome Build360 LLP">
+<meta property="og:title" content="UltraTech Tilefixo Product Range — Build360.online">
+<meta property="og:description" content="Source premium UltraTech tile adhesives and epoxy grouts in bulk. Custom color swatches, dynamic calculators, and B2B concierge quoting.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://build360.online/adhesives.html">
+<link rel="canonical" href="https://build360.online/adhesives.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Local Overrides and Subpage Specific styling */
+  .page-hero {
+    position: relative;
+    padding: 120px 0 60px;
+    background: linear-gradient(135deg, #2E1A17 0%, #1A0D0B 100%);
+    color: #FFFFFF;
+    border-bottom: 1px solid var(--color-primary-18);
+    overflow: hidden;
+  }
+  .page-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--color-primary-10) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    position: relative;
+    z-index: 2;
+  }
+  .page-hero h1 {
+    font-family: var(--display);
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .page-hero h1 em {
+    color: var(--color-primary);
+    font-style: normal;
+  }
+  .page-hero p {
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--color-bg-app);
+    max-width: 680px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  
+  /* Catalog Tabs */
+  .catalog-tabs {
+    display: flex;
+    gap: 12px;
+    border-bottom: 2px solid var(--color-border-subtle);
+    margin-bottom: 40px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .catalog-tab {
+    background: none;
+    border: none;
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    padding: 12px 24px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: var(--radius) var(--radius) 0 0;
+    transition: all 0.2s;
+  }
+  .catalog-tab:hover {
+    color: var(--color-primary);
+  }
+  .catalog-tab.active {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    background: var(--color-bg-surface-alt);
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .catalog-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .catalog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-18);
+  }
+  .card-badge {
+    align-self: flex-start;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    background: var(--color-primary-10);
+    color: var(--color-primary);
+  }
+  .catalog-card h3 {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 12px;
+  }
+  .catalog-card p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .card-meta {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: 14px;
+    margin-top: auto;
+  }
+  .card-meta strong {
+    color: var(--color-text-main);
+  }
+  .card-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+  }
+  .card-actions .btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .catalog-panel {
+    display: none;
+  }
+  .catalog-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Swatch Overlay Visualizer */
+  .interactive-vis {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    margin-top: 48px;
+  }
+
+  /* Product card image */
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: var(--color-bg-app);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+    padding: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="logo.jpg" alt="Build360.online" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li class="nav-item-dropdown" tabindex="0">
+        <a href="adhesives.html" style="color:var(--color-primary)">Our Products <span class="nav-caret">▾</span></a>
+        <div class="nav-dropdown-panel">
+          <a href="adhesives.html">Tile Adhesives</a>
+        </div>
+      </li>
+      <li><a href="bid.html">Bid</a></li>
+      <li><a href="index.html#estimator">Estimator</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="service-providers.html">Service Providers</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20bulk%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── MOBILE MENU ─── -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
+    <li>
+      <a href="adhesives.html" class="mob-link">Our Products</a>
+      <div class="mob-sub"><a href="adhesives.html" class="mob-link">Tile Adhesives</a></div>
+    </li>
+    <li><a href="bid.html" class="mob-link">Bid</a></li>
+    <li><a href="index.html#estimator" class="mob-link">Estimator</a></li>
+    <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
+    <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20bulk%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+  </ul>
+</div>
+
+<!-- ─── WA FLOAT ─── -->
+<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20B2B%20tile%20adhesive%20pricing." target="_blank" title="WhatsApp Srikar">💬</a>
+
+<!-- ─── HERO ─── -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--color-primary);margin-bottom:12px;">UltraTech Building Products Division</div>
+    <h1>Tile &amp; Stone<br><em>Fitting Solutions.</em></h1>
+    <p>Complete professional tiling systems. Showcase of 17 polymer-modified grey/white adhesives, high-durability epoxy grouts, additives, and specialized acid-based tile cleaners engineered from foundation to finish.</p>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<div style="background:var(--color-bg-surface);border-bottom:1px solid var(--color-border-light);padding:16px 0;">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:32px;">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> Self Curing Technology</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> Stain-Free Epoxy Joints</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> Food Grade Certified Grout</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> B2B Project Rates on WhatsApp</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CATALOG SECTION ─── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Master Catalog</div>
+      <h2 class="section-title">The Complete Range.<br><em>Two Trusted Brands.</em></h2>
+      <p class="section-lead" style="margin-bottom: 40px;">Select a category to browse specific products, application criteria, and standard coverages — from UltraTech Tilefixo (17 products) and MYK Laticrete.</p>
+    </div>
+
+    <div class="catalog-tabs reveal">
+      <button class="catalog-tab active" onclick="switchCatalogTab('grey', this)">Grey Adhesives</button>
+      <button class="catalog-tab" onclick="switchCatalogTab('white', this)">White Adhesives</button>
+      <button class="catalog-tab" onclick="switchCatalogTab('grout', this)">Epoxy &amp; Cement Grouts</button>
+      <button class="catalog-tab" onclick="switchCatalogTab('specialty', this)">Specialty &amp; Cleaners</button>
+      <button class="catalog-tab" onclick="switchCatalogTab('myk', this)">MYK Laticrete</button>
+    </div>
+
+    <!-- GREY ADHESIVES -->
+    <div class="catalog-panel active" id="cat-grey">
+      <div class="catalog-grid">
+        <div class="catalog-card">
+          <img class="card-img" src="Sumo CT.jpeg" alt="UltraTech Tilefixo Sumo CT — Ceramic Floor Adhesive">
+          <span class="card-badge">Ceramic Floors</span>
+          <h3>Sumo CT</h3>
+          <p>Heavy duty polymer-modified cementitious tile adhesive. Specially formulated for installing ceramic tiles on internal floor &amp; wall surfaces in dry indoor areas.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20CT." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+        
+        <div class="catalog-card">
+          <img class="card-img" src="Sumo CT plus.jpeg" alt="UltraTech Tilefixo Sumo CT Plus — Ceramic & Small Stone Adhesive">
+          <span class="card-badge">Ceramic &amp; Small Stone</span>
+          <h3>Sumo CT Plus</h3>
+          <p>Enhanced tensile strength tile adhesive. Suitable for installing ceramic tiles on floors &amp; walls, and small format natural stone tiles on internal floors in dry indoor areas.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20CT%20Plus." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="Aqua marine VT.jpeg" alt="UltraTech Tilefixo Aqua Marine VT — Anti-Damp Tile Adhesive">
+          <span class="card-badge">Anti-Damp / Bath</span>
+          <h3>Aqua Marine VT</h3>
+          <p>Water-resistant anti-damp tile adhesive. Specially formulated for installing vitrified tiles &amp; natural stones on floor &amp; walls in dry and wet indoor areas like bathrooms and kitchens.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Aqua%20Marine%20VT." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="ultra-tech-aqua-marine-vt-plus-white-anti-damp-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Aqua Marine VT Plus — Anti-Damp Outdoor Adhesive">
+          <span class="card-badge">Anti-Damp / Terrace</span>
+          <h3>Aqua Marine VT Plus</h3>
+          <p>High-bonding strength adhesive. Specially formulated for installing vitrified tiles &amp; natural stones on floor &amp; walls in dry &amp; wet outdoor areas like balconies and terraces.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Aqua%20Marine%20VT%20Plus." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="Royal NT.jpeg" alt="UltraTech Tilefixo Royal NT — Medium Format Natural Stone Adhesive">
+          <span class="card-badge">Medium Format Stone</span>
+          <h3>Royal NT</h3>
+          <p>High performance tile and natural stone adhesive. Ideal for medium format stones and tile cladding in dry &amp; wet indoor and outdoor areas.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Royal%20NT." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="Royal NT plus.jpeg" alt="UltraTech Tilefixo Royal NT Plus — Large Format Cladding Adhesive">
+          <span class="card-badge">Large Format Cladding</span>
+          <h3>Royal NT Plus</h3>
+          <p>Premium tile &amp; natural stone adhesive. Ideal for large format tiles and heavy stone cladding in both wet/dry indoor and outdoor vertical applications.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Royal%20NT%20Plus." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="Ultima.jpeg" alt="UltraTech Tilefixo Ultima — Deformable Tile Adhesive">
+          <span class="card-badge">Deformable High-Spec</span>
+          <h3>Ultima</h3>
+          <p>Deformable high performance tile adhesive. Formulated to handle structural vibrations and thermal stresses. Ideal for tiling on wood, metal, drywall, and existing tiling.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="ultratech-tilefixo-ultima-plus-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Ultima Plus — Highly Deformable Tile Adhesive">
+          <span class="card-badge">Highly Deformable</span>
+          <h3>Ultima Plus</h3>
+          <p>Highly deformable high performance tile adhesive. Engineered to absorb high impact and structural deformation in high-stress industrial and commercial environments.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima%20Plus." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHITE ADHESIVES -->
+    <div class="catalog-panel" id="cat-white">
+      <div class="catalog-grid">
+        <div class="catalog-card">
+          <img class="card-img" src="Sumo CT plus.jpeg" alt="UltraTech Tilefixo Sumo CT Plus White — Light Marble Indoor Adhesive">
+          <span class="card-badge">Light Marble / Indoor</span>
+          <h3>Sumo CT Plus White</h3>
+          <p>Polymer-modified white cement tile adhesive. Designed to prevent staining and shadows on translucent light-colored marble, glass mosaics, and natural stone in dry indoor areas.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Sumo%20CT%20Plus%20White." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="ultra-tech-aqua-marine-vt-plus-white-anti-damp-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Aqua Marine VT Plus White — Outdoor Anti-Damp Adhesive">
+          <span class="card-badge">White Stone / Outdoor</span>
+          <h3>Aqua Marine VT Plus White</h3>
+          <p>Water-resistant white tile adhesive. Ideal for light stones, white granite, and vitrified tiles in wet and outdoor areas like pools, balconies, and terraces.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Aqua%20Marine%20VT%20Plus%20White." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="Royal NT.jpeg" alt="UltraTech Tilefixo Royal NT White — Medium Format Cladding Adhesive">
+          <span class="card-badge">Medium Format Cladding</span>
+          <h3>Royal NT White</h3>
+          <p>High performance white adhesive for vertical cladding. Perfect for fixing light colored stones, translucent mosaics, and medium format marbles in internal &amp; external areas.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Royal%20NT%20White." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="ultratech-tilefixo-ultima-plus-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Ultima White — Deformable White Tile Adhesive">
+          <span class="card-badge">High Stress / White</span>
+          <h3>Ultima White</h3>
+          <p>Deformable high performance white cement adhesive. Combines premium flexibility with non-staining properties. For marble on glass, metal, wood, and drywalls.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima%20White." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUTS -->
+    <div class="catalog-panel" id="cat-grout">
+      <div class="catalog-grid">
+        <div class="catalog-card">
+          <span class="card-badge">Epoxy 2-Component</span>
+          <h3>STYLE 2K Epoxy Grout</h3>
+          <p>Two-component epoxy joint filler grout. Highly stain-free, crack-free, chemical resistant, and 100% waterproof. Best for kitchen countertops, bathroom floors, and showers.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div>
+            <div>Available colors: <strong>26 Swatch Colors</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20STYLE%202K%20Epoxy%20Grout." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <span class="card-badge">Epoxy 3-Component</span>
+          <h3>STYLE Epoxy Grout (3K)</h3>
+          <p>Premium three-component epoxy grout. Easy to mix, highly stain resistant, UV resistant, and certified for food grade applications. Anti-fungal and anti-bacterial properties.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div>
+            <div>Available colors: <strong>26 Swatch Colors</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20STYLE%203K%20Epoxy%20Grout." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <span class="card-badge">Cementitious Grout</span>
+          <h3>Grout CG</h3>
+          <p>Pigmented polymer-enriched cement-based tile joint filler. Self-curing, non-shrink grout with reduced water absorption. Suitable for general residential applications.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>1 kg Pack</strong></div>
+            <div>Available colors: <strong>Standard Range</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Grout%20CG." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIALTY & CLEANERS -->
+    <div class="catalog-panel" id="cat-specialty">
+      <div class="catalog-grid">
+        <div class="catalog-card">
+          <span class="card-badge">Epoxy Spot Bonding</span>
+          <h3>Tilefixo Rapid</h3>
+          <p>Two-component epoxy spot bonding adhesive. Features high bond strength and ultra-quick setting properties. Perfect for vertical, overhead, and drywall installations.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>300g / 750g Kit</strong></div>
+            <div>Setting Time: <strong>Quick Setting</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Rapid." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <span class="card-badge">Polyurethane Adhesive</span>
+          <h3>Tilefixo PU 2K</h3>
+          <p>Two-component polyurethane adhesive. Features high deformability and flexibility. Designed for fixing tiles and stones over metal, glass, wood, and drywalls.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>4 kg Pack</strong></div>
+            <div>Flexibility: <strong>High Deformability</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20PU%202K." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <span class="card-badge">Mortar Bed Additive</span>
+          <h3>Tilefixo Sumo Additive</h3>
+          <p>High-quality polymer liquid additive. Mixed with cement mortar bed/screed and slurry during traditional installations to enhance bond strength and extend open time.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>300g Pack</strong></div>
+            <div>Usage: <strong>Add to cement mortar</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20Additive." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <span class="card-badge">Maintenance / Cleaner</span>
+          <h3>Shine Tile Cleaner</h3>
+          <p>Powerful acid-based tile cleaner. Formulated to remove tough cement stains, grime, and hardwater scaling from ceramic, vitrified, and glass mosaic tiles.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>1L / 5L Bottle</strong></div>
+            <div>Action: <strong>Quick Stain Removal</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Shine%20Tile%20Cleaner." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MYK LATICRETE -->
+    <div class="catalog-panel" id="cat-myk">
+      <div style="margin-bottom:24px;padding:14px 18px;background:var(--color-primary-10);border:1px solid var(--color-primary-18);border-radius:var(--radius);font-size:13px;color:var(--color-text-secondary);">
+        <strong style="color:var(--color-text-main);">MYK Laticrete</strong> — a joint venture between LATICRETE International Inc. (USA) and the Hyderabad-based MYK Group. 25 years in India, manufactured locally with 21 regional offices and 22,000+ channel partners.
+      </div>
+      <div class="catalog-grid">
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 111 + 73 — Latex Fortified Standard Adhesive">
+          <span class="card-badge">Latex Fortified · Standard</span>
+          <h3>111 + 73</h3>
+          <p>LATICRETE 111 Crete Filler Powder mixed with 73 Latex Crete Admix. High strength latex-fortified adhesive for small to large format tiles and stones, interior &amp; exterior.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg + 5/20 L</strong></div>
+            <div>Coverage: <strong>~55-60 sqft/bag</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%2073." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-4237.jpg" alt="MYK LATICRETE 111 + 4237 — Latex Fortified Premium Adhesive">
+          <span class="card-badge">Latex Fortified · Premium</span>
+          <h3>111 + 4237</h3>
+          <p>LATICRETE 111 Crete Filler Powder with 4237 High Performance Latex Admix. Superior bond strength for heavy traffic, external facades and industrial floors.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg + 20 L</strong></div>
+            <div>Bed Thickness: <strong>Up to 12 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%204237." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-345-super-flex.jpg" alt="MYK LATICRETE 345 Super Flex — Large Format Highly Deformable Adhesive">
+          <span class="card-badge">Large Format / Highly Deformable</span>
+          <h3>345 Super Flex</h3>
+          <p>Highly polymer-modified, single-component adhesive (S2 grade) for very large format tiles. Suitable for airports, metro stations, swimming pools and external facades.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>20 kg / 50 kg</strong></div>
+            <div>Bed Thickness: <strong>Up to 15 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20345%20Super%20Flex." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-345-super-flex.jpg" alt="MYK LATICRETE 320 Thick Bed — Natural Stone Thick Bed Adhesive">
+          <span class="card-badge">Natural Stone · Thick Bed</span>
+          <h3>320 Thick Bed</h3>
+          <p>Polymer-modified thick bed adhesive for small to large format natural stone. Non-sag, no lippage — supports heavy stone slabs on floor.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>30 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>Up to 40 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20320%20Thick%20Bed." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 340 Medium Bed — Natural Stone Medium Bed Adhesive">
+          <span class="card-badge">Natural Stone · Medium Bed</span>
+          <h3>340 Medium Bed</h3>
+          <p>Highly polymer-modified medium bed adhesive for natural stone on walls. Complies with C2TES1 — suitable for wet areas including pools and wash rooms.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>30 kg Bag</strong></div>
+            <div>Bed Thickness: <strong>Up to 18 mm</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20340%20Medium%20Bed." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE SP-100 — Stainfree Epoxy Grout">
+          <span class="card-badge">Epoxy Grout · Stainfree</span>
+          <h3>SP-100</h3>
+          <p>100% solid epoxy grout — fully stainfree, chemical &amp; temperature resistant, anti-bacterial. Ideal for kitchens, hospitals, and high-traffic commercial areas.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>1 kg / 5 kg</strong></div>
+            <div>Colours: <strong>36+ Available</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20SP-100%20Stainfree%20Grout." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE STELLAR Grout — Single Component Epoxy Grout">
+          <span class="card-badge">Epoxy Grout · Single Component</span>
+          <h3>STELLAR Grout</h3>
+          <p>Single-component, high performance modified joint filling grout. No mixing of two packs required — just apply. Designed for exterior use, joints 1.5–12mm.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>1 kg / 5 kg</strong></div>
+            <div>Colours: <strong>5 Available</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20STELLAR%20Grout." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 600 Series — Cementitious Unsanded Grout">
+          <span class="card-badge">Cementitious Grout · Unsanded</span>
+          <h3>600 Series</h3>
+          <p>Portland cement, graded aggregate &amp; polymer-fortified grout for joints 1-3mm. Suitable for porous tiles, non-vitreous clay tiles and marble.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>500g / 1kg / 10kg</strong></div>
+            <div>Colours: <strong>36+ Available</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20600%20Series%20Grout." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+        <div class="catalog-card">
+          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 500 Series — Cementitious Sanded Grout">
+          <span class="card-badge">Cementitious Grout · Sanded</span>
+          <h3>500 Series</h3>
+          <p>Polymer-blended cement grout for joints 3-12mm on non-absorbent and vitreous tiles. Hard, durable and economical for residential &amp; commercial use.</p>
+          <div class="card-meta">
+            <div>Pack Size: <strong>10 kg Bag</strong></div>
+            <div>Colours: <strong>36+ Available</strong></div>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20500%20Series%20Grout." target="_blank">💬 Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTERACTIVE SHADE CARD ─── -->
+<section id="shade-card" class="section-pad" style="background:var(--color-bg-surface-alt);">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Color Matching Visualizer</div>
+      <h2 class="section-title">STYLE Epoxy Grouts.<br><em>26 Attractive Colors.</em></h2>
+      <p class="section-lead" style="margin-bottom: 40px;">Select a grout color below to dynamically preview how the joints look on a mock tile layout. Formulated to prevent cracking and staining.</p>
+    </div>
+
+    <div class="interactive-vis reveal">
+      <style>
+        .shade-card-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; }
+        .swatch-group { margin-bottom: 20px; }
+        .swatch-group h4 { font-family: var(--display); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 12px; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 6px; }
+        .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 8px; }
+        .swatch-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--color-border-light); cursor: pointer; transition: transform 0.2s, border-color 0.2s; position: relative; padding: 0; box-shadow: var(--shadow-sm); }
+        .swatch-btn:hover, .swatch-btn.active { transform: scale(1.15); border-color: var(--color-primary); box-shadow: var(--shadow-md); z-index: 2; }
+        .swatch-btn::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: inherit; border: 1px solid rgba(0,0,0,0.1); }
+        .mock-tile-box { border: 1px solid var(--color-border-light); padding: 24px; background: var(--color-bg-app); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); }
+        .mock-tile-grid { display: grid; grid-template-columns: repeat(2, 110px); grid-template-rows: repeat(2, 110px); gap: 6px; background: #BC4A3C; padding: 6px; border-radius: 4px; box-shadow: var(--shadow-md); transition: background-color 0.3s; }
+        .mock-tile-item { background: #E5E7EB; border-radius: 2px; }
+        .mock-details { margin-top: 20px; text-align: center; width: 100%; }
+        .mock-details h4 { font-family: var(--display); font-size: 16px; color: var(--color-text-main); margin-bottom: 4px; }
+        .mock-details p { font-size: 12px; color: var(--color-text-secondary); font-family: var(--mono); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
+        @media (max-width: 768px) { .shade-card-container { grid-template-columns: 1fr; gap: 24px; } }
+      </style>
+      <div class="shade-card-container">
+        <div>
+          <div class="swatch-group">
+            <h4>EG Shade Card Special Shades</h4>
+            <div class="swatch-grid" id="special-swatches"></div>
+          </div>
+          <div class="swatch-group" style="margin-top:24px;">
+            <h4>Standard Colors</h4>
+            <div class="swatch-grid" id="standard-swatches"></div>
+          </div>
+        </div>
+        
+        <div class="mock-tile-box">
+          <div class="mock-tile-grid" id="mockGroutJoints">
+            <div class="mock-tile-item"></div>
+            <div class="mock-tile-item"></div>
+            <div class="mock-tile-item"></div>
+            <div class="mock-tile-item"></div>
+          </div>
+          <div class="mock-details">
+            <h4 id="activeColorName">Terracotta</h4>
+            <p id="activeColorType">Standard Grout Color</p>
+            <a class="btn btn-primary" id="wa-shade" href="#" target="_blank" style="font-size:12px;padding:10px 20px;width:100%;justify-content:center;">💬 WhatsApp Quote for this Color</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOINT CALCULATOR SECTION ─── -->
+<section id="grout-calculator" class="section-pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">// Joint Quantity Tool</div>
+      <h2 class="section-title">Grout Volume &amp;<br><em>Weight Calculator.</em></h2>
+      <p class="section-lead" style="margin-bottom:40px;">Input tile geometry and target joint dimensions. Calculates required grout weight based on volumetric equations.</p>
+    </div>
+
+    <div class="estimator-shell reveal" style="max-width: 800px; margin: 0 auto;">
+      <div class="estimator-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tile Length (mm)</label>
+            <input type="number" id="g-length" placeholder="e.g. 600" min="10" value="600">
+          </div>
+          <div class="form-group">
+            <label>Tile Width (mm)</label>
+            <input type="number" id="g-width" placeholder="e.g. 600" min="10" value="600">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Joint Width (mm)</label>
+            <select id="g-jwidth">
+              <option value="2">2 mm (Minimal joint)</option>
+              <option value="3" selected>3 mm (Standard joint)</option>
+              <option value="4">4 mm (Medium joint)</option>
+              <option value="5">5 mm (Wide joint)</option>
+              <option value="8">8 mm (Heavy masonry stone)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Joint Depth / Tile Thickness (mm)</label>
+            <input type="number" id="g-depth" placeholder="e.g. 5" min="1" max="30" value="5">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Total Tile Area (Square Feet)</label>
+            <input type="number" id="g-area" placeholder="e.g. 500" min="1">
+          </div>
+          <div class="form-group">
+            <label>Grout Type (Density)</label>
+            <select id="g-type">
+              <option value="epoxy">STYLE Epoxy Grout (1.75 g/cm³)</option>
+              <option value="cement">Grout CG Cementitious (1.55 g/cm³)</option>
+            </select>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcGrout()">Calculate Grout Quantity →</button>
+        <div class="est-result" id="res-grout">
+          <div class="result-row">
+            <div class="result-label">Grout Weight Required</div>
+            <div class="result-val" id="rv-grout-kg">—</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Suggested Pack Quantity</div>
+            <div class="result-val" id="rv-grout-packs">—</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Density Applied</div>
+            <div class="result-val" id="rv-grout-density" style="font-size:14px;color:var(--text2)">—</div>
+          </div>
+          <div class="result-note">Estimates include a 10% safety buffer. Volumetric equation applied.</div>
+          <div class="result-actions" style="margin-top: 20px;">
+            <a class="btn btn-primary" id="wa-grout" href="#" target="_blank">💬 WhatsApp this BOM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── B2B CONCIERGE CTA ─── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="text-align:center;">// Direct Concierge Procurement</div>
+      <h2 class="section-title" style="text-align:center;margin:16px 0 24px;">Professional Sourcing.<br><em>Guaranteed Turnaround.</em></h2>
+      <p style="font-size:15px;font-weight:300;color:var(--color-text-secondary);max-width:480px;margin:0 auto 40px;line-height:1.7;text-align:center;">WhatsApp your project location and quantity specifications. Get detailed quotes for premium adhesives in under 4 hours.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20get%20a%20B2B%20quote%20for%20UltraTech%20Tilefixo%20adhesives." target="_blank">💬 WhatsApp Srikar Jaji</a>
+        <a class="btn btn-ghost" href="mailto:info@build360.online?subject=B2B%20Tiling%20Enquiry">Email Sourcing List</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="index.html"><img src="logo.jpg" alt="Build360.online" class="footer-logo-img"></a>
+        <div class="footer-tagline" style="margin-top: 6px;">India's Premium Tiling Procurement Network</div>
+        <p class="footer-desc">Tile Adhesives · Epoxy Grouts · Cement Grouts · Specialty Cleaners. Request. Quote. Build — across India.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <a href="adhesives.html">Grey Tile Adhesives</a>
+        <a href="adhesives.html">White Tile Adhesives</a>
+        <a href="adhesives.html">Epoxy &amp; Cement Grouts</a>
+        <a href="adhesives.html">Specialty &amp; Cleaners</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="index.html#estimator">Smart Estimator</a>
+        <a href="service-providers.html">Service Providers</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
+      <span>info@build360.online · +91 90325 14441</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switcher for products catalog
+function switchCatalogTab(id, btn) {
+  document.querySelectorAll('.catalog-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.catalog-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('cat-' + id).classList.add('active');
+}
+
+// Hamburger menu
+const btn  = document.getElementById('hamburger');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+document.querySelectorAll('.mob-link').forEach(a => {
+  a.addEventListener('click', () => {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  });
+});
+
+function waLink(msg) {
+  return 'https://wa.me/919032514441?text=' + encodeURIComponent(msg);
+}
+
+// Swatch Selector Logic
+const GROUT_COLORS = [
+  { name: 'Desert Yellow', hex: '#E3B85B', type: 'Specialty (EG Shade Card)' },
+  { name: 'Oyster Beige', hex: '#E3D4B6', type: 'Specialty (EG Shade Card)' },
+  { name: 'Cobalt Blue', hex: '#1D4ED8', type: 'Specialty (EG Shade Card)' },
+  { name: 'Stone Brown', hex: '#78350F', type: 'Specialty (EG Shade Card)' },
+  { name: 'Terrific Black', hex: '#1F2937', type: 'Specialty (EG Shade Card)' },
+  { name: 'Lorent Green', hex: '#15803D', type: 'Specialty (EG Shade Card)' },
+  { name: 'Shining Gold', hex: '#D4AF37', type: 'Specialty (EG Shade Card)' },
+  { name: 'Shining Silver', hex: '#C0C0C0', type: 'Specialty (EG Shade Card)' },
+  { name: 'Shining Copper', hex: '#B87333', type: 'Specialty (EG Shade Card)' },
+  { name: 'Pure White', hex: '#FFFFFF', type: 'Standard' },
+  { name: 'Ivory', hex: '#FFFFF0', type: 'Standard' },
+  { name: 'Charcoal', hex: '#36454F', type: 'Standard' },
+  { name: 'Terracotta', hex: '#BC4A3C', type: 'Standard' },
+  { name: 'Burgundy', hex: '#800020', type: 'Standard' },
+  { name: 'Light Grey', hex: '#D3D3D3', type: 'Standard' },
+  { name: 'Dark Grey', hex: '#A9A9A9', type: 'Standard' },
+  { name: 'Sandstone', hex: '#C2B280', type: 'Standard' },
+  { name: 'Misty Grey', hex: '#BCC6CC', type: 'Standard' },
+  { name: 'Soft Pink', hex: '#FFC0CB', type: 'Standard' },
+  { name: 'Alpine Blue', hex: '#6495ED', type: 'Standard' },
+  { name: 'Teal', hex: '#008080', type: 'Standard' },
+  { name: 'Mint Green', hex: '#98FF98', type: 'Standard' },
+  { name: 'Chocolate', hex: '#7B3F00', type: 'Standard' },
+  { name: 'Peach', hex: '#FFDAB9', type: 'Standard' },
+  { name: 'Golden Yellow', hex: '#FFDF00', type: 'Standard' },
+  { name: 'Copper Dust', hex: '#8C5D3A', type: 'Standard' }
+];
+
+function selectGroutColor(name, hex, type) {
+  document.getElementById('mockGroutJoints').style.backgroundColor = hex;
+  document.getElementById('activeColorName').textContent = name;
+  document.getElementById('activeColorType').textContent = type;
+  
+  document.querySelectorAll('.swatch-btn').forEach(btn => {
+    if (btn.dataset.color === name) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+
+  const msg = `Hi Srikar, I'm interested in purchasing the UltraTech STYLE Epoxy Grout in the shade "${name}" (${type}) shown on build360.online. Please share pricing.`;
+  document.getElementById('wa-shade').href = waLink(msg);
+}
+
+function renderSwatches() {
+  const specGrid = document.getElementById('special-swatches');
+  const stdGrid = document.getElementById('standard-swatches');
+  
+  specGrid.innerHTML = '';
+  stdGrid.innerHTML = '';
+
+  GROUT_COLORS.forEach(color => {
+    const btn = document.createElement('button');
+    btn.className = 'swatch-btn';
+    btn.style.backgroundColor = color.hex;
+    btn.dataset.color = color.name;
+    btn.title = `${color.name} (${color.type})`;
+    btn.onclick = () => selectGroutColor(color.name, color.hex, color.type);
+    
+    if (color.type.includes('EG Shade Card')) {
+      specGrid.appendChild(btn);
+    } else {
+      stdGrid.appendChild(btn);
+    }
+  });
+
+  // Select default terracotta
+  selectGroutColor('Terracotta', '#BC4A3C', 'Standard Grout Color');
+}
+
+// Volumetric Grout Calculator
+function calcGrout() {
+  const length = parseFloat(document.getElementById('g-length').value);
+  const width = parseFloat(document.getElementById('g-width').value);
+  const jwidth = parseFloat(document.getElementById('g-jwidth').value);
+  const depth = parseFloat(document.getElementById('g-depth').value);
+  const area = parseFloat(document.getElementById('g-area').value);
+  const type = document.getElementById('g-type').value;
+
+  if (!length || length <= 10) { alert('Please enter a valid tile length in mm.'); return; }
+  if (!width || width <= 10) { alert('Please enter a valid tile width in mm.'); return; }
+  if (!depth || depth <= 0) { alert('Please enter a valid tile thickness in mm.'); return; }
+  if (!area || area <= 0) { alert('Please enter a valid tiling area.'); return; }
+
+  const density = type === 'epoxy' ? 1.75 : 1.55;
+  const areaSqm = area * 0.092903;
+  
+  // Volumetric formula: kg/sqm = density * ((L+W)*jw*jd)/(L*W)
+  const kgPerSqm = density * ((length + width) * jwidth * depth) / (length * width);
+  const totalKg = Math.ceil(kgPerSqm * areaSqm * 1.10); // 10% safety buffer
+
+  let packText = '';
+  if (type === 'epoxy') {
+    const kits5kg = Math.ceil(totalKg / 5);
+    packText = `${kits5kg} x 5kg kit(s) or ${totalKg} x 1kg kit(s)`;
+  } else {
+    packText = `${totalKg} x 1kg pack(s)`;
+  }
+
+  document.getElementById('rv-grout-kg').textContent = totalKg + ' kg';
+  document.getElementById('rv-grout-packs').textContent = packText;
+  document.getElementById('rv-grout-density').textContent = `${density} g/cm³ (${type === 'epoxy' ? 'STYLE Epoxy' : 'Grout CG Cement'})`;
+
+  const typeName = type === 'epoxy' ? 'UltraTech STYLE Epoxy Grout' : 'UltraTech Grout CG (Cement)';
+  const msg = `Hi Srikar, here's my Grout estimate from build360.online:\nProduct: ${typeName}\nTile Size: ${length}x${width}mm (Joint: ${jwidth}x${depth}mm)\nArea: ${area} sqft\nRequired Grout: ${totalKg} kg (${packText})\nPlease share pricing.`;
+  document.getElementById('wa-grout').href = waLink(msg);
+  document.getElementById('res-grout').classList.add('show');
+}
+
+// Scroll Reveal
+function initReveal() {
+  const els = document.querySelectorAll('.reveal, .catalog-card');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+}
+
+// Initialise on load
+window.addEventListener('DOMContentLoaded', () => {
+  renderSwatches();
+  initReveal();
+});
+</script>
+</body>
+</html>
