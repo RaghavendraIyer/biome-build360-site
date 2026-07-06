@@ -151,7 +151,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   font-family: var(--display);
   font-size: 22px;
   font-weight: 800;
@@ -161,7 +161,9 @@ nav {
   line-height: 1;
   white-space: nowrap;
 }
-.logo em { color: var(--color-primary); font-style: normal; }
+.logo-img { height: 32px; width: auto; display: block; flex-shrink: 0; margin-right: 6px; }
+.logo em { color: var(--color-primary); font-style: normal; letter-spacing: 0; }
+.logo-txt { display: inline-flex; align-items: center; }
 .logo small {
   display: block;
   font-family: var(--mono);
@@ -172,7 +174,6 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.logo-img { height: 32px; width: auto; display: block; flex-shrink: 0; }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
   font-family: var(--body);
@@ -1272,10 +1273,7 @@ footer {
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#home">
-      <img src="logo.jpg" alt="" class="logo-img">
-      build<em>360</em>.online
-    </a>
+    <a class="logo" href="#home"><img src="logo.jpg" alt="" class="logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>
       <li class="nav-item-dropdown" tabindex="0">

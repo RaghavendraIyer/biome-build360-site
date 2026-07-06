@@ -111,7 +111,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   font-family: var(--display);
   font-size: 22px;
   font-weight: 800;
@@ -121,7 +121,9 @@ nav {
   line-height: 1;
   white-space: nowrap;
 }
-.logo em { color: var(--color-primary); font-style: normal; }
+.logo-img { height: 32px; width: auto; display: block; flex-shrink: 0; margin-right: 6px; }
+.logo em { color: var(--color-primary); font-style: normal; letter-spacing: 0; }
+.logo-txt { display: inline-flex; align-items: center; }
 .logo small {
   display: block;
   font-family: var(--mono);
@@ -145,7 +147,6 @@ nav {
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--color-primary); }
-.logo-img { height: 32px; width: auto; display: block; flex-shrink: 0; }
 .footer-logo-img { height: 44px; width: auto; display: block; margin-bottom: 6px; }
 .nav-cta {
   background: var(--color-primary) !important;
