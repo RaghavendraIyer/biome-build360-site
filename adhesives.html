@@ -199,6 +199,39 @@
     padding: 8px 16px;
   }
 
+  /* ── Brand Hero Sections ── */
+  .brand-hero {
+    padding: 80px 0;
+    color: #fff;
+    border-bottom: 1px solid var(--color-primary-18);
+  }
+  .brand-hero-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+  .brand-hero h2 {
+    font-family: var(--display);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .brand-hero h2 em { font-style: normal; }
+  .brand-hero p {
+    font-size: clamp(14px, 2vw, 17px);
+    max-width: 680px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .brand-hero { padding: 48px 0; }
+  }
+
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -238,9 +271,14 @@
       <li class="nav-item-dropdown" tabindex="0">
         <a href="adhesives.html" style="color:var(--color-primary)">Our Products <span class="nav-caret">▾</span></a>
         <div class="nav-dropdown-panel">
-          <a href="adhesives.html#brand-ultratech">UltraTech Tilefixo</a>
-          <a href="adhesives.html#brand-myk">MYK Laticrete</a>
-          <a href="adhesives.html#brand-saint-gobain">Saint Gobain Weber</a>
+          <div class="nav-sub-wrap">
+            <a href="adhesives.html" class="nav-sub-trigger">Tile Adhesives <span class="nav-caret-sub">▸</span></a>
+            <div class="nav-sub-panel">
+              <a href="adhesives.html#brand-ultratech">UltraTech Tilefixo</a>
+              <a href="adhesives.html#brand-myk">MYK Laticrete</a>
+              <a href="adhesives.html#brand-saint-gobain">Saint Gobain Weber</a>
+            </div>
+          </div>
         </div>
       </li>
       <li><a href="bid.html">Bid</a></li>
@@ -262,6 +300,7 @@
     <li>
       <a href="adhesives.html" class="mob-link">Our Products</a>
       <div class="mob-sub">
+        <a href="adhesives.html" class="mob-sub-head">Tile Adhesives</a>
         <a href="adhesives.html#brand-ultratech" class="mob-link">UltraTech Tilefixo</a>
         <a href="adhesives.html#brand-myk" class="mob-link">MYK Laticrete</a>
         <a href="adhesives.html#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
@@ -282,9 +321,9 @@
 <section class="page-hero">
   <div class="page-hero-grid"></div>
   <div class="page-hero-inner">
-    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--color-primary);margin-bottom:12px;">UltraTech Building Products Division</div>
-    <h1>Tile &amp; Stone<br><em>Fitting Solutions.</em></h1>
-    <p>Complete professional tiling systems across three premium brands — UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber. Polymer-modified adhesives, high-durability epoxy grouts, additives, cleaners, and specialty systems engineered from foundation to finish.</p>
+    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--color-primary);margin-bottom:12px;">Complete Tiling Solutions</div>
+    <h1>Tile &amp; Stone<br><em>Fitting Systems.</em></h1>
+    <p>Professional-grade tiling solutions across India's most trusted brands — UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber. Polymer-modified adhesives, high-durability epoxy grouts, specialty systems, and surface preparation products for every project.</p>
   </div>
 </section>
 
@@ -299,6 +338,33 @@
     </div>
   </div>
 </div>
+
+<!-- ─── ULTRATECH TILEFIXO ─── -->
+<section id="brand-ultratech" class="brand-hero" style="background:linear-gradient(135deg,#1a0d0b 0%,#2E1A17 100%);border-bottom-color:var(--color-primary-18);">
+  <div class="container">
+    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--color-primary);margin-bottom:12px;">UltraTech Building Products Division</div>
+    <h2 style="font-family:var(--display);font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:16px;">UltraTech<br><em style="color:var(--color-primary);font-style:normal;">Tilefixo</em></h2>
+    <p style="font-size:clamp(14px,2vw,17px);color:var(--color-bg-app);max-width:680px;line-height:1.6;font-weight:300;">India's leading tile adhesive and grout brand under the UltraTech Cement umbrella. Trusted by contractors nationwide for consistent quality, innovative formulations, and comprehensive project support. From ceramic floors to heavy stone cladding — Tilefixo has a solution for every substrate.</p>
+  </div>
+</section>
+
+<!-- ─── MYK LATICRETE ─── -->
+<section id="brand-myk" class="brand-hero" style="background:linear-gradient(135deg,#0a1628 0%,#0F1D3A 100%);border-bottom-color:rgba(37,99,235,0.15);">
+  <div class="container">
+    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:#3B82F6;margin-bottom:12px;">MYK Laticrete — A Laticrete Technology Partner</div>
+    <h2 style="font-family:var(--display);font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:16px;">MYK<br><em style="color:#3B82F6;font-style:normal;">Laticrete</em></h2>
+    <p style="font-size:clamp(14px,2vw,17px);color:var(--color-bg-app);max-width:680px;line-height:1.6;font-weight:300;">A joint venture between MYK India and Laticrete International (USA), bringing global tile installation technology to Indian construction sites. World-class epoxy grouts, premium adhesives, and waterproofing systems built on decades of American material science.</p>
+  </div>
+</section>
+
+<!-- ─── SAINT GOBAIN WEBER ─── -->
+<section id="brand-saint-gobain" class="brand-hero" style="background:linear-gradient(135deg,#0a1f1a 0%,#0F2E25 100%);border-bottom-color:rgba(16,185,129,0.15);">
+  <div class="container">
+    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:#10B981;margin-bottom:12px;">Saint Gobain Weber — A Saint-Gobain Brand</div>
+    <h2 style="font-family:var(--display);font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:16px;">Saint Gobain<br><em style="color:#10B981;font-style:normal;">Weber</em></h2>
+    <p style="font-size:clamp(14px,2vw,17px);color:var(--color-bg-app);max-width:680px;line-height:1.6;font-weight:300;">Part of the global Saint-Gobain group — the world's largest building materials company with over 350 years of expertise. Weber brings European construction chemistry to India with advanced tile adhesives, grouts, waterproofing, and repair mortars engineered for Indian climatic conditions.</p>
+  </div>
+</section>
 
 <!-- ─── CATALOG SECTION ─── -->
 <section class="section-pad">
