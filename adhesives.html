@@ -63,37 +63,75 @@
     font-weight: 300;
   }
   
-  /* Catalog Tabs */
-  .catalog-tabs {
-    display: flex;
-    gap: 12px;
-    border-bottom: 2px solid var(--color-border-subtle);
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius);
+    padding: 24px 28px;
     margin-bottom: 40px;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    box-shadow: var(--shadow-sm);
   }
-  .catalog-tab {
-    background: none;
-    border: none;
-    font-family: var(--display);
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    padding: 12px 24px;
+  .filter-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+    flex: 1;
+  }
+  .filter-group label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .filter-group select {
+    padding: 10px 14px;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--color-text-main);
+    background: var(--color-bg-surface);
     cursor: pointer;
-    white-space: nowrap;
-    border-radius: var(--radius) var(--radius) 0 0;
-    transition: all 0.2s;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238899A6' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
   }
-  .catalog-tab:hover {
-    color: var(--color-primary);
+  .filter-group select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-10);
   }
-  .catalog-tab.active {
-    color: var(--color-primary);
-    border-bottom: 3px solid var(--color-primary);
-    background: var(--color-bg-surface-alt);
+  .filter-clear-btn {
+    padding: 10px 20px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .filter-count {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-top: 14px;
+  }
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
   }
 
+  /* ── PRODUCT GRID ── */
   .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -160,14 +198,6 @@
     font-size: 12px;
     padding: 8px 16px;
   }
-  
-  .catalog-panel {
-    display: none;
-  }
-  .catalog-panel.active {
-    display: block;
-    animation: fadeIn 0.3s ease-in-out;
-  }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -210,7 +240,9 @@
       <li class="nav-item-dropdown" tabindex="0">
         <a href="adhesives.html" style="color:var(--color-primary)">Our Products <span class="nav-caret">▾</span></a>
         <div class="nav-dropdown-panel">
-          <a href="adhesives.html">Tile Adhesives</a>
+          <a href="adhesives.html#brand-ultratech">UltraTech Tilefixo</a>
+          <a href="adhesives.html#brand-myk">MYK Laticrete</a>
+          <a href="adhesives.html#brand-saint-gobain">Saint Gobain Weber</a>
         </div>
       </li>
       <li><a href="bid.html">Bid</a></li>
@@ -231,7 +263,11 @@
     <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
     <li>
       <a href="adhesives.html" class="mob-link">Our Products</a>
-      <div class="mob-sub"><a href="adhesives.html" class="mob-link">Tile Adhesives</a></div>
+      <div class="mob-sub">
+        <a href="adhesives.html#brand-ultratech" class="mob-link">UltraTech Tilefixo</a>
+        <a href="adhesives.html#brand-myk" class="mob-link">MYK Laticrete</a>
+        <a href="adhesives.html#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
+      </div>
     </li>
     <li><a href="bid.html" class="mob-link">Bid</a></li>
     <li><a href="index.html#estimator" class="mob-link">Estimator</a></li>
@@ -250,7 +286,7 @@
   <div class="page-hero-inner">
     <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--color-primary);margin-bottom:12px;">UltraTech Building Products Division</div>
     <h1>Tile &amp; Stone<br><em>Fitting Solutions.</em></h1>
-    <p>Complete professional tiling systems. Showcase of 17 polymer-modified grey/white adhesives, high-durability epoxy grouts, additives, and specialized acid-based tile cleaners engineered from foundation to finish.</p>
+    <p>Complete professional tiling systems across three premium brands — UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber. Polymer-modified adhesives, high-durability epoxy grouts, additives, cleaners, and specialty systems engineered from foundation to finish.</p>
   </div>
 </section>
 
@@ -271,431 +307,632 @@
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow">// Master Catalog</div>
-      <h2 class="section-title">The Complete Range.<br><em>Two Trusted Brands.</em></h2>
-      <p class="section-lead" style="margin-bottom: 40px;">Select a category to browse specific products, application criteria, and standard coverages — from UltraTech Tilefixo (17 products) and MYK Laticrete.</p>
+      <h2 class="section-title">The Complete Range.<br><em>Three Trusted Brands.</em></h2>
+      <p class="section-lead" style="margin-bottom: 40px;">Browse the complete range across three premium brands — from UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber. Use the filter bar below to narrow by brand, category, or grade.</p>
     </div>
 
-    <div class="catalog-tabs reveal">
-      <button class="catalog-tab active" onclick="switchCatalogTab('grey', this)">Grey Adhesives</button>
-      <button class="catalog-tab" onclick="switchCatalogTab('white', this)">White Adhesives</button>
-      <button class="catalog-tab" onclick="switchCatalogTab('grout', this)">Epoxy &amp; Cement Grouts</button>
-      <button class="catalog-tab" onclick="switchCatalogTab('specialty', this)">Specialty &amp; Cleaners</button>
-      <button class="catalog-tab" onclick="switchCatalogTab('myk', this)">MYK Laticrete</button>
+    <!-- FILTER BAR -->
+    <div class="filter-bar reveal">
+      <div class="filter-row">
+        <div class="filter-group">
+          <label for="filter-brand">Brand</label>
+          <select id="filter-brand" onchange="applyFilters()">
+            <option value="all">All Brands</option>
+            <option value="ultratech">UltraTech Tilefixo</option>
+            <option value="myk">MYK Laticrete</option>
+            <option value="saint-gobain">Saint Gobain Weber</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-category">Category</label>
+          <select id="filter-category" onchange="applyFilters()">
+            <option value="all">All Categories</option>
+            <option value="adhesive">Tile Adhesive</option>
+            <option value="epoxy-grout">Epoxy Grout</option>
+            <option value="cement-grout">Cement Grout</option>
+            <option value="specialty">Specialty</option>
+            <option value="cleaner">Cleaner</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-grade">Grade</label>
+          <select id="filter-grade" onchange="applyFilters()">
+            <option value="all">All Grades</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+            <option value="deformable">Deformable</option>
+            <option value="water-resistant">Water Resistant</option>
+            <option value="latex-fortified">Latex Fortified</option>
+            <option value="epoxy">Epoxy</option>
+            <option value="thick-bed">Thick Bed</option>
+            <option value="drywall">Drywall</option>
+            <option value="spot-bonding">Spot Bonding</option>
+          </select>
+        </div>
+        <button class="btn btn-ghost filter-clear-btn" onclick="clearFilters()">Clear Filters</button>
+      </div>
+      <div class="filter-count" id="filterCount">Showing all products</div>
     </div>
 
-    <!-- GREY ADHESIVES -->
-    <div class="catalog-panel active" id="cat-grey">
-      <div class="catalog-grid">
-        <div class="catalog-card">
-          <img class="card-img" src="Sumo CT.jpeg" alt="UltraTech Tilefixo Sumo CT — Ceramic Floor Adhesive">
-          <span class="card-badge">Ceramic Floors</span>
-          <h3>Sumo CT</h3>
-          <p>Heavy duty polymer-modified cementitious tile adhesive. Specially formulated for installing ceramic tiles on internal floor &amp; wall surfaces in dry indoor areas.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20CT." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-        
-        <div class="catalog-card">
-          <img class="card-img" src="Sumo CT plus.jpeg" alt="UltraTech Tilefixo Sumo CT Plus — Ceramic & Small Stone Adhesive">
-          <span class="card-badge">Ceramic &amp; Small Stone</span>
-          <h3>Sumo CT Plus</h3>
-          <p>Enhanced tensile strength tile adhesive. Suitable for installing ceramic tiles on floors &amp; walls, and small format natural stone tiles on internal floors in dry indoor areas.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20CT%20Plus." target="_blank">💬 Quote</a>
-          </div>
-        </div>
+    <!-- UNIFIED PRODUCT GRID -->
+    <div class="catalog-grid" id="productGrid">
 
-        <div class="catalog-card">
-          <img class="card-img" src="Aqua marine VT.jpeg" alt="UltraTech Tilefixo Aqua Marine VT — Anti-Damp Tile Adhesive">
-          <span class="card-badge">Anti-Damp / Bath</span>
-          <h3>Aqua Marine VT</h3>
-          <p>Water-resistant anti-damp tile adhesive. Specially formulated for installing vitrified tiles &amp; natural stones on floor &amp; walls in dry and wet indoor areas like bathrooms and kitchens.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Aqua%20Marine%20VT." target="_blank">💬 Quote</a>
-          </div>
+      <!-- ── ULTRATECH TILEFIXO ── -->
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="Sumo CT.jpeg" alt="UltraTech Tilefixo Sumo CT — Ceramic Floor Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Sumo CT</h3>
+        <p>Heavy duty polymer-modified cementitious tile adhesive. Specially formulated for installing ceramic tiles on internal floor &amp; wall surfaces in dry indoor areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
         </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="ultra-tech-aqua-marine-vt-plus-white-anti-damp-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Aqua Marine VT Plus — Anti-Damp Outdoor Adhesive">
-          <span class="card-badge">Anti-Damp / Terrace</span>
-          <h3>Aqua Marine VT Plus</h3>
-          <p>High-bonding strength adhesive. Specially formulated for installing vitrified tiles &amp; natural stones on floor &amp; walls in dry &amp; wet outdoor areas like balconies and terraces.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Aqua%20Marine%20VT%20Plus." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="Royal NT.jpeg" alt="UltraTech Tilefixo Royal NT — Medium Format Natural Stone Adhesive">
-          <span class="card-badge">Medium Format Stone</span>
-          <h3>Royal NT</h3>
-          <p>High performance tile and natural stone adhesive. Ideal for medium format stones and tile cladding in dry &amp; wet indoor and outdoor areas.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Royal%20NT." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="Royal NT plus.jpeg" alt="UltraTech Tilefixo Royal NT Plus — Large Format Cladding Adhesive">
-          <span class="card-badge">Large Format Cladding</span>
-          <h3>Royal NT Plus</h3>
-          <p>Premium tile &amp; natural stone adhesive. Ideal for large format tiles and heavy stone cladding in both wet/dry indoor and outdoor vertical applications.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Royal%20NT%20Plus." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="Ultima.jpeg" alt="UltraTech Tilefixo Ultima — Deformable Tile Adhesive">
-          <span class="card-badge">Deformable High-Spec</span>
-          <h3>Ultima</h3>
-          <p>Deformable high performance tile adhesive. Formulated to handle structural vibrations and thermal stresses. Ideal for tiling on wood, metal, drywall, and existing tiling.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="ultratech-tilefixo-ultima-plus-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Ultima Plus — Highly Deformable Tile Adhesive">
-          <span class="card-badge">Highly Deformable</span>
-          <h3>Ultima Plus</h3>
-          <p>Highly deformable high performance tile adhesive. Engineered to absorb high impact and structural deformation in high-stress industrial and commercial environments.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima%20Plus." target="_blank">💬 Quote</a>
-          </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20CT." target="_blank">💬 Quote</a>
         </div>
       </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="Sumo CT plus.jpeg" alt="UltraTech Tilefixo Sumo CT Plus — Ceramic & Small Stone Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Sumo CT Plus</h3>
+        <p>Enhanced tensile strength tile adhesive. Suitable for installing ceramic tiles on floors &amp; walls, and small format natural stone tiles on internal floors in dry indoor areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20CT%20Plus." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="water-resistant">
+        <img class="card-img" src="Aqua marine VT.jpeg" alt="UltraTech Tilefixo Aqua Marine VT — Anti-Damp Tile Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Aqua Marine VT</h3>
+        <p>Water-resistant anti-damp tile adhesive. Specially formulated for installing vitrified tiles &amp; natural stones on floor &amp; walls in dry and wet indoor areas like bathrooms and kitchens.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Aqua%20Marine%20VT." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="water-resistant">
+        <img class="card-img" src="ultra-tech-aqua-marine-vt-plus-white-anti-damp-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Aqua Marine VT Plus — Anti-Damp Outdoor Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Aqua Marine VT Plus</h3>
+        <p>High-bonding strength adhesive. Specially formulated for installing vitrified tiles &amp; natural stones on floor &amp; walls in dry &amp; wet outdoor areas like balconies and terraces.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Aqua%20Marine%20VT%20Plus." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="Royal NT.jpeg" alt="UltraTech Tilefixo Royal NT — Medium Format Natural Stone Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Royal NT</h3>
+        <p>High performance tile and natural stone adhesive. Ideal for medium format stones and tile cladding in dry &amp; wet indoor and outdoor areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Royal%20NT." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="Royal NT plus.jpeg" alt="UltraTech Tilefixo Royal NT Plus — Large Format Cladding Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Royal NT Plus</h3>
+        <p>Premium tile &amp; natural stone adhesive. Ideal for large format tiles and heavy stone cladding in both wet/dry indoor and outdoor vertical applications.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Royal%20NT%20Plus." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="deformable">
+        <img class="card-img" src="Ultima.jpeg" alt="UltraTech Tilefixo Ultima — Deformable Tile Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Ultima</h3>
+        <p>Deformable high performance tile adhesive. Formulated to handle structural vibrations and thermal stresses. Ideal for tiling on wood, metal, drywall, and existing tiling.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="deformable">
+        <img class="card-img" src="ultratech-tilefixo-ultima-plus-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Ultima Plus — Highly Deformable Tile Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Ultima Plus</h3>
+        <p>Highly deformable high performance tile adhesive. Engineered to absorb high impact and structural deformation in high-stress industrial and commercial environments.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima%20Plus." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="Sumo CT plus.jpeg" alt="UltraTech Tilefixo Sumo CT Plus White — Light Marble Indoor Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Sumo CT Plus White</h3>
+        <p>Polymer-modified white cement tile adhesive. Designed to prevent staining and shadows on translucent light-colored marble, glass mosaics, and natural stone in dry indoor areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Sumo%20CT%20Plus%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="water-resistant">
+        <img class="card-img" src="ultra-tech-aqua-marine-vt-plus-white-anti-damp-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Aqua Marine VT Plus White — Outdoor Anti-Damp Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Aqua Marine VT Plus White</h3>
+        <p>Water-resistant white tile adhesive. Ideal for light stones, white granite, and vitrified tiles in wet and outdoor areas like pools, balconies, and terraces.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Aqua%20Marine%20VT%20Plus%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="Royal NT.jpeg" alt="UltraTech Tilefixo Royal NT White — Medium Format Cladding Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Royal NT White</h3>
+        <p>High performance white adhesive for vertical cladding. Perfect for fixing light colored stones, translucent mosaics, and medium format marbles in internal &amp; external areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Royal%20NT%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="adhesive" data-grade="deformable">
+        <img class="card-img" src="ultratech-tilefixo-ultima-plus-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Ultima White — Deformable White Tile Adhesive">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Ultima White</h3>
+        <p>Deformable high performance white cement adhesive. Combines premium flexibility with non-staining properties. For marble on glass, metal, wood, and drywalls.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="epoxy-grout" data-grade="epoxy">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>STYLE 2K Epoxy Grout</h3>
+        <p>Two-component epoxy joint filler grout. Highly stain-free, crack-free, chemical resistant, and 100% waterproof. Best for kitchen countertops, bathroom floors, and showers.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div>
+          <div>Available colors: <strong>26 Swatch Colors</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20STYLE%202K%20Epoxy%20Grout." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="epoxy-grout" data-grade="epoxy">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>STYLE Epoxy Grout (3K)</h3>
+        <p>Premium three-component epoxy grout. Easy to mix, highly stain resistant, UV resistant, and certified for food grade applications. Anti-fungal and anti-bacterial properties.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div>
+          <div>Available colors: <strong>26 Swatch Colors</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20STYLE%203K%20Epoxy%20Grout." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="cement-grout" data-grade="standard">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Grout CG</h3>
+        <p>Pigmented polymer-enriched cement-based tile joint filler. Self-curing, non-shrink grout with reduced water absorption. Suitable for general residential applications.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>1 kg Pack</strong></div>
+          <div>Available colors: <strong>Standard Range</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Grout%20CG." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="specialty" data-grade="spot-bonding">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Tilefixo Rapid</h3>
+        <p>Two-component epoxy spot bonding adhesive. Features high bond strength and ultra-quick setting properties. Perfect for vertical, overhead, and drywall installations.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>300g / 750g Kit</strong></div>
+          <div>Setting Time: <strong>Quick Setting</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Rapid." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="specialty" data-grade="deformable">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Tilefixo PU 2K</h3>
+        <p>Two-component polyurethane adhesive. Features high deformability and flexibility. Designed for fixing tiles and stones over metal, glass, wood, and drywalls.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>4 kg Pack</strong></div>
+          <div>Flexibility: <strong>High Deformability</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20PU%202K." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="specialty" data-grade="standard">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Tilefixo Sumo Additive</h3>
+        <p>High-quality polymer liquid additive. Mixed with cement mortar bed/screed and slurry during traditional installations to enhance bond strength and extend open time.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>300g Pack</strong></div>
+          <div>Usage: <strong>Add to cement mortar</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20Additive." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="ultratech" data-category="cleaner" data-grade="standard">
+        <span class="card-badge">UltraTech Tilefixo</span>
+        <h3>Shine Tile Cleaner</h3>
+        <p>Powerful acid-based tile cleaner. Formulated to remove tough cement stains, grime, and hardwater scaling from ceramic, vitrified, and glass mosaic tiles.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>1L / 5L Bottle</strong></div>
+          <div>Action: <strong>Quick Stain Removal</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Shine%20Tile%20Cleaner." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <!-- ── MYK LATICRETE ── -->
+      <div class="catalog-card" data-brand="myk" data-category="adhesive" data-grade="latex-fortified">
+        <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 111 + 73 — Latex Fortified Standard Adhesive">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>111 + 73</h3>
+        <p>LATICRETE 111 Crete Filler Powder mixed with 73 Latex Crete Admix. High strength latex-fortified adhesive for small to large format tiles and stones, interior &amp; exterior.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg + 5/20 L</strong></div>
+          <div>Coverage: <strong>~55-60 sqft/bag</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%2073." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="adhesive" data-grade="latex-fortified">
+        <img class="card-img" src="myk-111-4237.jpg" alt="MYK LATICRETE 111 + 4237 — Latex Fortified Premium Adhesive">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>111 + 4237</h3>
+        <p>LATICRETE 111 Crete Filler Powder with 4237 High Performance Latex Admix. Superior bond strength for heavy traffic, external facades and industrial floors.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg + 20 L</strong></div>
+          <div>Bed Thickness: <strong>Up to 12 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%204237." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="adhesive" data-grade="deformable">
+        <img class="card-img" src="myk-345-super-flex.jpg" alt="MYK LATICRETE 345 Super Flex — Large Format Highly Deformable Adhesive">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>345 Super Flex</h3>
+        <p>Highly polymer-modified, single-component adhesive (S2 grade) for very large format tiles. Suitable for airports, metro stations, swimming pools and external facades.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg / 50 kg</strong></div>
+          <div>Bed Thickness: <strong>Up to 15 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20345%20Super%20Flex." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="adhesive" data-grade="thick-bed">
+        <img class="card-img" src="myk-345-super-flex.jpg" alt="MYK LATICRETE 320 Thick Bed — Natural Stone Thick Bed Adhesive">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>320 Thick Bed</h3>
+        <p>Polymer-modified thick bed adhesive for small to large format natural stone. Non-sag, no lippage — supports heavy stone slabs on floor.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>30 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>Up to 40 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20320%20Thick%20Bed." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="adhesive" data-grade="thick-bed">
+        <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 340 Medium Bed — Natural Stone Medium Bed Adhesive">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>340 Medium Bed</h3>
+        <p>Highly polymer-modified medium bed adhesive for natural stone on walls. Complies with C2TES1 — suitable for wet areas including pools and wash rooms.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>30 kg Bag</strong></div>
+          <div>Bed Thickness: <strong>Up to 18 mm</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20340%20Medium%20Bed." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="epoxy-grout" data-grade="epoxy">
+        <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE SP-100 — Stainfree Epoxy Grout">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>SP-100</h3>
+        <p>100% solid epoxy grout — fully stainfree, chemical &amp; temperature resistant, anti-bacterial. Ideal for kitchens, hospitals, and high-traffic commercial areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>1 kg / 5 kg</strong></div>
+          <div>Colours: <strong>36+ Available</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20SP-100%20Stainfree%20Grout." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="epoxy-grout" data-grade="epoxy">
+        <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE STELLAR Grout — Single Component Epoxy Grout">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>STELLAR Grout</h3>
+        <p>Single-component, high performance modified joint filling grout. No mixing of two packs required — just apply. Designed for exterior use, joints 1.5–12mm.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>1 kg / 5 kg</strong></div>
+          <div>Colours: <strong>5 Available</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20STELLAR%20Grout." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="cement-grout" data-grade="standard">
+        <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 600 Series — Cementitious Unsanded Grout">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>600 Series</h3>
+        <p>Portland cement, graded aggregate &amp; polymer-fortified grout for joints 1-3mm. Suitable for porous tiles, non-vitreous clay tiles and marble.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>500g / 1kg / 10kg</strong></div>
+          <div>Colours: <strong>36+ Available</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20600%20Series%20Grout." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="myk" data-category="cement-grout" data-grade="standard">
+        <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 500 Series — Cementitious Sanded Grout">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>500 Series</h3>
+        <p>Polymer-blended cement grout for joints 3-12mm on non-absorbent and vitreous tiles. Hard, durable and economical for residential &amp; commercial use.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>10 kg Bag</strong></div>
+          <div>Colours: <strong>36+ Available</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20500%20Series%20Grout." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <!-- ── SAINT GOBAIN WEBER ── -->
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="standard">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset premier (Grey)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset premier (Grey)</h3>
+        <p>A polymer-modified, thinset tile adhesive designed for fixing ceramic tiles in internal areas. Suitable for both horizontal and vertical application over cementitious substrates.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg / 40 kg</strong></div>
+          <div>Application: <strong>Internal walls &amp; floors</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20premier%20Grey." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset classic (Grey)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset classic (Grey)</h3>
+        <p>A high polymer-modified thinset adhesive specially formulated for fixing low-porosity vitrified tiles on internal floors. Also suitable for ceramic tiles and tile-on-tile applications.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg / 40 kg</strong></div>
+          <div>Application: <strong>Vitrified tiles on floors</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20classic%20Grey." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset nova (Grey)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset nova (Grey)</h3>
+        <p>A high polymer-modified thinset adhesive for fixing low-porosity vitrified tiles on walls and floors, and natural stones on floor. Suitable for internal/external, dry/wet areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg / 40 kg</strong></div>
+          <div>Application: <strong>Internal/external, dry/wet</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20nova%20Grey." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset nova (White)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset nova (White)</h3>
+        <p>A high polymer-modified thinset adhesive for fixing low-porosity vitrified tiles on walls and floors, and natural stones on floor. Suitable for internal/external, dry/wet areas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg / 40 kg</strong></div>
+          <div>Application: <strong>Internal/external, dry/wet</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20nova%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset plus-white (White)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset plus-white (White)</h3>
+        <p>A polymer-modified cementitious adhesive for fixing vitrified tiles and natural stones on internal or external walls and floors. High bond at high bed thicknesses for window sills and jams.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg</strong></div>
+          <div>Application: <strong>Window sills &amp; jams</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20plus-white." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset glass mosaic (White)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset glass mosaic (White)</h3>
+        <p>A flexible, cement-based polymer-modified adhesive with ultra-fine particle size for fixing glass mosaics in wet/dry areas, including swimming pools underwater up to 10 metres.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg</strong></div>
+          <div>Application: <strong>Glass mosaic, pools</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20glass%20mosaic." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="water-resistant">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset firm (Grey)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset firm (Grey)</h3>
+        <p>A highly polymer-modified, high-performance thinset adhesive for vertical and horizontal cladding. Highly water and heat-resistant — ideal for swimming pools, saunas, and spas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg</strong></div>
+          <div>Application: <strong>Pools, saunas, outdoor</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20firm%20Grey." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="water-resistant">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset firm (White)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset firm (White)</h3>
+        <p>A highly polymer-modified, high-performance thinset adhesive for vertical and horizontal cladding. Highly water and heat-resistant — ideal for swimming pools, saunas, and spas.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg</strong></div>
+          <div>Application: <strong>Pools, saunas, outdoor</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20firm%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="deformable">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset flex (Grey)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset flex (Grey)</h3>
+        <p>A high polymer-modified, flexible adhesive for large-format tiles and natural stones where nominal substrate movement or moderate vibrations are expected. Recommended for external cladding.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg</strong></div>
+          <div>Application: <strong>Large format, external</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20flex%20Grey." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="deformable">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset flex (White)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset flex (White)</h3>
+        <p>A high polymer-modified, flexible adhesive for large-format tiles and natural stones where nominal substrate movement or moderate vibrations are expected. Recommended for external cladding.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>20 kg</strong></div>
+          <div>Application: <strong>Large format, external</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20flex%20White." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset ultra (White)">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberset ultra (White)</h3>
+        <p>A two-component, high-performance modified adhesive for impregnated stone, composite marble, and large-format tiles where nominal to moderate substrate movement is expected.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>21 kg Kit</strong></div>
+          <div>Application: <strong>Impregnated stone, large format</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberset%20ultra." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="specialty" data-grade="drywall">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberfix drywall">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weberfix drywall</h3>
+        <p>A two-component, moisture-free, high-performance adhesive for fixing large-format tiles and stones onto drywall partitions and plywood. Prevents damage to sensitive stones.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>5 kg / 20 kg Kit</strong></div>
+          <div>Application: <strong>Drywall &amp; plywood</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weberfix%20drywall." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
+      <div class="catalog-card" data-brand="saint-gobain" data-category="specialty" data-grade="epoxy">
+        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weber epoxy adhesive">
+        <span class="card-badge">Saint Gobain Weber</span>
+        <h3>weber epoxy adhesive</h3>
+        <p>A three-component, heavy-duty, chemical-resistant adhesive for fixing tiles or stones onto metal sheets, aluminium panels, glass, plywood, and gypsum board.</p>
+        <div class="card-meta">
+          <div>Pack Size: <strong>24 kg Kit</strong></div>
+          <div>Application: <strong>Metal, glass, ceilings</strong></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Saint%20Gobain%20weber%20epoxy%20adhesive." target="_blank">💬 Quote</a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- WHITE ADHESIVES -->
-    <div class="catalog-panel" id="cat-white">
-      <div class="catalog-grid">
-        <div class="catalog-card">
-          <img class="card-img" src="Sumo CT plus.jpeg" alt="UltraTech Tilefixo Sumo CT Plus White — Light Marble Indoor Adhesive">
-          <span class="card-badge">Light Marble / Indoor</span>
-          <h3>Sumo CT Plus White</h3>
-          <p>Polymer-modified white cement tile adhesive. Designed to prevent staining and shadows on translucent light-colored marble, glass mosaics, and natural stone in dry indoor areas.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Sumo%20CT%20Plus%20White." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="ultra-tech-aqua-marine-vt-plus-white-anti-damp-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Aqua Marine VT Plus White — Outdoor Anti-Damp Adhesive">
-          <span class="card-badge">White Stone / Outdoor</span>
-          <h3>Aqua Marine VT Plus White</h3>
-          <p>Water-resistant white tile adhesive. Ideal for light stones, white granite, and vitrified tiles in wet and outdoor areas like pools, balconies, and terraces.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 6 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Aqua%20Marine%20VT%20Plus%20White." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="Royal NT.jpeg" alt="UltraTech Tilefixo Royal NT White — Medium Format Cladding Adhesive">
-          <span class="card-badge">Medium Format Cladding</span>
-          <h3>Royal NT White</h3>
-          <p>High performance white adhesive for vertical cladding. Perfect for fixing light colored stones, translucent mosaics, and medium format marbles in internal &amp; external areas.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 10 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Royal%20NT%20White." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="ultratech-tilefixo-ultima-plus-tile-adhesive-1000x1000.jpeg" alt="UltraTech Tilefixo Ultima White — Deformable White Tile Adhesive">
-          <span class="card-badge">High Stress / White</span>
-          <h3>Ultima White</h3>
-          <p>Deformable high performance white cement adhesive. Combines premium flexibility with non-staining properties. For marble on glass, metal, wood, and drywalls.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>3 - 8 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Ultima%20White." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GROUTS -->
-    <div class="catalog-panel" id="cat-grout">
-      <div class="catalog-grid">
-        <div class="catalog-card">
-          <span class="card-badge">Epoxy 2-Component</span>
-          <h3>STYLE 2K Epoxy Grout</h3>
-          <p>Two-component epoxy joint filler grout. Highly stain-free, crack-free, chemical resistant, and 100% waterproof. Best for kitchen countertops, bathroom floors, and showers.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div>
-            <div>Available colors: <strong>26 Swatch Colors</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20STYLE%202K%20Epoxy%20Grout." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <span class="card-badge">Epoxy 3-Component</span>
-          <h3>STYLE Epoxy Grout (3K)</h3>
-          <p>Premium three-component epoxy grout. Easy to mix, highly stain resistant, UV resistant, and certified for food grade applications. Anti-fungal and anti-bacterial properties.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div>
-            <div>Available colors: <strong>26 Swatch Colors</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20STYLE%203K%20Epoxy%20Grout." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <span class="card-badge">Cementitious Grout</span>
-          <h3>Grout CG</h3>
-          <p>Pigmented polymer-enriched cement-based tile joint filler. Self-curing, non-shrink grout with reduced water absorption. Suitable for general residential applications.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>1 kg Pack</strong></div>
-            <div>Available colors: <strong>Standard Range</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Grout%20CG." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SPECIALTY & CLEANERS -->
-    <div class="catalog-panel" id="cat-specialty">
-      <div class="catalog-grid">
-        <div class="catalog-card">
-          <span class="card-badge">Epoxy Spot Bonding</span>
-          <h3>Tilefixo Rapid</h3>
-          <p>Two-component epoxy spot bonding adhesive. Features high bond strength and ultra-quick setting properties. Perfect for vertical, overhead, and drywall installations.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>300g / 750g Kit</strong></div>
-            <div>Setting Time: <strong>Quick Setting</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Rapid." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <span class="card-badge">Polyurethane Adhesive</span>
-          <h3>Tilefixo PU 2K</h3>
-          <p>Two-component polyurethane adhesive. Features high deformability and flexibility. Designed for fixing tiles and stones over metal, glass, wood, and drywalls.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>4 kg Pack</strong></div>
-            <div>Flexibility: <strong>High Deformability</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20PU%202K." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <span class="card-badge">Mortar Bed Additive</span>
-          <h3>Tilefixo Sumo Additive</h3>
-          <p>High-quality polymer liquid additive. Mixed with cement mortar bed/screed and slurry during traditional installations to enhance bond strength and extend open time.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>300g Pack</strong></div>
-            <div>Usage: <strong>Add to cement mortar</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Tilefixo%20Sumo%20Additive." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <span class="card-badge">Maintenance / Cleaner</span>
-          <h3>Shine Tile Cleaner</h3>
-          <p>Powerful acid-based tile cleaner. Formulated to remove tough cement stains, grime, and hardwater scaling from ceramic, vitrified, and glass mosaic tiles.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>1L / 5L Bottle</strong></div>
-            <div>Action: <strong>Quick Stain Removal</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20Shine%20Tile%20Cleaner." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MYK LATICRETE -->
-    <div class="catalog-panel" id="cat-myk">
-      <div style="margin-bottom:24px;padding:14px 18px;background:var(--color-primary-10);border:1px solid var(--color-primary-18);border-radius:var(--radius);font-size:13px;color:var(--color-text-secondary);">
-        <strong style="color:var(--color-text-main);">MYK Laticrete</strong> — a joint venture between LATICRETE International Inc. (USA) and the Hyderabad-based MYK Group. 25 years in India, manufactured locally with 21 regional offices and 22,000+ channel partners.
-      </div>
-      <div class="catalog-grid">
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 111 + 73 — Latex Fortified Standard Adhesive">
-          <span class="card-badge">Latex Fortified · Standard</span>
-          <h3>111 + 73</h3>
-          <p>LATICRETE 111 Crete Filler Powder mixed with 73 Latex Crete Admix. High strength latex-fortified adhesive for small to large format tiles and stones, interior &amp; exterior.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg + 5/20 L</strong></div>
-            <div>Coverage: <strong>~55-60 sqft/bag</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%2073." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-4237.jpg" alt="MYK LATICRETE 111 + 4237 — Latex Fortified Premium Adhesive">
-          <span class="card-badge">Latex Fortified · Premium</span>
-          <h3>111 + 4237</h3>
-          <p>LATICRETE 111 Crete Filler Powder with 4237 High Performance Latex Admix. Superior bond strength for heavy traffic, external facades and industrial floors.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg + 20 L</strong></div>
-            <div>Bed Thickness: <strong>Up to 12 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%204237." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-345-super-flex.jpg" alt="MYK LATICRETE 345 Super Flex — Large Format Highly Deformable Adhesive">
-          <span class="card-badge">Large Format / Highly Deformable</span>
-          <h3>345 Super Flex</h3>
-          <p>Highly polymer-modified, single-component adhesive (S2 grade) for very large format tiles. Suitable for airports, metro stations, swimming pools and external facades.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>20 kg / 50 kg</strong></div>
-            <div>Bed Thickness: <strong>Up to 15 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20345%20Super%20Flex." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-345-super-flex.jpg" alt="MYK LATICRETE 320 Thick Bed — Natural Stone Thick Bed Adhesive">
-          <span class="card-badge">Natural Stone · Thick Bed</span>
-          <h3>320 Thick Bed</h3>
-          <p>Polymer-modified thick bed adhesive for small to large format natural stone. Non-sag, no lippage — supports heavy stone slabs on floor.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>30 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>Up to 40 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20320%20Thick%20Bed." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 340 Medium Bed — Natural Stone Medium Bed Adhesive">
-          <span class="card-badge">Natural Stone · Medium Bed</span>
-          <h3>340 Medium Bed</h3>
-          <p>Highly polymer-modified medium bed adhesive for natural stone on walls. Complies with C2TES1 — suitable for wet areas including pools and wash rooms.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>30 kg Bag</strong></div>
-            <div>Bed Thickness: <strong>Up to 18 mm</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20340%20Medium%20Bed." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE SP-100 — Stainfree Epoxy Grout">
-          <span class="card-badge">Epoxy Grout · Stainfree</span>
-          <h3>SP-100</h3>
-          <p>100% solid epoxy grout — fully stainfree, chemical &amp; temperature resistant, anti-bacterial. Ideal for kitchens, hospitals, and high-traffic commercial areas.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>1 kg / 5 kg</strong></div>
-            <div>Colours: <strong>36+ Available</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20SP-100%20Stainfree%20Grout." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE STELLAR Grout — Single Component Epoxy Grout">
-          <span class="card-badge">Epoxy Grout · Single Component</span>
-          <h3>STELLAR Grout</h3>
-          <p>Single-component, high performance modified joint filling grout. No mixing of two packs required — just apply. Designed for exterior use, joints 1.5–12mm.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>1 kg / 5 kg</strong></div>
-            <div>Colours: <strong>5 Available</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20STELLAR%20Grout." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 600 Series — Cementitious Unsanded Grout">
-          <span class="card-badge">Cementitious Grout · Unsanded</span>
-          <h3>600 Series</h3>
-          <p>Portland cement, graded aggregate &amp; polymer-fortified grout for joints 1-3mm. Suitable for porous tiles, non-vitreous clay tiles and marble.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>500g / 1kg / 10kg</strong></div>
-            <div>Colours: <strong>36+ Available</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20600%20Series%20Grout." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-        <div class="catalog-card">
-          <img class="card-img" src="myk-111-73.jpg" alt="MYK LATICRETE 500 Series — Cementitious Sanded Grout">
-          <span class="card-badge">Cementitious Grout · Sanded</span>
-          <h3>500 Series</h3>
-          <p>Polymer-blended cement grout for joints 3-12mm on non-absorbent and vitreous tiles. Hard, durable and economical for residential &amp; commercial use.</p>
-          <div class="card-meta">
-            <div>Pack Size: <strong>10 kg Bag</strong></div>
-            <div>Colours: <strong>36+ Available</strong></div>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20500%20Series%20Grout." target="_blank">💬 Quote</a>
-          </div>
-        </div>
-
-      </div>
+    <div id="noResults" class="no-results" style="display:none;">
+      <span style="font-size:36px;display:block;margin-bottom:12px;">🔍</span>
+      <p style="font-size:16px;color:var(--color-text-secondary);">No products match your filter criteria. Try adjusting your selections.</p>
+      <button class="btn btn-ghost" onclick="clearFilters()" style="margin-top:16px;">Clear Filters</button>
     </div>
   </div>
 </section>
@@ -879,12 +1116,48 @@
 </footer>
 
 <script>
-// Tab switcher for products catalog
-function switchCatalogTab(id, btn) {
-  document.querySelectorAll('.catalog-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.catalog-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('cat-' + id).classList.add('active');
+// Product filter
+function applyFilters() {
+  const brand = document.getElementById('filter-brand').value;
+  const cat = document.getElementById('filter-category').value;
+  const grade = document.getElementById('filter-grade').value;
+  const cards = document.querySelectorAll('.catalog-card');
+  let visible = 0;
+  cards.forEach(c => {
+    const match = (brand === 'all' || c.dataset.brand === brand) &&
+                  (cat === 'all' || c.dataset.category === cat) &&
+                  (grade === 'all' || c.dataset.grade === grade);
+    c.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  const total = cards.length;
+  const el = document.getElementById('filterCount');
+  document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
+  if (visible === total) {
+    el.textContent = 'Showing all ' + total + ' products';
+  } else {
+    el.textContent = 'Showing ' + visible + ' of ' + total + ' products';
+  }
+}
+
+function clearFilters() {
+  document.getElementById('filter-brand').value = 'all';
+  document.getElementById('filter-category').value = 'all';
+  document.getElementById('filter-grade').value = 'all';
+  applyFilters();
+  history.replaceState(null, '', window.location.pathname);
+}
+
+// Apply brand filter from URL hash on load
+function initFilterFromHash() {
+  const hash = window.location.hash.replace('#brand-', '');
+  if (hash) {
+    const sel = document.getElementById('filter-brand');
+    if ([...sel.options].some(o => o.value === hash)) {
+      sel.value = hash;
+      applyFilters();
+    }
+  }
 }
 
 // Hamburger menu
@@ -1032,6 +1305,7 @@ function initReveal() {
 window.addEventListener('DOMContentLoaded', () => {
   renderSwatches();
   initReveal();
+  initFilterFromHash();
 });
 </script>
 </body>
