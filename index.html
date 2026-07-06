@@ -149,6 +149,9 @@ nav {
   justify-content: space-between;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--display);
   font-size: 22px;
   font-weight: 800;
@@ -168,6 +171,7 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
+.logo-img { height: 40px; width: auto; display: block; }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
   font-family: var(--body);
@@ -1268,7 +1272,8 @@ footer {
 <nav>
   <div class="nav-inner">
     <a class="logo" href="#home">
-      <img src="logo.jpg" alt="Build360.online" class="logo-img">
+      <img src="logo.jpg" alt="" class="logo-img">
+      build<em>360</em>.online
     </a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>

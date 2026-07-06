@@ -109,6 +109,9 @@ nav {
   justify-content: space-between;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--display);
   font-size: 22px;
   font-weight: 800;
