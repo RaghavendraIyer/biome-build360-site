@@ -119,6 +119,7 @@ nav {
   color: var(--color-text-main);
   text-decoration: none;
   line-height: 1;
+  white-space: nowrap;
 }
 .logo em { color: var(--color-primary); font-style: normal; }
 .logo small {
