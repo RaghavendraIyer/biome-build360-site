@@ -48,7 +48,7 @@
 
   /* Layout */
   --nav-h:     64px;
-  --gutter:    clamp(20px, 4vw, 48px);
+  --gutter:    clamp(24px, 4vw, 48px);
   --radius:    6px;
   --shadow-sm: 0 1px 3px rgba(30,37,43,0.06), 0 1px 2px rgba(30,37,43,0.04);
   --shadow-md: 0 4px 12px rgba(30,37,43,0.08), 0 2px 4px rgba(30,37,43,0.04);
@@ -1365,6 +1365,7 @@ footer {
   padding: 80px 0;
   color: #fff;
   border-bottom: 1px solid var(--color-primary-18);
+  scroll-margin-top: calc(var(--nav-h) + 20px);
 }
 .brand-hero-label {
   font-family: var(--mono);
@@ -1391,4 +1392,7 @@ footer {
 }
 @media (max-width: 900px) {
   .brand-hero { padding: 48px 0; }
+}
+@media (max-width: 480px) {
+  .brand-hero { padding: 36px 0; }
 }

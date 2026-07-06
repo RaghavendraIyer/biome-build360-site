@@ -20,48 +20,6 @@
 <link rel="stylesheet" href="style.css">
 <style>
   /* Local Overrides and Subpage Specific styling */
-  .page-hero {
-    position: relative;
-    padding: 120px 0 60px;
-    background: linear-gradient(135deg, #2E1A17 0%, #1A0D0B 100%);
-    color: #FFFFFF;
-    border-bottom: 1px solid var(--color-primary-18);
-    overflow: hidden;
-  }
-  .page-hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(var(--color-primary-10) 1px, transparent 0);
-    background-size: 24px 24px;
-    opacity: 0.3;
-    pointer-events: none;
-  }
-  .page-hero-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--gutter);
-    position: relative;
-    z-index: 2;
-  }
-  .page-hero h1 {
-    font-family: var(--display);
-    font-size: clamp(36px, 6vw, 56px);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-  .page-hero h1 em {
-    color: var(--color-primary);
-    font-style: normal;
-  }
-  .page-hero p {
-    font-size: clamp(14px, 2vw, 18px);
-    color: var(--color-bg-app);
-    max-width: 680px;
-    line-height: 1.6;
-    font-weight: 300;
-  }
   
   /* ── FILTER BAR ── */
   .filter-bar {
@@ -204,6 +162,7 @@
     padding: 80px 0;
     color: #fff;
     border-bottom: 1px solid var(--color-primary-18);
+    scroll-margin-top: calc(var(--nav-h) + 20px);
   }
   .brand-hero-label {
     font-family: var(--mono);
@@ -316,28 +275,6 @@
 
 <!-- ─── WA FLOAT ─── -->
 <a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20B2B%20tile%20adhesive%20pricing." target="_blank" title="WhatsApp Srikar">💬</a>
-
-<!-- ─── HERO ─── -->
-<section class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-inner">
-    <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--color-primary);margin-bottom:12px;">Complete Tiling Solutions</div>
-    <h1>Tile &amp; Stone<br><em>Fitting Systems.</em></h1>
-    <p>Professional-grade tiling solutions across India's most trusted brands — UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber. Polymer-modified adhesives, high-durability epoxy grouts, specialty systems, and surface preparation products for every project.</p>
-  </div>
-</section>
-
-<!-- ─── TRUST BAR ─── -->
-<div style="background:var(--color-bg-surface);border-bottom:1px solid var(--color-border-light);padding:16px 0;">
-  <div class="container">
-    <div style="display:flex;flex-wrap:wrap;gap:32px;">
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> Self Curing Technology</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> Stain-Free Epoxy Joints</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> Food Grade Certified Grout</div>
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--color-success);">✓</span> B2B Project Rates on WhatsApp</div>
-    </div>
-  </div>
-</div>
 
 <!-- ─── ULTRATECH TILEFIXO ─── -->
 <section id="brand-ultratech" class="brand-hero" style="background:linear-gradient(135deg,#1a0d0b 0%,#2E1A17 100%);border-bottom-color:var(--color-primary-18);">
@@ -1181,8 +1118,17 @@
 
 <script>
 // Product filter
+function syncBrandSections(brand) {
+  const sections = ['ultratech', 'myk', 'saint-gobain'];
+  sections.forEach(id => {
+    const el = document.getElementById('brand-' + id);
+    if (el) el.style.display = (brand === 'all' || brand === id) ? '' : 'none';
+  });
+}
+
 function applyFilters() {
   const brand = document.getElementById('filter-brand').value;
+  syncBrandSections(brand);
   const cat = document.getElementById('filter-category').value;
   const grade = document.getElementById('filter-grade').value;
   const cards = document.querySelectorAll('.catalog-card');
