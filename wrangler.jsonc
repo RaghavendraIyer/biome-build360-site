@@ -1,0 +1,15 @@
+{
+  "name": "build360-website",
+  "compatibility_date": "2026-07-08",
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      "*.DS_Store",
+      "*.py",
+      "package.json",
+      "package-lock.json",
+      ".wrangler",
+      "node_modules"
+    ]
+  }
+}
