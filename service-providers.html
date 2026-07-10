@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
-<meta property="og:image" content="https://build360.online/logo.jpg">
+<meta property="og:image" content="https://build360.online/lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg">
 <title>Service Providers — Coming Soon | Build360.online</title>
 <meta name="description" content="Build360.online is onboarding verified contractors, material vendors, logistics providers, and skilled labour relevant to organised construction materials. Join our network.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://build360.online/service-providers.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   .soon-hero {
@@ -62,7 +62,7 @@
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html"><img src="logo.jpg" alt="" class="logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
+    <a class="logo" href="index.html">build<em>360</em>.online</a>
     <ul class="nav-links">
       <li><a href="index.html#how-it-works">How It Works</a></li>
       <li class="nav-item-dropdown" tabindex="0">
@@ -83,6 +83,18 @@
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="service-providers.html" style="color:var(--color-primary)">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20construction%20material%20pricing." target="_blank">Get Pricing →</a></li>
+      <li>
+        <div class="nav-tenant" tabindex="0">
+          <span class="tenant-marker">📍</span> Hyderabad
+          <span class="nav-caret">▾</span>
+          <div class="nav-tenant-dropdown">
+            <a href="#" class="active">📍 Hyderabad</a>
+            <a href="#">Bengaluru <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+            <a href="#">Mumbai <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+            <a href="#">Delhi NCR <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+          </div>
+        </div>
+      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -101,12 +113,22 @@
         <a href="adhesives.html#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
       </div>
     </li>
-    <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
     <li><a href="bid.html" class="mob-link">Bid</a></li>
     <li><a href="index.html#estimator" class="mob-link">Estimator</a></li>
     <li><a href="index.html#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20construction%20material%20pricing." target="_blank">Get Pricing →</a></li>
+    <li>
+      <div class="mob-tenant">
+        <span style="font-size:14px;">📍</span>
+        <select onchange="switchTenant(this.value)">
+          <option value="hyderabad" selected>Hyderabad</option>
+          <option value="bangalore" disabled>Bengaluru (Coming soon)</option>
+          <option value="mumbai" disabled>Mumbai (Coming soon)</option>
+          <option value="delhi" disabled>Delhi NCR (Coming soon)</option>
+        </select>
+      </div>
+    </li>
   </ul>
 </div>
 <a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20register%20as%20a%20service%20provider." target="_blank" title="WhatsApp Srikar">💬</a>
@@ -148,23 +170,27 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="footer-logo" href="index.html"><img src="logo.jpg" alt="" class="footer-logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
-        <div class="footer-tagline" style="margin-top:6px;">India's Organised Construction Materials Marketplace</div>
-        <p class="footer-desc">Cement · Steel · AAC Blocks · Tile Adhesives · Grouts · Finishing Materials. Request. Quote. Build — across India.</p>
+        <a class="footer-logo" href="index.html">build<em>360</em>.online</a>
+        <div class="footer-tagline" style="margin-top:6px;">India's Organized Procurement Network</div>
+        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build — across Hyderabad &amp; India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
       </div>
       <div class="footer-col">
-        <h5>Categories</h5>
-        <a href="adhesives.html">Grey Tile Adhesives</a>
-        <a href="adhesives.html">White Tile Adhesives</a>
-        <a href="adhesives.html">Epoxy &amp; Cement Grouts</a>
-        <a href="adhesives.html">Specialty &amp; Cleaners</a>
+        <h5>Services</h5>
+        <a href="index.html#ai-rfq">AI RFQ Generator</a>
+        <a href="adhesives.html">Browse Products</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="index.html#estimator">Smart Estimator</a>
+        <a href="index.html#contact">Request a Quote</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering →</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <a href="index.html#how-it-works">How It Works</a>
-        <a href="bid.html">Bid Platform</a>
-        <a href="index.html#estimator">Smart Estimator</a>
+        <a href="index.html#hyderabad">Hyderabad Coverage</a>
         <a href="service-providers.html">Service Providers</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
       </div>
@@ -178,6 +204,7 @@
 
 <script>
 function initHamburger(){const b=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('open');});document.addEventListener('click',e=>{if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});}
+function switchTenant(v){const a={hyderabad:'Hyderabad',bangalore:'Bengaluru',mumbai:'Mumbai',delhi:'Delhi NCR'};alert(`📍 ${a[v]||v} market coming soon. You'll stay on Hyderabad for now.`);}
 window.addEventListener('DOMContentLoaded',()=>{initHamburger();});
 </script>
 </body>

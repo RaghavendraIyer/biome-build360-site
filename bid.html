@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
-<meta property="og:image" content="https://build360.online/logo.jpg">
+<meta property="og:image" content="https://build360.online/lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg">
 <title>Bid Platform — Build360.online | Vendor RFQ &amp; Bidding</title>
 <meta name="description" content="Build360.online's vendor bidding platform — verified suppliers compete on approved RFQs for tile adhesives and grouts across India.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://build360.online/bid.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   /* ─── DEMO BANNER ─── */
@@ -123,7 +123,7 @@
   .flow-text h4 { font-family: var(--display); font-size: 15px; font-weight: 700; color: var(--color-text-main); margin-bottom: 4px; }
   .flow-text p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .rfq-card { grid-template-columns: 1fr; }
     .rfq-right { text-align: left; }
     .dash-topbar { flex-direction: column; align-items: flex-start; }
@@ -140,7 +140,7 @@
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html"><img src="logo.jpg" alt="" class="logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
+    <a class="logo" href="index.html">build<em>360</em>.online</a>
     <ul class="nav-links">
       <li><a href="index.html#how-it-works">How It Works</a></li>
       <li class="nav-item-dropdown" tabindex="0">
@@ -161,6 +161,18 @@
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+      <li>
+        <div class="nav-tenant" tabindex="0">
+          <span class="tenant-marker">📍</span> Hyderabad
+          <span class="nav-caret">▾</span>
+          <div class="nav-tenant-dropdown">
+            <a href="#" class="active">📍 Hyderabad</a>
+            <a href="#">Bengaluru <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+            <a href="#">Mumbai <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+            <a href="#">Delhi NCR <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+          </div>
+        </div>
+      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -179,12 +191,22 @@
         <a href="adhesives.html#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
       </div>
     </li>
-    <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
     <li><a href="bid.html" class="mob-link">Bid</a></li>
     <li><a href="index.html#estimator" class="mob-link">Estimator</a></li>
     <li><a href="index.html#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+    <li>
+      <div class="mob-tenant">
+        <span style="font-size:14px;">📍</span>
+        <select onchange="switchTenant(this.value)">
+          <option value="hyderabad" selected>Hyderabad</option>
+          <option value="bangalore" disabled>Bengaluru (Coming soon)</option>
+          <option value="mumbai" disabled>Mumbai (Coming soon)</option>
+          <option value="delhi" disabled>Delhi NCR (Coming soon)</option>
+        </select>
+      </div>
+    </li>
   </ul>
 </div>
 <a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20a%20vendor%20interested%20in%20joining%20the%20Build360%20Bid%20platform." target="_blank" title="WhatsApp Build360">💬</a>
@@ -192,9 +214,38 @@
 <!-- ─── PAGE HERO ─── -->
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-label">// Vendor Bidding Platform</div>
-    <h1>Approved RFQs.<br><em>Lowest Price Wins.</em></h1>
-    <p>Verified buyer requirements flow into this dashboard. Registered supply partners compete by submitting their lowest all-inclusive supply price — Build360 awards the RFQ to the most competitive bid before the timer ends.</p>
+    <div class="page-hero-label">// Reverse Auction Platform</div>
+    <h1>Approved RFQs.<br><em>Ranked Reverse Bidding.</em></h1>
+    <p>Verified buyer requirements flow into this dashboard. Compete using the <strong>Ranked (British) Model</strong> — you see your rank position, not competitor prices. Bid lower to improve your standing. Build360 awards the RFQ to the lowest bid when the timer ends.</p>
+    <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+      <span style="background:var(--color-primary-10);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;color:var(--color-primary);">⏱️ 80% faster procurement</span>
+      <span style="background:var(--color-primary-10);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;color:var(--color-primary);">📉 5–10% cost savings</span>
+      <span style="background:var(--color-primary-10);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;color:var(--color-primary);">🔒 Sealed-bid for high-value</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OPERATIONAL BENCHMARKS ─── -->
+<section class="section-pad-sm" style="background:var(--color-bg-surface-alt);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:24px;text-align:center;">
+        <strong style="font-family:var(--display-alt);font-size:32px;font-weight:800;color:var(--color-primary);display:block;">90%</strong>
+        <span style="font-size:12px;color:var(--color-text-secondary);">Time saved in procurement cycle</span>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:24px;text-align:center;">
+        <strong style="font-family:var(--display-alt);font-size:32px;font-weight:800;color:var(--color-primary);display:block;">10%</strong>
+        <span style="font-size:12px;color:var(--color-text-secondary);">Average material cost savings for buyers</span>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:24px;text-align:center;">
+        <strong style="font-family:var(--display-alt);font-size:32px;font-weight:800;color:var(--color-primary);display:block;">8–12%</strong>
+        <span style="font-size:12px;color:var(--color-text-secondary);">Margin stabilisation via Private Label Engine</span>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:24px;text-align:center;">
+        <strong style="font-family:var(--display-alt);font-size:32px;font-weight:800;color:var(--color-primary);display:block;">#1</strong>
+        <span style="font-size:12px;color:var(--color-text-secondary);">Rank visibility — drive aggressive pricing</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -205,23 +256,19 @@
     <div class="flow-steps">
       <div class="flow-step">
         <div class="flow-num">1</div>
-        <div class="flow-text"><h4>A buyer posts a requirement</h4><p>Material, quantity, and delivery location are submitted as a verified RFQ on Build360.</p></div>
+        <div class="flow-text"><h4>A buyer posts a requirement</h4><p>Material, quantity, and delivery location are submitted as a verified RFQ on Build360. High-value contracts default to <strong>sealed-bid</strong> mode — all bids hidden until the deadline.</p></div>
       </div>
       <div class="flow-step">
         <div class="flow-num">2</div>
-        <div class="flow-text"><h4>The RFQ goes live</h4><p>Once verified, the requirement is published to this vendor dashboard with a delivery-linked bidding window.</p></div>
+        <div class="flow-text"><h4>The RFQ goes live (Ranked Model)</h4><p>Published to the vendor dashboard with a live timer. You accept the RFQ to unlock bidding. You see <strong>your rank only</strong> — not competitor prices.</p></div>
       </div>
       <div class="flow-step">
         <div class="flow-num">3</div>
-        <div class="flow-text"><h4>Vendors register &amp; log in</h4><p>Verified supply partners sign up once, then log in to view all currently open RFQs.</p></div>
+        <div class="flow-text"><h4>Submit &amp; improve your rank</h4><p>Enter your lowest all-inclusive price. The system ranks you among all participants. If you're #3, bid lower to reach #1. Aggressive pricing wins.</p></div>
       </div>
       <div class="flow-step">
         <div class="flow-num">4</div>
-        <div class="flow-text"><h4>Accept &amp; submit your lowest price</h4><p>Accept the RFQ to participate, then enter the lowest all-inclusive supply price you can operate at to win the bid.</p></div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">5</div>
-        <div class="flow-text"><h4>Build360 awards the RFQ</h4><p>When the countdown hits zero, Build360 reviews all bids and awards the work order to the vendor with the most competitive (lowest) price.</p></div>
+        <div class="flow-text"><h4>Build360 awards the RFQ</h4><p>When the countdown hits zero, the lowest bid wins. For sealed-bid RFQs, all bids are revealed and the winner is announced simultaneously.</p></div>
       </div>
     </div>
   </div>
@@ -304,7 +351,7 @@
     <div class="rfq-grid" id="rfq-grid"><!-- populated by JS --></div>
 
     <div class="markup-note">
-      💡 Enter the <strong>lowest all-inclusive supply price</strong> you can profitably fulfil at. Build360 will award the RFQ to the most competitive bid when the timer ends.
+      💡 <strong>Ranked Reverse Auction:</strong> Enter the <strong>lowest all-inclusive supply price</strong> you can profitably fulfil at. You'll see your <strong>rank</strong> in real time — bid lower to improve your position. The lowest bid wins when the timer ends.
     </div>
   </div>
 </section>
@@ -314,7 +361,7 @@
   <div class="container">
     <div style="text-align:center;">
       <h2 class="section-title" style="text-align:center;margin:16px 0 20px;">Not Registered<br><em>Yet?</em></h2>
-      <p style="font-size:15px;color:var(--color-text-secondary);max-width:460px;margin:0 auto 36px;line-height:1.7;">Reach out on WhatsApp and our team will get you set up as a verified vendor on the platform.</p>
+      <p style="font-size:15px;color:var(--color-text-secondary);max-width:460px;margin:0 auto 36px;line-height:1.7;">Reach out on WhatsApp and our team will get you set up as a verified vendor on the platform. Ranked reverse bidding — private label margins at 8–12%, far exceeding traditional 2–3%.</p>
       <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27d%20like%20to%20register%20as%20a%20vendor%20on%20the%20Build360%20Bid%20platform." target="_blank">💬 Register as a Vendor</a>
     </div>
   </div>
@@ -325,23 +372,25 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="footer-logo" href="index.html"><img src="logo.jpg" alt="" class="footer-logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
-        <div class="footer-tagline" style="margin-top:6px;">India's Premium Tiling Procurement Network</div>
-        <p class="footer-desc">Tile Adhesives · Epoxy Grouts · Cement Grouts · Specialty Cleaners. Request. Quote. Build — across India.</p>
+        <a class="footer-logo" href="index.html">build<em>360</em>.online</a>
+        <div class="footer-tagline" style="margin-top:6px;">India's Organized Procurement Network</div>
+        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build — across Hyderabad &amp; India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
       </div>
       <div class="footer-col">
-        <h5>Categories</h5>
-        <a href="adhesives.html">Grey Tile Adhesives</a>
-        <a href="adhesives.html">White Tile Adhesives</a>
-        <a href="adhesives.html">Epoxy &amp; Cement Grouts</a>
-        <a href="adhesives.html">Specialty &amp; Cleaners</a>
+        <h5>Services</h5>
+        <a href="index.html#ai-rfq">AI RFQ Generator</a>
+        <a href="adhesives.html">Browse Products</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="index.html#estimator">Smart Estimator</a>
+        <a href="index.html#contact">Request a Quote</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering →</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <a href="index.html#how-it-works">How It Works</a>
-        <a href="bid.html">Bid Platform</a>
-        <a href="index.html#estimator">Smart Estimator</a>
+        <a href="index.html#hyderabad">Hyderabad Coverage</a>
         <a href="service-providers.html">Service Providers</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
       </div>
@@ -357,6 +406,7 @@
 
 <script>
 function initHamburger(){const b=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('open');});document.addEventListener('click',e=>{if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});}
+function switchTenant(v){showToast(`📍 Switching to ${v} market — coming soon.`);}
 
 /* ─── AUTH TABS ─── */
 function switchAuthTab(id, btn){
@@ -403,13 +453,40 @@ function showToast(msg){
   setTimeout(()=>t.classList.remove('show'), 3200);
 }
 
-/* ─── DEMO RFQ DATA ─── */
+/* ─── RANKED REVERSE AUCTION ─── */
+const COMPETITOR_NAMES = ['Sri Lakshmi Traders', 'Deccan Supply Co.', 'Apex Buildmat', 'Metro Cement', 'Pragati Enterprises', 'Vijay Tiles', 'Sai Traders', 'Rockwell Materials', 'Nizam Distributors'];
+
+function seededCompetitorBids(basePrice, count) {
+  const bids = [];
+  for (let i = 0; i < count; i++) {
+    const variance = (Math.random() - 0.3) * basePrice * 0.18;
+    bids.push({ vendor: COMPETITOR_NAMES[i % COMPETITOR_NAMES.length], price: Math.round((basePrice + variance) * 100) / 100 });
+  }
+  return bids.sort((a,b) => a.price - b.price);
+}
+
 const RFQs = [
-  { id:'RFQ-2241', title:'Vitrified Floor Adhesive — 1,200 sqft', loc:'Gachibowli, Hyderabad', material:'Aqua Marine VT Plus · 20kg bags', qty:'58 bags', basePrice:780, seconds: 5*60+40, bids: 6, accepted:false, won:false },
-  { id:'RFQ-2242', title:'Epoxy Grout — Commercial Lobby', loc:'Madhapur, Hyderabad', material:'STYLE 2K Epoxy Grout · Terrific Black', qty:'14 kits (5kg)', basePrice:2150, seconds: 9*60+15, bids: 3, accepted:false, won:false },
-  { id:'RFQ-2243', title:'Large Format Stone Adhesive — Lobby Cladding', loc:'Kokapet, Hyderabad', material:'345 Super Flex · 20kg bags', qty:'40 bags', basePrice:945, seconds: 2*60+05, bids: 9, accepted:false, won:false },
-  { id:'RFQ-2244', title:'Bathroom Tile Adhesive — 36-Unit Villa Project', loc:'Shamshabad, Hyderabad', material:'Royal NT · 20kg bags', qty:'120 bags', basePrice:610, seconds: 14*60+30, bids: 2, accepted:false, won:false },
+  { id:'RFQ-2241', title:'Vitrified Floor Adhesive — 1,200 sqft', loc:'Gachibowli, Hyderabad', material:'Aqua Marine VT Plus · 20kg bags', qty:'58 bags', basePrice:780, seconds:5*60+40, sealed:false, accepted:false, won:false, myBid:null, myRank:null, competitors:seededCompetitorBids(780, 5) },
+  { id:'RFQ-2242', title:'Epoxy Grout — Commercial Lobby', loc:'Madhapur, Hyderabad', material:'STYLE 2K Epoxy Grout · Terrific Black', qty:'14 kits (5kg)', basePrice:2150, seconds:9*60+15, sealed:true, accepted:false, won:false, myBid:null, myRank:null, competitors:seededCompetitorBids(2150, 3) },
+  { id:'RFQ-2243', title:'Large Format Stone Adhesive — Lobby Cladding', loc:'Kokapet, Hyderabad', material:'345 Super Flex · 20kg bags', qty:'40 bags', basePrice:945, seconds:2*60+5, sealed:false, accepted:false, won:false, myBid:null, myRank:null, competitors:seededCompetitorBids(945, 8) },
+  { id:'RFQ-2244', title:'Bathroom Tile Adhesive — 36-Unit Villa Project', loc:'Shamshabad, Hyderabad', material:'Royal NT · 20kg bags', qty:'120 bags', basePrice:610, seconds:14*60+30, sealed:false, accepted:false, won:false, myBid:null, myRank:null, competitors:seededCompetitorBids(610, 2) },
 ];
+
+function calcRank(r) {
+  if (!r.myBid) return null;
+  const allPrices = r.competitors.map(c => c.price);
+  if (r.myBid) allPrices.push(r.myBid);
+  allPrices.sort((a,b) => a - b);
+  return allPrices.indexOf(r.myBid) + 1;
+}
+
+function rankLabel(rank) {
+  if (!rank) return '';
+  if (rank === 1) return '<span style="color:#16a34a;font-weight:800;">🥇 #1 — You Lead!</span>';
+  if (rank === 2) return '<span style="color:#2563eb;font-weight:700;">🥈 #2 — Bid lower to take the lead</span>';
+  if (rank === 3) return '<span style="color:#d97706;font-weight:700;">🥉 #3 — Improve your price</span>';
+  return `<span style="color:var(--color-text-muted);font-weight:600;">#${rank} — Bid aggressively to move up</span>`;
+}
 
 function fmtTime(s){
   if (s <= 0) return '00:00';
@@ -421,17 +498,19 @@ function buildRFQBoard(){
   const grid = document.getElementById('rfq-grid');
   grid.innerHTML = RFQs.map((r,i) => rfqCardHTML(r,i)).join('');
   document.getElementById('stat-open').textContent = RFQs.filter(r=>!r.won).length;
+  document.getElementById('stat-bids').textContent = RFQs.filter(r=>r.myBid).length;
   startTimers();
 }
 
 function rfqCardHTML(r,i){
-  const lowestLabel = r.lowestBid ? `₹${r.lowestBid}/bag — lowest so far` : `₹${r.basePrice}/bag ref. price`;
+  const modeLabel = r.sealed ? '🔒 Sealed Bid' : '📊 Ranked';
   return `
   <div class="rfq-card${r.won ? ' awarded' : ''}" id="rfq-card-${i}">
     <div>
       <div class="rfq-top">
         <span class="rfq-id">${r.id}</span>
-        <span class="rfq-badge">${r.material.split(' · ')[0]}</span>
+        <span class="rfq-badge">${modeLabel}</span>
+        <span class="rfq-badge" style="background:rgba(22,163,74,0.1);color:#16a34a;">${r.material.split(' · ')[0]}</span>
       </div>
       <div class="rfq-title">${r.title}</div>
       <div class="rfq-meta">
@@ -440,18 +519,19 @@ function rfqCardHTML(r,i){
         <span>🏷️ ${r.material}</span>
       </div>
       <div class="bid-entry-row" id="bid-entry-${i}">
-        <input type="number" id="bid-input-${i}" placeholder="₹ Your lowest price" min="1">
+        <input type="number" id="bid-input-${i}" placeholder="₹ Your lowest price per bag" min="1" step="0.01">
         <button class="btn btn-primary btn-sm" style="font-size:11px;padding:9px 16px;" onclick="placeBid(${i})">Submit Bid</button>
       </div>
     </div>
     <div class="rfq-right">
       <div class="rfq-timer" id="rfq-timer-${i}">${fmtTime(r.seconds)}</div>
       <div class="rfq-timer-label">${r.won ? 'Bidding Closed' : 'Time Remaining'}</div>
-      <div class="rfq-current-bid" id="rfq-bid-${i}">${lowestLabel}</div>
-      <div class="rfq-current-bid-label">${r.lowestBid ? 'Lowest Bid (Live)' : 'Reference Price'}</div>
-      <div class="rfq-bidcount" id="rfq-bidcount-${i}">${r.bids} vendor${r.bids !== 1 ? 's' : ''} bid so far</div>
+      <div id="rfq-rank-${i}" style="font-size:12px;margin-bottom:6px;min-height:20px;">${r.myRank ? rankLabel(r.myRank) : (r.sealed ? '🔒 Bids hidden until close' : '')}</div>
+      <div class="rfq-current-bid" id="rfq-bid-${i}">${r.myBid ? `₹${r.myBid}/bag` : `₹${r.basePrice}/bag ref.`}</div>
+      <div class="rfq-current-bid-label">${r.myBid ? 'Your Bid' : 'Reference Price'}</div>
+      <div class="rfq-bidcount" id="rfq-bidcount-${i}">${r.competitors.length + (r.myBid ? 1 : 0)} vendor${r.competitors.length + (r.myBid ? 1 : 0) !== 1 ? 's' : ''} participating</div>
       <button class="btn ${r.accepted ? 'btn-ghost' : 'btn-outline'} btn-sm" style="font-size:11px;padding:9px 16px;width:100%;" id="rfq-accept-${i}" onclick="acceptRFQ(${i})" ${r.won ? 'disabled' : ''}>
-        ${r.won ? '✓ Awarded by Build360' : (r.accepted ? '✓ Accepted — Enter Price Below' : 'Accept &amp; Bid')}
+        ${r.won ? '✓ Awarded by Build360' : (r.accepted ? (r.myBid ? '✓ Bid Submitted' : '✓ Accepted — Enter Price') : 'Accept &amp; Bid')}
       </button>
     </div>
   </div>`;
@@ -463,22 +543,34 @@ function acceptRFQ(i){
   const btn = document.getElementById(`rfq-accept-${i}`);
   btn.textContent = '✓ Accepted — Enter Price Below';
   btn.classList.remove('btn-outline'); btn.classList.add('btn-ghost');
-  showToast(`✓ You've accepted ${RFQs[i].id}. Submit your lowest price before the timer ends.`);
+  const r = RFQs[i];
+  const modeText = r.sealed ? 'Your sealed bid will be revealed at close.' : 'See your rank improve as you bid lower.';
+  showToast(`✓ Accepted ${r.id}. ${modeText}`);
 }
 
 function placeBid(i){
   const input = document.getElementById(`bid-input-${i}`);
   const val = parseFloat(input.value);
   const r = RFQs[i];
-  if (!val || val <= 0) { showToast(`⚠️ Please enter a valid price.`); return; }
-  // Track lowest bid
-  if (!r.lowestBid || val < r.lowestBid) r.lowestBid = val;
-  r.bids += 1;
-  document.getElementById(`rfq-bid-${i}`).textContent = `₹${r.lowestBid}/bag — lowest so far`;
-  document.getElementById(`rfq-bidcount-${i}`).textContent = `${r.bids} vendor${r.bids !== 1 ? 's' : ''} bid so far`;
+  if (!val || val <= 0) { showToast('⚠️ Enter a valid price.'); return; }
+  r.myBid = val;
+  const rank = calcRank(r);
+  r.myRank = rank;
+  document.getElementById(`rfq-bid-${i}`).textContent = `₹${val}/bag`;
+  if (r.sealed) {
+    document.getElementById(`rfq-rank-${i}`).innerHTML = '🔒 Sealed bid locked — results at close';
+    showToast(`🔒 Sealed bid of ₹${val}/bag locked on ${r.id}. Winner announced at close.`);
+  } else {
+    document.getElementById(`rfq-rank-${i}`).innerHTML = rankLabel(rank);
+    if (rank === 1) {
+      showToast(`🥇 You're #1 on ${r.id}! Another vendor may underbid — watch your rank.`);
+    } else {
+      const diff = rank - 1;
+      showToast(`📊 You're #${rank} on ${r.id}. Bid ${diff > 0 ? '₹' + (r.competitors[rank-2].price - val + 0.01).toFixed(2) + ' lower' : ''} to reach #1.`);
+    }
+  }
   input.value = '';
-  document.getElementById('stat-bids').textContent = parseInt(document.getElementById('stat-bids').textContent) + 1;
-  showToast(`✓ Bid of ₹${val}/bag submitted on ${r.id}. Build360 will award the RFQ to the lowest price when the timer ends.`);
+  document.getElementById('stat-bids').textContent = RFQs.filter(x=>x.myBid).length;
 }
 
 let timerInterval;
@@ -504,8 +596,16 @@ function startTimers(){
           document.querySelector(`#rfq-timer-${i}`).nextElementSibling.textContent = 'Bidding Closed';
           const btn = document.getElementById(`rfq-accept-${i}`);
           btn.textContent = '✓ Awarded'; btn.disabled = true;
+          // Reveal rank if sealed
+          const rankEl = document.getElementById(`rfq-rank-${i}`);
+          if (r.sealed && rankEl) {
+            const winner = r.competitors.sort((a,b)=>a.price-b.price)[0];
+            rankEl.innerHTML = `🔓 Lowest bid: ₹${winner.price}/bag by ${winner.vendor}`;
+          } else if (rankEl && r.myRank) {
+            rankEl.innerHTML = rankEl.innerHTML + (r.myRank === 1 ? ' 🏆 You won!' : '');
+          }
         }
-        showToast(`🏆 Bidding closed on ${r.id} — Build360 will award to the lowest bid.`);
+        showToast(`🏆 Bidding closed on ${r.id}. ${r.myRank === 1 ? 'Congratulations — you won!' : 'Build360 will notify the winner.'}`);
       }
     });
     if (!anyRunning) clearInterval(timerInterval);

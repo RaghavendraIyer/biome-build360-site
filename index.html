@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
-<meta property="og:image" content="https://build360.online/logo.jpg">
+<meta property="og:image" content="https://build360.online/lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg">
 <title>Build360.online — India's Premium Tile Adhesive & Grout Procurement Network</title>
 <meta name="description" content="Source premium tile adhesives, epoxy grouts, spot bonding systems, and tile cleaners in bulk. India's construction procurement network for contractors and tiling professionals.">
 <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://build360.online">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1452,7 +1452,7 @@ footer {
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#home"><img src="logo.jpg" alt="" class="logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
+    <a class="logo" href="#home">build<em>360</em>.online</a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>
       <li class="nav-item-dropdown" tabindex="0">
@@ -1473,6 +1473,18 @@ footer {
       <li><a href="#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+      <li>
+        <div class="nav-tenant" tabindex="0">
+          <span class="tenant-marker">📍</span> Hyderabad
+          <span class="nav-caret">▾</span>
+          <div class="nav-tenant-dropdown">
+            <a href="#" class="active">📍 Hyderabad</a>
+            <a href="#">Bengaluru <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+            <a href="#">Mumbai <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+            <a href="#">Delhi NCR <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
+          </div>
+        </div>
+      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1498,6 +1510,17 @@ footer {
     <li><a href="#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
+    <li>
+      <div class="mob-tenant">
+        <span style="font-size:14px;">📍</span>
+        <select onchange="switchTenant(this.value)">
+          <option value="hyderabad" selected>Hyderabad</option>
+          <option value="bangalore" disabled>Bengaluru (Coming soon)</option>
+          <option value="mumbai" disabled>Mumbai (Coming soon)</option>
+          <option value="delhi" disabled>Delhi NCR (Coming soon)</option>
+        </select>
+      </div>
+    </li>
   </ul>
 </div>
 
@@ -2188,9 +2211,9 @@ footer {
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="footer-logo" href="#home"><img src="logo.jpg" alt="" class="footer-logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
+        <a class="footer-logo" href="#home">build<em>360</em>.online</a>
         <div class="footer-tagline" style="margin-top: 6px;">India's Organized Procurement Network</div>
-        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build — across India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
+        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build — across Hyderabad &amp; India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>
@@ -2731,6 +2754,12 @@ document.addEventListener('click', e => {
     }
   }
 });
+
+/* ─── TENANT SWITCHER ─── */
+function switchTenant(v) {
+  const names = { hyderabad:'Hyderabad', bangalore:'Bengaluru', mumbai:'Mumbai', delhi:'Delhi NCR' };
+  alert(`📍 ${names[v] || v} market coming soon. You'll stay on Hyderabad for now.`);
+}
 
 /* ─── INIT ─── */
 window.addEventListener('DOMContentLoaded', () => {
