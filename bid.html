@@ -16,10 +16,12 @@
 <style>
   /* ─── DEMO BANNER ─── */
   .demo-banner {
-    position: sticky; top: 0; z-index: 101;
+    margin-top: var(--nav-h);
     background: #1A0D0B; border-bottom: 1px solid var(--color-primary-18);
     padding: 10px 0; text-align: center;
   }
+
+  .page-hero { padding-top: calc(var(--nav-h) + 40px); }
   .demo-banner span {
     font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
     color: #E8B8AC;
@@ -133,11 +135,6 @@
 </head>
 <body>
 
-<!-- ─── DEMO BANNER ─── -->
-<div class="demo-banner">
-  <span>👁️ <strong>Interactive Preview</strong> — this dashboard demonstrates the vendor bidding workflow. Live multi-vendor data &amp; authentication launch in Phase 2.</span>
-</div>
-
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
@@ -180,6 +177,11 @@
     </button>
   </div>
 </nav>
+
+<!-- ─── DEMO BANNER ─── -->
+<div class="demo-banner">
+  <span>👁️ <strong>Interactive Preview</strong> — this dashboard demonstrates the vendor bidding workflow. Live multi-vendor data &amp; authentication launch in Phase 2.</span>
+</div>
 <div class="mobile-menu" id="mobileMenu">
   <ul>
     <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
