@@ -41,10 +41,10 @@
 /* ─── DESIGN TOKENS — Modern Industrial Palette ─── */
 :root {
   /* Primary Brand */
-  --color-primary:       #BC4A3C;
-  --color-primary-hover:  #963529;
-  --color-primary-10:    rgba(188,74,60,0.10);
-  --color-primary-18:    rgba(188,74,60,0.18);
+  --color-primary:       #DE5A3F;
+  --color-primary-hover:  #C14D33;
+  --color-primary-10:    rgba(222,90,63,0.10);
+  --color-primary-18:    rgba(222,90,63,0.18);
 
   /* Backgrounds — 60-30-10 distribution */
   --color-bg-app:        #F8F9FA;   /* 60 % canvas */
@@ -52,7 +52,7 @@
   --color-bg-surface-alt:#F1F3F5;   /* Alternating rows / subtle panels */
 
   /* Typography */
-  --color-text-main:     #1E252B;   /* Headers, primary */
+  --color-text-main:     #1E293B;   /* Headers, primary */
   --color-text-secondary:#4A5568;   /* Body, descriptions */
   --color-text-muted:    #8899A6;   /* Captions, disabled */
 
@@ -76,7 +76,7 @@
   --border2:   var(--color-border-light);
   --orange:    var(--color-primary);
   --orange2:   var(--color-primary-hover);
-  --orange-dim: rgba(188,74,60,0.25);
+  --orange-dim: rgba(222,90,63,0.25);
   --text:      var(--color-text-main);
   --text2:     var(--color-text-secondary);
   --text3:     var(--color-text-muted);
@@ -194,9 +194,9 @@ nav {
   border-radius: var(--radius);
   font-weight: 600 !important;
   transition: all .2s !important;
-  box-shadow: 0 2px 8px rgba(188,74,60,0.25);
+  box-shadow: 0 2px 8px rgba(222,90,63,0.25);
 }
-.nav-cta:hover { background: var(--color-primary-hover) !important; color: #FFFFFF !important; box-shadow: 0 4px 12px rgba(188,74,60,0.35); }
+.nav-cta:hover { background: var(--color-primary-hover) !important; color: #FFFFFF !important; box-shadow: 0 4px 12px rgba(222,90,63,0.35); }
 
 /* ─── NAV DROPDOWN (Products) ─── */
 .nav-item-dropdown { position: relative; }
@@ -398,15 +398,15 @@ section { position: relative; z-index: 1; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(188,74,60,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(188,74,60,.04) 1px, transparent 1px);
+    linear-gradient(rgba(222,90,63,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(222,90,63,.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-glow {
   position: absolute;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(188,74,60,.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(222,90,63,.08) 0%, transparent 70%);
   top: 10%; right: -100px;
   pointer-events: none;
 }
@@ -462,11 +462,11 @@ section { position: relative; z-index: 1; }
   transition: all .2s;
   border: none;
 }
-.btn-primary { background: var(--color-primary); color: #FFFFFF; box-shadow: 0 2px 8px rgba(188,74,60,0.25); }
-.btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(188,74,60,0.35); }
+.btn-primary { background: var(--color-primary); color: #FFFFFF; box-shadow: 0 2px 8px rgba(222,90,63,0.25); }
+.btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(222,90,63,0.35); }
 .btn-primary:disabled { background: rgba(103,116,126,0.40); color: #FFFFFF; cursor: not-allowed; box-shadow: none; transform: none; }
 .btn-ghost { background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border-light); }
-.btn-ghost:hover { border-color: var(--color-primary); color: var(--color-primary); background: rgba(188,74,60,0.04); }
+.btn-ghost:hover { border-color: var(--color-primary); color: var(--color-primary); background: rgba(222,90,63,0.04); }
 .btn-wa { background: #25D366; color: #FFFFFF; }
 .btn-wa:hover { background: #1da851; }
 
@@ -501,7 +501,7 @@ section { position: relative; z-index: 1; }
 .ticker-bar {
   border-top: 1px solid var(--color-primary-18);
   border-bottom: 1px solid var(--color-primary-10);
-  background: linear-gradient(90deg, rgba(188,74,60,0.03) 0%, var(--color-bg-surface) 100%);
+  background: linear-gradient(90deg, rgba(222,90,63,0.03) 0%, var(--color-bg-surface) 100%);
   padding: 0;
   overflow: hidden;
   height: 52px;
@@ -561,7 +561,7 @@ section { position: relative; z-index: 1; }
   transition: background .2s;
   flex-shrink: 0;
 }
-.ticker-item:hover { background: rgba(188,74,60,.06); }
+.ticker-item:hover { background: rgba(222,90,63,.06); }
 .ticker-item .t-brand { color: var(--color-text-secondary); font-weight: 600; }
 .ticker-item .t-price { color: var(--color-text-main); font-weight: 600; }
 .ticker-item .t-delta { font-size: 11px; font-weight: 600; }
@@ -569,9 +569,9 @@ section { position: relative; z-index: 1; }
 .ticker-item .t-delta.dn { color: var(--color-error); }
 .ticker-item.flash { animation: tickerFlash .5s ease; }
 @keyframes tickerFlash {
-  0% { background: rgba(188,74,60,.0); }
-  40% { background: rgba(188,74,60,.12); }
-  100% { background: rgba(188,74,60,.0); }
+  0% { background: rgba(222,90,63,.0); }
+  40% { background: rgba(222,90,63,.12); }
+  100% { background: rgba(222,90,63,.0); }
 }
 
 /* ─── SECTION HEADER ─── */
@@ -628,7 +628,7 @@ section { position: relative; z-index: 1; }
 .agent-card:hover::before { transform: scaleX(1); }
 .agent-card.founder {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, rgba(188,74,60,.06) 0%, var(--color-bg-surface) 60%);
+  background: linear-gradient(135deg, rgba(222,90,63,.06) 0%, var(--color-bg-surface) 60%);
   border-top: 3px solid var(--color-primary);
 }
 .agent-icon { font-size: 28px; margin-bottom: 20px; display: block; }
@@ -690,8 +690,140 @@ section { position: relative; z-index: 1; }
   cursor: default;
   letter-spacing: .05em;
 }
-.brand-pill:hover { border-color: var(--color-primary); color: var(--color-primary); background: rgba(188,74,60,.04); }
-.brand-pill.primary { border-color: rgba(188,74,60,.35); color: var(--color-text-main); font-weight: 500; }
+.brand-pill:hover { border-color: var(--color-primary); color: var(--color-primary); background: rgba(222,90,63,.04); }
+.brand-pill.primary { border-color: rgba(222,90,63,.35); color: var(--color-text-main); font-weight: 500; }
+.product-tile-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px; }
+.product-tile {
+  aspect-ratio:1;border-radius:8px;position:relative;overflow:hidden;cursor:default;
+  background-size:cover;background-position:center;transition:transform .2s,box-shadow .2s;
+}
+.product-tile:hover { transform:translateY(-2px);box-shadow:var(--shadow-md); }
+.product-tile-name {
+  position:absolute;bottom:0;left:0;right:0;
+  padding:12px 10px 8px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));
+  color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.04em;line-height:1.3;
+}
+
+/* ─── AI NOTE-TO-RFQ ─── */
+.ai-rfq-section {
+  background: linear-gradient(135deg, rgba(222,90,63,0.04) 0%, var(--color-bg-app) 100%);
+  border-top: 1px solid var(--color-primary-18);
+  border-bottom: 1px solid var(--color-primary-18);
+  padding: 80px 0;
+}
+.ai-rfq-inner { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center; }
+.ai-rfq-visual {
+  background: linear-gradient(135deg, rgba(222,90,63,0.08), rgba(30,41,59,0.04));
+  border: 1px solid var(--color-primary-18);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ai-rfq-visual .phone-mock {
+  width: 180px;height: 320px;
+  background: var(--color-bg-surface);
+  border: 3px solid var(--color-text-main);
+  border-radius: 24px;
+  margin: 0 auto 24px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  overflow: hidden;
+}
+.ai-rfq-visual .phone-mock::after {
+  content: '';position:absolute;top:8px;left:50%;transform:translateX(-50%);
+  width:40px;height:5px;background:var(--color-text-main);border-radius:3px;
+}
+.ai-rfq-visual .scan-line {
+  position: absolute;
+  left: 10%;right:10%;height:3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  animation: scanAnim 2s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(222,90,63,0.5);
+}
+@keyframes scanAnim {
+  0%,100% { top:20%;opacity:0.3; }
+  50% { top:70%;opacity:1; }
+}
+.ai-rfq-upload-zone {
+  border: 2px dashed var(--color-primary-18);
+  border-radius: 12px;
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .25s;
+  background: var(--color-bg-surface);
+}
+.ai-rfq-upload-zone:hover { border-color: var(--color-primary); background: rgba(222,90,63,0.04); }
+.ai-rfq-upload-zone .upload-icon { font-size: 40px;margin-bottom:12px;display:block; }
+.ai-rfq-upload-zone .upload-label { font-family:var(--display);font-size:15px;font-weight:600;color:var(--color-text-main); }
+.ai-rfq-upload-zone .upload-hint { font-size:12px;color:var(--color-text-secondary);margin-top:6px; }
+.ai-rfq-formats { display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;justify-content:center; }
+.ai-rfq-formats .fmt-chip {
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 14px;border-radius:20px;
+  border:1px solid var(--color-primary-18);
+  color:var(--color-text-secondary);
+  background:var(--color-bg-surface);
+  transition:all .2s;
+}
+.ai-rfq-formats .fmt-chip:hover { border-color:var(--color-primary);color:var(--color-primary);background:rgba(222,90,63,0.04); }
+
+/* ─── CLICK & UPLOAD FLOATING CARD ─── */
+.upload-float {
+  position: fixed;
+  bottom: 100px; right: 28px;
+  z-index: 998;
+  width: auto;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-primary-18);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s, opacity .5s;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+.upload-float.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.upload-float:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(30,41,59,0.15); }
+.upload-float-icon {
+  width:44px;height:44px;
+  border-radius:50%;
+  background: var(--color-primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;color:#fff;flex-shrink:0;
+}
+.upload-float-text { font-family:var(--display);font-size:13px;font-weight:600;color:var(--color-text-main);line-height:1.3; }
+.upload-float-text small { display:block;font-family:var(--body);font-size:10px;font-weight:400;color:var(--color-text-secondary);margin-top:2px; }
+
+/* ─── HYDERABAD MARKET CONTEXT ─── */
+.hyderabad-section { background: var(--color-bg-surface); }
+.hyderabad-zones { display:flex;gap:10px;flex-wrap:wrap;margin-top:28px; }
+.hyderabad-zone {
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+  padding:10px 18px;border-radius:var(--radius);
+  border:1px solid var(--color-primary-18);
+  background:rgba(222,90,63,0.04);
+  color:var(--color-primary);
+  transition:all .2s;
+}
+.hyderabad-zone:hover { background:var(--color-primary);color:#fff;border-color:var(--color-primary); }
+.hyderabad-stats { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-border-light);border-radius:var(--radius);overflow:hidden;margin-top:40px; }
+.hyderabad-stat { background:var(--color-bg-surface);padding:32px 20px;text-align:center; }
+.hyderabad-stat strong { display:block;font-family:var(--display);font-size:32px;font-weight:800;color:var(--color-primary);line-height:1;margin-bottom:6px; }
+.hyderabad-stat span { font-family:var(--mono);font-size:9px;color:var(--color-text-muted);letter-spacing:.15em;text-transform:uppercase; }
 
 /* ─── POLICY GRID ─── */
 .policy-grid {
@@ -716,7 +848,7 @@ section { position: relative; z-index: 1; }
   font-family: var(--display);
   font-size: 52px;
   font-weight: 800;
-  color: rgba(188,74,60,.12);
+  color: rgba(222,90,63,.12);
   line-height: 1;
   margin-bottom: 20px;
 }
@@ -791,7 +923,7 @@ section { position: relative; z-index: 1; }
 }
 .form-group select:focus, .form-group input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(188,74,60,0.12);
+  box-shadow: 0 0 0 3px rgba(222,90,63,0.12);
 }
 .form-group select option { background: var(--color-bg-surface); }
 .calc-btn {
@@ -809,9 +941,9 @@ section { position: relative; z-index: 1; }
   cursor: pointer;
   transition: all .2s;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(188,74,60,0.25);
+  box-shadow: 0 2px 8px rgba(222,90,63,0.25);
 }
-.calc-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(188,74,60,0.35); }
+.calc-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(222,90,63,0.35); }
 .est-result {
   background: var(--color-bg-surface-alt);
   border: 1px solid var(--color-border-light);
@@ -869,12 +1001,12 @@ section { position: relative; z-index: 1; }
 }
 .bom-table td.val { color: var(--color-primary); font-weight: 600; }
 .bom-table tr:last-child td { border-bottom: none; }
-.bom-table tr:hover td { background: rgba(188,74,60,0.02); }
+.bom-table tr:hover td { background: rgba(222,90,63,0.02); }
 .result-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
 
 /* ─── CTA ─── */
 .cta-section {
-  background: linear-gradient(135deg, rgba(188,74,60,.06) 0%, var(--color-bg-app) 50%);
+  background: linear-gradient(135deg, rgba(222,90,63,.06) 0%, var(--color-bg-app) 50%);
   border-top: 1px solid var(--color-primary-18);
   border-bottom: 1px solid var(--color-primary-18);
   padding: 100px 0;
@@ -898,7 +1030,7 @@ section { position: relative; z-index: 1; }
   justify-content: center;
   font-size: 16px;
   flex-shrink: 0;
-  background: rgba(188,74,60,0.06);
+  background: rgba(222,90,63,0.06);
 }
 .contact-item h4 {
   font-family: var(--mono);
@@ -948,7 +1080,7 @@ section { position: relative; z-index: 1; }
 .form-body select:focus,
 .form-body textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(188,74,60,0.12);
+  box-shadow: 0 0 0 3px rgba(222,90,63,0.12);
 }
 .form-body select option { background: var(--color-bg-surface); }
 .form-body textarea { min-height: 80px; }
@@ -966,9 +1098,9 @@ section { position: relative; z-index: 1; }
   text-transform: uppercase;
   cursor: pointer;
   transition: all .2s;
-  box-shadow: 0 2px 8px rgba(188,74,60,0.25);
+  box-shadow: 0 2px 8px rgba(222,90,63,0.25);
 }
-.form-submit-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(188,74,60,0.35); }
+.form-submit-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(222,90,63,0.35); }
 .form-submit-btn:disabled { background: rgba(103,116,126,0.40); cursor: not-allowed; box-shadow: none; }
 .form-success {
   display: none;
@@ -1092,7 +1224,7 @@ footer {
   background: linear-gradient(100deg, rgba(241, 239, 234, 0.85) 0%, rgba(248, 249, 250, 0.6) 50%, rgba(253, 240, 232, 0.2) 100%),
               url('lucid-origin_An_immense_well-organized_construction_logistics_yard_at_sunset_looking_like_an_-0.jpg') center/cover no-repeat;
 }
-.hero.bg-slide-0 .hero-grid-bg { background-image: linear-gradient(rgba(188,74,60,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(188,74,60,.05) 1px, transparent 1px); }
+.hero.bg-slide-0 .hero-grid-bg { background-image: linear-gradient(rgba(222,90,63,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(222,90,63,.05) 1px, transparent 1px); }
 .hero.bg-slide-1 .hero-grid-bg { background-image: linear-gradient(rgba(76,110,73,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(76,110,73,.045) 1px, transparent 1px); }
 .hero.bg-slide-2 .hero-grid-bg { background-image: linear-gradient(rgba(30,37,43,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(30,37,43,.05) 1px, transparent 1px); }
 .hero-dots {
@@ -1154,7 +1286,7 @@ footer {
   font-family: var(--display);
   font-size: 44px;
   font-weight: 800;
-  color: rgba(188,74,60,.08);
+  color: rgba(222,90,63,.08);
   line-height: 1;
 }
 .process-icon {
@@ -1165,7 +1297,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  background: rgba(188,74,60,.06);
+  background: rgba(222,90,63,.06);
 }
 .process-label {
   font-family: var(--display);
@@ -1238,7 +1370,7 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 8px 32px rgba(188,74,60,0.12);
+  box-shadow: 0 8px 32px rgba(222,90,63,0.12);
 }
 .qr-svg { width: 100%; height: 100%; }
 .qr-label {
@@ -1298,6 +1430,12 @@ footer {
   .process-step:nth-child(2n) { border-right: none; }
   .process-step:last-child { border-right: none; }
   .wa-banner-inner { flex-direction: column; align-items: flex-start; }
+  .ai-rfq-inner { grid-template-columns:1fr;gap:40px; }
+  .ai-rfq-visual { order:-1; }
+  .ai-rfq-visual .phone-mock { width:140px;height:260px;font-size:40px; }
+  .hyderabad-stats { grid-template-columns:repeat(2,1fr); }
+  .upload-float { bottom:90px;right:16px;left:16px;border-radius:12px;padding:12px 16px; }
+  .upload-float-icon { width:36px;height:36px;font-size:16px; }
 }
 @media (max-width: 480px) {
   .logo-img { height: 36px; }
@@ -1366,8 +1504,18 @@ footer {
 <!-- ─── WA FLOAT ─── -->
 <a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20B2B%20tile%20adhesive%20and%20grout%20pricing." target="_blank" title="WhatsApp Srikar">💬</a>
 
+<!-- ─── CLICK & UPLOAD FLOAT ─── -->
+<div class="upload-float" id="uploadFloat" onclick="document.getElementById('aiFileInput')?.click() || triggerFileUpload()">
+  <div class="upload-float-icon">📤</div>
+  <div class="upload-float-text">
+    Click &amp; Upload
+    <small>BOQ · Excel · Handwritten Note</small>
+  </div>
+</div>
+<input type="file" id="globalFileInput" accept="image/*,.pdf,.xls,.xlsx" style="display:none;">
+
 <!-- ─── LIVE TICKER ─── -->
-<div class="ticker-bar" id="tickerBar">
+<div class="ticker-bar" id="tickerBar" style="margin-top:var(--nav-h);">
   <div class="ticker-live-badge">
     <div class="live-dot"></div>
     Live Rates
@@ -1439,19 +1587,19 @@ footer {
   <div class="hero-stats">
     <div class="hero-stat">
       <strong id="stat-mills">0</strong>
-      <span>Supply Partners</span>
+      <span style="color:#000;">Supply Partners</span>
     </div>
     <div class="hero-stat">
       <strong>&lt;4 hrs</strong>
-      <span>Quote Response</span>
+      <span style="color:#000;">Quote Response</span>
     </div>
     <div class="hero-stat">
       <strong>PAN</strong>
-      <span>India Coverage</span>
+      <span style="color:#000;">India Coverage</span>
     </div>
     <div class="hero-stat">
       <strong>B2B+</strong>
-      <span>All Buyers Welcome</span>
+      <span style="color:#000;">All Buyers Welcome</span>
     </div>
   </div>
 </section>
@@ -1592,87 +1740,69 @@ footer {
   </div>
 </section>
 
-<!-- ─── BRANDS ─── -->
-<section id="brands" class="brands-section section-pad">
+<!-- ─── AI NOTE-TO-RFQ ─── -->
+<section id="ai-rfq" class="ai-rfq-section">
+  <div class="container">
+    <div class="ai-rfq-inner">
+      <div class="reveal">
+        <h2 class="section-title">Handwritten Note to <em>RFQ in Seconds.</em></h2>
+        <p class="section-lead" style="max-width:480px;">Don't waste time typing. Upload a photo of your handwritten site notes, a PDF BOQ, or an Excel sheet. Our AI engine parses your requirements into a structured Request for Quote (RFQ) instantly.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;">
+          <a class="btn btn-primary" href="#" id="aiRfqBtn" style="font-size:15px;padding:16px 32px;">📤 Upload &amp; Generate RFQ</a>
+          <a class="btn btn-ghost" href="#how-it-works">How It Works →</a>
+        </div>
+      </div>
+      <div class="ai-rfq-visual reveal">
+        <div class="phone-mock">
+          📝
+          <div class="scan-line"></div>
+        </div>
+        <div class="ai-rfq-formats" style="justify-content:center;">
+          <span class="fmt-chip">📸 Handwritten Note</span>
+          <span class="fmt-chip">📄 PDF BOQ</span>
+          <span class="fmt-chip">📊 Excel Sheet</span>
+        </div>
+      </div>
+    </div>
+    <div class="ai-rfq-upload-zone reveal" style="margin-top:48px;" id="aiUploadZone">
+      <span class="upload-icon">📁</span>
+      <div class="upload-label">Click to Upload or Drag &amp; Drop Your File</div>
+      <p class="upload-hint">Supports images (JPEG/PNG), PDF, XLS, XLSX — up to 25 MB</p>
+      <input type="file" id="aiFileInput" accept="image/*,.pdf,.xls,.xlsx" style="display:none;" multiple>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HYDERABAD MARKET CONTEXT ─── -->
+<section id="hyderabad" class="hyderabad-section section-pad">
   <div class="container">
     <div class="reveal">
-      <h2 class="section-title">Our <em>Product Range.</em></h2>
-      <p class="section-lead">Premium tiling solutions from India's most trusted brands — UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber. Verified B2B supply partners, direct billing, and project rates.</p>
+      <h2 class="section-title">Built for <em>Hyderabad's Growth</em> Corridors.</h2>
+      <p class="section-lead">We operate where the city is expanding. Our supply network covers every major development zone with priority sourcing from local wholesale nodes — ensuring faster delivery and competitive project pricing.</p>
     </div>
-    <div class="divider"></div>
-
-    <div class="brands-category reveal">
-      <div class="brands-cat-label">// UltraTech Tilefixo — Grey Tile Adhesives</div>
-      <div class="brands-grid">
-        <div class="brand-pill primary">Tilefixo Sumo CT</div>
-        <div class="brand-pill primary">Tilefixo Sumo CT Plus</div>
-        <div class="brand-pill primary">Tilefixo Aqua Marine VT</div>
-        <div class="brand-pill primary">Tilefixo Aqua Marine VT Plus</div>
-        <div class="brand-pill">Tilefixo Royal NT</div>
-        <div class="brand-pill">Tilefixo Royal NT Plus</div>
-        <div class="brand-pill">Tilefixo Ultima</div>
-        <div class="brand-pill">Tilefixo Ultima Plus</div>
+    <div class="hyderabad-zones reveal">
+      <span class="hyderabad-zone">📍 Kokapet</span>
+      <span class="hyderabad-zone">📍 Narsingi</span>
+      <span class="hyderabad-zone">📍 Kompally</span>
+      <span class="hyderabad-zone">📍 Hitec City</span>
+      <span class="hyderabad-zone" style="border-color:var(--color-primary);color:#fff;background:var(--color-primary);">★ Priority Sourcing — Wholesale Nodes</span>
+    </div>
+    <div class="hyderabad-stats reveal" style="margin-top:48px;">
+      <div class="hyderabad-stat">
+        <strong id="hz-stat-1">0</strong>
+        <span>Hyderabad Supply Partners</span>
       </div>
-    </div>
-
-    <div class="brands-category reveal">
-      <div class="brands-cat-label">// UltraTech Tilefixo — White Tile Adhesives</div>
-      <div class="brands-grid">
-        <div class="brand-pill primary">Tilefixo Sumo CT Plus White</div>
-        <div class="brand-pill primary">Tilefixo Aqua Marine VT Plus White</div>
-        <div class="brand-pill">Tilefixo Royal NT White</div>
-        <div class="brand-pill">Tilefixo Ultima White</div>
+      <div class="hyderabad-stat">
+        <strong>&lt;2 hrs</strong>
+        <span>Intra-City Delivery</span>
       </div>
-    </div>
-
-    <div class="brands-category reveal">
-      <div class="brands-cat-label">// UltraTech Tilefixo — Epoxy &amp; Cementitious Grouts</div>
-      <div class="brands-grid">
-        <div class="brand-pill primary">Tilefixo STYLE 2K Epoxy Grout</div>
-        <div class="brand-pill primary">Tilefixo STYLE Epoxy Grout (3K)</div>
-        <div class="brand-pill">Tilefixo Grout CG (Cement-based)</div>
-        <div class="brand-pill">26 Attractive Swatch Colors</div>
+      <div class="hyderabad-stat">
+        <strong>4</strong>
+        <span>Growth Corridors Covered</span>
       </div>
-    </div>
-
-    <div class="brands-category reveal">
-      <div class="brands-cat-label">// UltraTech Tilefixo — Specialty Adhesives &amp; Maintenance</div>
-      <div class="brands-grid">
-        <div class="brand-pill primary">Tilefixo Rapid (Spot Bonding)</div>
-        <div class="brand-pill primary">Tilefixo PU 2K (Polyurethane)</div>
-        <div class="brand-pill">Tilefixo Sumo (Polymer Additive)</div>
-        <div class="brand-pill">Tilefixo Shine Tile Cleaner</div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-    <div class="brands-category reveal">
-      <div class="brands-cat-label">// MYK Laticrete — Premium Adhesives &amp; Grouts</div>
-      <div class="brands-grid">
-        <div class="brand-pill primary">MYK Laticrete 111 + 73 (C2TE)</div>
-        <div class="brand-pill primary">MYK Laticrete 111 + 4237 (C2TES1)</div>
-        <div class="brand-pill primary">MYK Laticrete 345 Super Flex (C2S1E)</div>
-        <div class="brand-pill primary">MYK Laticrete 320 Thick Bed</div>
-        <div class="brand-pill">MYK Laticrete 340 Medium Bed</div>
-        <div class="brand-pill">MYK Laticrete SP-100 Epoxy Grout</div>
-        <div class="brand-pill">MYK Laticrete STELLAR Grout</div>
-        <div class="brand-pill">MYK Laticrete 600/500 Series</div>
-      </div>
-    </div>
-
-    <div class="brands-category reveal">
-      <div class="brands-cat-label">// Saint Gobain Weber — Complete Tiling Systems</div>
-      <div class="brands-grid">
-        <div class="brand-pill primary">Weber Set Premier</div>
-        <div class="brand-pill primary">Weber Set Classic</div>
-        <div class="brand-pill primary">Weber Set Nova (Grey/White)</div>
-        <div class="brand-pill primary">Weber Set Plus White</div>
-        <div class="brand-pill">Weber Set Glass Mosaic</div>
-        <div class="brand-pill">Weber Set Firm (Grey/White)</div>
-        <div class="brand-pill">Weber Set Flex (Grey/White)</div>
-        <div class="brand-pill">Weber Set Ultra</div>
-        <div class="brand-pill">Weber Fix Drywall</div>
-        <div class="brand-pill">Weber Epoxy Adhesive</div>
+      <div class="hyderabad-stat">
+        <strong>15+</strong>
+        <span>Wholesale Node Partners</span>
       </div>
     </div>
   </div>
@@ -1975,55 +2105,55 @@ footer {
 <!-- ─── CONTACT ─── -->
 <section id="contact" class="section-pad" style="position:relative;background:var(--color-bg-surface);overflow:hidden;">
   <div style="position:absolute;inset:0;z-index:0;">
-    <img src="bloom-generated-1783494358624.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.92) 30%,rgba(255,255,255,0.82) 100%);"></div>
+    <img src="bloom-generated-1783494358624.png" alt="" style="width:100%;height:100%;object-fit:contain;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.55) 30%,rgba(255,255,255,0.25) 100%);"></div>
   </div>
   <div class="container" style="position:relative;z-index:1;">
-    <div class="reveal">
-      <h2 class="section-title">Let's Discuss<br><em>Your Project.</em></h2>
-    </div>
-    <div class="contact-grid" style="margin-top:56px;">
+    <div class="contact-grid" style="margin-top:0;align-items:stretch;">
       <div class="reveal">
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div>
-            <h4>Phone / WhatsApp</h4>
-            <p>+91 90325 14441</p>
-            <p style="font-size:12px;color:var(--text3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">Srikar Jaji — Founder · Mon–Sat 9am–7pm</p>
+        <h2 class="section-title" style="font-size:clamp(28px,4vw,48px);margin-left:0;margin-top:40vh;text-shadow:0 0 20px rgba(255,255,255,0.6),0 2px 4px rgba(255,255,255,0.8);">Let's Discuss<br><em>Your Project.</em></h2>
+        <div style="margin-top:6vh;text-shadow:0 0 10px rgba(255,255,255,0.5);">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4 style="color:#000;">Phone / WhatsApp</h4>
+              <p style="color:#000;">+91 90325 14441</p>
+              <p style="font-size:12px;color:#000;margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">Srikar Jaji — Founder · Mon–Sat 9am–7pm</p>
+            </div>
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📧</div>
-          <div>
-            <h4>Email</h4>
-            <p>info@build360.online</p>
-            <p style="font-size:12px;color:var(--text3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">AI Concierge replies in &lt;4 minutes</p>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4 style="color:#000;">Email</h4>
+              <p style="color:#000;">info@build360.online</p>
+              <p style="font-size:12px;color:#000;margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">AI Concierge replies in &lt;4 minutes</p>
+            </div>
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <h4>Location</h4>
-            <p>Hyderabad, Telangana</p>
-            <p style="font-size:12px;color:var(--text3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">Pan-India · Enquiries from across the country welcome</p>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4 style="color:#000;">Location</h4>
+              <p style="color:#000;">Hyderabad, Telangana</p>
+              <p style="font-size:12px;color:#000;margin-top:4px;font-family:var(--mono);letter-spacing:.05em;">Pan-India · Enquiries from across the country welcome</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="contact-form reveal">
-        <div class="form-header">// Procurement Enquiry</div>
-        <div class="form-body" id="contactFormBody">
+        <div class="contact-form reveal" style="margin-top:40vh;align-self:end;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
+        <div class="form-header" style="background:transparent;border-bottom-color:rgba(255,255,255,0.3);text-shadow:0 0 12px rgba(255,255,255,0.5);color:#000;">// Procurement Enquiry</div>
+        <div class="form-body" id="contactFormBody" style="text-shadow:0 0 8px rgba(255,255,255,0.6);">
           <div class="form-group">
-            <label>Company / Firm Name</label>
+            <label style="color:#000;">Company / Firm Name</label>
             <input type="text" id="cf-company" placeholder="Your company name">
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label>Phone</label>
+              <label style="color:#000;">Phone</label>
               <input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX">
             </div>
             <div class="form-group">
-              <label>Material Category</label>
+              <label style="color:#000;">Material Category</label>
               <select id="cf-material">
                 <option>Grey Tile Adhesives</option>
                 <option>White Tile Adhesives</option>
@@ -2034,17 +2164,17 @@ footer {
             </div>
           </div>
           <div class="form-group">
-            <label>Project Location &amp; Quantity</label>
+            <label style="color:#000;">Project Location &amp; Quantity</label>
             <textarea id="cf-details" placeholder="e.g. Gachibowli — 200 bags Tilefixo Sumo CT, 50 kits STYLE 2K Epoxy Grout (Desert Yellow), delivery by 15 July"></textarea>
           </div>
           <button class="form-submit-btn" id="contactSubmitBtn" onclick="submitEnquiry()">Send Enquiry →</button>
-          <p style="font-family:var(--mono);font-size:9px;color:var(--text3);text-align:center;margin-top:12px;letter-spacing:.08em;">AI Concierge responds in &lt;4 min · info@build360.online</p>
+          <p style="font-family:var(--mono);font-size:9px;color:#000;text-align:center;margin-top:12px;letter-spacing:.08em;">AI Concierge responds in &lt;4 min · info@build360.online</p>
         </div>
         <div class="form-success" id="contactSuccess">
           <div class="form-success-inner">
             <div class="form-success-icon">◆</div>
             <div class="form-success-title">Enquiry Received</div>
-            <p style="font-size:13px;color:var(--text2);line-height:1.6;">Our AI Concierge will respond in under 4 minutes with pricing.</p>
+            <p style="font-size:13px;color:#000;line-height:1.6;">Our AI Concierge will respond in under 4 minutes with pricing.</p>
             <div class="form-success-ref" id="successRef"></div>
           </div>
         </div>
@@ -2059,22 +2189,24 @@ footer {
     <div class="footer-grid">
       <div>
         <a class="footer-logo" href="#home"><img src="logo.jpg" alt="" class="footer-logo-img"><span class="logo-txt">build<em>360</em>.online</span></a>
-        <div class="footer-tagline" style="margin-top: 6px;">India's Premium Tiling Procurement Network</div>
-        <p class="footer-desc">Tile Adhesives · Epoxy Grouts · Cement Grouts · Specialty Cleaners. Request. Quote. Build — across India.</p>
+        <div class="footer-tagline" style="margin-top: 6px;">India's Organized Procurement Network</div>
+        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build — across India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
       </div>
       <div class="footer-col">
-        <h5>Categories</h5>
-        <a href="adhesives.html">Grey Tile Adhesives</a>
-        <a href="adhesives.html">White Tile Adhesives</a>
-        <a href="adhesives.html">Epoxy &amp; Cement Grouts</a>
-        <a href="adhesives.html">Specialty &amp; Cleaners</a>
+        <h5>Services</h5>
+        <a href="#ai-rfq">AI RFQ Generator</a>
+        <a href="adhesives.html">Browse Products</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="#estimator">Smart Estimator</a>
+        <a href="#contact">Request a Quote</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering →</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <a href="#how-it-works">How It Works</a>
-        <a href="bid.html">Bid Platform</a>
-        <a href="#estimator">Smart Estimator</a>
+        <a href="#hyderabad">Hyderabad Coverage</a>
         <a href="service-providers.html">Service Providers</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering</a>
         <a href="#contact">Contact</a>
         <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
       </div>
@@ -2518,16 +2650,87 @@ function submitEnquiry() {
   btn.disabled = true;
   btn.textContent = 'Routing to Concierge...';
 
+  const leadId = 'ENQ-' + Date.now().toString().slice(-6);
+  const timestamp = new Date().toISOString();
+
   const msg = `Hi Srikar,\n\nNew enquiry from build360.online:\n\nCompany: ${company}\nPhone: ${phone}\nMaterial: ${material}\nDetails: ${details}\n\nPlease respond with pricing.`;
+
+  const payload = { company, phone, material, details, lead_id: leadId, source: 'web-enquiry', timestamp };
+
+  fetch('/submit-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(err => console.warn('CRM submission deferred:', err));
 
   setTimeout(() => {
     window.open(waLink(msg), '_blank');
     document.getElementById('contactFormBody').style.display = 'none';
     document.getElementById('contactSuccess').classList.add('show');
-    const ref = 'ENQ-' + Date.now().toString().slice(-6);
-    document.getElementById('successRef').textContent = '// Reference: ' + ref;
+    document.getElementById('successRef').textContent = '// Reference: ' + leadId;
   }, 1200);
 }
+
+/* ─── UPLOAD FLOAT BEHAVIOR ─── */
+let lastScrollY = 0;
+function handleUploadFloatScroll() {
+  const el = document.getElementById('uploadFloat');
+  if (!el) return;
+  const sy = window.scrollY;
+  if (sy > 80 && sy > lastScrollY) { el.style.transform='translateY(140px)'; el.style.opacity='0'; }
+  else { el.style.transform='translateY(0)'; el.style.opacity='1'; }
+  lastScrollY = sy;
+}
+
+/* ─── AI FILE UPLOAD HANDLER ─── */
+function triggerFileUpload() {
+  const inp = document.getElementById('aiFileInput');
+  if (inp) { inp.click(); return; }
+  const inp2 = document.getElementById('globalFileInput');
+  if (inp2) inp2.click();
+}
+document.addEventListener('change', e => {
+  const input = e.target;
+  if (input.id !== 'aiFileInput' && input.id !== 'globalFileInput') return;
+  const files = input.files;
+  if (!files || !files.length) return;
+  const names = Array.from(files).map(f => f.name).join(', ');
+  const zone = document.getElementById('aiUploadZone');
+  if (zone) {
+    const label = zone.querySelector('.upload-label');
+    if (label) {
+      label.innerHTML = `✅ ${files.length} file(s) selected</div>`;
+      const hint = zone.querySelector('.upload-hint');
+      if (hint) hint.textContent = names;
+    }
+    zone.style.borderColor = '#16a34a';
+  }
+  document.getElementById('aiRfqBtn')?.scrollIntoView({ behavior:'smooth', block:'center' });
+});
+
+/* ─── AI RFQ BUTTON ─── */
+document.addEventListener('click', e => {
+  if (e.target.id === 'aiRfqBtn' || e.target.closest('#aiRfqBtn')) {
+    e.preventDefault();
+    const inp = document.getElementById('aiFileInput');
+    if (!inp || !inp.files || !inp.files.length) {
+      inp?.click();
+      return;
+    }
+    const names = Array.from(inp.files).map(f => f.name).join(', ');
+    const msg = `Hi Srikar,\n\nAI RFQ from build360.online.\n\nFiles ready for processing: ${names}\n\nPlease share a quote.`;
+    window.open(waLink(msg), '_blank');
+    inp.value = '';
+    const zone = document.getElementById('aiUploadZone');
+    if (zone) {
+      const label = zone.querySelector('.upload-label');
+      if (label) label.innerHTML = '📁 Click to Upload or Drag & Drop Your File';
+      const hint = zone.querySelector('.upload-hint');
+      if (hint) hint.textContent = 'Supports images (JPEG/PNG), PDF, XLS, XLSX — up to 25 MB';
+      zone.style.borderColor = '';
+    }
+  }
+});
 
 /* ─── INIT ─── */
 window.addEventListener('DOMContentLoaded', () => {
@@ -2536,6 +2739,8 @@ window.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   renderSwatches();
   setInterval(updateTickerPrices, 300000); // update every 5 min
+  document.getElementById('uploadFloat')?.classList.add('visible');
+  window.addEventListener('scroll', handleUploadFloatScroll, { passive: true });
 });
 </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07848c56c52557b',t:'MTc4MDc1ODAwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
