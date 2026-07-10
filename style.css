@@ -63,7 +63,6 @@ body {
   font-feature-settings: 'cv11' 1, 'ss01' 1; /* Inter alternates */
   background: var(--color-bg-app);
   color: var(--color-text-main);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -92,7 +91,7 @@ body::before {
   align-items: center;
   gap: 6px;
   font-family: var(--body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--color-text-main);
   background: var(--color-bg-surface-alt);
@@ -199,7 +198,7 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 16px; flex-wrap: wrap; list-style: none; align-items: center; }
 .nav-links a {
   font-family: var(--body);
   font-size: 13px;
@@ -1012,6 +1011,8 @@ section { position: relative; z-index: 1; }
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .bom-table td.val { color: var(--color-primary); font-weight: 600; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll table { min-width: 600px; }
 .bom-table tr:last-child td { border-bottom: none; }
 .bom-table tr:hover td { background: rgba(222,90,63,0.02); }
 .result-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
@@ -1177,8 +1178,8 @@ footer {
   border-bottom: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 32px;
 }
-.footer-logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--display); font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px; text-decoration: none; }
-.footer-logo em { color: var(--color-primary); font-style: normal; letter-spacing: 0; }
+.footer-logo { display: inline; font-family: var(--display); font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px; text-decoration: none; }
+.footer-logo em { color: var(--color-primary); font-style: normal; }
 .footer-logo .logo-txt { display: inline-flex; align-items: center; }
 .footer-tagline {
   font-family: var(--mono);
@@ -1426,6 +1427,7 @@ footer {
   .process-step:nth-child(2n) { border-right: none; }
   .process-step:last-child { border-right: none; }
   .wa-banner-inner { flex-direction: column; align-items: flex-start; }
+  .bom-table th, .bom-table td { padding: 8px 6px; font-size: 10px; }
 }
 @media (max-width: 480px) {
   .logo { font-size: 18px; gap: 0; }
