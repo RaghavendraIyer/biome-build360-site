@@ -2166,44 +2166,9 @@ footer {
         </div>
       </div>
 
-        <div class="contact-form reveal" style="margin-top:40vh;align-self:end;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
+        <div class="contact-form reveal" style="align-self:end;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
         <div class="form-header" style="background:transparent;border-bottom-color:rgba(255,255,255,0.3);text-shadow:0 0 12px rgba(255,255,255,0.5);color:#000;">// Procurement Enquiry</div>
-        <div class="form-body" id="contactFormBody" style="text-shadow:0 0 8px rgba(255,255,255,0.6);">
-          <div class="form-group">
-            <label style="color:#000;">Company / Firm Name</label>
-            <input type="text" id="cf-company" placeholder="Your company name">
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label style="color:#000;">Phone</label>
-              <input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX">
-            </div>
-            <div class="form-group">
-              <label style="color:#000;">Material Category</label>
-              <select id="cf-material">
-                <option>Grey Tile Adhesives</option>
-                <option>White Tile Adhesives</option>
-                <option>Epoxy / Cement Grouts</option>
-                <option>Specialty Adhesives &amp; Cleaners</option>
-                <option>Multiple Tiling Categories</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label style="color:#000;">Project Location &amp; Quantity</label>
-            <textarea id="cf-details" placeholder="e.g. Gachibowli — 200 bags Tilefixo Sumo CT, 50 kits STYLE 2K Epoxy Grout (Desert Yellow), delivery by 15 July"></textarea>
-          </div>
-          <button class="form-submit-btn" id="contactSubmitBtn" onclick="submitEnquiry()">Send Enquiry →</button>
-          <p style="font-family:var(--mono);font-size:9px;color:#000;text-align:center;margin-top:12px;letter-spacing:.08em;">AI Concierge responds in &lt;4 min · info@build360.online</p>
-        </div>
-        <div class="form-success" id="contactSuccess">
-          <div class="form-success-inner">
-            <div class="form-success-icon">◆</div>
-            <div class="form-success-title">Enquiry Received</div>
-            <p style="font-size:13px;color:#000;line-height:1.6;">Our AI Concierge will respond in under 4 minutes with pricing.</p>
-            <div class="form-success-ref" id="successRef"></div>
-          </div>
-        </div>
+        <iframe src="https://flint-dawn-39f.notion.site/ebd/3545e0a1b48a80c8a252ea130b376a64?v=1948249f292342ce8f28dc76c07737e6" width="100%" height="650" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -2658,43 +2623,6 @@ function calcBOM() {
   document.getElementById('bom-note').textContent = `Based on ${area.toLocaleString()} sqft tiling area. Standard 5% wastage for adhesive and 10% for grout included. Recommended products based on catalog application rules.`;
   document.getElementById('wa-bom').href = waLink(waMsg);
   document.getElementById('res-bom').classList.add('show');
-}
-
-/* ─── CONTACT FORM ─── */
-function submitEnquiry() {
-  const company  = document.getElementById('cf-company').value.trim();
-  const phone    = document.getElementById('cf-phone').value.trim();
-  const material = document.getElementById('cf-material').value;
-  const details  = document.getElementById('cf-details').value.trim();
-  const phoneDigits = phone.replace(/\D/g, '');
-
-  if (!company) { alert('Please enter your company name.'); return; }
-  if (phoneDigits.length < 10) { alert('Please enter a valid 10-digit phone number.'); return; }
-  if (!details) { alert('Please describe your project location and quantity.'); return; }
-
-  const btn = document.getElementById('contactSubmitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Routing to Concierge...';
-
-  const leadId = 'ENQ-' + Date.now().toString().slice(-6);
-  const timestamp = new Date().toISOString();
-
-  const msg = `Hi Srikar,\n\nNew enquiry from build360.online:\n\nCompany: ${company}\nPhone: ${phone}\nMaterial: ${material}\nDetails: ${details}\n\nPlease respond with pricing.`;
-
-  const payload = { company, phone, material, details, lead_id: leadId, source: 'web-enquiry', timestamp };
-
-  fetch('/submit-lead', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(err => console.warn('CRM submission deferred:', err));
-
-  setTimeout(() => {
-    window.open(waLink(msg), '_blank');
-    document.getElementById('contactFormBody').style.display = 'none';
-    document.getElementById('contactSuccess').classList.add('show');
-    document.getElementById('successRef').textContent = '// Reference: ' + leadId;
-  }, 1200);
 }
 
 /* ─── UPLOAD FLOAT BEHAVIOR ─── */
