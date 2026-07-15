@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
+
 <meta property="og:image" content="https://build360.online/lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg">
 <title>Service Providers — Coming Soon | Build360.online</title>
 <meta name="description" content="Build360.online is onboarding verified contractors, material vendors, logistics providers, and skilled labour relevant to organised construction materials. Join our network.">
@@ -83,18 +83,6 @@
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="service-providers.html" style="color:var(--color-primary)">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20construction%20material%20pricing." target="_blank">Get Pricing →</a></li>
-      <li>
-        <div class="nav-tenant" tabindex="0">
-          <span class="tenant-marker">📍</span> Hyderabad
-          <span class="nav-caret">▾</span>
-          <div class="nav-tenant-dropdown">
-            <a href="#" class="active">📍 Hyderabad</a>
-            <a href="#">Bengaluru <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-            <a href="#">Mumbai <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-            <a href="#">Delhi NCR <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-          </div>
-        </div>
-      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -118,17 +106,6 @@
     <li><a href="index.html#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20construction%20material%20pricing." target="_blank">Get Pricing →</a></li>
-    <li>
-      <div class="mob-tenant">
-        <span style="font-size:14px;">📍</span>
-        <select onchange="switchTenant(this.value)">
-          <option value="hyderabad" selected>Hyderabad</option>
-          <option value="bangalore" disabled>Bengaluru (Coming soon)</option>
-          <option value="mumbai" disabled>Mumbai (Coming soon)</option>
-          <option value="delhi" disabled>Delhi NCR (Coming soon)</option>
-        </select>
-      </div>
-    </li>
   </ul>
 </div>
 <a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20register%20as%20a%20service%20provider." target="_blank" title="WhatsApp Srikar">💬</a>
@@ -203,7 +180,6 @@
 
 <script>
 function initHamburger(){const b=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('open');});document.addEventListener('click',e=>{if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});}
-function switchTenant(v){const a={hyderabad:'Hyderabad',bangalore:'Bengaluru',mumbai:'Mumbai',delhi:'Delhi NCR'};alert(`📍 ${a[v]||v} market coming soon. You'll stay on Hyderabad for now.`);}
 window.addEventListener('DOMContentLoaded',()=>{initHamburger();});
 </script>
 </body>

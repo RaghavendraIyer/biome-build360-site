@@ -85,68 +85,7 @@ body::before {
 ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 
 
-/* ─── TENANT / CITY DROPDOWN ─── */
-.nav-tenant {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--body);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-main);
-  background: var(--color-bg-surface-alt);
-  border: 1px solid var(--color-border-light);
-  border-radius: 6px;
-  padding: 5px 12px;
-  cursor: pointer;
-  transition: background .2s;
-  position: relative;
-  white-space: nowrap;
-}
-.nav-tenant:hover { background: var(--color-bg-surface); }
-.nav-tenant-dropdown {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  min-width: 180px;
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  padding: 6px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .15s, visibility .15s, transform .15s;
-  transform: translateY(4px);
-  z-index: 60;
-}
-.nav-tenant:hover .nav-tenant-dropdown,
-.nav-tenant:focus-within .nav-tenant-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.nav-tenant-dropdown a {
-  display: block;
-  padding: 8px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background .15s, color .15s;
-}
-.nav-tenant-dropdown a:hover { background: var(--color-primary-10); color: var(--color-primary); }
-.nav-tenant-dropdown a.active { color: var(--color-primary); font-weight: 600; }
-.tenant-marker { font-size: 14px; }
-.mob-tenant { display: none; align-items: center; gap: 6px; padding: 4px 0; }
-.mob-tenant select {
-  flex: 1;
-  padding: 9px 12px;
-  border: 1px solid var(--color-border-light);
-  border-radius: 4px;
-  font-family: var(--body);
-  font-size: 13px;
+
   background: var(--color-bg-surface);
   color: var(--color-text-main);
 }
@@ -198,7 +137,7 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 10px; list-style: none; align-items: center; margin-left: auto; }
 .nav-links a {
   font-family: var(--body);
   font-size: 13px;
@@ -246,7 +185,7 @@ nav {
 .nav-cta {
   background: var(--color-primary) !important;
   color: #FFFFFF !important;
-  padding: 8px 20px;
+  padding: 8px 16px;
   border-radius: var(--radius);
   font-weight: 600 !important;
   transition: all .2s !important;
@@ -1411,8 +1350,6 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
-  .nav-tenant { display: none; }
-  .mob-tenant { display: flex; }
   .agents-grid { grid-template-columns: 1fr; }
   .agent-card.founder { grid-column: 1; }
   .policy-grid { grid-template-columns: 1fr; }

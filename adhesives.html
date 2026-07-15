@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
+
 <meta property="og:image" content="https://build360.online/lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg">
 <title>UltraTech Tilefixo Adhesives & Grouts — Build360.online</title>
 <meta name="description" content="Explore the complete range of UltraTech Tilefixo tile adhesives, epoxy grouts, spot bonding agents, and cleaners. Calculate grout joints and preview 26 colors.">
@@ -245,18 +245,6 @@
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20bulk%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
-      <li>
-        <div class="nav-tenant" tabindex="0">
-          <span class="tenant-marker">📍</span> Hyderabad
-          <span class="nav-caret">▾</span>
-          <div class="nav-tenant-dropdown">
-            <a href="#" class="active">📍 Hyderabad</a>
-            <a href="#">Bengaluru <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-            <a href="#">Mumbai <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-            <a href="#">Delhi NCR <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-          </div>
-        </div>
-      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -282,17 +270,6 @@
     <li><a href="index.html#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20bulk%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
-    <li>
-      <div class="mob-tenant">
-        <span style="font-size:14px;">📍</span>
-        <select onchange="switchTenant(this.value)">
-          <option value="hyderabad" selected>Hyderabad</option>
-          <option value="bangalore" disabled>Bengaluru (Coming soon)</option>
-          <option value="mumbai" disabled>Mumbai (Coming soon)</option>
-          <option value="delhi" disabled>Delhi NCR (Coming soon)</option>
-        </select>
-      </div>
-    </li>
   </ul>
 </div>
 
@@ -769,7 +746,7 @@
 
       <!-- ── SAINT GOBAIN WEBER ── -->
       <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="standard">
-        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset premier (Grey)">
+        <img class="card-img" src="weberset premier packshot.jpg" alt="Saint Gobain Weber weberset premier (Grey)">
         <span class="card-badge">Saint Gobain Weber</span>
         <h3>weberset premier (Grey)</h3>
         <p>A polymer-modified, thinset tile adhesive designed for fixing ceramic tiles in internal areas. Suitable for both horizontal and vertical application over cementitious substrates.</p>
@@ -783,7 +760,7 @@
       </div>
 
       <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
-        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset classic (Grey)">
+        <img class="card-img" src="weberset classic packshot.jpg" alt="Saint Gobain Weber weberset classic (Grey)">
         <span class="card-badge">Saint Gobain Weber</span>
         <h3>weberset classic (Grey)</h3>
         <p>A high polymer-modified thinset adhesive specially formulated for fixing low-porosity vitrified tiles on internal floors. Also suitable for ceramic tiles and tile-on-tile applications.</p>
@@ -825,7 +802,7 @@
       </div>
 
       <div class="catalog-card" data-brand="saint-gobain" data-category="adhesive" data-grade="premium">
-        <img class="card-img" src="saint-gobain-placeholder.jpg" alt="Saint Gobain Weber weberset plus-white (White)">
+        <img class="card-img" src="weberset plus white packshot.jpg" alt="Saint Gobain Weber weberset plus-white (White)">
         <span class="card-badge">Saint Gobain Weber</span>
         <h3>weberset plus-white (White)</h3>
         <p>A polymer-modified cementitious adhesive for fixing vitrified tiles and natural stones on internal or external walls and floors. High bond at high bed thicknesses for window sills and jams.</p>
@@ -1330,11 +1307,6 @@ function initReveal() {
     });
   }, { threshold: 0.1 });
   els.forEach(el => obs.observe(el));
-}
-
-function switchTenant(v) {
-  const names = { hyderabad:'Hyderabad', bangalore:'Bengaluru', mumbai:'Mumbai', delhi:'Delhi NCR' };
-  alert(`📍 ${names[v] || v} market coming soon. You'll stay on Hyderabad for now.`);
 }
 window.addEventListener('DOMContentLoaded', () => {
   renderSwatches();

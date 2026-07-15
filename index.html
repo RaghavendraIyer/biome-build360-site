@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/jpeg" href="favicon-32x32.jpg">
+
 <meta property="og:image" content="https://build360.online/lucid-origin_A_massive_organized_raw_materials_stockpile_terminal_seen_at_dramatic_twilight_w-0.jpg">
 <title>Build360.online — India's Premium Tile Adhesive & Grout Procurement Network</title>
 <meta name="description" content="Source premium tile adhesives, epoxy grouts, spot bonding systems, and tile cleaners in bulk. India's construction procurement network for contractors and tiling professionals.">
@@ -173,7 +173,7 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 10px; list-style: none; align-items: center; margin-left: auto; }
 .nav-links a {
   font-family: var(--body);
   font-size: 13px;
@@ -1474,18 +1474,6 @@ footer {
       <li><a href="#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
-      <li>
-        <div class="nav-tenant" tabindex="0">
-          <span class="tenant-marker">📍</span> Hyderabad
-          <span class="nav-caret">▾</span>
-          <div class="nav-tenant-dropdown">
-            <a href="#" class="active">📍 Hyderabad</a>
-            <a href="#">Bengaluru <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-            <a href="#">Mumbai <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-            <a href="#">Delhi NCR <span style="color:var(--color-text-muted);font-size:10px;font-family:var(--mono);">Coming soon</span></a>
-          </div>
-        </div>
-      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1511,17 +1499,7 @@ footer {
     <li><a href="#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
-    <li>
-      <div class="mob-tenant">
-        <span style="font-size:14px;">📍</span>
-        <select onchange="switchTenant(this.value)">
-          <option value="hyderabad" selected>Hyderabad</option>
-          <option value="bangalore" disabled>Bengaluru (Coming soon)</option>
-          <option value="mumbai" disabled>Mumbai (Coming soon)</option>
-          <option value="delhi" disabled>Delhi NCR (Coming soon)</option>
-        </select>
-      </div>
-    </li>
+
   </ul>
 </div>
 
@@ -2685,12 +2663,6 @@ document.addEventListener('click', e => {
     }
   }
 });
-
-/* ─── TENANT SWITCHER ─── */
-function switchTenant(v) {
-  const names = { hyderabad:'Hyderabad', bangalore:'Bengaluru', mumbai:'Mumbai', delhi:'Delhi NCR' };
-  alert(`📍 ${names[v] || v} market coming soon. You'll stay on Hyderabad for now.`);
-}
 
 /* ─── INIT ─── */
 window.addEventListener('DOMContentLoaded', () => {
