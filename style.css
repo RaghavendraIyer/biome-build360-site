@@ -43,9 +43,9 @@
 
   /* Typography stacks */
   --mono:      'JetBrains Mono', monospace;
-  --display:   'Plus Jakarta Sans', 'Inter', sans-serif;
-  --display-alt: 'Space Grotesk', 'Plus Jakarta Sans', 'Inter', sans-serif;
-  --body:      'Inter', 'Plus Jakarta Sans', sans-serif;
+  --display:   'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --display-alt: 'Space Grotesk', 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --body:      'Outfit', 'Plus Jakarta Sans', sans-serif;
 
   /* Layout */
   --nav-h:     64px;
@@ -60,7 +60,7 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--body);
-  font-feature-settings: 'cv11' 1, 'ss01' 1; /* Inter alternates */
+  font-feature-settings: 'cv02' 1, 'cv05' 1; /* Outfit alternates */
   background: var(--color-bg-app);
   color: var(--color-text-main);
   -webkit-font-smoothing: antialiased;
@@ -1409,4 +1409,114 @@ footer {
 }
 @media (max-width: 480px) {
   .brand-hero { padding: 36px 0; }
+}
+
+/* ─── WOW FACTOR: Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px var(--color-primary-18); }
+  50%      { box-shadow: 0 0 20px var(--color-primary-18), 0 0 40px rgba(222,90,63,0.08); }
+}
+
+/* ─── WOW FACTOR: Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── WOW FACTOR: Reveal scroll animation ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── WOW FACTOR: Card micro-interactions ─── */
+.catalog-card,
+.agent-card,
+.soon-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.catalog-card:hover,
+.agent-card:hover,
+.soon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── WOW FACTOR: Button polish ─── */
+.btn {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background 0.2s ease !important;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(222,90,63,0.3) !important;
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-ghost:hover {
+  box-shadow: 0 4px 16px rgba(255,255,255,0.15) !important;
+}
+
+/* ─── WOW FACTOR: Nav link polish ─── */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 1px;
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-links a {
+  position: relative;
+}
+.nav-links a:hover::after,
+.nav-links a[style*="color:var(--color-primary)"]::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ─── WOW FACTOR: Image treatments ─── */
+.card-img {
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.catalog-card:hover .card-img {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* ─── WOW FACTOR: Glassmorphism polish ─── */
+.glass {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+}
+
+/* ─── WOW FACTOR: Hero section accent ─── */
+.section-title em {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: normal;
 }
