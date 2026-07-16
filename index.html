@@ -174,7 +174,7 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 10px; list-style: none; align-items: center; margin-left: auto; }
+.nav-links { display: flex; gap: 18px; list-style: none; align-items: center; margin-left: auto; }
 .nav-links a {
   font-family: var(--body);
   font-size: 13px;
@@ -864,148 +864,6 @@ section { position: relative; z-index: 1; }
 .policy-desc { font-size: 13px; font-weight: 400; color: var(--color-text-secondary); line-height: 1.65; }
 
 /* ─── ESTIMATOR ─── */
-.estimator-shell {
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-top: 56px;
-  box-shadow: var(--shadow-sm);
-}
-.estimator-tabs {
-  display: flex;
-  border-bottom: 1px solid var(--color-border-light);
-  background: var(--color-bg-surface-alt);
-  overflow-x: auto;
-}
-.est-tab {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  padding: 14px 24px;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all .2s;
-  background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.est-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
-.est-tab:hover { color: var(--color-text-main); }
-.estimator-body { padding: 40px; }
-.est-panel { display: none; }
-.est-panel.active { display: block; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-.form-group select, .form-group input {
-  padding: 12px 16px;
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius);
-  color: var(--color-text-main);
-  font-family: var(--mono);
-  font-size: 13px;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-  -webkit-appearance: none;
-}
-.form-group select:focus, .form-group input:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(222,90,63,0.12);
-}
-.form-group select option { background: var(--color-bg-surface); }
-.calc-btn {
-  width: 100%;
-  padding: 16px;
-  background: var(--color-primary);
-  color: #FFFFFF;
-  border: none;
-  border-radius: var(--radius);
-  font-family: var(--display);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all .2s;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(222,90,63,0.25);
-}
-.calc-btn:hover { background: var(--color-primary-hover); box-shadow: 0 4px 16px rgba(222,90,63,0.35); }
-.est-result {
-  background: var(--color-bg-surface-alt);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius);
-  padding: 24px;
-  display: none;
-}
-.est-result.show { display: block; }
-.result-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--color-border-light);
-}
-.result-row:last-child { border-bottom: none; }
-.result-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-.result-val { font-family: var(--display); font-size: 20px; font-weight: 800; color: var(--color-primary); }
-.result-note {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: var(--color-text-muted);
-  margin-top: 16px;
-  letter-spacing: .05em;
-  line-height: 1.5;
-}
-.bom-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 8px;
-}
-.bom-table th {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  padding: 10px 14px;
-  text-align: left;
-  border-bottom: 1px solid var(--color-border-light);
-  background: var(--color-bg-surface-alt);
-}
-.bom-table td {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--color-border-subtle);
-}
-.bom-table td.val { color: var(--color-primary); font-weight: 600; }
-.bom-table tr:last-child td { border-bottom: none; }
-.bom-table tr:hover td { background: rgba(222,90,63,0.02); }
-.result-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.table-scroll table { min-width: 600px; }
-
 /* ─── CTA ─── */
 .cta-section {
   background: linear-gradient(135deg, rgba(222,90,63,.06) 0%, var(--color-bg-app) 50%);
@@ -1471,7 +1329,6 @@ footer {
         </div>
       </li>
       <li><a href="bid.html">Bid</a></li>
-      <li><a href="#estimator">Estimator</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
@@ -1496,7 +1353,6 @@ footer {
       </div>
     </li>
     <li><a href="bid.html" class="mob-link">Bid</a></li>
-    <li><a href="#estimator" class="mob-link">Estimator</a></li>
     <li><a href="#contact" class="mob-link">Contact</a></li>
     <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
     <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
@@ -1554,11 +1410,11 @@ footer {
         <h1>Verified Brands<br>For Every<br><em>Specialty Need.</em></h1>
         <p class="hero-sub">
           Starting with premium tile adhesives and epoxy grouts. Get competitive quotes for UltraTech and MYK Laticrete over WhatsApp.
-          <strong>Expanding soon to cement, steel, and blocks.</strong>
+          <strong>Expanding to cement, steel, and blocks.</strong>
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#estimator">Tiling Estimator</a>
-          <a class="btn btn-ghost" href="adhesives.html#shade-card">Grout Shade Card</a>
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20building%20materials." target="_blank">💬 Get Pricing</a>
+          <a class="btn btn-ghost" href="adhesives.html">View Products</a>
         </div>
       </div>
     </div>
@@ -1566,12 +1422,12 @@ footer {
       <div class="hero-inner">
         <h1>Procurement<br>As Simple As<br><em>Sending a Message.</em></h1>
         <p class="hero-sub">
-          WhatsApp your material requirements and project site. Our smart engine matches you with the lowest verified bids in under 4 hours.
+          One request, one relationship, all materials coordinated. From cement and steel to tiles, adhesives, and finishing supplies : source your entire project through a single verified partner.
           <strong>We handle the logistics : you focus on the build.</strong>
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20WhatsApp%20my%20tile%20grout%20requirements." target="_blank">💬 WhatsApp Us Now</a>
-          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+          <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20competitive%20pricing%20for%20construction%20materials." target="_blank">💬 Get a Quote</a>
+          <a class="btn btn-ghost" href="#contact">Talk to Us</a>
         </div>
       </div>
     </div>
@@ -1660,7 +1516,6 @@ footer {
         <p class="section-lead" style="margin-top:16px;">Scan the QR code, send us your requirements on WhatsApp, and get a quote in under 4 hours. No app download. No sign-up. No friction.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
           <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%2C%20I%27d%20like%20to%20place%20a%20material%20order." target="_blank">💬 Open WhatsApp</a>
-          <a class="btn btn-ghost" href="#estimator">Calculate First →</a>
         </div>
       </div>
       <div class="qr-box">
@@ -1776,322 +1631,18 @@ footer {
   </div>
 </section>
 
-<!-- ─── HYDERABAD MARKET CONTEXT ─── -->
-<section id="hyderabad" class="hyderabad-section section-pad">
+<!-- ─── HYDERABAD → PAN INDIA ─── -->
+<section id="pan-india" class="hyderabad-section section-pad">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Built for <em>Hyderabad's Growth</em> Corridors.</h2>
-      <p class="section-lead">We operate where the city is expanding. Our supply network covers every major development zone with priority sourcing from local wholesale nodes : ensuring faster delivery and competitive project pricing.</p>
-    </div>
-    <div class="hyderabad-zones reveal">
-      <span class="hyderabad-zone">📍 Kokapet</span>
-      <span class="hyderabad-zone">📍 Narsingi</span>
-      <span class="hyderabad-zone">📍 Kompally</span>
-      <span class="hyderabad-zone">📍 Hitec City</span>
-      <span class="hyderabad-zone" style="border-color:var(--color-primary);color:#fff;background:var(--color-primary);">★ Priority Sourcing : Wholesale Nodes</span>
-    </div>
-    <div class="hyderabad-stats reveal" style="margin-top:48px;">
-      <div class="hyderabad-stat">
-        <strong id="hz-stat-1">4</strong>
-        <span>Hyderabad Supply Partners</span>
-      </div>
-      <div class="hyderabad-stat">
-        <strong>&lt;2 hrs</strong>
-        <span>Intra-City Delivery</span>
-      </div>
-      <div class="hyderabad-stat">
-        <strong>4</strong>
-        <span>Growth Corridors Covered</span>
-      </div>
-      <div class="hyderabad-stat">
-        <strong>15+</strong>
-        <span>Wholesale Node Partners</span>
-      </div>
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Pan India <em>Coverage.</em></h2>
+      <p class="section-lead" style="max-width:640px;margin:0 auto;">From metro cities to Tier-2 towns : our supplier network spans India. Local knowledge, national reach, reliable delivery wherever you build.</p>
     </div>
   </div>
 </section>
 
-<!-- ─── SMART ESTIMATOR ─── -->
-<section id="estimator" class="section-pad" style="background:var(--bg2);">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Smart Tiling <em>Estimator.</em></h2>
-      <p class="section-lead">Calculate quantities for your project before you request a quote. Instant estimates across adhesives, joint grouts, cleaners, and shade swatches.</p>
-    </div>
-
-    <div class="estimator-shell reveal">
-      <div class="estimator-tabs">
-        <button class="est-tab active" onclick="switchTab('tile', this)">Tile Adhesive</button>
-        <button class="est-tab" onclick="switchTab('grout', this)">Grout Joint</button>
-        <button class="est-tab" onclick="switchTab('shade', this)">Shade Card</button>
-        <button class="est-tab" onclick="switchTab('cleaner', this)">Tile Cleaner</button>
-        <button class="est-tab" onclick="switchTab('bom', this)">Full Project BOM</button>
-      </div>
-      <div class="estimator-body">
-
-        <!-- TILE ADHESIVE -->
-        <div class="est-panel active" id="tab-tile">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Tile Area (Square Feet)</label>
-              <input type="number" id="t-area" placeholder="e.g. 500" min="1">
-            </div>
-            <div class="form-group">
-              <label>Application Type & Bed Thickness</label>
-              <select id="t-type">
-                <option value="floor">Floor Ceramic / Vitrified (5mm bed)</option>
-                <option value="wall">Wall Ceramic / Vitrified (3mm bed)</option>
-                <option value="large">Large Format Tile / Marble (6mm bed)</option>
-                <option value="cladding">Vertical Cladding / Heavy Stone (8mm bed)</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Preferred Tilefixo Product</label>
-              <select id="t-product">
-                <option value="Sumo CT">Tilefixo Sumo CT (Dry indoor floor/wall)</option>
-                <option value="Sumo CT Plus">Tilefixo Sumo CT Plus (Small stone indoor)</option>
-                <option value="Aqua Marine VT">Tilefixo Aqua Marine VT (Wet indoor/bath)</option>
-                <option value="Aqua Marine VT Plus">Tilefixo Aqua Marine VT Plus (Balcony/terrace)</option>
-                <option value="Royal NT">Tilefixo Royal NT (Stone cladding)</option>
-                <option value="Ultima">Tilefixo Ultima (Deformable high strength)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Packaging Size</label>
-              <select id="t-bag">
-                <option value="20">20 kg bag (Standard)</option>
-              </select>
-            </div>
-          </div>
-          <button class="calc-btn" onclick="calcTile()">Calculate Adhesive Bags →</button>
-          <div class="est-result" id="res-tile">
-            <div class="result-row">
-              <div class="result-label">Adhesive Bags Required (20kg)</div>
-              <div class="result-val" id="rv-tile-bags">—</div>
-            </div>
-            <div class="result-row">
-              <div class="result-label">Total Material Weight</div>
-              <div class="result-val" id="rv-tile-kg">—</div>
-            </div>
-            <div class="result-row">
-              <div class="result-label">Coverage Standard</div>
-              <div class="result-val" id="rv-tile-cov" style="font-size:14px;color:var(--text2)">—</div>
-            </div>
-            <div class="result-note">Estimates include a 5% wastage buffer. Suitable for UltraTech Tilefixo series.</div>
-            <div class="result-actions">
-              <a class="btn btn-primary" id="wa-tile" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
-              <a class="btn btn-ghost" href="adhesives.html" style="font-size:12px;padding:10px 20px;">View Specs</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GROUT & JOINT -->
-        <div class="est-panel" id="tab-grout">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Tile Length (mm)</label>
-              <input type="number" id="g-length" placeholder="e.g. 600" min="10" value="600">
-            </div>
-            <div class="form-group">
-              <label>Tile Width (mm)</label>
-              <input type="number" id="g-width" placeholder="e.g. 600" min="10" value="600">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Joint Width (mm)</label>
-              <select id="g-jwidth">
-                <option value="2">2 mm (Minimal joint)</option>
-                <option value="3" selected>3 mm (Standard joint)</option>
-                <option value="4">4 mm (Medium joint)</option>
-                <option value="5">5 mm (Wide joint)</option>
-                <option value="8">8 mm (Heavy masonry stone)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Joint Depth / Tile Thickness (mm)</label>
-              <input type="number" id="g-depth" placeholder="e.g. 5" min="1" max="30" value="5">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Total Tile Area (Square Feet)</label>
-              <input type="number" id="g-area" placeholder="e.g. 500" min="1">
-            </div>
-            <div class="form-group">
-              <label>Grout Type (Density)</label>
-              <select id="g-type">
-                <option value="epoxy">Tilefixo STYLE Epoxy Grout (1.75 g/cm³)</option>
-                <option value="cement">Tilefixo Grout CG Cementitious (1.55 g/cm³)</option>
-              </select>
-            </div>
-          </div>
-          <button class="calc-btn" onclick="calcGrout()">Calculate Grout Quantity →</button>
-          <div class="est-result" id="res-grout">
-            <div class="result-row">
-              <div class="result-label">Grout Weight Required</div>
-              <div class="result-val" id="rv-grout-kg">—</div>
-            </div>
-            <div class="result-row">
-              <div class="result-label">Suggested Pack Quantity</div>
-              <div class="result-val" id="rv-grout-packs">—</div>
-            </div>
-            <div class="result-row">
-              <div class="result-label">Density Applied</div>
-              <div class="result-val" id="rv-grout-density" style="font-size:14px;color:var(--text2)">—</div>
-            </div>
-            <div class="result-note">Formula used: $\text{Grout Weight (kg/sqm)} = \text{Density} \times \frac{(L + W) \times W_j \times D_j}{L \times W}$. Includes a 10% safety buffer.</div>
-            <div class="result-actions">
-              <a class="btn btn-primary" id="wa-grout" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
-              <a class="btn btn-ghost" href="adhesives.html#shade-card" style="font-size:12px;padding:10px 20px;">Grout Colors</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- SHADE CARD -->
-        <div class="est-panel" id="tab-shade">
-          <style>
-            .shade-card-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; }
-            .swatch-group { margin-bottom: 20px; }
-            .swatch-group h4 { font-family: var(--display); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 12px; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 6px; }
-            .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 8px; }
-            .swatch-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--color-border-light); cursor: pointer; transition: transform 0.2s, border-color 0.2s; position: relative; padding: 0; box-shadow: var(--shadow-sm); }
-            .swatch-btn:hover, .swatch-btn.active { transform: scale(1.15); border-color: var(--color-primary); box-shadow: var(--shadow-md); z-index: 2; }
-            .swatch-btn::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: inherit; border: 1px solid rgba(0,0,0,0.1); }
-            .mock-tile-box { border: 1px solid var(--color-border-light); padding: 24px; background: var(--color-bg-app); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); }
-            .mock-tile-grid { display: grid; grid-template-columns: repeat(2, 110px); grid-template-rows: repeat(2, 110px); gap: 6px; background: #BC4A3C; padding: 6px; border-radius: 4px; box-shadow: var(--shadow-md); transition: background-color 0.3s; }
-            .mock-tile-item { background: #E5E7EB; border-radius: 2px; }
-            .mock-details { margin-top: 20px; text-align: center; width: 100%; }
-            .mock-details h4 { font-family: var(--display); font-size: 16px; color: var(--color-text-main); margin-bottom: 4px; }
-            .mock-details p { font-size: 12px; color: var(--color-text-secondary); font-family: var(--mono); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; }
-            @media (max-width: 768px) { .shade-card-container { grid-template-columns: 1fr; gap: 24px; } }
-          </style>
-          <div class="shade-card-container">
-            <div>
-              <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px;">Select from 26 attractive colors (representing standard and special catalog shades). Click a swatch to visualize the grout line color on the mock tile layout.</p>
-              
-              <div class="swatch-group">
-                <h4>EG Shade Card Special Shades</h4>
-                <div class="swatch-grid" id="special-swatches"></div>
-              </div>
-              <div class="swatch-group" style="margin-top:24px;">
-                <h4>Standard Colors</h4>
-                <div class="swatch-grid" id="standard-swatches"></div>
-              </div>
-            </div>
-            
-            <div class="mock-tile-box">
-              <div class="mock-tile-grid" id="mockGroutJoints">
-                <div class="mock-tile-item"></div>
-                <div class="mock-tile-item"></div>
-                <div class="mock-tile-item"></div>
-                <div class="mock-tile-item"></div>
-              </div>
-              <div class="mock-details">
-                <h4 id="activeColorName">Terracotta</h4>
-                <p id="activeColorType">Standard Grout Color</p>
-                <a class="btn btn-primary" id="wa-shade" href="#" target="_blank" style="font-size:12px;padding:10px 20px;width:100%;justify-content:center;">💬 WhatsApp Quote for this Color</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TILE CLEANER -->
-        <div class="est-panel" id="tab-cleaner">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Cleaning Area (Square Feet)</label>
-              <input type="number" id="cl-area" placeholder="e.g. 1000" min="1">
-            </div>
-            <div class="form-group">
-              <label>Stain Severity / Dilution Rate</label>
-              <select id="cl-severity">
-                <option value="light">Light Stain / General Maintenance (1:5 dilution)</option>
-                <option value="medium" selected>Moderate Cement Stains / Post-tiling (1:3 dilution)</option>
-                <option value="heavy">Severe Hardwater / Paint Stain (Undiluted)</option>
-              </select>
-            </div>
-          </div>
-          <button class="calc-btn" onclick="calcCleaner()">Calculate Cleaner Bottles →</button>
-          <div class="est-result" id="res-cleaner">
-            <div class="result-row">
-              <div class="result-label">Tile Cleaner Volume Required</div>
-              <div class="result-val" id="rv-cleaner-vol">—</div>
-            </div>
-            <div class="result-row">
-              <div class="result-label">Suggested Pack Size</div>
-              <div class="result-val" id="rv-cleaner-packs">—</div>
-            </div>
-            <div class="result-note">Calculated for UltraTech Tilefixo Shine Tile Cleaner. 1 Liter covers ~80-120 sqft depending on stain severity and substrate porosity.</div>
-            <div class="result-actions">
-              <a class="btn btn-primary" id="wa-cleaner" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- FULL BOM -->
-        <div class="est-panel" id="tab-bom">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Total Built-Up Tiling Area (sqft)</label>
-              <input type="number" id="bom-area" placeholder="e.g. 2500" min="1">
-            </div>
-            <div class="form-group">
-              <label>Tiling Scope</label>
-              <select id="bom-scope">
-                <option value="normal" selected>Standard Flooring Only (5mm bed)</option>
-                <option value="premium">Flooring + Wet Area Wall cladding (Standard+Anti damp)</option>
-                <option value="heavy">Heavy Marble &amp; Granite External cladding (Large format)</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Grout Joint Type</label>
-              <select id="bom-gtype">
-                <option value="epoxy">Epoxy Grout (Tilefixo STYLE 2K)</option>
-                <option value="cement">Cementitious Grout (Tilefixo Grout CG)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Average Tile Size</label>
-              <select id="bom-tsize">
-                <option value="600">600 × 600 mm (Standard Vitrified)</option>
-                <option value="300">300 × 300 mm (Bath Ceramic)</option>
-                <option value="1200">1200 × 600 mm (Large format slab)</option>
-              </select>
-            </div>
-          </div>
-          <button class="calc-btn" onclick="calcBOM()">Generate Full Project BOM →</button>
-          <div class="est-result" id="res-bom">
-            <div class="table-scroll">
-            <table class="bom-table">
-              <thead>
-                <tr>
-                  <th>Product Category</th>
-                  <th>Recommended Product</th>
-                  <th>Quantity Needed</th>
-                  <th>Packing Size</th>
-                  <th>Total Weight/Vol</th>
-                </tr>
-              </thead>
-              <tbody id="bom-tbody"></tbody>
-            </table>
-            </div>
-            <div class="result-note" id="bom-note"></div>
-            <div class="result-actions">
-              <a class="btn btn-primary" id="wa-bom" href="#" target="_blank" style="font-size:12px;padding:10px 20px;">💬 WhatsApp this BOM →</a>
-              <button class="btn btn-ghost" onclick="window.print()" style="font-size:12px;padding:10px 20px;">🖨 Print BOM</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ─── AI CONCIERGE ─── -->
+<section id="ai-concierge" class="section-pad" style="background:var(--bg2);text-align:center;">
 
 <!-- ─── CTA ─── -->
 <section class="cta-section">
@@ -2160,21 +1711,20 @@ footer {
       <div>
         <a class="footer-logo" href="#home">build<em>360</em>.online</a>
         <div class="footer-tagline" style="margin-top: 6px;">India's Organized Procurement Network</div>
-        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build : across Hyderabad &amp; India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
+        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build : across India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>
         <a href="#ai-rfq">AI RFQ Generator</a>
         <a href="adhesives.html">Browse Products</a>
         <a href="bid.html">Bid Platform</a>
-        <a href="#estimator">Smart Estimator</a>
         <a href="#contact">Request a Quote</a>
         <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering →</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <a href="#how-it-works">How It Works</a>
-        <a href="#hyderabad">Hyderabad Coverage</a>
+        <a href="#pan-india">Pan India Coverage</a>
         <a href="service-providers.html">Service Providers</a>
         <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering</a>
         <a href="#contact">Contact</a>
@@ -2195,13 +1745,7 @@ footer {
   #ai-agents, .brands-section, .result-actions { display: none !important; }
   body { background: #fff !important; color: #000 !important; }
   body::before { display: none !important; }
-  .bom-table th, .bom-table td { color: #000 !important; border-color: #ccc !important; }
-  .est-result { display: block !important; border: 1px solid #ccc; }
-  .bom-table td.val { color: #BC4A3C !important; }
   section { padding: 20px 0 !important; }
-  .estimator-shell { border: 1px solid #ccc !important; }
-  .estimator-tabs, .calc-btn { display: none !important; }
-  .est-panel { display: block !important; }
 }
 </style>
 
@@ -2384,224 +1928,9 @@ function initHamburger() {
 }
 
 /* ─── TAB SWITCHING ─── */
-function switchTab(id, btn) {
-  document.querySelectorAll('.est-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.est-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('tab-' + id).classList.add('active');
-}
-
-/* ─── CALCULATORS ─── */
+/* ─── WA LINK HELPER ─── */
 function waLink(msg) {
   return 'https://wa.me/919032514441?text=' + encodeURIComponent(msg);
-}
-
-const GROUT_COLORS = [
-  { name: 'Desert Yellow', hex: '#E3B85B', type: 'Specialty (EG Shade Card)' },
-  { name: 'Oyster Beige', hex: '#E3D4B6', type: 'Specialty (EG Shade Card)' },
-  { name: 'Cobalt Blue', hex: '#1D4ED8', type: 'Specialty (EG Shade Card)' },
-  { name: 'Stone Brown', hex: '#78350F', type: 'Specialty (EG Shade Card)' },
-  { name: 'Terrific Black', hex: '#1F2937', type: 'Specialty (EG Shade Card)' },
-  { name: 'Lorent Green', hex: '#15803D', type: 'Specialty (EG Shade Card)' },
-  { name: 'Shining Gold', hex: '#D4AF37', type: 'Specialty (EG Shade Card)' },
-  { name: 'Shining Silver', hex: '#C0C0C0', type: 'Specialty (EG Shade Card)' },
-  { name: 'Shining Copper', hex: '#B87333', type: 'Specialty (EG Shade Card)' },
-  { name: 'Pure White', hex: '#FFFFFF', type: 'Standard' },
-  { name: 'Ivory', hex: '#FFFFF0', type: 'Standard' },
-  { name: 'Charcoal', hex: '#36454F', type: 'Standard' },
-  { name: 'Terracotta', hex: '#BC4A3C', type: 'Standard' },
-  { name: 'Burgundy', hex: '#800020', type: 'Standard' },
-  { name: 'Light Grey', hex: '#D3D3D3', type: 'Standard' },
-  { name: 'Dark Grey', hex: '#A9A9A9', type: 'Standard' },
-  { name: 'Sandstone', hex: '#C2B280', type: 'Standard' },
-  { name: 'Misty Grey', hex: '#BCC6CC', type: 'Standard' },
-  { name: 'Soft Pink', hex: '#FFC0CB', type: 'Standard' },
-  { name: 'Alpine Blue', hex: '#6495ED', type: 'Standard' },
-  { name: 'Teal', hex: '#008080', type: 'Standard' },
-  { name: 'Mint Green', hex: '#98FF98', type: 'Standard' },
-  { name: 'Chocolate', hex: '#7B3F00', type: 'Standard' },
-  { name: 'Peach', hex: '#FFDAB9', type: 'Standard' },
-  { name: 'Golden Yellow', hex: '#FFDF00', type: 'Standard' },
-  { name: 'Copper Dust', hex: '#8C5D3A', type: 'Standard' }
-];
-
-function selectGroutColor(name, hex, type) {
-  document.getElementById('mockGroutJoints').style.backgroundColor = hex;
-  document.getElementById('activeColorName').textContent = name;
-  document.getElementById('activeColorType').textContent = type;
-  
-  // Highlight active button
-  document.querySelectorAll('.swatch-btn').forEach(btn => {
-    if (btn.dataset.color === name) btn.classList.add('active');
-    else btn.classList.remove('active');
-  });
-
-  const msg = `Hi Srikar, I'm interested in purchasing the UltraTech Epoxy Grout in the shade "${name}" (${type}) shown on build360.online. Please share pricing.`;
-  document.getElementById('wa-shade').href = waLink(msg);
-}
-
-function renderSwatches() {
-  const specGrid = document.getElementById('special-swatches');
-  const stdGrid = document.getElementById('standard-swatches');
-  if (!specGrid || !stdGrid) return;
-  
-  specGrid.innerHTML = '';
-  stdGrid.innerHTML = '';
-
-  GROUT_COLORS.forEach(color => {
-    const btn = document.createElement('button');
-    btn.className = 'swatch-btn';
-    btn.style.backgroundColor = color.hex;
-    btn.dataset.color = color.name;
-    btn.title = `${color.name} (${color.type})`;
-    btn.onclick = () => selectGroutColor(color.name, color.hex, color.type);
-    
-    if (color.type.includes('EG Shade Card')) {
-      specGrid.appendChild(btn);
-    } else {
-      stdGrid.appendChild(btn);
-    }
-  });
-
-  // Select default terracotta
-  selectGroutColor('Terracotta', '#BC4A3C', 'Standard Grout Color');
-}
-
-function calcTile() {
-  const area = parseFloat(document.getElementById('t-area').value);
-  const type = document.getElementById('t-type').value;
-  const prod = document.getElementById('t-product').value;
-  if (!area || area <= 0) { alert('Please enter a valid tile area.'); return; }
-  
-  const rates = { floor: 4.5, wall: 3.0, large: 6.0, cladding: 8.0 };
-  const labels = {
-    floor: '4.5 kg/sqm (5mm bed thickness)',
-    wall: '3.0 kg/sqm (3mm bed thickness)',
-    large: '6.0 kg/sqm (6mm bed thickness)',
-    cladding: '8.0 kg/sqm (8mm bed thickness)'
-  };
-
-  const areaSqm = area * 0.092903;
-  const kgNeeded = areaSqm * rates[type] * 1.05; // 5% buffer
-  const bags = Math.ceil(kgNeeded / 20);
-
-  document.getElementById('rv-tile-bags').textContent = bags + ' bags';
-  document.getElementById('rv-tile-kg').textContent = Math.ceil(kgNeeded).toLocaleString() + ' kg total';
-  document.getElementById('rv-tile-cov').textContent = labels[type];
-
-  const msg = `Hi Srikar, here's my Tile Adhesive estimate from build360.online:\nProduct: ${prod}\nArea: ${area} sqft\nRequired: ${bags} bags (20kg)\nPlease share best pricing.`;
-  document.getElementById('wa-tile').href = waLink(msg);
-  document.getElementById('res-tile').classList.add('show');
-}
-
-function calcGrout() {
-  const length = parseFloat(document.getElementById('g-length').value);
-  const width = parseFloat(document.getElementById('g-width').value);
-  const jwidth = parseFloat(document.getElementById('g-jwidth').value);
-  const depth = parseFloat(document.getElementById('g-depth').value);
-  const area = parseFloat(document.getElementById('g-area').value);
-  const type = document.getElementById('g-type').value;
-
-  if (!length || length <= 10) { alert('Please enter a valid tile length in mm.'); return; }
-  if (!width || width <= 10) { alert('Please enter a valid tile width in mm.'); return; }
-  if (!depth || depth <= 0) { alert('Please enter a valid tile thickness in mm.'); return; }
-  if (!area || area <= 0) { alert('Please enter a valid tiling area.'); return; }
-
-  const density = type === 'epoxy' ? 1.75 : 1.55;
-  const areaSqm = area * 0.092903;
-  
-  // Volumetric formula: kg/sqm = density * ((L+W)*jw*jd)/(L*W)
-  const kgPerSqm = density * ((length + width) * jwidth * depth) / (length * width);
-  const totalKg = Math.ceil(kgPerSqm * areaSqm * 1.10); // 10% safety buffer
-
-  let packText = '';
-  if (type === 'epoxy') {
-    const kits5kg = Math.ceil(totalKg / 5);
-    packText = `${kits5kg} x 5kg kit(s) or ${totalKg} x 1kg kit(s)`;
-  } else {
-    packText = `${totalKg} x 1kg pack(s)`;
-  }
-
-  document.getElementById('rv-grout-kg').textContent = totalKg + ' kg';
-  document.getElementById('rv-grout-packs').textContent = packText;
-  document.getElementById('rv-grout-density').textContent = `${density} g/cm³ (${type === 'epoxy' ? 'STYLE Epoxy' : 'Grout CG Cement'})`;
-
-  const typeName = type === 'epoxy' ? 'UltraTech STYLE Epoxy Grout' : 'UltraTech Grout CG (Cement)';
-  const msg = `Hi Srikar, here's my Grout estimate from build360.online:\nProduct: ${typeName}\nTile Size: ${length}x${width}mm (Joint: ${jwidth}x${depth}mm)\nArea: ${area} sqft\nRequired Grout: ${totalKg} kg (${packText})\nPlease share pricing.`;
-  document.getElementById('wa-grout').href = waLink(msg);
-  document.getElementById('res-grout').classList.add('show');
-}
-
-function calcCleaner() {
-  const area = parseFloat(document.getElementById('cl-area').value);
-  const severity = document.getElementById('cl-severity').value;
-  if (!area || area <= 0) { alert('Please enter a valid cleaning area.'); return; }
-
-  // Coverage per Litre: light = 100 sqft, medium = 80 sqft, heavy = 50 sqft
-  const covs = { light: 100, medium: 80, heavy: 50 };
-  const litres = Math.ceil(area / covs[severity]);
-
-  document.getElementById('rv-cleaner-vol').textContent = litres + ' Litres';
-  document.getElementById('rv-cleaner-packs').textContent = `${litres} x 1L bottle(s) or ${Math.ceil(litres/5)} x 5L jar(s)`;
-
-  const msg = `Hi Srikar, here's my Tile Cleaner estimate from build360.online:\nProduct: Tilefixo Shine Cleaner\nArea: ${area} sqft (${severity} stains)\nRequired: ${litres} Litres\nPlease share pricing.`;
-  document.getElementById('wa-cleaner').href = waLink(msg);
-  document.getElementById('res-cleaner').classList.add('show');
-}
-
-function calcBOM() {
-  const area = parseFloat(document.getElementById('bom-area').value);
-  const scope = document.getElementById('bom-scope').value;
-  const gtype = document.getElementById('bom-gtype').value;
-  const tsize = parseFloat(document.getElementById('bom-tsize').value);
-  
-  if (!area || area <= 0) { alert('Please enter a valid area.'); return; }
-
-  const areaSqm = area * 0.092903;
-
-  // 1. Adhesive bags (20kg)
-  const adRates = { normal: 4.5, premium: 5.5, heavy: 7.5 };
-  const adKgs = areaSqm * adRates[scope] * 1.05;
-  const adBags = Math.ceil(adKgs / 20);
-  const adProduct = scope === 'normal' ? 'Tilefixo Sumo CT' : scope === 'premium' ? 'Tilefixo Aqua Marine VT' : 'Tilefixo Royal NT';
-
-  // 2. Grout weight (kg)
-  // Assume joint width = 3mm, tile thickness / joint depth = 5mm (bath), 4mm (slab), 5mm (std)
-  const depth = tsize === 300 ? 6 : tsize === 600 ? 5 : 4;
-  const density = gtype === 'epoxy' ? 1.75 : 1.55;
-  const grKgsPerSqm = density * ((tsize + tsize) * 3 * depth) / (tsize * tsize);
-  const groutKg = Math.ceil(grKgsPerSqm * areaSqm * 1.10);
-  const groutProduct = gtype === 'epoxy' ? 'Tilefixo STYLE 2K Epoxy' : 'Tilefixo Grout CG';
-
-  // 3. Tile Cleaner bottles (1L)
-  const cleanerLitres = Math.ceil(area / 80);
-
-  const rows = [
-    { cat: 'Tile Adhesive', prod: adProduct, qty: `${adBags} Bags`, pack: '20 kg Bag', total: `${adBags * 20} kg` },
-    { cat: 'Tile Joint Grout', prod: groutProduct, qty: `${groutKg} kg`, pack: '1 kg / 5 kg Pack', total: `${groutKg} kg` },
-    { cat: 'Tile Cleaner', prod: 'Tilefixo Shine', qty: `${cleanerLitres} Bottles`, pack: '1 Litre Bottle', total: `${cleanerLitres} L` }
-  ];
-
-  let tbody = '';
-  let waMsg = `Hi Srikar, here's my Full Tiling BOM from build360.online:\nProject Area: ${area} sqft\n\n`;
-  
-  rows.forEach(r => {
-    tbody += `<tr>
-      <td style="font-weight:600;">${r.cat}</td>
-      <td>${r.prod}</td>
-      <td class="val" style="font-family:var(--mono);">${r.qty}</td>
-      <td>${r.pack}</td>
-      <td class="val">${r.total}</td>
-    </tr>`;
-    waMsg += `• ${r.cat}: ${r.qty} of ${r.prod}\n`;
-  });
-  
-  waMsg += `\nPlease share best quotation and delivery timeline.`;
-
-  document.getElementById('bom-tbody').innerHTML = tbody;
-  document.getElementById('bom-note').textContent = `Based on ${area.toLocaleString()} sqft tiling area. Standard 5% wastage for adhesive and 10% for grout included. Recommended products based on catalog application rules.`;
-  document.getElementById('wa-bom').href = waLink(waMsg);
-  document.getElementById('res-bom').classList.add('show');
 }
 
 /* ─── UPLOAD FLOAT BEHAVIOR ─── */
@@ -2670,7 +1999,6 @@ window.addEventListener('DOMContentLoaded', () => {
   initTicker();
   initReveal();
   initHamburger();
-  renderSwatches();
   setInterval(updateTickerPrices, 300000); // update every 5 min
   document.getElementById('uploadFloat')?.classList.add('visible');
   window.addEventListener('scroll', handleUploadFloatScroll, { passive: true });
