@@ -137,7 +137,7 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 22px; list-style: none; align-items: center; margin: 0 auto; }
+.nav-links { display: flex; gap: 22px; list-style: none; align-items: center; flex: 1; justify-content: center; }
 .nav-links a {
   font-family: var(--body);
   font-size: 13px;
