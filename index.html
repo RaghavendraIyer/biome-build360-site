@@ -1672,7 +1672,7 @@ footer {
     <div class="contact-grid" style="margin-top:0;align-items:stretch;">
       <div class="reveal">
         <h2 class="section-title" style="font-size:clamp(28px,4vw,48px);margin-left:0;margin-top:6vh;text-shadow:0 0 20px rgba(255,255,255,0.6),0 2px 4px rgba(255,255,255,0.8);">Let's Discuss<br><em>Your Project.</em></h2>
-        <div style="margin-top:3vh;text-shadow:0 0 10px rgba(255,255,255,0.5);">
+        <div style="margin-top:1.5vh;text-shadow:0 0 10px rgba(255,255,255,0.5);">
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
@@ -1713,9 +1713,9 @@ footer {
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div>
+      <div style="text-align:left;">
         <a class="footer-logo" href="index.html">Build<em>360</em>.Online</a>
-        <div class="footer-tagline" style="margin-top: 6px;">India's Organized Procurement Network</div>
+        <div class="footer-tagline" style="margin-top:6px;">India's Organized Procurement Network</div>
         <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build : across India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
       </div>
       <div class="footer-col">
@@ -1771,10 +1771,10 @@ function goSlide(n) {
   dots[currentSlide].classList.add('active');
   if (heroEl) heroEl.classList.add('bg-slide-' + currentSlide);
   clearInterval(slideTimer);
-  slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
+  slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 10000);
 }
 
-slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 5000);
+slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 10000);
 
 /* ─── TICKER ─── */
 const TICKER_BRANDS = [
