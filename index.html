@@ -180,7 +180,8 @@ nav {
   margin-top: 3px;
 }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; margin-left: auto; }
-.nav-links a {
+.nav-links a,
+.nav-links span {
   font-family: var(--body);
   font-size: 14px;
   font-weight: 500;
@@ -206,7 +207,7 @@ nav {
 /* ─── NAV DROPDOWN (Products) ─── */
 .nav-item-dropdown { position: relative; }
 .nav-item-dropdown > a,
-.nav-item-dropdown > span { display: flex; align-items: center; gap: 5px; }
+.nav-item-dropdown > span { display: flex; align-items: center; gap: 5px; color: var(--color-text-secondary); font-family: var(--body); font-size: 14px; font-weight: 500; letter-spacing: .02em; text-decoration: none; cursor: pointer; }
 .nav-caret { font-size: 9px; transition: transform .2s; opacity: .7; }
 .nav-item-dropdown:hover .nav-caret { transform: rotate(180deg); }
 .nav-dropdown-panel {
@@ -260,7 +261,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  padding: 9px 12px;
+  border-radius: 4px;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--color-text-secondary);
   cursor: pointer;
+  transition: background .15s, color .15s;
 }
 .nav-caret-sub { font-size: 10px; opacity: .5; transition: none; }
 .nav-sub-panel {
@@ -1717,7 +1726,7 @@ footer {
       <div style="text-align:left;">
         <a class="footer-logo" href="index.html">Build<em>360</em>.Online</a>
         <div class="footer-tagline" style="margin-top:6px;">India's Organized Procurement Network</div>
-        <p class="footer-desc">Tile Adhesives · Cement · Steel · Blocks. Request. Quote. Build : across India. AI-powered RFQ from handwritten notes, BOQs, and spreadsheets.</p>
+        <p class="footer-desc">A digital procurement ecosystem transforming how India sources construction materials. From cement, steel, tiles, and adhesives to finishing supplies — connect with verified suppliers, get competitive quotes, and manage RFQs through a single platform. AI-powered intake parses handwritten notes, BOQs, and spreadsheets into structured procurement requests, reducing delays and optimizing costs. Whether for small-scale projects or large developments, Build360 makes material sourcing faster, smarter, and more reliable.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>

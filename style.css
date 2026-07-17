@@ -138,7 +138,8 @@ nav {
   margin-top: 3px;
 }
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; flex: 1; justify-content: center; }
-.nav-links a {
+.nav-links a,
+.nav-links span {
   font-family: var(--body);
   font-size: 14px;
   font-weight: 500;
@@ -197,7 +198,7 @@ nav {
 /* ─── NAV DROPDOWN (Products) ─── */
 .nav-item-dropdown { position: relative; }
 .nav-item-dropdown > a,
-.nav-item-dropdown > span { display: flex; align-items: center; gap: 5px; }
+.nav-item-dropdown > span { display: flex; align-items: center; gap: 5px; color: var(--color-text-secondary); font-family: var(--body); font-size: 14px; font-weight: 500; letter-spacing: .02em; text-decoration: none; cursor: pointer; }
 .nav-caret { font-size: 9px; transition: transform .2s; opacity: .7; }
 .nav-item-dropdown:hover .nav-caret { transform: rotate(180deg); }
 .nav-dropdown-panel {
@@ -251,7 +252,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  padding: 9px 12px;
+  border-radius: 4px;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--color-text-secondary);
   cursor: pointer;
+  transition: background .15s, color .15s;
 }
 .nav-caret-sub { font-size: 10px; opacity: .5; transition: none; }
 .nav-sub-panel {
