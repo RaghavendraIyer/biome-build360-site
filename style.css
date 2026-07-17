@@ -137,10 +137,10 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 22px; list-style: none; align-items: center; flex: 1; justify-content: center; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; flex: 1; justify-content: center; }
 .nav-links a {
   font-family: var(--body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: .02em;
   text-transform: none;
@@ -149,6 +149,7 @@ nav {
   cursor: pointer;
   transition: color .2s;
 }
+.nav-links li { display: flex; align-items: center; }
 .nav-links a:hover { color: var(--color-primary); }
 /* ─── PAGE HERO (for sub-pages like bid) ─── */
 .page-hero {
@@ -1075,7 +1076,7 @@ footer {
   color: rgba(255,255,255,0.4);
   margin-bottom: 20px;
 }
-.footer-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 280px; }
+.footer-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
 .footer-col h5 {
   font-family: var(--mono);
   font-size: 9px;
