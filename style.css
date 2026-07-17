@@ -196,7 +196,8 @@ nav {
 
 /* ─── NAV DROPDOWN (Products) ─── */
 .nav-item-dropdown { position: relative; }
-.nav-item-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.nav-item-dropdown > a,
+.nav-item-dropdown > span { display: flex; align-items: center; gap: 5px; }
 .nav-caret { font-size: 9px; transition: transform .2s; opacity: .7; }
 .nav-item-dropdown:hover .nav-caret { transform: rotate(180deg); }
 .nav-dropdown-panel {

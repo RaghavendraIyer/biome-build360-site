@@ -205,7 +205,8 @@ nav {
 
 /* ─── NAV DROPDOWN (Products) ─── */
 .nav-item-dropdown { position: relative; }
-.nav-item-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.nav-item-dropdown > a,
+.nav-item-dropdown > span { display: flex; align-items: center; gap: 5px; }
 .nav-caret { font-size: 9px; transition: transform .2s; opacity: .7; }
 .nav-item-dropdown:hover .nav-caret { transform: rotate(180deg); }
 .nav-dropdown-panel {
@@ -1321,10 +1322,10 @@ footer {
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>
       <li class="nav-item-dropdown" tabindex="0">
-        <a href="adhesives.html">Our Products <span class="nav-caret">▾</span></a>
+        <span style="cursor:default;">Our Products <span class="nav-caret">▾</span></span>
         <div class="nav-dropdown-panel">
           <div class="nav-sub-wrap">
-            <a href="adhesives.html" class="nav-sub-trigger">Tile Adhesives <span class="nav-caret-sub">▸</span></a>
+            <span class="nav-sub-trigger" style="cursor:default;">Tile Adhesives <span class="nav-caret-sub">▸</span></span>
             <div class="nav-sub-panel">
               <a href="adhesives.html#brand-ultratech">UltraTech Tilefixo</a>
               <a href="adhesives.html#brand-myk">MYK Laticrete</a>
@@ -1349,9 +1350,9 @@ footer {
   <ul>
     <li><a href="#how-it-works" class="mob-link">How It Works</a></li>
     <li>
-      <a href="adhesives.html" class="mob-link">Our Products</a>
+      <span class="mob-link" style="cursor:default;">Our Products</span>
       <div class="mob-sub">
-        <a href="adhesives.html" class="mob-sub-head">Tile Adhesives</a>
+        <span class="mob-sub-head">Tile Adhesives</span>
         <a href="adhesives.html#brand-ultratech" class="mob-link">UltraTech Tilefixo</a>
         <a href="adhesives.html#brand-myk" class="mob-link">MYK Laticrete</a>
         <a href="adhesives.html#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
@@ -1672,7 +1673,7 @@ footer {
     <div class="contact-grid" style="margin-top:0;align-items:stretch;">
       <div class="reveal">
         <h2 class="section-title" style="font-size:clamp(28px,4vw,48px);margin-left:0;margin-top:6vh;text-shadow:0 0 20px rgba(255,255,255,0.6),0 2px 4px rgba(255,255,255,0.8);">Let's Discuss<br><em>Your Project.</em></h2>
-        <div style="margin-top:1.5vh;text-shadow:0 0 10px rgba(255,255,255,0.5);">
+        <div style="margin-top:4vh;text-shadow:0 0 10px rgba(255,255,255,0.5);">
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
@@ -1702,7 +1703,7 @@ footer {
 
         <div class="contact-form reveal" style="align-self:end;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
         <div class="form-header" style="background:transparent;border-bottom-color:rgba(255,255,255,0.3);text-shadow:0 0 12px rgba(255,255,255,0.5);color:#000;">// Procurement Enquiry</div>
-        <iframe src="https://tally.so/embed/WOlAJv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" title="Build360 Lead Capture"></iframe>
+        <iframe src="https://tally.so/embed/WOlAJv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="525" frameborder="0" marginheight="0" marginwidth="0" title="Build360 Lead Capture"></iframe>
         <script async src="https://tally.so/widgets/embed.js"></script>
       </div>
     </div>
