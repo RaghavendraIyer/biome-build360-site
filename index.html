@@ -363,7 +363,7 @@ nav {
   transition: max-height .35s ease;
   box-shadow: var(--shadow-lg);
 }
-.mobile-menu.open { max-height: 100dvh; }
+.mobile-menu.open { max-height: calc(100dvh - var(--total-header)); overflow-y: auto; }
 .mobile-menu ul {
   list-style: none;
   padding: 20px var(--gutter) 28px;
@@ -1331,22 +1331,27 @@ footer {
   .hero-dots { bottom: 80px; }
 }
 @media (max-width: 480px) {
-  .utility-left span { font-size: 12px; }
+  .utility-left { padding-right: 12px; }
+  .utility-left span { font-size: 11px; }
   .utility-right { gap: 3px; }
   .utility-right a { font-size: 9px; }
-  .utility-right .u-login { font-size: 9px; }
+  .utility-right .u-login { font-size: 10px; color: var(--color-text-secondary); }
   .logo { font-size: 18px; gap: 0; }
-  .section-pad { padding: 48px 0; }
-  .segments-section { padding: 48px 0; }
-  .segment-card { padding: 24px 16px; }
-  .ai-rfq-section { padding: 48px 0; }
-  .cta-section { padding: 48px 0; }
-  .hero-inner { padding: 40px var(--gutter) 30px; }
+  .section-pad { padding: 40px 0; }
+  .segments-section { padding: 40px 0; }
+  .segment-card { padding: 20px 14px; }
+  .segment-card .btn { white-space: nowrap; }
+  .ai-rfq-section { padding: 40px 0; }
+  .cta-section { padding: 40px 0; }
+  .hero-inner { padding: 32px var(--gutter) 24px; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { justify-content: center; width: 100%; }
+  .section-lead { font-size: 14px; }
+  .ai-rfq-upload-zone .upload-label { font-size: 13px; }
+  .ai-rfq-upload-zone .upload-hint { font-size: 10px; }
+  .mobile-menu ul { padding-bottom: 40px; }
   .hamburger { padding: 2px; }
-  .hamburger span { width: 22px; height: 2px; margin: 4px 0; }
-  .mobile-menu.open { overflow-y: auto; }
+  .hamburger span { width: 20px; height: 2px; margin: 3px 0; }
 }
 </style>
 <link rel="stylesheet" href="style.css">
