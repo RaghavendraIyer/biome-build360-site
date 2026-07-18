@@ -1294,10 +1294,12 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
+  html { overflow-x: hidden; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
   nav { overflow: hidden; }
+  .utility-bar { overflow: hidden; }
   .utility-right { gap: 10px; }
   .logo-img { height: 40px; }
   .agents-grid { grid-template-columns: 1fr; }
@@ -1329,6 +1331,12 @@ footer {
   .hero-dots { bottom: 80px; }
 }
 @media (max-width: 480px) {
+  .utility-left span { font-size: 0; visibility: hidden; }
+  .utility-left span i { font-size: 14px; visibility: visible; }
+  .utility-right a:nth-child(-n+2),
+  .utility-right a:nth-child(4),
+  .utility-right .utility-divider,
+  .utility-right .u-login { display: none; }
   .logo { font-size: 18px; gap: 0; }
   .hero-inner { padding: 40px var(--gutter) 30px; }
   .hero-actions { flex-direction: column; }

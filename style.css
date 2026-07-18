@@ -1460,9 +1460,11 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
+  html { overflow-x: hidden; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
+  .utility-bar { overflow: hidden; }
   .agents-grid { grid-template-columns: 1fr; }
   .agent-card.founder { grid-column: 1; }
   .policy-grid { grid-template-columns: 1fr; }
@@ -1481,6 +1483,12 @@ footer {
   .segments-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
+  .utility-left span { font-size: 0; visibility: hidden; }
+  .utility-left span i { font-size: 14px; visibility: visible; }
+  .utility-right a:nth-child(-n+2),
+  .utility-right a:nth-child(4),
+  .utility-right .utility-divider,
+  .utility-right .u-login { display: none; }
   .logo { font-size: 18px; gap: 0; }
   .hero h1 { font-size: clamp(40px, 12vw, 72px); }
   .hero-inner { padding: 60px var(--gutter) 40px; }
