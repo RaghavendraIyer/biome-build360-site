@@ -35,9 +35,10 @@
 .mob-link[href="about.html"] { color: var(--color-primary); font-weight: 600; }
 .founder-card { display:flex; gap:60px; align-items:center; max-width:900px; margin:0 auto; }
 .founder-image { flex-shrink:0; }
+.founder-img { width:280px;height:280px;border-radius:50%;object-fit:cover;display:block;box-shadow:var(--shadow-md); }
 .founder-placeholder { width:280px;height:280px;border-radius:50%;background:var(--color-bg-surface);border:2px dashed var(--color-primary-18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--color-text-muted);font-size:13px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em; }
 .founder-bio { flex:1;text-align:left; }
-@media (max-width:768px){.founder-card{flex-direction:column;text-align:center;gap:32px;}.founder-placeholder{width:200px;height:200px;}.founder-bio{text-align:center;}}
+@media (max-width:768px){.founder-card{flex-direction:column;text-align:center;gap:32px;}.founder-img{width:200px;height:200px;}.founder-placeholder{width:200px;height:200px;}.founder-bio{text-align:center;}}
 </style>
 </head>
 <body>
@@ -144,10 +145,7 @@
   <div class="container">
     <div class="founder-card">
       <div class="founder-image">
-        <div class="founder-placeholder">
-          <i class="fas fa-user-tie" style="font-size:64px;color:var(--color-primary-18);"></i>
-          <span>Founder Headshot</span>
-        </div>
+        <img class="founder-img" src="founder%20headshot.jpeg" alt="S. Srikar Reddy, Founder & CEO">
       </div>
       <div class="founder-bio">
         <span class="section-label">Founder &amp; CEO</span>
