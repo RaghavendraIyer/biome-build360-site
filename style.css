@@ -1483,21 +1483,26 @@ footer {
   .segments-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .utility-left span { font-size: 0; visibility: hidden; }
-  .utility-left span i { font-size: 14px; visibility: visible; }
-  .utility-right a:nth-child(-n+2),
-  .utility-right a:nth-child(4),
-  .utility-right .utility-divider,
-  .utility-right .u-login { display: none; }
+  .utility-left span { font-size: 12px; }
+  .utility-right { gap: 3px; }
+  .utility-right a { font-size: 9px; }
+  .utility-right .u-login { font-size: 9px; }
   .logo { font-size: 18px; gap: 0; }
-  .hero h1 { font-size: clamp(40px, 12vw, 72px); }
-  .hero-inner { padding: 60px var(--gutter) 40px; }
+  .section-pad { padding: 48px 0; }
+  .segments-section { padding: 48px 0; }
+  .segment-card { padding: 24px 16px; }
+  .ai-rfq-section { padding: 48px 0; }
+  .cta-section { padding: 48px 0; }
+  .hero h1 { font-size: clamp(36px, 10vw, 56px); }
+  .hero-inner { padding: 40px var(--gutter) 30px; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { justify-content: center; }
   .counter-inner { grid-template-columns: 1fr; }
   .counter-item { border-right: none; border-bottom: 1px solid rgba(222,90,63,0.10); }
   .counter-item:last-child { border-bottom: none; }
   .counter-num { font-size: 34px; }
+  .hamburger span { width: 22px; height: 2px; margin: 4px 0; }
+  .mobile-menu.open { overflow-y: auto; }
 }
 
 /* ── Brand Hero Sections ── */
