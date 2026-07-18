@@ -22,7 +22,9 @@
 <link rel="canonical" href="https://build360.online">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://unpkg.com/lucide@latest"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -401,7 +403,7 @@ section { position: relative; z-index: 1; }
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh;
-  padding-top: var(--nav-h);
+  padding-top: var(--total-header);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1324,6 +1326,20 @@ footer {
 </head>
 <body>
 
+<!-- ─── UTILITY BAR ─── -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span><i class="fas fa-envelope u-icon"></i>info@build360.online</span>
+    </div>
+    <div class="utility-right">
+      <a href="service-providers.html">Partner with us</a>
+      <span class="utility-divider"></span>
+      <span class="u-login"><i class="fas fa-lock u-icon"></i>Login</span>
+    </div>
+  </div>
+</div>
+
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
@@ -1346,6 +1362,7 @@ footer {
       <li><a href="bid.html">Bid</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
+      <li><a class="nav-order-btn" href="tel:+919032514441"><i class="fas fa-phone-alt"></i> Order Now</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1389,7 +1406,7 @@ footer {
 <input type="file" id="globalFileInput" accept="image/*,.pdf,.xls,.xlsx" style="display:none;">
 
 <!-- ─── LIVE TICKER ─── -->
-<div class="ticker-bar" id="tickerBar" style="margin-top:var(--nav-h);">
+<div class="ticker-bar" id="tickerBar" style="margin-top:var(--total-header);">
   <div class="ticker-live-badge">
     <div class="live-dot"></div>
     Live Rates
@@ -1746,6 +1763,13 @@ footer {
         <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
       </div>
     </div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="legal-divider"></span>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <span class="legal-divider"></span>
+      <a href="refund.html">Refund Policy</a>
+    </div>
     <div class="footer-bottom">
       <span>© 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
       <span>info@build360.online · +91 90325 14441</span>
@@ -2014,9 +2038,10 @@ window.addEventListener('DOMContentLoaded', () => {
   initTicker();
   initReveal();
   initHamburger();
-  setInterval(updateTickerPrices, 300000); // update every 5 min
+  setInterval(updateTickerPrices, 300000);
   document.getElementById('uploadFloat')?.classList.add('visible');
   window.addEventListener('scroll', handleUploadFloatScroll, { passive: true });
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07848c56c52557b',t:'MTc4MDc1ODAwMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>

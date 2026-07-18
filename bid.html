@@ -17,7 +17,9 @@
 <link rel="canonical" href="https://build360.online/bid.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300..900&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="style.css">
 <style>
   /* ─── DEMO BANNER ─── */
@@ -26,7 +28,7 @@
     padding: 10px 0; text-align: center;
   }
 
-  .page-hero { padding-top: calc(var(--nav-h) + 40px); }
+  .page-hero { padding-top: calc(var(--total-header) + 40px); }
   .demo-banner span {
     font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
     color: #E8B8AC;
@@ -140,6 +142,20 @@
 </head>
 <body>
 
+<!-- ─── UTILITY BAR ─── -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span><i class="fas fa-envelope u-icon"></i>info@build360.online</span>
+    </div>
+    <div class="utility-right">
+      <a href="service-providers.html">Partner with us</a>
+      <span class="utility-divider"></span>
+      <span class="u-login"><i class="fas fa-lock u-icon"></i>Login</span>
+    </div>
+  </div>
+</div>
+
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
@@ -162,6 +178,7 @@
       <li><a href="bid.html" style="color:var(--color-primary)">Bid</a></li>
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="service-providers.html">Service Providers</a></li>
+      <li><a class="nav-order-btn" href="tel:+919032514441"><i class="fas fa-phone-alt"></i> Order Now</a></li>
       <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Build360%2C%20I%27m%20interested%20in%20tile%20adhesive%20pricing." target="_blank">Get Pricing →</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -375,6 +392,13 @@
         <a href="index.html#contact">Contact</a>
         <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
       </div>
+    </div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="legal-divider"></span>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <span class="legal-divider"></span>
+      <a href="refund.html">Refund Policy</a>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
@@ -592,7 +616,7 @@ function startTimers(){
   }, 1000);
 }
 
-window.addEventListener('DOMContentLoaded', () => { initHamburger(); });
+window.addEventListener('DOMContentLoaded', () => { initHamburger(); if (typeof lucide !== 'undefined') lucide.createIcons(); });
 </script>
 </body>
 </html>
