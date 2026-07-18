@@ -1868,36 +1868,61 @@ function goSlide(n) {
 slideTimer = setInterval(() => goSlide((currentSlide + 1) % slides.length), 10000);
 
 /* ─── TICKER ─── */
-const TICKER_BRANDS = [
-  { brand: 'UltraTech OPC 53',     grade: 'Cement 50kg',  price: 360,  unit: 'bag' },
-  { brand: 'Ambuja PPC',           grade: 'Cement 50kg',  price: 345,  unit: 'bag' },
-  { brand: 'Tata Tiscon 550SD',    grade: 'TMT Steel',    price: 64,   unit: 'kg' },
-  { brand: 'JSW Neo Steel',        grade: 'TMT 550D',     price: 61,   unit: 'kg' },
-  { brand: 'Aerocon AAC Blocks',   grade: '600x200x150',  price: 65,   unit: 'pc' },
-  { brand: 'Birla Aerocon AAC',    grade: '600x200x200',  price: 85,   unit: 'pc' },
-  { brand: 'Tilefixo Sumo CT',     grade: 'Grey 20kg',    price: 290,  unit: 'bag' },
-  { brand: 'MYK Laticrete 335',    grade: 'Adhesive 20kg',price: 820,  unit: 'bag' },
-  { brand: 'Tilefixo STYLE 2K',    grade: 'Epoxy 1kg',    price: 950,  unit: 'kit' },
-  { brand: 'Saint-Gobain Gyproc',  grade: 'Gypsum Board', price: 420,  unit: 'sheet' },
-  { brand: 'JK Lakshmi PRO+',      grade: 'Cement 50kg',  price: 350,  unit: 'bag' },
-  { brand: 'Jindal Panther',       grade: 'TMT 550D',     price: 60,   unit: 'kg' }
+const TICKER_ANNOUNCEMENTS = [
+  { type: 'announcement', text: 'Now serving 28 states &amp; UTs across India' },
+  { type: 'announcement', text: 'New : UltraTech Tilefixo Sumo CT Plus White now in stock' },
+  { type: 'announcement', text: 'AI-powered RFQ generator : upload handwritten notes or BOQs' },
+  { type: 'announcement', text: 'B2B bulk pricing available on all tile adhesives &amp; grouts' },
+  { type: 'announcement', text: 'Bid platform live : vendors compete on your RFQs' },
+  { type: 'announcement', text: 'Pan-India delivery : metro cities to Tier-2 towns' },
 ];
 
-let tickerPrices = TICKER_BRANDS.map(b => ({ ...b, prev: b.price }));
+const TICKER_PRICES = [
+  { type: 'price', brand: 'UltraTech OPC 53',     grade: 'Cement 50kg',  price: 360,  unit: 'bag' },
+  { type: 'price', brand: 'Ambuja PPC',           grade: 'Cement 50kg',  price: 345,  unit: 'bag' },
+  { type: 'price', brand: 'Tata Tiscon 550SD',    grade: 'TMT Steel',    price: 64,   unit: 'kg' },
+  { type: 'price', brand: 'JSW Neo Steel',        grade: 'TMT 550D',     price: 61,   unit: 'kg' },
+  { type: 'price', brand: 'Aerocon AAC Blocks',   grade: '600x200x150',  price: 65,   unit: 'pc' },
+  { type: 'price', brand: 'Tilefixo Sumo CT',     grade: 'Grey 20kg',    price: 290,  unit: 'bag' },
+  { type: 'price', brand: 'MYK Laticrete 335',    grade: 'Adhesive 20kg',price: 820,  unit: 'bag' },
+  { type: 'price', brand: 'Tilefixo STYLE 2K',    grade: 'Epoxy 1kg',    price: 950,  unit: 'kit' },
+  { type: 'price', brand: 'Saint-Gobain Gyproc',  grade: 'Gypsum Board', price: 420,  unit: 'sheet' },
+  { type: 'price', brand: 'JK Lakshmi PRO+',      grade: 'Cement 50kg',  price: 350,  unit: 'bag' },
+];
+
+// Interleave announcements with prices
+function buildTickerData() {
+  const data = [];
+  let ai = 0, pi = 0;
+  while (ai < TICKER_ANNOUNCEMENTS.length || pi < TICKER_PRICES.length) {
+    if (ai < TICKER_ANNOUNCEMENTS.length) data.push({ ...TICKER_ANNOUNCEMENTS[ai++], prev: 0 });
+    if (pi < TICKER_PRICES.length) data.push({ ...TICKER_PRICES[pi++], prev: null });
+    if (ai < TICKER_ANNOUNCEMENTS.length) data.push({ ...TICKER_ANNOUNCEMENTS[ai++], prev: 0 });
+    if (pi < TICKER_PRICES.length) data.push({ ...TICKER_PRICES[pi++], prev: null });
+  }
+  return data;
+}
+
+let tickerData = buildTickerData();
 let tickerPaused = false;
 let tickerX = 0;
 let tickerRAF;
 let tickerItemWidth = 0;
 let totalItems = 0;
 
-function buildTickerItems(prices) {
-  const doubled = [...prices, ...prices]; // seamless loop
+function buildTickerItems(data) {
+  const doubled = [...data, ...data];
   return doubled.map((item, i) => {
-    const delta = item.price - item.prev;
+    if (item.type === 'announcement') {
+      return `<div class="ticker-item ticker-announcement" data-idx="${i % data.length}">
+        <span class="t-announce">${item.text}</span>
+      </div>`;
+    }
+    const delta = item.price - (item.prev || item.price);
     const sign  = delta >= 0 ? '+' : '';
     const cls   = delta >= 0 ? 'up' : 'dn';
     const arrow = delta >= 0 ? '▲' : '▼';
-    return `<div class="ticker-item" data-idx="${i % prices.length}">
+    return `<div class="ticker-item" data-idx="${i % data.length}">
       <span class="t-brand">${item.brand}</span>
       <span class="t-price">₹${item.price}/${item.unit}</span>
       <span class="t-delta ${cls}">${arrow} ${sign}${delta}</span>
@@ -1907,15 +1932,13 @@ function buildTickerItems(prices) {
 
 function initTicker() {
   const track = document.getElementById('tickerTrack');
-  track.innerHTML = buildTickerItems(tickerPrices);
+  track.innerHTML = buildTickerItems(tickerData);
   const items = track.querySelectorAll('.ticker-item');
   if (!items.length) return;
   tickerItemWidth = items[0].offsetWidth;
-  totalItems = tickerPrices.length;
+  totalItems = tickerData.length;
   tickerX = 0;
   animateTicker();
-
-  // Pause on hover
   document.getElementById('tickerWrap').addEventListener('mouseenter', () => tickerPaused = true);
   document.getElementById('tickerWrap').addEventListener('mouseleave', () => tickerPaused = false);
 }
@@ -1931,17 +1954,20 @@ function animateTicker() {
 }
 
 function updateTickerPrices() {
-  tickerPrices = tickerPrices.map(item => {
+  tickerData = tickerData.map(item => {
+    if (item.type !== 'price') return item;
     const prev  = item.price;
-    const delta = Math.round((Math.random() * 6 - 3));  // ±3 swing
+    const delta = Math.round((Math.random() * 6 - 3));
     const price = Math.max(prev + delta, 50);
     return { ...item, prev, price };
   });
   const track = document.getElementById('tickerTrack');
   const items = track.querySelectorAll('.ticker-item');
+  let priceIdx = 0;
   items.forEach((el, i) => {
     const real = i % totalItems;
-    const item = tickerPrices[real];
+    const item = tickerData[real];
+    if (item.type === 'announcement') return;
     const delta = item.price - item.prev;
     const sign  = delta >= 0 ? '+' : '';
     const cls   = delta >= 0 ? 'up' : 'dn';

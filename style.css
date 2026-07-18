@@ -669,6 +669,14 @@ section { position: relative; z-index: 1; }
 .ticker-item .t-delta.up { color: #16a34a; }
 .ticker-item .t-delta.dn { color: var(--color-error); }
 .ticker-item.flash { animation: tickerFlash .5s ease; }
+.ticker-item.ticker-announcement { background: linear-gradient(180deg, rgba(222,90,63,0.08) 0%, rgba(222,90,63,0.02) 100%); }
+.ticker-item .t-announce {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: .01em;
+}
 @keyframes tickerFlash {
   0% { background: rgba(222,90,63,.0); }
   40% { background: rgba(222,90,63,.12); }
