@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights : Build360.online</title>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Build360" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="description" content="Procurement insights, market analysis, and best practices from India's construction supply chain experts.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://build360.online/insights/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="../style.css">
+<style>
+.insights-hero {
+  padding: calc(var(--total-header) + 60px) var(--gutter) 40px;
+  text-align: center;
+  background: var(--color-bg-app);
+}
+.insights-hero h1 { font-family: var(--display); font-size: clamp(32px,5vw,48px); font-weight: 800; }
+.insights-hero h1 em { color: var(--color-primary); font-style: normal; }
+.insights-hero p { font-size: 15px; color: var(--color-text-secondary); max-width: 520px; margin: 12px auto 0; line-height: 1.7; }
+.insights-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 80px;
+}
+.insight-card {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.insight-card:last-child { border-bottom: none; }
+.insight-thumb {
+  flex-shrink: 0;
+  width: 180px;
+  height: 140px;
+  border-radius: var(--radius);
+  background: var(--color-primary-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--color-primary);
+}
+.insight-meta { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-muted); }
+.insight-card h3 { font-family: var(--display); font-size: 18px; font-weight: 700; margin: 8px 0; }
+.insight-card h3 a { color: var(--color-text-main); text-decoration: none; }
+.insight-card h3 a:hover { color: var(--color-primary); }
+.insight-card p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+@media (max-width: 640px) {
+  .insight-card { flex-direction: column; }
+  .insight-thumb { width: 100%; height: 120px; }
+}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span><i class="fas fa-envelope u-icon"></i>info@build360.online</span>
+    </div>
+    <div class="utility-right">
+      <a href="../service-providers.html">Partner with us</a>
+      <span class="utility-divider"></span>
+      <span class="u-login"><i class="fas fa-lock u-icon"></i>Login</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Build<em>360</em>.Online</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#how-it-works">How It Works</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#ecosystem">Ecosystem</a></li>
+      <li class="nav-item-dropdown" tabindex="0">
+        <span style="cursor:default;color:var(--color-primary);font-weight:600;">Our Products <span class="nav-caret" style="color:var(--color-primary);opacity:1;">▾</span></span>
+        <div class="nav-dropdown-panel">
+          <div class="nav-sub-wrap">
+            <a class="nav-sub-trigger" href="../products/tile-adhesives/">Tile Adhesives <span class="nav-caret-sub">▸</span></a>
+            <div class="nav-sub-panel">
+              <a href="../products/tile-adhesives/#brand-ultratech">UltraTech Tilefixo</a>
+              <a href="../products/tile-adhesives/#brand-myk">MYK Laticrete</a>
+              <a href="../products/tile-adhesives/#brand-saint-gobain">Saint Gobain Weber</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="../bid.html">Bid</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../service-providers.html">Service Providers</a></li>
+      <li><a class="nav-order-btn" href="tel:+919032514441"><i class="fas fa-phone-alt"></i> Order Now</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20product%20pricing." target="_blank">Get Pricing →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="../index.html#how-it-works" class="mob-link">How It Works</a></li>
+    <li><a href="../index.html#about" class="mob-link">About</a></li>
+    <li><a href="../index.html#ecosystem" class="mob-link">Ecosystem</a></li>
+    <li>
+      <span class="mob-link" style="cursor:default;color:var(--color-primary);font-weight:600;">Our Products</span>
+      <div class="mob-sub">
+        <a class="mob-sub-head" href="../products/tile-adhesives/">Tile Adhesives</a>
+        <a href="../products/tile-adhesives/#brand-ultratech" class="mob-link">UltraTech Tilefixo</a>
+        <a href="../products/tile-adhesives/#brand-myk" class="mob-link">MYK Laticrete</a>
+        <a href="../products/tile-adhesives/#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
+      </div>
+    </li>
+    <li><a href="../bid.html" class="mob-link">Bid</a></li>
+    <li><a href="../index.html#contact" class="mob-link">Contact</a></li>
+    <li><a href="../service-providers.html" class="mob-link">Service Providers</a></li>
+    <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20product%20pricing." target="_blank">Get Pricing →</a></li>
+  </ul>
+</div>
+
+<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20inquire%20about%20procurement%20insights." target="_blank" title="WhatsApp Srikar"><i class="fab fa-whatsapp" style="font-size:24px;"></i></a>
+
+<section class="insights-hero">
+  <div>
+    <span class="section-label">Procurement Intelligence</span>
+    <h1>Insights &amp; <em>Analysis</em></h1>
+    <p>Market trends, price forecasts, and best practices from India's construction supply chain.</p>
+  </div>
+</section>
+
+<div class="insights-list">
+  <div class="insight-card">
+    <div class="insight-thumb"><i class="fas fa-chart-line"></i></div>
+    <div>
+      <div class="insight-meta">Market Analysis · 5 min read</div>
+      <h3><a href="tile-adhesive-pricing-q2-2026/">Tile Adhesive Pricing Trends Q2 2026</a></h3>
+      <p>Cement-based adhesives see 6–8% YoY increase driven by raw material costs. We break down the numbers and what they mean for your next project.</p>
+    </div>
+  </div>
+  <div class="insight-card">
+    <div class="insight-thumb"><i class="fas fa-clipboard-list"></i></div>
+    <div>
+      <div class="insight-meta">Best Practices · 7 min read</div>
+      <h3><a href="how-to-write-a-boq/">How to Write a BOQ That Gets You the Best Price</a></h3>
+      <p>A well-structured Bill of Quantities saves you 12–15% on procurement. Here's the format suppliers actually want to see.</p>
+    </div>
+  </div>
+  <div class="insight-card">
+    <div class="insight-thumb"><i class="fas fa-building"></i></div>
+    <div>
+      <div class="insight-meta">Case Study · 10 min read</div>
+      <h3><a href="hyderabad-builder-cost-savings/">How a Hyderabad Builder Cut Material Costs by 18%</a></h3>
+      <p>By switching to consolidated procurement across 3 brands, one mid-size developer saved ₹2.4 Cr on a single residential tower project.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div style="text-align:left;">
+        <a class="footer-logo" href="../index.html">Build<em>360</em>.Online</a>
+        <div class="footer-tagline" style="margin-top:6px;">India's Organized Procurement Network</div>
+        <p class="footer-desc">A digital procurement ecosystem transforming how India sources construction materials.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="../products/tile-adhesives/">Browse Products</a>
+        <a href="../index.html#contact">Request a Quote</a>
+        <a href="../bid.html">Bid Platform</a>
+        <a href="../index.html#ai-rfq">AI RFQ Generator</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering →</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="../index.html#how-it-works">How It Works</a>
+        <a href="../index.html#pan-india">Pan India Coverage</a>
+        <a href="../insights/">Insights</a>
+        <a href="../service-providers.html">Service Providers</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <a href="../privacy.html">Privacy Policy</a>
+      <span class="legal-divider"></span>
+      <a href="../terms.html">Terms &amp; Conditions</a>
+      <span class="legal-divider"></span>
+      <a href="../refund.html">Refund Policy</a>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
+      <span>info@build360.online &middot; +91 90325 14441</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+@media print { nav, .wa-float, footer { display: none !important; } body { background: #fff !important; } }
+</style>
+
+<script>
+function initHamburger(){const b=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('open');});document.addEventListener('click',e=>{if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});}
+window.addEventListener('DOMContentLoaded',()=>{initHamburger();if(typeof lucide!=='undefined')lucide.createIcons();});
+</script>
+</body>
+</html>
