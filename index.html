@@ -112,6 +112,7 @@ body {
   color: var(--color-text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ─── SUBTLE TEXTURE (very light for alabaster bg) ─── */
@@ -1294,6 +1295,8 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
+  nav { overflow: hidden; }
+  .utility-right { gap: 10px; }
   .logo-img { height: 40px; }
   .agents-grid { grid-template-columns: 1fr; }
   .agent-card.founder { grid-column: 1; }
