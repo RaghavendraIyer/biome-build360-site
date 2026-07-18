@@ -1490,27 +1490,29 @@ footer {
       <button class="hero-dot" onclick="goSlide(2)"></button>
     </div>
   </div>
+</section>
 
-  <!-- Stats strip -->
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <strong id="stat-mills">0</strong>
-      <span style="color:#000;">Supply Partners</span>
+<!-- ─── COUNTER STRIP ─── -->
+<div class="counter-strip">
+  <div class="counter-inner">
+    <div class="counter-item">
+      <span class="counter-num">15+</span>
+      <span class="counter-label">Verified Supplier Partners</span>
     </div>
-    <div class="hero-stat">
-      <strong>&lt;4 hrs</strong>
-      <span style="color:#000;">Quote Response</span>
+    <div class="counter-item">
+      <span class="counter-num">&lt;4 hrs</span>
+      <span class="counter-label">Average Quote Response</span>
     </div>
-    <div class="hero-stat">
-      <strong>PAN</strong>
-      <span style="color:#000;">India Coverage</span>
+    <div class="counter-item">
+      <span class="counter-num">28</span>
+      <span class="counter-label">States &amp; UTs Covered</span>
     </div>
-    <div class="hero-stat">
-      <strong>B2B+</strong>
-      <span style="color:#000;">All Buyers Welcome</span>
+    <div class="counter-item">
+      <span class="counter-num">100%</span>
+      <span class="counter-label">Verified Product Quality</span>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ─── 5-STEP PROCESS STRIP ─── -->
 <div class="process-strip" id="how-it-works">
@@ -1985,18 +1987,6 @@ function initReveal() {
   });
 
   els.forEach(el => io.observe(el));
-
-  // Count-up for hero stats
-  const statMills = document.getElementById('stat-mills');
-  const heroIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        countUp(statMills, 15, '+', 1200);
-        heroIO.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
-  if (statMills) heroIO.observe(statMills.closest('.hero-stats'));
 }
 
 /* ─── HAMBURGER ─── */
