@@ -468,32 +468,31 @@ section { position: relative; z-index: 1; }
   pointer-events: none;
 }
 /* ─── HERO DECORATIVE SHAPES ─── */
-.hero-shape {
+.hero-slide-blob {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.5;
-}
-.hero-shape-1 {
+  width: 320px;
+  height: 260px;
   color: var(--color-primary);
-  opacity: 0.06;
-  width: 500px; height: 500px;
-  top: -120px; left: -180px;
-  transform: rotate(-15deg);
+  opacity: 0.07;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-55%) rotate(-8deg);
 }
-.hero-shape-2 {
-  color: var(--color-text-main);
-  opacity: 0.04;
-  width: 400px; height: 400px;
-  bottom: -80px; right: -100px;
-  transform: rotate(25deg);
-}
-.hero-shape-3 {
-  color: var(--color-primary);
+.hero-slide-blob-b {
+  left: auto;
+  right: 5%;
+  top: 45%;
+  transform: translateY(-50%) rotate(12deg);
   opacity: 0.05;
-  width: 200px; height: 200px;
-  top: 40%; left: 60%;
-  transform: rotate(45deg);
+  color: var(--color-text-main);
+}
+.hero-slide-blob-c {
+  left: 25%;
+  top: 55%;
+  transform: translateY(-55%) rotate(4deg);
+  opacity: 0.06;
 }
 .hero-inner {
   position: relative;
@@ -560,9 +559,10 @@ section { position: relative; z-index: 1; }
 /* ─── COUNTER STRIP ─── */
 .counter-strip {
   background: #F5EAE7;
-  padding: 36px 0;
-  border-top: 1px solid var(--color-border-light);
-  border-bottom: 1px solid var(--color-border-light);
+  padding: 40px 0;
+  border-top: 1px solid rgba(222,90,63,0.10);
+  border-bottom: 1px solid rgba(222,90,63,0.10);
+  display: block;
 }
 .counter-inner {
   max-width: 1400px;
@@ -574,26 +574,29 @@ section { position: relative; z-index: 1; }
 }
 .counter-item {
   text-align: center;
-  padding: 12px 16px;
-  border-right: 1px solid rgba(30,41,59,0.08);
+  padding: 8px 16px;
+  border-right: 1px solid rgba(222,90,63,0.10);
 }
 .counter-item:last-child { border-right: none; }
 .counter-num {
   display: block;
-  font-family: 'Syne', sans-serif;
-  font-size: 38px;
+  font-family: var(--display), sans-serif;
+  font-size: 40px;
   font-weight: 800;
-  color: var(--color-primary);
+  color: #DE5A3F;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
 }
 .counter-label {
   display: block;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--color-text-secondary);
-  letter-spacing: .08em;
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 500;
+  color: #5A3E35;
+  letter-spacing: .04em;
   text-transform: uppercase;
+  opacity: 0.8;
 }
 
 /* ─── LIVE TICKER ─── */
@@ -1384,28 +1387,6 @@ footer {
   color: var(--color-text-muted);
   line-height: 1.55;
 }
-/* ─── TRUST LINE ─── */
-.trust-line {
-  background: var(--color-bg-surface-alt);
-  border-bottom: 1px solid var(--color-border-light);
-  padding: 20px 0;
-}
-.trust-line .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.trust-line p {
-  font-family: var(--display);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-text-main);
-  text-align: center;
-}
-.trust-line .btn { flex-shrink: 0; }
-
 /* ─── WHATSAPP BANNER ─── */
 .wa-banner {
   background: linear-gradient(135deg, #f0fdf4 0%, var(--color-bg-surface) 100%);
@@ -1513,7 +1494,7 @@ footer {
   .footer-grid { grid-template-columns: 1fr; gap: 40px; }
   .counter-inner { grid-template-columns: repeat(2, 1fr); }
   .counter-item:nth-child(2n) { border-right: none; }
-  .counter-item:nth-child(3), .counter-item:nth-child(4) { border-top: 1px solid rgba(30,41,59,0.08); }
+  .counter-item:nth-child(3), .counter-item:nth-child(4) { border-top: 1px solid rgba(222,90,63,0.10); }
   .form-row { grid-template-columns: 1fr; }
   .estimator-body { padding: 24px 20px; }
   .process-inner { grid-template-columns: repeat(2, 1fr); }
@@ -1530,7 +1511,7 @@ footer {
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { justify-content: center; }
   .counter-inner { grid-template-columns: 1fr; }
-  .counter-item { border-right: none; border-bottom: 1px solid rgba(30,41,59,0.08); }
+  .counter-item { border-right: none; border-bottom: 1px solid rgba(222,90,63,0.10); }
   .counter-item:last-child { border-bottom: none; }
   .counter-num { font-size: 34px; }
 }
