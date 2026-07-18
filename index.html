@@ -135,7 +135,7 @@ body::before {
 /* ─── NAV ─── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: var(--utility-h); left: 0; right: 0;
   z-index: 100;
   height: var(--nav-h);
   background: rgba(255,255,255,0.92);
@@ -525,6 +525,7 @@ section { position: relative; z-index: 1; }
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 1;
 }
 .ticker-live-badge {
   display: flex;
@@ -1323,6 +1324,7 @@ footer {
   .hero-actions .btn { justify-content: center; }
 }
 </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -1347,16 +1349,22 @@ footer {
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="platform.html">Platform</a></li>
+      <li class="nav-item-dropdown" tabindex="0">
+        <span style="cursor:default;color:var(--color-primary);font-weight:600;">Platform <span class="nav-caret" style="color:var(--color-primary);opacity:1;">▾</span></span>
+        <div class="nav-dropdown-panel">
+          <a href="consumers.html">For Consumers</a>
+          <a href="partners.html">For Partners</a>
+        </div>
+      </li>
       <li class="nav-item-dropdown" tabindex="0">
         <span style="cursor:default;color:var(--color-primary);font-weight:600;">Our Products <span class="nav-caret" style="color:var(--color-primary);opacity:1;">▾</span></span>
         <div class="nav-dropdown-panel">
           <div class="nav-sub-wrap">
-            <a class="nav-sub-trigger" href="products/tile-adhesives/">Tile Adhesives <span class="nav-caret-sub">▸</span></a>
+            <span style="display:block;padding:9px 12px;font-family:var(--body);font-size:13px;font-weight:600;color:var(--color-text-muted);letter-spacing:.04em;text-transform:uppercase;cursor:default;">Tile Adhesives</span>
             <div class="nav-sub-panel">
-              <a href="products/tile-adhesives/#brand-ultratech">UltraTech Tilefixo</a>
-              <a href="products/tile-adhesives/#brand-myk">MYK Laticrete</a>
-              <a href="products/tile-adhesives/#brand-saint-gobain">Saint Gobain Weber</a>
+              <a href="products/ultratech-tilefixo.html">UltraTech Tilefixo</a>
+              <a href="products/myk-laticrete.html">MYK Laticrete</a>
+              <a href="products/saint-gobain-weber.html">Saint Gobain Weber</a>
             </div>
           </div>
         </div>
@@ -1378,14 +1386,20 @@ footer {
   <ul>
     <li><a href="#how-it-works" class="mob-link">How It Works</a></li>
     <li><a href="about.html" class="mob-link">About</a></li>
-    <li><a href="platform.html" class="mob-link">Platform</a></li>
+      <li>
+        <span class="mob-link" style="cursor:default;color:var(--color-primary);font-weight:600;">Platform</span>
+        <div class="mob-sub">
+          <a href="consumers.html" class="mob-link">For Consumers</a>
+          <a href="partners.html" class="mob-link">For Partners</a>
+        </div>
+      </li>
     <li>
       <span class="mob-link" style="cursor:default;color:var(--color-primary);font-weight:600;">Our Products</span>
       <div class="mob-sub">
-        <a class="mob-sub-head" href="products/tile-adhesives/">Tile Adhesives</a>
-        <a href="products/tile-adhesives/#brand-ultratech" class="mob-link">UltraTech Tilefixo</a>
-        <a href="products/tile-adhesives/#brand-myk" class="mob-link">MYK Laticrete</a>
-        <a href="products/tile-adhesives/#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
+        <span style="display:block;padding:6px 12px;font-size:11px;font-weight:600;color:var(--color-text-muted);letter-spacing:.08em;text-transform:uppercase;cursor:default;">Tile Adhesives</span>
+        <a href="products/ultratech-tilefixo.html" class="mob-link">UltraTech Tilefixo</a>
+        <a href="products/myk-laticrete.html" class="mob-link">MYK Laticrete</a>
+        <a href="products/saint-gobain-weber.html" class="mob-link">Saint Gobain Weber</a>
       </div>
     </li>
     <li><a href="bid.html" class="mob-link">Bid</a></li>
@@ -1410,7 +1424,7 @@ footer {
 <input type="file" id="globalFileInput" accept="image/*,.pdf,.xls,.xlsx" style="display:none;">
 
 <!-- ─── LIVE TICKER ─── -->
-<div class="ticker-bar" id="tickerBar" style="margin-top:var(--total-header);">
+<div class="ticker-bar" id="tickerBar">
   <div class="ticker-live-badge">
     <div class="live-dot"></div>
     Live Rates
@@ -1722,7 +1736,8 @@ footer {
         <a href="#how-it-works">How It Works</a>
         <a href="about.html">About</a>
         <a href="insights/">Insights</a>
-        <a href="platform.html">Platform</a>
+        <a href="consumers.html">For Consumers</a>
+        <a href="partners.html">For Partners</a>
         <a href="#pan-india">Pan India Coverage</a>
         <a href="service-providers.html">Service Providers</a>
         <a href="#contact">Contact</a>
@@ -2019,10 +2034,53 @@ document.addEventListener('click', e => {
   }
 });
 
+/* ─── COUNTER ANIMATION ─── */
+function initCounter() {
+  const strip = document.querySelector('.counter-strip');
+  if (!strip) return;
+  let fired = false;
+  const obs = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !fired) {
+      fired = true;
+      document.querySelectorAll('.counter-num').forEach(el => {
+        const txt = el.textContent.trim();
+        const num = parseInt(txt);
+        if (!isNaN(num) && txt === String(num)) {
+          const suffix = '';
+          animateCount(el, num, suffix);
+        } else if (txt.endsWith('+')) {
+          const n = parseInt(txt);
+          if (!isNaN(n)) animateCount(el, n, '+');
+        } else if (txt.startsWith('<')) {
+          // static, no animation
+        } else if (txt.endsWith('%')) {
+          const n = parseInt(txt);
+          if (!isNaN(n)) animateCount(el, n, '%');
+        }
+      });
+      obs.unobserve(strip);
+    }
+  }, { threshold: 0.5 });
+  obs.observe(strip);
+}
+function animateCount(el, target, suffix) {
+  const dur = 1500;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = Math.round(ease * target);
+    el.textContent = val + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
 /* ─── INIT ─── */
 window.addEventListener('DOMContentLoaded', () => {
   initTicker();
   initReveal();
+  initCounter();
   initHamburger();
   setInterval(updateTickerPrices, 300000);
   document.getElementById('uploadFloat')?.classList.add('visible');

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products : Build360.online</title>
+<title>MYK Laticrete : Build360.online</title>
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Build360" />
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="description" content="Browse Build360's product verticals : tile adhesives, epoxy grouts, and coming-soon categories including water solutions, power & gensets, and furniture.">
+<meta name="description" content="MYK Laticrete tile adhesives and epoxy grouts — source in bulk from Build360.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://build360.online/products/">
+<link rel="canonical" href="https://build360.online/products/myk-laticrete.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300..900&display=swap" rel="stylesheet">
@@ -20,67 +20,31 @@
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="../style.css">
 <style>
-.products-hero {
-  min-height: 40vh;
+.brand-hero {
+  min-height: 35vh;
   padding: calc(var(--total-header) + 60px) var(--gutter) 60px;
   display: flex;
   align-items: center;
   text-align: center;
-  background: var(--color-bg-app);
+  position: relative;
+  overflow: hidden;
 }
-.products-hero h1 { font-family: var(--display); font-size: clamp(32px, 5vw, 52px); font-weight: 800; margin-bottom: 16px; }
-.products-hero h1 em { color: var(--color-primary); font-style: normal; }
-.products-hero p { font-size: 15px; color: var(--color-text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.7; }
-.products-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--gutter) 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-.prod-card {
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: box-shadow .25s, transform .25s;
-}
-.prod-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.prod-card.coming-soon { opacity: 0.6; pointer-events: none; }
-.prod-card.coming-soon:hover { transform: none; box-shadow: none; }
-.prod-icon {
-  width: 56px; height: 56px;
-  background: var(--color-primary-10);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: var(--color-primary);
-}
-.prod-title { font-family: var(--display); font-size: 20px; font-weight: 700; color: var(--color-text-main); }
-.prod-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.65; flex: 1; }
-.prod-badge {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 3px;
-  background: var(--color-primary-10);
-  color: var(--color-primary);
-  align-self: flex-start;
-}
-.prod-badge.soon { background: var(--color-border-subtle); color: var(--color-text-muted); }
-.prod-card .btn { align-self: flex-start; }
-@media (max-width: 640px) {
-  .products-grid { grid-template-columns: 1fr; }
-}
+.brand-hero h2 { font-family:var(--display);font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:16px; }
+.brand-hero h2 em { font-style:normal; }
+.brand-hero p { font-size:clamp(14px,2vw,17px);max-width:680px;line-height:1.6;font-weight:300; }
+.section-label { font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:12px; }
+.catalog-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px; }
+.catalog-card { background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s; }
+.catalog-card:hover { box-shadow:var(--shadow-md); }
+.card-img { width:100%;height:200px;object-fit:cover;display:block;background:var(--color-bg-surface-alt); }
+.card-badge { display:inline-block;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#3B82F6;background:rgba(59,130,246,0.1);padding:3px 10px;border-radius:3px;margin:16px 16px 8px; }
+.catalog-card h3 { font-family:var(--display);font-size:17px;font-weight:700;padding:0 16px;margin-bottom:6px; }
+.catalog-card p { font-size:13px;color:var(--color-text-secondary);line-height:1.5;padding:0 16px;margin-bottom:12px; }
+.card-meta { padding:0 16px 12px;font-size:12px;color:var(--color-text-muted);display:flex;flex-direction:column;gap:2px; }
+.card-meta strong { color:var(--color-text-secondary); }
+.card-actions { padding:0 16px 16px; }
+.nav-links a[href="myk-laticrete.html"] { color: var(--color-primary); font-weight: 600; }
+.mob-link[href="myk-laticrete.html"] { color: var(--color-primary); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -128,7 +92,7 @@
       <li><a href="../index.html#contact">Contact</a></li>
       <li><a href="../service-providers.html">Service Providers</a></li>
       <li><a class="nav-order-btn" href="tel:+919032514441"><i class="fas fa-phone-alt"></i> Order Now</a></li>
-      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20product%20pricing." target="_blank">Get Pricing →</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20want%20to%20order%20MYK%20Laticrete%20products." target="_blank">Get Pricing →</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -159,52 +123,75 @@
     <li><a href="../bid.html" class="mob-link">Bid</a></li>
     <li><a href="../index.html#contact" class="mob-link">Contact</a></li>
     <li><a href="../service-providers.html" class="mob-link">Service Providers</a></li>
-    <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20product%20pricing." target="_blank">Get Pricing →</a></li>
+    <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20want%20to%20order%20MYK%20Laticrete%20products." target="_blank">Get Pricing →</a></li>
   </ul>
 </div>
 
-<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20enquire%20about%20products." target="_blank" title="WhatsApp Srikar"><i class="fab fa-whatsapp" style="font-size:24px;"></i></a>
+<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20MYK%20Laticrete%20pricing." target="_blank" title="WhatsApp Srikar"><i class="fab fa-whatsapp" style="font-size:24px;"></i></a>
 
-<!-- ─── PRODUCTS HERO ─── -->
-<section class="products-hero">
-  <div style="max-width:800px;margin:0 auto;">
-    <span class="section-label">Product Verticals</span>
-    <h1>Everything You Need<br>to <em>Build.</em></h1>
-    <p>From tile adhesives and epoxy grouts to cement, steel, and finishing supplies — source every category through Build360's verified partner network.</p>
+<!-- ─── BRAND HERO ─── -->
+<section class="brand-hero" style="background:linear-gradient(135deg,#0a1628 0%,#0F1D3A 100%);">
+  <div class="container" style="max-width:800px;">
+    <div class="section-label" style="color:#3B82F6;">MYK Laticrete : A Laticrete Technology Partner</div>
+    <h2 style="color:#fff;">MYK<br><em style="color:#3B82F6;">Laticrete</em></h2>
+    <p style="color:var(--color-bg-app);">A joint venture between MYK India and Laticrete International (USA), bringing global tile installation technology to Indian construction sites. World-class epoxy grouts, premium adhesives, and waterproofing systems built on decades of American material science.</p>
   </div>
 </section>
 
-<!-- ─── PRODUCT GRID ─── -->
-<div class="products-grid">
-  <div class="prod-card">
-    <div class="prod-icon"><i class="fas fa-trowel"></i></div>
-    <span class="prod-badge">Live</span>
-    <div class="prod-title">Tile Adhesives &amp; Grouts</div>
-    <p class="prod-desc">UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber adhesives, epoxy grouts, and specialty tiling solutions. 40+ SKUs across 3 brands.</p>
-    <a class="btn btn-primary" href="tile-adhesives/">Browse Range →</a>
+<!-- ─── PRODUCTS ─── -->
+<section class="section-pad">
+  <div class="container">
+    <h2 class="section-title">MYK Laticrete<br><em>Product Range</em></h2>
+    <p class="section-lead" style="margin-bottom:40px;">Browse the range of MYK Laticrete products. Click <strong>Quote</strong> on any product to request pricing via WhatsApp.</p>
+    <div class="catalog-grid">
+      <div class="catalog-card">
+        <img class="card-img" src="../myk-111-73.jpg" alt="MYK LATICRETE 111 + 73">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>111 + 73</h3>
+        <p>LATICRETE 111 Crete Filler Powder mixed with 73 Latex Crete Admix. High strength latex-fortified adhesive for small to large format tiles and stones.</p>
+        <div class="card-meta"><div>Pack Size: <strong>20 kg + 5/20 L</strong></div><div>Coverage: <strong>~55-60 sqft/bag</strong></div></div>
+        <div class="card-actions"><a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%2073." target="_blank">💬 Quote</a></div>
+      </div>
+      <div class="catalog-card">
+        <img class="card-img" src="../myk-111-4237.jpg" alt="MYK LATICRETE 111 + 4237">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>111 + 4237</h3>
+        <p>LATICRETE 111 Crete Filler Powder with 4237 High Performance Latex Admix. Superior bond strength for heavy traffic and industrial floors.</p>
+        <div class="card-meta"><div>Pack Size: <strong>20 kg + 20 L</strong></div><div>Bed Thickness: <strong>Up to 12 mm</strong></div></div>
+        <div class="card-actions"><a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20111%20%2B%204237." target="_blank">💬 Quote</a></div>
+      </div>
+      <div class="catalog-card">
+        <img class="card-img" src="../myk-345-super-flex.jpg" alt="MYK LATICRETE 345 Super Flex">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>345 Super Flex</h3>
+        <p>Highly polymer-modified, single-component adhesive (S2 grade) for very large format tiles. Suitable for airports, metro stations, and swimming pools.</p>
+        <div class="card-meta"><div>Pack Size: <strong>20 kg Bag</strong></div></div>
+        <div class="card-actions"><a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20345%20Super%20Flex." target="_blank">💬 Quote</a></div>
+      </div>
+      <div class="catalog-card">
+        <span class="card-badge">MYK Laticrete</span>
+        <h3>LATICRETE Epoxy Grout</h3>
+        <p>Premium epoxy-based joint filler grout. Stain-free, crack-free, chemical resistant, and waterproof for tiled surfaces.</p>
+        <div class="card-meta"><div>Pack Size: <strong>1 kg / 5 kg Kit</strong></div></div>
+        <div class="card-actions"><a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20quote%20for%20MYK%20LATICRETE%20Epoxy%20Grout." target="_blank">💬 Quote</a></div>
+      </div>
+    </div>
   </div>
-  <div class="prod-card coming-soon">
-    <div class="prod-icon"><i class="fas fa-droplet"></i></div>
-    <span class="prod-badge soon">Coming Soon</span>
-    <div class="prod-title">Water Solutions</div>
-    <p class="prod-desc">Waterproofing membranes, sealants, and drainage solutions for residential and commercial construction projects.</p>
-    <span class="btn btn-ghost" style="opacity:0.5;cursor:default;">Notify Me</span>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title" style="text-align:center;margin:16px 0 24px;">Need Bulk Pricing?<br><em>We're Here to Help.</em></h2>
+      <p style="font-size:15px;font-weight:300;color:var(--text2);max-width:480px;margin:0 auto 40px;line-height:1.7;text-align:center;">Send your BOQ or product list — get a competitive quote within 4 hours.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%20need%20a%20bulk%20quote%20for%20MYK%20Laticrete%20products." target="_blank"><i class="fab fa-whatsapp" style="margin-right:6px;"></i> Request Quote on WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+919032514441">Call +91 90325 14441</a>
+      </div>
+    </div>
   </div>
-  <div class="prod-card coming-soon">
-    <div class="prod-icon"><i class="fas fa-bolt"></i></div>
-    <span class="prod-badge soon">Coming Soon</span>
-    <div class="prod-title">Power &amp; Gensets</div>
-    <p class="prod-desc">Industrial generators, power backup solutions, and electrical distribution equipment for construction sites and facilities.</p>
-    <span class="btn btn-ghost" style="opacity:0.5;cursor:default;">Notify Me</span>
-  </div>
-  <div class="prod-card coming-soon">
-    <div class="prod-icon"><i class="fas fa-chair"></i></div>
-    <span class="prod-badge soon">Coming Soon</span>
-    <div class="prod-title">Furniture &amp; Interiors</div>
-    <p class="prod-desc">Modular furniture, interior fit-out materials, and finishing supplies for commercial and residential projects.</p>
-    <span class="btn btn-ghost" style="opacity:0.5;cursor:default;">Notify Me</span>
-  </div>
-</div>
+</section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -217,7 +204,7 @@
       </div>
       <div class="footer-col">
         <h5>Services</h5>
-        <a href="tile-adhesives/">Browse Products</a>
+        <a href="../products/tile-adhesives/">Browse Products</a>
         <a href="../index.html#contact">Request a Quote</a>
         <a href="../bid.html">Bid Platform</a>
         <a href="../index.html#ai-rfq">AI RFQ Generator</a>
@@ -227,12 +214,11 @@
         <h5>Company</h5>
         <a href="../index.html#how-it-works">How It Works</a>
         <a href="../about.html">About</a>
-        <a href="../insights/">Insights</a>
         <a href="../consumers.html">For Consumers</a>
         <a href="../partners.html">For Partners</a>
+        <a href="../insights/">Insights</a>
         <a href="../index.html#pan-india">Pan India Coverage</a>
         <a href="../service-providers.html">Service Providers</a>
-        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering</a>
         <a href="../index.html#contact">Contact</a>
         <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
       </div>

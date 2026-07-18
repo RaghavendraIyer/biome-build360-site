@@ -585,6 +585,7 @@ section { position: relative; z-index: 1; }
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 1;
 }
 .ticker-live-badge {
   display: flex;
