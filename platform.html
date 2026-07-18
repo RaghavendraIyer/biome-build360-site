@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform : Build360.online</title>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Build360" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="description" content="Build360 Platform — procurement tools for consumers, business partners, and service providers.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://build360.online/platform.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+.platform-hero {
+  min-height: 40vh;
+  padding: calc(var(--total-header) + 60px) var(--gutter) 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: var(--color-bg-app);
+}
+.platform-hero h1 { font-family: var(--display); font-size: clamp(32px, 5vw, 52px); font-weight: 800; margin-bottom: 16px; }
+.platform-hero h1 em { color: var(--color-primary); font-style: normal; }
+.platform-hero p { font-size: 15px; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+.nav-links a[href="platform.html"] { color: var(--color-primary); font-weight: 600; }
+.mob-link[href="platform.html"] { color: var(--color-primary); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span><i class="fas fa-envelope u-icon"></i>info@build360.online</span>
+    </div>
+    <div class="utility-right">
+      <a href="service-providers.html">Partner with us</a>
+      <span class="utility-divider"></span>
+      <span class="u-login"><i class="fas fa-lock u-icon"></i>Login</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Build<em>360</em>.Online</a>
+    <ul class="nav-links">
+      <li><a href="index.html#how-it-works">How It Works</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="platform.html">Platform</a></li>
+      <li class="nav-item-dropdown" tabindex="0">
+        <span style="cursor:default;color:var(--color-primary);font-weight:600;">Our Products <span class="nav-caret" style="color:var(--color-primary);opacity:1;">▾</span></span>
+        <div class="nav-dropdown-panel">
+          <div class="nav-sub-wrap">
+            <a class="nav-sub-trigger" href="products/tile-adhesives/">Tile Adhesives <span class="nav-caret-sub">▸</span></a>
+            <div class="nav-sub-panel">
+              <a href="products/tile-adhesives/#brand-ultratech">UltraTech Tilefixo</a>
+              <a href="products/tile-adhesives/#brand-myk">MYK Laticrete</a>
+              <a href="products/tile-adhesives/#brand-saint-gobain">Saint Gobain Weber</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="bid.html">Bid</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="service-providers.html">Service Providers</a></li>
+      <li><a class="nav-order-btn" href="tel:+919032514441"><i class="fas fa-phone-alt"></i> Order Now</a></li>
+      <li><a class="nav-cta" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20product%20pricing." target="_blank">Get Pricing →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#how-it-works" class="mob-link">How It Works</a></li>
+    <li><a href="about.html" class="mob-link">About</a></li>
+    <li><a href="platform.html" class="mob-link">Platform</a></li>
+    <li>
+      <span class="mob-link" style="cursor:default;color:var(--color-primary);font-weight:600;">Our Products</span>
+      <div class="mob-sub">
+        <a class="mob-sub-head" href="products/tile-adhesives/">Tile Adhesives</a>
+        <a href="products/tile-adhesives/#brand-ultratech" class="mob-link">UltraTech Tilefixo</a>
+        <a href="products/tile-adhesives/#brand-myk" class="mob-link">MYK Laticrete</a>
+        <a href="products/tile-adhesives/#brand-saint-gobain" class="mob-link">Saint Gobain Weber</a>
+      </div>
+    </li>
+    <li><a href="bid.html" class="mob-link">Bid</a></li>
+    <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    <li><a href="service-providers.html" class="mob-link">Service Providers</a></li>
+    <li><a href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20product%20pricing." target="_blank">Get Pricing →</a></li>
+  </ul>
+</div>
+
+<a class="wa-float" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20learn%20about%20the%20Build360%20platform." target="_blank" title="WhatsApp Srikar"><i class="fab fa-whatsapp" style="font-size:24px;"></i></a>
+
+<!-- ─── PLATFORM HERO ─── -->
+<section class="platform-hero">
+  <div style="max-width:800px;margin:0 auto;">
+    <span class="section-label">Platform</span>
+    <h1>One Platform for<br><em>Consumers &amp; Partners.</em></h1>
+    <p>Whether you're a contractor sourcing materials, a vendor bidding on RFQs, or a service provider looking for work — Build360 connects you to the right opportunity.</p>
+  </div>
+</section>
+
+<!-- ─── B2B PROCUREMENT ─── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">B2B Procurement</span>
+      <h2 class="section-title">Bulk <em>Construction Sourcing,</em><br>Without the Runaround.</h2>
+      <p class="section-lead" style="max-width:560px;margin:0 auto;">Contractors, builders, and project managers — get aggregated quotes across multiple brands in one place. We handle the paperwork, logistics coordination, and quality checks.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:12px;background:var(--color-primary-10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;color:var(--color-primary);"><i class="fas fa-file-invoice"></i></div>
+        <h4 style="font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:8px;">Aggregated Quotes</h4>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Submit your BOQ once and receive competitive pricing from multiple brand partners side by side.</p>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:12px;background:var(--color-primary-10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;color:var(--color-primary);"><i class="fas fa-truck"></i></div>
+        <h4 style="font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:8px;">Logistics Managed</h4>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">We coordinate dispatch, transit tracking, and last-mile delivery to your site — partial or full truckload.</p>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:12px;background:var(--color-primary-10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;color:var(--color-primary);"><i class="fas fa-handshake"></i></div>
+        <h4 style="font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:8px;">Credit Terms</h4>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Enrolled B2B partners qualify for credit lines, volume discounts, and supply agreements tailored to project timelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ECOSYSTEM ─── -->
+<section class="section-pad" style="background:var(--bg2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Ecosystem</span>
+      <h2 class="section-title">Trusted by <em>Manufacturers,</em><br>Powered by Partners.</h2>
+      <p class="section-lead" style="max-width:560px;margin:0 auto;">We bridge the gap between India's top construction brands and the contractors, architects, and site engineers who build the nation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--color-primary-10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;color:var(--color-primary);"><i class="fas fa-industry"></i></div>
+        <h4 style="font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:8px;">Manufacturers</h4>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">UltraTech, MYK Laticrete, Saint Gobain Weber, and more — all onboarded with live inventory and dynamic pricing.</p>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--color-primary-10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;color:var(--color-primary);"><i class="fas fa-hard-hat"></i></div>
+        <h4 style="font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:8px;">Service Providers</h4>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Vetted contractors and installers offering turnkey execution — waterproofing, tiling, grouting, and site finishing.</p>
+      </div>
+      <div style="background:var(--color-bg-surface);border:1px solid var(--color-border-light);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--color-primary-10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;color:var(--color-primary);"><i class="fas fa-boxes"></i></div>
+        <h4 style="font-family:var(--display);font-size:16px;font-weight:700;margin-bottom:8px;">Logistics Network</h4>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;">Integrated 3PL partners ensure time-bound delivery across 28 states — with real-time tracking on every consignment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title" style="text-align:center;margin:16px 0 24px;">Your Project.<br><em>Our Intelligence.</em></h2>
+      <p style="font-size:15px;font-weight:300;color:var(--text2);max-width:480px;margin:0 auto 40px;line-height:1.7;text-align:center;">Share your vertical, quantity, and location. Our AI Concierge responds in under 4 minutes with pricing.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27m%20interested%20in%20B2B%20cement%20procurement%20pricing." target="_blank"><i class="fab fa-whatsapp" style="margin-right:6px;"></i> WhatsApp for Instant Quote</a>
+        <a class="btn btn-ghost" href="mailto:info@build360.online?subject=B2B%20Procurement%20Enquiry">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div style="text-align:left;">
+        <a class="footer-logo" href="index.html">Build<em>360</em>.Online</a>
+        <div class="footer-tagline" style="margin-top:6px;">India's Organized Procurement Network</div>
+        <p class="footer-desc">A digital procurement ecosystem transforming how India sources construction materials.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="products/tile-adhesives/">Browse Products</a>
+        <a href="index.html#contact">Request a Quote</a>
+        <a href="bid.html">Bid Platform</a>
+        <a href="index.html#ai-rfq">AI RFQ Generator</a>
+        <a href="mailto:info@build360.online?subject=Vendor%20Partnership%20Enquiry" target="_blank">Vendor Partnering →</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="about.html">About</a>
+        <a href="platform.html">Platform</a>
+        <a href="insights/">Insights</a>
+        <a href="index.html#pan-india">Pan India Coverage</a>
+        <a href="service-providers.html">Service Providers</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://wa.me/919032514441" target="_blank">WhatsApp →</a>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/build360-online/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/@build360online" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me/919032514441" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:info@build360.online" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="legal-divider"></span>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <span class="legal-divider"></span>
+      <a href="refund.html">Refund Policy</a>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Biome Build360 LLP. All rights reserved. Pan-India Operations.</span>
+      <span>info@build360.online &middot; +91 90325 14441</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+@media print { nav, .wa-float, footer { display: none !important; } body { background: #fff !important; } }
+</style>
+
+<script>
+function initHamburger(){const b=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');b.addEventListener('click',()=>{b.classList.toggle('open');m.classList.toggle('open');});document.addEventListener('click',e=>{if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});}
+window.addEventListener('DOMContentLoaded',()=>{initHamburger();if(typeof lucide!=='undefined')lucide.createIcons();});
+</script>
+</body>
+</html>

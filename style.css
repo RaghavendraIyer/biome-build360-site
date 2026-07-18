@@ -96,7 +96,8 @@ body::before {
 .utility-bar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 101;
+  z-index: 1001;
+  backdrop-filter: blur(0px);
   height: var(--utility-h);
   background: var(--color-text-main);
   display: flex;
@@ -468,32 +469,6 @@ section { position: relative; z-index: 1; }
   pointer-events: none;
 }
 /* ─── HERO DECORATIVE SHAPES ─── */
-.hero-slide-blob {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1;
-  width: 320px;
-  height: 260px;
-  color: var(--color-primary);
-  opacity: 0.07;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-55%) rotate(-8deg);
-}
-.hero-slide-blob-b {
-  left: auto;
-  right: 5%;
-  top: 45%;
-  transform: translateY(-50%) rotate(12deg);
-  opacity: 0.05;
-  color: var(--color-text-main);
-}
-.hero-slide-blob-c {
-  left: 25%;
-  top: 55%;
-  transform: translateY(-55%) rotate(4deg);
-  opacity: 0.06;
-}
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -580,7 +555,7 @@ section { position: relative; z-index: 1; }
 .counter-item:last-child { border-right: none; }
 .counter-num {
   display: block;
-  font-family: var(--display), sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 40px;
   font-weight: 800;
   color: #DE5A3F;
@@ -590,7 +565,7 @@ section { position: relative; z-index: 1; }
 }
 .counter-label {
   display: block;
-  font-family: var(--display);
+  font-family: 'Outfit', sans-serif;
   font-size: 11px;
   font-weight: 500;
   color: #5A3E35;
