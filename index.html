@@ -403,7 +403,6 @@ section { position: relative; z-index: 1; }
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh;
-  padding-top: var(--total-header);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -526,6 +525,7 @@ section { position: relative; z-index: 1; }
   align-items: center;
   position: relative;
   z-index: 1;
+  margin-top: calc(var(--nav-h) + var(--utility-h));
 }
 .ticker-live-badge {
   display: flex;
