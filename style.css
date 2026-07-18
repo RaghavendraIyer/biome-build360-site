@@ -49,7 +49,7 @@
 
   /* Layout */
   --nav-h:     64px;
-  --utility-h: 32px;
+  --utility-h: 36px;
   --total-header: calc(var(--nav-h) + var(--utility-h));
   --gutter:    clamp(24px, 4vw, 48px);
   --radius:    6px;
@@ -97,7 +97,6 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1001;
-  backdrop-filter: blur(0px);
   height: var(--utility-h);
   background: var(--color-bg-surface-alt);
   border-bottom: 1px solid var(--color-border-light);
@@ -173,11 +172,11 @@ nav {
   color: var(--color-text-muted);
   margin-top: 3px;
 }
-.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; flex: 1; justify-content: center; }
+.nav-links { display: flex; gap: clamp(8px, 1.8vw, 28px); list-style: none; align-items: center; flex: 1; justify-content: center; }
 .nav-links a,
 .nav-links span {
   font-family: var(--body);
-  font-size: 14px;
+  font-size: clamp(11px, 1.1vw, 14px);
   font-weight: 500;
   letter-spacing: .02em;
   text-transform: none;
