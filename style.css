@@ -467,6 +467,34 @@ section { position: relative; z-index: 1; }
   top: 10%; right: -100px;
   pointer-events: none;
 }
+/* ─── HERO DECORATIVE SHAPES ─── */
+.hero-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+.hero-shape-1 {
+  color: var(--color-primary);
+  opacity: 0.06;
+  width: 500px; height: 500px;
+  top: -120px; left: -180px;
+  transform: rotate(-15deg);
+}
+.hero-shape-2 {
+  color: var(--color-text-main);
+  opacity: 0.04;
+  width: 400px; height: 400px;
+  bottom: -80px; right: -100px;
+  transform: rotate(25deg);
+}
+.hero-shape-3 {
+  color: var(--color-primary);
+  opacity: 0.05;
+  width: 200px; height: 200px;
+  top: 40%; left: 60%;
+  transform: rotate(45deg);
+}
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -1273,6 +1301,27 @@ footer {
   color: var(--color-text-muted);
   line-height: 1.55;
 }
+/* ─── TRUST LINE ─── */
+.trust-line {
+  background: var(--color-bg-surface-alt);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 20px 0;
+}
+.trust-line .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.trust-line p {
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  text-align: center;
+}
+.trust-line .btn { flex-shrink: 0; }
 
 /* ─── WHATSAPP BANNER ─── */
 .wa-banner {
