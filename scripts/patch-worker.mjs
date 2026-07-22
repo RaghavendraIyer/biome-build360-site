@@ -11,7 +11,7 @@ const ASSETS_BLOCK = `            // Serve static assets from the Pages ASSETS b
                     let assetResponse = await env.ASSETS.fetch(request);
                     if (assetResponse.status !== 404) return assetResponse;
                     if (url.pathname.startsWith("/_next/") || url.pathname.startsWith("/adhesives/") || url.pathname.startsWith("/favicon") || url.pathname.startsWith("/apple-touch") || url.pathname.startsWith("/site.webmanifest")) {
-                        const prefixedUrl = new URL(\\\`/assets\\\${url.pathname}\\\`, request.url);
+                        const prefixedUrl = new URL(\`/assets\${url.pathname}\`, request.url);
                         prefixedUrl.search = url.search;
                         assetResponse = await env.ASSETS.fetch(new Request(prefixedUrl, request));
                         if (assetResponse.status !== 404) return assetResponse;
