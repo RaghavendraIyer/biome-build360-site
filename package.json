@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "cf-build": "opennextjs-cloudflare build",
-    "cf-deploy": "wrangler pages deploy .cloudflare/",
+    "cf-deploy": "opennextjs-cloudflare build && wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=main",
     "start": "next start",
     "lint": "eslint"
   },
