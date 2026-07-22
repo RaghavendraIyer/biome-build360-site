@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-"cf-build": "opennextjs-cloudflare build && node scripts/patch-worker.mjs",
-"cf-deploy": "opennextjs-cloudflare build && node scripts/patch-worker.mjs && cp .open-next/worker.js .open-next/_worker.js && wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=main",
+    "cf-build": "opennextjs-cloudflare build && node scripts/patch-worker.mjs",
+    "cf-deploy": "opennextjs-cloudflare build && node scripts/patch-worker.mjs && cp .open-next/worker.js .open-next/_worker.js && npx wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=main",
     "start": "next start",
     "lint": "eslint"
   },
@@ -25,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.113.0"
   }
 }
