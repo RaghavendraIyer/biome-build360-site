@@ -17,14 +17,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npx opennextjs-cloudflare build
-
-      - run: node scripts/patch-worker.mjs
-
-      - run: cp .open-next/worker.js .open-next/_worker.js
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=main
+      - name: Build & Deploy to Cloudflare Pages
+        run: npm run cf-deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
