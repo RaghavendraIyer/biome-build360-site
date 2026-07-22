@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #DE5A3F;
+  --color-primary-hover: #C94A30;
+  --color-primary-10: rgba(222, 90, 63, 0.10);
+  --color-primary-18: rgba(222, 90, 63, 0.18);
+  --color-primary-20: rgba(222, 90, 63, 0.20);
+  --color-primary-50: rgba(222, 90, 63, 0.50);
+
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1DA851;
+
+  --color-bg-app: #0A0A0A;
+  --color-bg-surface: #1A1A1A;
+  --color-bg-surface-alt: #222;
+
+  --color-text-main: #F5F5F0;
+  --color-text-secondary: #A0A090;
+  --color-text-muted: #707060;
+
+  --color-border-light: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.10);
+
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Syne', serif;
+
+  --radius: 10px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+
+  --gutter: clamp(24px, 4vw, 48px);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-bg-app);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--color-primary-20); color: var(--color-text-main); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px var(--color-primary-18); }
+  50% { box-shadow: 0 0 20px var(--color-primary-20); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}

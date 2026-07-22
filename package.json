@@ -1,37 +1,30 @@
 {
-  "name": "build360-website",
-  "version": "1.0.0",
-  "description": "Build360.online — India's Construction Procurement Network",
+  "name": "build360-next",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "python3 -m http.server 3000",
-    "start": "python3 -m http.server 3000"
+    "dev": "next dev",
+    "build": "next build",
+    "cf-build": "opennextjs-cloudflare build",
+    "cf-deploy": "wrangler pages deploy .cloudflare/",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "main": "index.js",
   "dependencies": {
-    "blake3-wasm": "^2.1.5",
-    "cookie": "^1.1.1",
-    "detect-libc": "^2.1.2",
-    "error-stack-parser-es": "^1.0.5",
-    "esbuild": "^0.28.1",
-    "miniflare": "^4.20260625.0",
-    "pathe": "^2.0.3",
-    "semver": "^7.8.5",
-    "sharp": "^0.34.5",
-    "supports-color": "^10.2.2",
-    "undici": "^7.28.0",
-    "unenv": "^2.0.0-rc.24",
-    "workerd": "^1.20260625.1",
-    "ws": "^8.21.0",
-    "youch": "^4.1.0-beta.10",
-    "youch-core": "^0.3.3"
+    "@opennextjs/cloudflare": "^1.20.2",
+    "lucide-react": "^1.25.0",
+    "next": "16.2.11",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
-
-  "optionalDependencies": {
-    "fsevents": "^2.3.3"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.11",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
