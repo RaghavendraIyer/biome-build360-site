@@ -36,7 +36,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-# cloudflare
+# cloudflare build output
 .open-next/
 .wrangler/
 
