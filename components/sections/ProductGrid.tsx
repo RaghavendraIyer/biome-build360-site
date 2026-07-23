@@ -113,9 +113,8 @@ export function ProductGrid() {
                   src={cat.image}
                   alt={cat.title}
                   className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <span className="absolute top-3 right-3 px-2.5 py-1 text-[9px] font-mono uppercase tracking-wider rounded"
                   style={{
                     background: cat.status === 'live' ? 'rgba(37,211,102,0.15)' : 'rgba(255,255,255,0.10)',
