@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
@@ -10,6 +10,16 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleOpen = (label: string) => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    setOpenDropdown(label);
+  };
+
+  const handleClose = () => {
+    closeTimeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -21,6 +31,15 @@ export function Header() {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    const onClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.desktop-nav-item')) setOpenDropdown(null);
+    };
+    document.addEventListener('click', onClickOutside);
+    return () => document.removeEventListener('click', onClickOutside);
+  }, []);
 
   return (
     <header
@@ -43,13 +62,19 @@ export function Header() {
           {navLinks.map((link) => (
             <div
               key={link.href}
-              className="relative"
-              onMouseEnter={() => link.children && setOpenDropdown(link.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              className="desktop-nav-item relative"
+              onMouseEnter={() => handleOpen(link.label)}
+              onMouseLeave={handleClose}
             >
               <Link
                 href={link.href}
                 className="flex items-center gap-1 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors no-underline"
+                onClick={(e) => {
+                  if (link.children) {
+                    e.preventDefault();
+                    setOpenDropdown(openDropdown === link.label ? null : link.label);
+                  }
+                }}
               >
                 {link.label}
                 {link.children && (
@@ -63,16 +88,18 @@ export function Header() {
                 )}
               </Link>
               {link.children && openDropdown === link.label && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 z-50">
-                  {link.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-0 -mt-2 pt-2 w-56">
+                  <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
