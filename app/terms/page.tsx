@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="px-[var(--gutter)] pt-[calc(80px+60px)] pb-20 max-w-3xl mx-auto">
+    <section className="px-[var(--gutter)] pt-[60px] pb-20 max-w-3xl mx-auto">
       <h1 className="font-serif text-[clamp(32px,5vw,48px)] font-extrabold text-[var(--color-text-main)] mb-8">Terms &amp; Conditions</h1>
       <div className="space-y-6 text-sm text-[var(--color-text-secondary)] leading-relaxed">
         <p>These Terms &amp; Conditions govern your use of the Build360.online website and services operated by Biome Build360 LLP.</p>

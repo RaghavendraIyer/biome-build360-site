@@ -9,18 +9,21 @@ const slides = [
     heading: <>The Smarter Way to{' '}<em className="not-italic text-[var(--color-primary)]">Procure</em>{' '}Building Supplies.</>,
     body: 'India\'s organized procurement network: connecting contractors, builders, and architects to verified supplier partners. Bulk pricing, project delivery, zero hassle.',
     sub: 'From cement and steel to tiles, adhesives, and finishing supplies — source your entire project through a single verified partner.',
+    bg: '/hero/slide-0.jpg',
   },
   {
     badge: 'Verified Brands · India\'s Trusted Procurement Network',
     heading: <>Verified Brands<br />For Every{' '}<em className="not-italic text-[var(--color-primary)]">Specialty Need.</em></>,
     body: 'Your single-source partner for organized construction materials across India. Starting with premium tile adhesives and epoxy grouts, we\'re expanding into cement, steel, blocks, and finishing supplies — all from verified suppliers, all on a single WhatsApp conversation.',
     sub: 'One request. One partner. Full project coverage.',
+    bg: '/hero/slide-1.jpg',
   },
   {
     badge: 'WhatsApp-First · Instant Quotes & Delivery',
     heading: <>Procurement<br />As Simple As{' '}<em className="not-italic text-[var(--color-primary)]">Sending a Message.</em></>,
     body: 'One request, one relationship, all materials coordinated. From cement and steel to tiles, adhesives, and finishing supplies : source your entire project through a single verified partner.',
     sub: 'We handle the logistics : you focus on the build.',
+    bg: '/hero/slide-2.jpg',
   },
 ];
 
@@ -67,16 +70,18 @@ export function Hero() {
       onMouseEnter={stopInterval}
       onMouseLeave={startInterval}
     >
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1A0A08] via-[#0A0A0A] to-[#1A0A08]" />
+      {slides.map((slide, i) => (
         <div
-          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          key={i}
+          className={`absolute inset-0 z-0 transition-opacity duration-700 ${i === current ? 'opacity-100' : 'opacity-0'}`}
           style={{
-            backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 0)',
-            backgroundSize: '32px 32px',
+            backgroundImage: `linear-gradient(100deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.35) 100%), url(${slide.bg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
-      </div>
+      ))}
+      <div className="absolute inset-0 z-[1] opacity-[0.07] pointer-events-none" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
       <div className="relative z-10 w-full px-[var(--gutter)] py-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center">
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-primary)] border border-[var(--color-primary-18)] bg-[var(--color-primary-10)] px-4 py-2 rounded-full inline-block mb-6">

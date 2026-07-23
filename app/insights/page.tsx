@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function InsightsPage() {
   return (
     <>
-      <section className="pt-[calc(80px+60px)] pb-10 px-[var(--gutter)] text-center bg-[var(--color-bg-app)]">
+      <section className="pt-[60px] pb-10 px-[var(--gutter)] text-center bg-[var(--color-bg-app)]">
         <h1 className="font-serif text-[clamp(32px,5vw,48px)] font-extrabold text-[var(--color-text-main)]">
           Insights &amp;{' '}
           <em className="not-italic text-[var(--color-primary)]">Analysis</em>

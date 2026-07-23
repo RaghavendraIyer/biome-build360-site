@@ -44,13 +44,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-9 left-0 right-0 z-50 transition-all duration-300',
         scrolled
           ? 'bg-[var(--color-bg-app)]/95 backdrop-blur-md shadow-sm'
           : 'bg-transparent'
       )}
     >
-      <div className="mx-auto flex items-center justify-between px-[var(--gutter)] h-16 md:h-20">
+      <div className="mx-auto grid grid-cols-[auto_1fr_auto] gap-x-8 items-center px-[var(--gutter)] h-16 md:h-20">
         <Link
           href="/"
           className="font-serif text-xl md:text-2xl font-extrabold tracking-tight text-[var(--color-text-main)] no-underline"

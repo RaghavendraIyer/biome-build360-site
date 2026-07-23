@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Syne, JetBrains_Mono } from "next/font/google";
+import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
+import { TickerBar } from "@/components/sections/TickerBar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
 import "./globals.css";
@@ -56,8 +58,13 @@ export default function RootLayout({
       className={`${outfit.variable} ${syne.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <UtilityBar />
         <Header />
-        <main className="flex-1">{children}</main>
+        <div className="h-[100px] md:h-[116px]" />
+        <TickerBar />
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer />
         <FloatingContact />
       </body>

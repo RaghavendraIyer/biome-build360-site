@@ -17,7 +17,7 @@ export default function WeberPage() {
       <section className="min-h-[35vh] flex items-center text-center px-[var(--gutter)] relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1A0A08, #0A0A0A, #1A0A08)' }}
       >
-        <div className="mx-auto max-w-3xl w-full pt-[calc(80px+60px)] pb-16">
+        <div className="mx-auto max-w-3xl w-full pt-[60px] pb-16">
           <h2 className="font-serif text-[clamp(32px,5vw,52px)] font-extrabold leading-[1] tracking-[-0.02em] uppercase text-white mb-4">
             {brand.name}
           </h2>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="px-[var(--gutter)] pt-[calc(80px+60px)] pb-20 max-w-3xl mx-auto">
+    <section className="px-[var(--gutter)] pt-[60px] pb-20 max-w-3xl mx-auto">
       <h1 className="font-serif text-[clamp(32px,5vw,48px)] font-extrabold text-[var(--color-text-main)] mb-8">Privacy Policy</h1>
       <div className="space-y-6 text-sm text-[var(--color-text-secondary)] leading-relaxed">
         <p>Biome Build360 LLP (&apos;Build360.online&apos;, &apos;we&apos;, &apos;us&apos;, or &apos;our&apos;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information.</p>

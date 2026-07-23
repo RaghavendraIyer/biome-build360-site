@@ -29,7 +29,7 @@ export default async function ArticlePage({ params }: Props) {
   if (post.comingSoon) notFound();
 
   return (
-    <article className="px-[var(--gutter)] pt-[calc(80px+60px)] pb-20 max-w-3xl mx-auto">
+    <article className="px-[var(--gutter)] pt-[60px] pb-20 max-w-3xl mx-auto">
       <Link href="/insights" className="inline-flex items-center gap-1 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] no-underline mb-8 transition-colors">
         <ArrowLeft size={14} /> Back to Insights
       </Link>

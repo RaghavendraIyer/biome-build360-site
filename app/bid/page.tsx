@@ -9,7 +9,7 @@ export default function BidPage() {
 
   return (
     <>
-      <section className="pt-[calc(80px+40px)] pb-10 px-[var(--gutter)] text-center bg-[var(--color-bg-app)]">
+      <section className="pt-10 pb-10 px-[var(--gutter)] text-center bg-[var(--color-bg-app)]">
         <div className="max-w-3xl mx-auto">
           <div className="px-4 py-2 text-[10px] font-mono uppercase tracking-wider bg-[var(--color-primary-10)] text-[var(--color-primary)] rounded-full inline-block mb-4">
             Interactive Preview

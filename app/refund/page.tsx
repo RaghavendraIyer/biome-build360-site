@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function RefundPage() {
   return (
-    <section className="px-[var(--gutter)] pt-[calc(80px+60px)] pb-20 max-w-3xl mx-auto">
+    <section className="px-[var(--gutter)] pt-[60px] pb-20 max-w-3xl mx-auto">
       <h1 className="font-serif text-[clamp(32px,5vw,48px)] font-extrabold text-[var(--color-text-main)] mb-8">Refund Policy</h1>
       <div className="space-y-6 text-sm text-[var(--color-text-secondary)] leading-relaxed">
         <p>Biome Build360 LLP facilitates procurement between buyers and verified supplier partners. Refund and return policies are governed by the terms agreed upon at the time of order confirmation.</p>

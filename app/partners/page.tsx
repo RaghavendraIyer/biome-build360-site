@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <>
-      <section className="min-h-[40vh] flex items-center text-center px-[var(--gutter)] pt-[calc(80px+60px)] pb-16 bg-[var(--color-bg-app)]">
+      <section className="min-h-[40vh] flex items-center text-center px-[var(--gutter)] pt-[60px] pb-16 bg-[var(--color-bg-app)]">
         <div className="mx-auto max-w-3xl">
           <h1 className="font-serif text-[clamp(32px,5vw,52px)] font-extrabold text-[var(--color-text-main)] mb-4">
             Join India&apos;s{' '}

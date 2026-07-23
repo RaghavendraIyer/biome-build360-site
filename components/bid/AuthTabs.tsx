@@ -1,6 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { TurnstileWidget } from '@/components/shared/TurnstileWidget';
+
+const SITE_KEY = '0x4AAAAAAD8BznFFwtYj9ED9';
 
 interface AuthTabsProps {
   onLogin: () => void;
@@ -8,6 +11,35 @@ interface AuthTabsProps {
 
 export function AuthTabs({ onLogin }: AuthTabsProps) {
   const [tab, setTab] = useState<'login' | 'register'>('login');
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [verifying, setVerifying] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = useCallback(async () => {
+    setError(null);
+    if (!turnstileToken) {
+      setError('Please complete the security check');
+      return;
+    }
+    setVerifying(true);
+    try {
+      const resp = await fetch('/api/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: turnstileToken }),
+      });
+      const result = await resp.json();
+      if (result.success) {
+        onLogin();
+      } else {
+        setError('Security check failed. Please try again.');
+      }
+    } catch {
+      setError('Verification error. Please try again.');
+    } finally {
+      setVerifying(false);
+    }
+  }, [turnstileToken, onLogin]);
 
   return (
     <div className="max-w-md mx-auto bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] overflow-hidden shadow-md">
@@ -33,11 +65,18 @@ export function AuthTabs({ onLogin }: AuthTabsProps) {
               <label className="text-xs text-[var(--color-text-muted)] block mb-1">Phone Number</label>
               <input type="tel" placeholder="+91 98765 43210" className="w-full bg-[var(--color-bg-surface-alt)] border border-[var(--color-border-light)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-main)] outline-none focus:border-[var(--color-primary)]" />
             </div>
+            <div className="flex justify-center">
+              <TurnstileWidget siteKey={SITE_KEY} onToken={setTurnstileToken} id="turnstile-login" />
+            </div>
+            {error && (
+              <p className="text-[11px] text-red-500 text-center">{error}</p>
+            )}
             <button
-              onClick={onLogin}
-              className="w-full py-3 text-sm font-medium bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors"
+              onClick={handleSubmit}
+              disabled={verifying || !turnstileToken}
+              className="w-full py-3 text-sm font-medium bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Login to Dashboard
+              {verifying ? 'Verifying...' : 'Login to Dashboard'}
             </button>
             <p className="text-[10px] text-[var(--color-text-muted)] text-center">
               This is a preview. Enter any phone number to access the demo dashboard.
@@ -53,11 +92,18 @@ export function AuthTabs({ onLogin }: AuthTabsProps) {
               <label className="text-xs text-[var(--color-text-muted)] block mb-1">Phone Number</label>
               <input type="tel" placeholder="+91 98765 43210" className="w-full bg-[var(--color-bg-surface-alt)] border border-[var(--color-border-light)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-main)] outline-none focus:border-[var(--color-primary)]" />
             </div>
+            <div className="flex justify-center">
+              <TurnstileWidget siteKey={SITE_KEY} onToken={setTurnstileToken} id="turnstile-register" />
+            </div>
+            {error && (
+              <p className="text-[11px] text-red-500 text-center">{error}</p>
+            )}
             <button
-              onClick={onLogin}
-              className="w-full py-3 text-sm font-medium bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors"
+              onClick={handleSubmit}
+              disabled={verifying || !turnstileToken}
+              className="w-full py-3 text-sm font-medium bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Register & Enter Demo
+              {verifying ? 'Verifying...' : 'Register & Enter Demo'}
             </button>
           </div>
         )}
