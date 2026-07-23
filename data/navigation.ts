@@ -17,6 +17,7 @@ export const navLinks: NavLink[] = [
       { label: 'Saint Gobain Weber', href: '/products/saint-gobain-weber' },
     ],
   },
+  { label: 'Bid Platform', href: '/bid' },
   { label: 'Careers', href: '/careers' },
   { label: 'Insights', href: '/insights' },
   { label: 'Contact', href: '/#contact' },
