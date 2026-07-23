@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { products, brands } from '@/data/products';
-import { FilterBar } from '@/components/products/FilterBar';
 import { GroutCalculator } from '@/components/products/GroutCalculator';
 
 export const metadata: Metadata = {

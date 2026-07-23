@@ -31,7 +31,7 @@ export function GroutCalculator() {
           ['Joint Width (mm)', jointWidth, setJointWidth, 3],
           ['Joint Depth (mm)', depth, setDepth, 10],
           ['Total Area (m²)', area, setArea, 10],
-        ] as const).map(([label, val, set, def]) => (
+        ] as const).map(([label, val, set]) => (
           <div key={label}>
             <label className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-muted)] block mb-1">{label}</label>
             <input

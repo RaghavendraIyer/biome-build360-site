@@ -23,16 +23,7 @@ const initialRFQs: RFQ[] = [
 
 export function VendorDashboard() {
   const [rfqs, setRfqs] = useState(initialRFQs);
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setLoggedIn(true);
-    setRfqs(prev => prev.map(rfq => ({
-      ...rfq,
-      yourBid: rfq.currentBid + 2000,
-      rank: 3,
-    })));
-  };
+  const [loggedIn] = useState(true);
 
   const handleBidChange = (id: string, value: number) => {
     setRfqs(prev => prev.map(rfq =>

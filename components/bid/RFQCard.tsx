@@ -21,7 +21,8 @@ const competitorNames = [
 ];
 
 export function RFQCard({ id, title, location, company, deadline, currentBid, yourBid, rank, onBidChange, onPlaceBid, isDemo }: RFQCardProps) {
-  const randomCompetitors = competitorNames.slice(0, 2 + Math.floor(Math.random() * 2));
+  const competitorCount = 2 + (id.charCodeAt(id.length - 1) % 2);
+  const randomCompetitors = competitorNames.slice(0, competitorCount);
 
   return (
     <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] p-6">

@@ -1,5 +1,3 @@
-import { Phone } from 'lucide-react';
-
 export function FloatingContact() {
   return (
     <a

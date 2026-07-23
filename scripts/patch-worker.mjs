@@ -6,7 +6,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const workerPath = join(__dirname, "..", ".open-next", "worker.js");
 
 const ASSETS_BLOCK = `            // Serve static assets from the Pages ASSETS binding (for _worker.js advanced mode).
-            if (env.ASSETS) {
+            // Only try ASSETS for paths with file extensions (skip page routes to save CPU).
+            if (/\\\.\\w+$/.test(url.pathname) && env.ASSETS) {
                 try {
                     let assetResponse = await env.ASSETS.fetch(request);
                     if (assetResponse.status !== 404) return assetResponse;
