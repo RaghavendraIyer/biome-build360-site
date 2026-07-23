@@ -1,78 +1,87 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-const categories = [
+interface Category {
+  title: string;
+  desc: string;
+  href: string;
+  badge: string;
+  status: 'live' | 'coming-soon';
+  image: string;
+}
+
+const categories: Category[] = [
   {
     title: 'Tile Adhesives & Grouts',
     desc: 'Premium tile adhesives, epoxy grouts, and cleaners from UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber.',
     href: '/products/adhesives',
     badge: '3 Brands · 34 SKUs',
-    status: 'live' as const,
-    bg: 'from-[#2E1A17] to-[#1A0D0B]',
+    status: 'live',
+    image: '/images/categories-jpg/tile-adhesives.jpg',
   },
   {
     title: 'Cement & Concrete',
     desc: 'OPC, PPC, and specialty cement for all construction grades. Sourced from IS-certified mills.',
     href: '/products',
     badge: 'Coming Soon',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/cement-concrete.jpg',
   },
   {
     title: 'Steel & TMT Bars',
     desc: 'Fe-500, Fe-550, and Fe-600 grade TMT bars from IS-certified manufacturers.',
     href: '/products',
     badge: 'Coming Soon',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/steel-tmt.jpg',
   },
   {
     title: 'Blocks & Bricks',
     desc: 'AAC blocks, fly ash bricks, red bricks, and concrete blocks for all walling needs.',
     href: '/products',
     badge: 'Coming Soon',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/blocks-bricks.jpg',
   },
   {
     title: 'Finishing Supplies',
     desc: 'POP, putty, paints, sealants, and interior finishing materials for residential and commercial projects.',
     href: '/products',
     badge: 'Coming Soon',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/finishing-supplies.jpg',
   },
   {
     title: 'Waterproofing & Sealants',
     desc: 'Membrane waterproofing, liquid sealants, and drainage solutions. Coming soon.',
     href: '/products',
     badge: 'Coming Soon',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/waterproofing-sealants.jpg',
   },
   {
     title: 'Water Treatment Solutions',
     desc: 'Industrial and residential water treatment systems, RO plants, and softeners. Partner: Venus.',
     href: '/products',
     badge: 'Coming Soon · Venus',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/water-treatment.jpg',
   },
   {
     title: 'Power Backups & Gensets',
     desc: 'Industrial generators, UPS systems, and power backup solutions. Partner: Cummins.',
     href: '/products',
     badge: 'Coming Soon · Cummins',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/power-backups.jpg',
   },
   {
     title: 'Plumbing & Sanitaryware',
     desc: 'CPVC pipes, fittings, sanitaryware, and bathroom solutions for residential and commercial projects.',
     href: '/products',
     badge: 'Coming Soon',
-    status: 'coming-soon' as const,
-    bg: 'from-zinc-800 to-zinc-900',
+    status: 'coming-soon',
+    image: '/images/categories-jpg/plumbing-sanitaryware.jpg',
   },
 ];
 
@@ -99,10 +108,14 @@ export function ProductGrid() {
               href={cat.href}
               className="group block bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] overflow-hidden hover:shadow-md hover:border-[var(--color-primary-18)] transition-all no-underline"
             >
-              <div className={`aspect-[4/3] bg-gradient-to-br ${cat.bg} relative overflow-hidden flex items-center justify-center`}>
-                <span className="font-serif text-4xl md:text-5xl font-extrabold text-white/10 select-none">
-                  {cat.title.split(' ')[0]}
-                </span>
+              <div className="aspect-[4/3] relative overflow-hidden bg-[var(--color-bg-surface)]">
+                <img
+                  src={cat.image}
+                  alt={cat.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <span className="absolute top-3 right-3 px-2.5 py-1 text-[9px] font-mono uppercase tracking-wider rounded"
                   style={{
                     background: cat.status === 'live' ? 'rgba(37,211,102,0.15)' : 'rgba(255,255,255,0.10)',
