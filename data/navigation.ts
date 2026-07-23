@@ -6,7 +6,14 @@ export interface NavLink {
 
 export const navLinks: NavLink[] = [
   { label: 'Who We Are', href: '/about' },
-  { label: 'Platform', href: '/' },
+  {
+    label: 'Platform',
+    href: '/',
+    children: [
+      { label: 'Consumer Platform', href: '/consumers' },
+      { label: 'Business Partners', href: '/partners' },
+    ],
+  },
   {
     label: 'Products',
     href: '/products',
@@ -17,7 +24,7 @@ export const navLinks: NavLink[] = [
       { label: 'Saint Gobain Weber', href: '/products/saint-gobain-weber' },
     ],
   },
-  { label: 'Bid Platform', href: '/bid' },
+  { label: 'Bid', href: '/bid' },
   { label: 'Careers', href: '/careers' },
   { label: 'Insights', href: '/insights' },
   { label: 'Contact', href: '/#contact' },

@@ -10,9 +10,14 @@ const footerLinks = {
   ],
   products: [
     { label: 'Tile Adhesives & Grouts', href: '/products/adhesives' },
-    { label: 'UltraTech Tilefixo', href: '/products/ultratech-tilefixo' },
-    { label: 'MYK Laticrete', href: '/products/myk-laticrete' },
-    { label: 'Saint Gobain Weber', href: '/products/saint-gobain-weber' },
+    { label: 'Cement & Concrete', href: '/products' },
+    { label: 'Steel & TMT Bars', href: '/products' },
+    { label: 'Blocks & Bricks', href: '/products' },
+    { label: 'Finishing Supplies', href: '/products' },
+    { label: 'Waterproofing & Sealants', href: '/products' },
+    { label: 'Water Treatment Solutions', href: '/products' },
+    { label: 'Power Backups & Gensets', href: '/products' },
+    { label: 'Plumbing & Sanitaryware', href: '/products' },
   ],
   company: [
     { label: 'For Consumers', href: '/consumers' },
