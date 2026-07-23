@@ -2,7 +2,7 @@
 
 @theme inline {
   --color-primary: #DE5A3F;
-  --color-primary-hover: #C94A30;
+  --color-primary-hover: #C14D33;
   --color-primary-10: rgba(222, 90, 63, 0.10);
   --color-primary-18: rgba(222, 90, 63, 0.18);
   --color-primary-20: rgba(222, 90, 63, 0.20);
@@ -11,24 +11,25 @@
   --color-whatsapp: #25D366;
   --color-whatsapp-hover: #1DA851;
 
-  --color-bg-app: #0A0A0A;
-  --color-bg-surface: #1A1A1A;
-  --color-bg-surface-alt: #222;
+  --color-bg-app: #F8F9FA;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-alt: #F1F3F5;
 
-  --color-text-main: #F5F5F0;
-  --color-text-secondary: #A0A090;
-  --color-text-muted: #707060;
+  --color-text-main: #1E293B;
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #8899A6;
 
-  --color-border-light: rgba(255, 255, 255, 0.06);
-  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-light: rgba(103, 116, 126, 0.20);
+  --color-border: rgba(103, 116, 126, 0.30);
 
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Syne', serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  --radius: 10px;
+  --radius: 6px;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.10);
 
   --gutter: clamp(24px, 4vw, 48px);
 }

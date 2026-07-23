@@ -55,7 +55,7 @@ export function Header() {
           href="/"
           className="font-serif text-xl md:text-2xl font-extrabold tracking-tight text-[var(--color-text-main)] no-underline"
         >
-          Build<span className="text-[var(--color-primary)]">360</span>
+          Build<span className="text-[var(--color-primary)]">360</span>.Online
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">

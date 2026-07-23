@@ -22,7 +22,7 @@ export function AiRfqUpload() {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="bg-gradient-to-br from-[rgba(222,90,63,0.08)] to-[rgba(30,41,59,0.04)] border border-[var(--color-primary-18)] rounded-[var(--radius)] p-10 md:p-12 text-center relative overflow-hidden order-2 lg:order-1">
-            <div className="w-[140px] h-[260px] md:w-[180px] md:h-[320px] mx-auto mb-6 bg-[var(--color-bg-surface)] border-2 border-[var(--color-text-main)] rounded-3xl relative shadow-lg flex items-center justify-center text-5xl overflow-hidden">
+            <div className="w-[140px] h-[260px] md:w-[180px] md:h-[320px] mx-auto mb-6 bg-[var(--color-bg-surface)] border-2 border-[var(--color-border-light)] rounded-3xl relative shadow-lg flex items-center justify-center text-5xl overflow-hidden">
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[var(--color-text-main)] rounded" />
               <div className="absolute left-[10%] right-[10%] h-0.5 bg-[var(--color-primary)] rounded animate-[scanAnim_2s_ease-in-out_infinite] shadow-[0_0_12px_var(--color-primary-50)]" />
               🤖

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Syne } from "next/font/google";
+import { Outfit, Syne, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
@@ -17,11 +17,25 @@ const syne = Syne({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Build360.online : India's Premium Construction Procurement Network",
   description:
     "Source premium tile adhesives, epoxy grouts, cement, steel, and construction materials in bulk. India's organized procurement network for contractors, builders, and architects.",
   metadataBase: new URL("https://build360.online"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Build360.online — Construction Procurement Network",
     description:
@@ -39,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${syne.variable} h-full antialiased`}
+      className={`${outfit.variable} ${syne.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />
