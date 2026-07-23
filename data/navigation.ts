@@ -19,7 +19,7 @@ export const navLinks: NavLink[] = [
   },
   { label: 'Careers', href: '/careers' },
   { label: 'Insights', href: '/insights' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export const companyInfo = {

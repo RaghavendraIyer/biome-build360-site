@@ -7,6 +7,7 @@ import { AudienceSegments } from '@/components/sections/AudienceSegments';
 import { FeatureCards } from '@/components/sections/FeatureCards';
 import { BlogPreview } from '@/components/sections/BlogPreview';
 import { ContactSection } from '@/components/sections/ContactSection';
+import { AiRfqUpload } from '@/components/sections/AiRfqUpload';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <ProcessSteps />
       <AudienceSegments />
       <FeatureCards />
+      <AiRfqUpload />
       <BlogPreview />
       <ContactSection />
     </>
