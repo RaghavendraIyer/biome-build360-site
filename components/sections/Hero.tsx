@@ -27,24 +27,42 @@ const slides = [
 export function Hero() {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const startInterval = () => {
+    if (intervalRef.current) return;
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
   };
 
   const stopInterval = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
   };
 
   useEffect(() => {
+    const el = sectionRef.current;
     startInterval();
-    return () => stopInterval();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) startInterval();
+        else stopInterval();
+      },
+      { threshold: 0 },
+    );
+    if (el) observer.observe(el);
+    return () => {
+      stopInterval();
+      if (el) observer.disconnect();
+    };
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       className="relative min-h-[90vh] flex items-center overflow-hidden transition-colors duration-700"
       onMouseEnter={stopInterval}
       onMouseLeave={startInterval}
