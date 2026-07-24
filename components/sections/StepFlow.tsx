@@ -67,14 +67,17 @@ export function StepFlow() {
           })}
         </div>
 
-        <div className="mt-8 flex justify-center lg:absolute lg:bottom-0 lg:left-0 lg:justify-start">
+        <div className="mt-12 flex flex-col items-center gap-3">
           <Image
             src="/qr-code.png"
             alt="Scan QR code to start ordering"
-            width={100}
-            height={100}
+            width={120}
+            height={120}
             className="rounded-lg shadow-sm"
           />
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+            Scan to get started
+          </span>
         </div>
       </div>
     </section>
