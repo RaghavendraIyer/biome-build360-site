@@ -30,7 +30,8 @@ export function TurnstileWidget({ siteKey, onToken, id = 'turnstile-widget' }: T
   const widgetId = useRef<string | null>(null);
   const scriptLoaded = useRef(false);
   const onTokenRef = useRef(onToken);
-  onTokenRef.current = onToken;
+
+  useEffect(() => { onTokenRef.current = onToken; }, [onToken]);
 
   const readyCallback = useCallback(() => {
     if (!containerRef.current || widgetId.current) return;
@@ -59,7 +60,7 @@ export function TurnstileWidget({ siteKey, onToken, id = 'turnstile-widget' }: T
     script.async = true;
     script.defer = true;
 
-    (window as any).cfTurnstileOnload = () => {
+    (window as unknown as Record<string, unknown>).cfTurnstileOnload = () => {
       scriptLoaded.current = true;
       readyCallback();
     };
