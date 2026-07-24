@@ -111,20 +111,20 @@ export function Header() {
             href="https://wa.me/919032514441"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-[var(--color-whatsapp)] text-white rounded-full hover:bg-[var(--color-whatsapp-hover)] transition-colors no-underline shadow-sm"
+            className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-main)] transition-colors no-underline"
           >
             <Phone size={16} />
             <span className="hidden xl:inline text-xs">+91 90325 14441</span>
           </a>
           <Link
             href="/bid"
-            className="px-4 py-2 text-sm font-medium border border-[var(--color-primary-18)] text-[var(--color-primary)] rounded-[var(--radius)] hover:bg-[var(--color-primary-10)] transition-colors no-underline"
+            className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-main)] transition-colors no-underline"
           >
             Login
           </Link>
           <Link
             href="/partners"
-            className="px-4 py-2 text-sm font-medium bg-[var(--color-primary)] text-white rounded-[var(--radius)] hover:bg-[var(--color-primary-hover)] transition-colors no-underline"
+            className="px-4 py-2 text-sm font-medium bg-[#1E293B] text-white rounded-[var(--radius)] hover:bg-[#0F172A] transition-colors no-underline"
           >
             Partner Signup
           </Link>
@@ -170,14 +170,14 @@ export function Header() {
             <hr className="my-4 border-[var(--color-border-light)]" />
             <Link
               href="/bid"
-              className="block py-3 text-base font-medium text-[var(--color-primary)] no-underline"
+              className="block py-3 text-base font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-main)] no-underline transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Login
             </Link>
             <Link
               href="/partners"
-              className="block mt-2 py-3 px-4 text-center text-base font-medium bg-[var(--color-primary)] text-white rounded-[var(--radius)] no-underline"
+              className="block mt-2 py-3 px-4 text-center text-base font-medium bg-[#1E293B] text-white rounded-[var(--radius)] hover:bg-[#0F172A] no-underline transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Partner Signup
@@ -186,7 +186,7 @@ export function Header() {
               href="https://wa.me/919032514441"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 mt-3 py-3 text-sm text-[var(--color-whatsapp)] no-underline"
+              className="flex items-center justify-center gap-2 mt-3 py-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] no-underline transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               <Phone size={16} />
