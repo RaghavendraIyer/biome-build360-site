@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Syne, JetBrains_Mono } from "next/font/google";
+import { Outfit, Manrope, JetBrains_Mono } from "next/font/google";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { TickerBar } from "@/components/sections/TickerBar";
@@ -13,7 +13,7 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const syne = Syne({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-serif",
   display: "swap",
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${syne.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <UtilityBar />

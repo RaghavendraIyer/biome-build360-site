@@ -11,19 +11,19 @@
   --color-whatsapp: #25D366;
   --color-whatsapp-hover: #1DA851;
 
-  --color-bg-app: #F8F9FA;
+  --color-bg-app: #F5F4F0;
   --color-bg-surface: #FFFFFF;
-  --color-bg-surface-alt: #F1F3F5;
+  --color-bg-surface-alt: #EBEAE5;
 
   --color-text-main: #1E293B;
-  --color-text-secondary: #4A5568;
-  --color-text-muted: #8899A6;
+  --color-text-secondary: #5A5350;
+  --color-text-muted: #8A8580;
 
-  --color-border-light: rgba(103, 116, 126, 0.20);
-  --color-border: rgba(103, 116, 126, 0.30);
+  --color-border-light: rgba(90, 83, 80, 0.15);
+  --color-border: rgba(90, 83, 80, 0.25);
 
   --font-sans: 'Outfit', sans-serif;
-  --font-serif: 'Syne', serif;
+  --font-serif: 'Manrope', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --radius: 6px;
