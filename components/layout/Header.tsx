@@ -88,17 +88,31 @@ export function Header() {
                 )}
               </Link>
               {link.children && openDropdown === link.label && (
-                <div className="absolute top-full left-0 -mt-2 pt-2 w-56">
+                <div className="absolute top-full left-0 -mt-2 pt-2 w-64">
                   <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                    {link.children.map((child, idx) => {
+                      if (child.type === 'section-header' && !child.label) {
+                        return <hr key={`sep-${idx}`} className="mx-4 my-1.5 border-[var(--color-border-light)]" />;
+                      }
+                      if (child.type === 'section-header') {
+                        return (
+                          <div key={`hdr-${idx}`} className="px-4 py-1.5">
+                            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+                              {child.label}
+                            </span>
+                          </div>
+                        );
+                      }
+                      return (
+                        <Link
+                          key={`lnk-${idx}`}
+                          href={child.href}
+                          className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -116,12 +130,6 @@ export function Header() {
             <Phone size={16} />
             <span className="hidden xl:inline text-xs">+91 90325 14441</span>
           </a>
-          <Link
-            href="/bid"
-            className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-main)] transition-colors no-underline"
-          >
-            Login
-          </Link>
           <Link
             href="/partners"
             className="px-4 py-2 text-sm font-medium bg-[#1E293B] text-white rounded-[var(--radius)] hover:bg-[#0F172A] transition-colors no-underline"
@@ -153,28 +161,35 @@ export function Header() {
                 </Link>
                 {link.children && (
                   <div className="pl-4 pb-2 space-y-1">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                    {link.children.map((child, idx) => {
+                      if (child.type === 'section-header' && !child.label) {
+                        return <hr key={`sep-${idx}`} className="my-2 border-[var(--color-border-light)]" />;
+                      }
+                      if (child.type === 'section-header') {
+                        return (
+                          <div key={`hdr-${idx}`} className="py-1.5">
+                            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+                              {child.label}
+                            </span>
+                          </div>
+                        );
+                      }
+                      return (
+                        <Link
+                          key={`lnk-${idx}`}
+                          href={child.href}
+                          className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
             ))}
             <hr className="my-4 border-[var(--color-border-light)]" />
-            <Link
-              href="/bid"
-              className="block py-3 text-base font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-main)] no-underline transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              Login
-            </Link>
             <Link
               href="/partners"
               className="block mt-2 py-3 px-4 text-center text-base font-medium bg-[#1E293B] text-white rounded-[var(--radius)] hover:bg-[#0F172A] no-underline transition-colors"

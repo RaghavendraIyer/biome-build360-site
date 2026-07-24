@@ -1,14 +1,16 @@
 import Link from 'next/link';
+import { Mail } from 'lucide-react';
 
 export function UtilityBar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[1001] h-9 bg-[var(--color-bg-surface-alt)] border-b border-[var(--color-border-light)] flex items-center">
       <div className="w-full max-w-7xl mx-auto px-[var(--gutter)] flex items-center justify-between">
-        <div className="flex items-center gap-3.5">
+        <div className="flex items-center gap-2">
           <a
             href="mailto:info@build360.online"
-            className="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors no-underline"
+            className="flex items-center gap-1.5 text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors no-underline"
           >
+            <Mail size={12} />
             info@build360.online
           </a>
         </div>

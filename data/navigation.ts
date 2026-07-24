@@ -1,7 +1,13 @@
+export interface NavChild {
+  label: string;
+  href: string;
+  type?: 'link' | 'section-header';
+}
+
 export interface NavLink {
   label: string;
   href: string;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 }
 
 export const navLinks: NavLink[] = [
@@ -18,7 +24,18 @@ export const navLinks: NavLink[] = [
     label: 'Products',
     href: '/products',
     children: [
+      { label: 'Categories', href: '#', type: 'section-header' },
       { label: 'Tile Adhesives & Grouts', href: '/products/adhesives' },
+      { label: 'Cement & Concrete', href: '#' },
+      { label: 'Steel & TMT Bars', href: '#' },
+      { label: 'Blocks & Bricks', href: '#' },
+      { label: 'Finishing Supplies', href: '#' },
+      { label: 'Waterproofing & Sealants', href: '#' },
+      { label: 'Water Treatment Solutions', href: '#' },
+      { label: 'Power Backups & Gensets', href: '#' },
+      { label: 'Plumbing & Sanitaryware', href: '#' },
+      { label: '', href: '#', type: 'section-header' },
+      { label: 'Brands', href: '#', type: 'section-header' },
       { label: 'UltraTech Tilefixo', href: '/products/ultratech-tilefixo' },
       { label: 'MYK Laticrete', href: '/products/myk-laticrete' },
       { label: 'Saint Gobain Weber', href: '/products/saint-gobain-weber' },
