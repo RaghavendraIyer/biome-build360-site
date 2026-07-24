@@ -74,6 +74,7 @@ export const blogPosts = [
     category: 'Market Analysis',
     readTime: '5 min read',
     comingSoon: false,
+    image: '/blog-tile-adhesive-pricing.jpg',
   },
   {
     slug: 'how-to-write-a-boq',

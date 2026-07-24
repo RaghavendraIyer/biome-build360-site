@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '@/data/metrics';
 
@@ -21,8 +22,10 @@ export function BlogPreview() {
               key={post.slug}
               className="rounded-[var(--radius)] bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] overflow-hidden hover:border-[var(--color-primary-18)] transition-colors relative"
             >
-              <div className="aspect-[16/9] bg-[var(--color-bg-surface-alt)] flex items-center justify-center">
-                {post.comingSoon ? (
+              <div className="relative aspect-[16/9] bg-[var(--color-bg-surface-alt)] flex items-center justify-center overflow-hidden">
+                {post.image ? (
+                  <Image src={post.image} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                ) : post.comingSoon ? (
                   <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-text-muted)]">
                     Coming Soon
                   </span>

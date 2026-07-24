@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { blogPosts } from '@/data/metrics';
@@ -41,6 +42,12 @@ export default async function ArticlePage({ params }: Props) {
         {post.title}
       </h1>
       <p className="text-sm text-[var(--color-text-muted)] mb-8">{post.readTime}</p>
+
+      {post.image && (
+        <div className="relative aspect-[16/7] mb-8 rounded-[var(--radius)] overflow-hidden">
+          <Image src={post.image} alt={post.title} fill className="object-cover" sizes="100vw" />
+        </div>
+      )}
 
       <div className="prose prose-invert prose-sm max-w-none text-[var(--color-text-secondary)] leading-relaxed space-y-6">
         {slug === 'tile-adhesive-pricing-q2-2026' && (
