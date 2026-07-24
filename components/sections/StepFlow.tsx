@@ -1,5 +1,6 @@
 import { MessageSquare, MapPin, Package, CheckCircle, Truck } from 'lucide-react';
 import { stepFlow } from '@/data/metrics';
+import Image from 'next/image';
 
 const iconMap: Record<string, React.ElementType> = {
   MessageSquare, MapPin, Package, CheckCircle, Truck,
@@ -7,8 +8,31 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function StepFlow() {
   return (
-    <section className="py-20 md:py-28 px-[var(--gutter)] bg-[var(--color-bg-surface)]">
-      <div className="mx-auto max-w-6xl">
+    <section className="relative py-20 md:py-28 px-[var(--gutter)] bg-[var(--color-bg-surface)] overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 hidden lg:flex items-center justify-center" aria-hidden="true">
+        <svg
+          className="w-full h-full max-w-6xl"
+          viewBox="0 0 1152 400"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <defs>
+            <marker id="flowArrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-primary)" opacity="0.2" />
+            </marker>
+          </defs>
+          <path
+            d="M 30,200 Q 288,60 576,200 T 1122,200"
+            fill="none"
+            stroke="var(--color-primary)"
+            strokeWidth="2"
+            strokeDasharray="6 8"
+            opacity="0.12"
+            markerEnd="url(#flowArrowhead)"
+          />
+        </svg>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">
             How It Works
@@ -41,6 +65,16 @@ export function StepFlow() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-8 flex justify-center lg:absolute lg:bottom-0 lg:left-0 lg:justify-start">
+          <Image
+            src="/qr-code.png"
+            alt="Scan QR code to start ordering"
+            width={100}
+            height={100}
+            className="rounded-lg shadow-sm"
+          />
         </div>
       </div>
     </section>

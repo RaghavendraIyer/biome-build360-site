@@ -95,7 +95,7 @@ export function Hero() {
           </h1>
           <p
             key={`b-${current}`}
-            className="text-sm md:text-[16px] text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed font-light mb-8 animate-[fadeUp_0.5s_0.1s_ease_both]"
+            className="text-sm md:text-[16px] text-white/85 max-w-2xl mx-auto leading-relaxed font-light mb-8 animate-[fadeUp_0.5s_0.1s_ease_both]"
           >
             {slides[current].body}
           </p>

@@ -111,7 +111,7 @@ export function Header() {
             href="https://wa.me/919032514441"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[var(--color-whatsapp)] hover:text-[var(--color-whatsapp-hover)] transition-colors no-underline"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-[var(--color-whatsapp)] text-white rounded-full hover:bg-[var(--color-whatsapp-hover)] transition-colors no-underline shadow-sm"
           >
             <Phone size={16} />
             <span className="hidden xl:inline text-xs">+91 90325 14441</span>
@@ -131,7 +131,7 @@ export function Header() {
         </div>
 
         <button
-          className="lg:hidden flex flex-col items-center justify-center w-10 h-10 bg-transparent border-none cursor-pointer"
+          className="lg:hidden flex flex-col items-center justify-center w-10 h-10 bg-transparent border-none cursor-pointer relative z-[51]"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
@@ -140,7 +140,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-[var(--color-bg-app)] z-40 overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-0 bg-[var(--color-bg-app)] z-40 overflow-y-auto pt-16">
           <nav className="flex flex-col px-[var(--gutter)] py-6" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <div key={link.href}>

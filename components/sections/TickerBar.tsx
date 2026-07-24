@@ -73,7 +73,7 @@ export function TickerBar() {
   }, []);
 
   return (
-    <div className="h-[52px] flex items-center border-t border-[var(--color-primary-18)] border-b border-[var(--color-primary-10)] bg-gradient-to-r from-[rgba(222,90,63,0.03)] via-[var(--color-bg-surface)] to-[rgba(222,90,63,0.03)] overflow-hidden">
+    <div className="h-[52px] flex items-center border-t border-[var(--color-primary-18)] border-b border-[var(--color-primary-10)] bg-gradient-to-r from-[rgba(222,90,63,0.06)] via-[var(--color-bg-surface)] to-[rgba(222,90,63,0.06)] overflow-hidden relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:pointer-events-none">
       <div className="flex items-center gap-2 shrink-0 h-full px-6 bg-[var(--color-bg-surface)] border-r border-[var(--color-primary-18)] z-[2]">
         <span className="w-2 h-2 rounded-full bg-[var(--color-success)] animate-pulse shrink-0" />
         <span className="font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-[var(--color-success)]">
