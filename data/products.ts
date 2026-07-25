@@ -36,8 +36,8 @@ export const products: Product[] = [
   { id: 'weber-set-classic', brand: 'weber', name: 'Weber Set Classic', description: 'Standard cement-based tile adhesive for ceramic tiles in interior applications.', image: '/adhesives/weberset-classic.jpg' },
   { id: 'weber-set-plus', brand: 'weber', name: 'Weber Set Plus White', description: 'White cement-based adhesive for light-coloured natural stone and marble.', image: '/adhesives/weberset-plus-white.jpg' },
   { id: 'weber-set-premier', brand: 'weber', name: 'Weber Set Premier', description: 'Premium grade adhesive with enhanced adhesion and extended open time.', image: '/adhesives/weberset-premier.jpg' },
-  { id: 'weber-epoxy', brand: 'weber', name: 'Weber Epoxy Grout', description: 'High-performance epoxy grout for demanding commercial and industrial applications.' },
-  { id: 'weber-firm', brand: 'weber', name: 'Weber Set Firm', description: 'Non-sag adhesive for heavy and large-format tiles.', image: '/adhesives/weberset-firm.jpg' },
+  { id: 'weber-epoxy', brand: 'weber', name: 'Weber Epoxy Grout', description: 'High-performance epoxy grout for demanding commercial and industrial applications.', image: '/adhesives/weber-epoxy-grout-1000x1000.webp' },
+  { id: 'weber-firm', brand: 'weber', name: 'Weber Set Firm', description: 'Non-sag adhesive for heavy and large-format tiles.', image: '/adhesives/weber-set-firm-tile-adhesive-1000x1000.webp' },
 ];
 
 export const brands = [
