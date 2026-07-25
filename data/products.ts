@@ -29,15 +29,15 @@ export const products: Product[] = [
   { id: 'myk-111-73', brand: 'myk', name: '111 + 73', description: 'Standard tile adhesive system with 111 adhesive and 73 additive for enhanced performance.', image: '/adhesives/myk-111-73.jpg' },
   { id: 'myk-111-4237', brand: 'myk', name: '111 + 4237', description: 'Premium adhesive system with advanced polymer additive for superior adhesion.', image: '/adhesives/myk-111-4237.jpg' },
   { id: 'myk-345', brand: 'myk', name: '345 Super Flex', description: 'Flexible tile adhesive for substrates with movement and thermal expansion.', image: '/adhesives/myk-345.jpg' },
-  { id: 'myk-epoxy-grout', brand: 'myk', name: 'LATICRETE Epoxy Grout', description: 'Premium epoxy grout for stain-proof, waterproof, and crack-resistant joints.' },
-  { id: 'myk-sp-100', brand: 'myk', name: 'SP-100', description: 'Self-leveling underlayment for preparing floors before tiling.' },
+  { id: 'myk-epoxy-grout', brand: 'myk', name: 'LATICRETE Epoxy Grout', description: 'Premium epoxy grout for stain-proof, waterproof, and crack-resistant joints.', image: '/adhesives/LATICRETE%20Epoxy%20Grout%20.png' },
+  { id: 'myk-sp-100', brand: 'myk', name: 'SP-100', description: 'Self-leveling underlayment for preparing floors before tiling.', image: '/adhesives/LATICRETE%20Epoxy%20Grout%20.png' },
 
   // Saint Gobain Weber
   { id: 'weber-set-classic', brand: 'weber', name: 'Weber Set Classic', description: 'Standard cement-based tile adhesive for ceramic tiles in interior applications.', image: '/adhesives/weberset-classic.jpg' },
   { id: 'weber-set-plus', brand: 'weber', name: 'Weber Set Plus White', description: 'White cement-based adhesive for light-coloured natural stone and marble.', image: '/adhesives/weberset-plus-white.jpg' },
   { id: 'weber-set-premier', brand: 'weber', name: 'Weber Set Premier', description: 'Premium grade adhesive with enhanced adhesion and extended open time.', image: '/adhesives/weberset-premier.jpg' },
-  { id: 'weber-epoxy', brand: 'weber', name: 'Weber Epoxy Grout', description: 'High-performance epoxy grout for demanding commercial and industrial applications.' },
-  { id: 'weber-firm', brand: 'weber', name: 'Weber Set Firm', description: 'Non-sag adhesive for heavy and large-format tiles.', image: '/adhesives/weberset-firm.jpg' },
+  { id: 'weber-epoxy', brand: 'weber', name: 'Weber Epoxy Grout', description: 'High-performance epoxy grout for demanding commercial and industrial applications.', image: '/adhesives/weber-epoxy-grout-1000x1000.webp' },
+  { id: 'weber-firm', brand: 'weber', name: 'Weber Set Firm', description: 'Non-sag adhesive for heavy and large-format tiles.', image: '/adhesives/weber-set-firm-tile-adhesive-1000x1000.webp' },
 ];
 
 export const brands = [
