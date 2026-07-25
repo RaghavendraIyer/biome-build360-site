@@ -1,11 +1,11 @@
-name: Deploy to Cloudflare Pages
+name: Verify Production Build
 
 on:
   push:
     branches: [main, dev/staging]
 
 jobs:
-  deploy:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,9 +17,3 @@ jobs:
       - run: npx opennextjs-cloudflare build
       - run: node scripts/patch-worker.mjs
       - run: cp .open-next/worker.js .open-next/_worker.js
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=${{ github.ref_name }}
