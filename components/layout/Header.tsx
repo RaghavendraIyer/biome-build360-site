@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, Phone } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { cn } from '@/lib/utils';
 
@@ -10,7 +10,10 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [flyoutCategory, setFlyoutCategory] = useState<string | null>(null);
+  const [mobileExpandedCategory, setMobileExpandedCategory] = useState<string | null>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const flyoutTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleOpen = (label: string) => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
@@ -18,7 +21,19 @@ export function Header() {
   };
 
   const handleClose = () => {
-    closeTimeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+      setFlyoutCategory(null);
+    }, 150);
+  };
+
+  const handleFlyoutOpen = (label: string) => {
+    if (flyoutTimeoutRef.current) clearTimeout(flyoutTimeoutRef.current);
+    setFlyoutCategory(label);
+  };
+
+  const handleFlyoutClose = () => {
+    flyoutTimeoutRef.current = setTimeout(() => setFlyoutCategory(null), 200);
   };
 
   useEffect(() => {
@@ -35,11 +50,101 @@ export function Header() {
   useEffect(() => {
     const onClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (!target.closest('.desktop-nav-item')) setOpenDropdown(null);
+      if (!target.closest('.desktop-nav-item')) {
+        setOpenDropdown(null);
+        setFlyoutCategory(null);
+      }
     };
     document.addEventListener('click', onClickOutside);
     return () => document.removeEventListener('click', onClickOutside);
   }, []);
+
+  const renderDropdown = (link: (typeof navLinks)[number]) => (
+    <div className="absolute top-full left-0 -mt-2 pt-2 flex">
+      {link.label === 'Products' ? (
+        <>
+          <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-56">
+            {link.children!.map((child, idx) => (
+              <div
+                key={idx}
+                className="relative"
+                onMouseEnter={() => handleFlyoutOpen(child.label)}
+                onMouseLeave={handleFlyoutClose}
+              >
+                <Link
+                  href={child.href}
+                  className={cn(
+                    'flex items-center justify-between px-4 py-2 text-sm no-underline transition-colors',
+                    child.brands && child.brands.length > 0
+                      ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)]'
+                      : 'text-[var(--color-text-muted)] cursor-default pointer-events-none'
+                  )}
+                  onClick={(e) => {
+                    if (!child.brands || child.brands.length === 0) e.preventDefault();
+                  }}
+                >
+                  {child.label}
+                  {child.brands && child.brands.length > 0 && (
+                    <ChevronRight size={14} className="text-[var(--color-text-muted)] shrink-0" />
+                  )}
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {flyoutCategory && (() => {
+            const category = link.children!.find(c => c.label === flyoutCategory);
+            if (!category || !category.brands || category.brands.length === 0) return null;
+            return (
+              <div
+                className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start"
+                onMouseEnter={() => handleFlyoutOpen(flyoutCategory)}
+                onMouseLeave={handleFlyoutClose}
+              >
+                <div className="px-4 py-1.5">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+                    {category.label}
+                  </span>
+                </div>
+                {category.brands.map((brand, i) => (
+                  <Link
+                    key={i}
+                    href={brand.href}
+                    className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
+                  >
+                    {brand.label}
+                  </Link>
+                ))}
+              </div>
+            );
+          })()}
+        </>
+      ) : (
+        <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2">
+          {link.children!.map((child, idx) => {
+            if (child.type === 'section-header') {
+              return (
+                <div key={`hdr-${idx}`} className="px-4 py-1.5">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+                    {child.label}
+                  </span>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={`lnk-${idx}`}
+                href={child.href}
+                className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
+              >
+                {child.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <header
@@ -87,35 +192,7 @@ export function Header() {
                   />
                 )}
               </Link>
-              {link.children && openDropdown === link.label && (
-                <div className="absolute top-full left-0 -mt-2 pt-2 w-64">
-                  <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2">
-                    {link.children.map((child, idx) => {
-                      if (child.type === 'section-header' && !child.label) {
-                        return <hr key={`sep-${idx}`} className="mx-4 my-1.5 border-[var(--color-border-light)]" />;
-                      }
-                      if (child.type === 'section-header') {
-                        return (
-                          <div key={`hdr-${idx}`} className="px-4 py-1.5">
-                            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                              {child.label}
-                            </span>
-                          </div>
-                        );
-                      }
-                      return (
-                        <Link
-                          key={`lnk-${idx}`}
-                          href={child.href}
-                          className="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
+              {link.children && openDropdown === link.label && renderDropdown(link)}
             </div>
           ))}
         </nav>
@@ -139,7 +216,7 @@ export function Header() {
         </div>
 
         <button
-          className="lg:hidden flex flex-col items-center justify-center w-10 h-10 bg-transparent border-none cursor-pointer relative z-[51]"
+          className="lg:hidden flex flex-col items-center justify-center w-10 h-10 bg-transparent border-none cursor-pointer relative z-[51] justify-self-end"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
@@ -159,34 +236,67 @@ export function Header() {
                 >
                   {link.label}
                 </Link>
-                {link.children && (
+                {link.children && link.label === 'Products' ? (
                   <div className="pl-4 pb-2 space-y-1">
-                    {link.children.map((child, idx) => {
-                      if (child.type === 'section-header' && !child.label) {
-                        return <hr key={`sep-${idx}`} className="my-2 border-[var(--color-border-light)]" />;
-                      }
-                      if (child.type === 'section-header') {
-                        return (
-                          <div key={`hdr-${idx}`} className="py-1.5">
-                            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                              {child.label}
-                            </span>
-                          </div>
-                        );
-                      }
-                      return (
-                        <Link
-                          key={`lnk-${idx}`}
-                          href={child.href}
-                          className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
-                          onClick={() => setMobileOpen(false)}
+                    {link.children.map((child, idx) => (
+                      <div key={idx}>
+                        <button
+                          className={cn(
+                            'flex items-center justify-between w-full py-2 text-sm text-left no-underline transition-colors',
+                            child.brands && child.brands.length > 0
+                              ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]'
+                              : 'text-[var(--color-text-muted)] cursor-default'
+                          )}
+                          onClick={() => {
+                            if (child.brands && child.brands.length > 0) {
+                              setMobileExpandedCategory(
+                                mobileExpandedCategory === child.label ? null : child.label
+                              );
+                            }
+                          }}
                         >
                           {child.label}
-                        </Link>
-                      );
-                    })}
+                          {child.brands && child.brands.length > 0 && (
+                            <ChevronRight
+                              size={14}
+                              className={cn(
+                                'text-[var(--color-text-muted)] shrink-0 transition-transform',
+                                mobileExpandedCategory === child.label && 'rotate-90'
+                              )}
+                            />
+                          )}
+                        </button>
+                        {mobileExpandedCategory === child.label && child.brands && (
+                          <div className="pl-4 space-y-1 pb-2">
+                            {child.brands.map((brand, i) => (
+                              <Link
+                                key={i}
+                                href={brand.href}
+                                className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {brand.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                )}
+                ) : link.children && link.label !== 'Products' ? (
+                  <div className="pl-4 pb-2 space-y-1">
+                    {link.children.map((child, idx) => (
+                      <Link
+                        key={`lnk-${idx}`}
+                        href={child.href}
+                        className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
               </div>
             ))}
             <hr className="my-4 border-[var(--color-border-light)]" />

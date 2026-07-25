@@ -2,7 +2,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-20 md:py-28 px-[var(--gutter)] overflow-hidden relative">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/contact-bg.jpg)' }}
+        style={{ backgroundImage: 'url(/contact%20section%20BG%20new.png)' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
       <div className="mx-auto max-w-6xl relative z-10">
