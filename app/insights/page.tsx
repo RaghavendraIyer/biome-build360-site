@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '@/data/metrics';
 
@@ -25,8 +26,12 @@ export default function InsightsPage() {
         <div className="space-y-6">
           {blogPosts.map((post) => (
             <div key={post.slug} className="flex flex-col md:flex-row gap-6 p-6 rounded-[var(--radius)] bg-[var(--color-bg-surface)] border border-[var(--color-border-light)]">
-              <div className="w-full md:w-[180px] h-[120px] rounded-lg bg-[var(--color-bg-surface-alt)] flex items-center justify-center shrink-0">
-                <span className="font-serif text-xl font-bold text-[var(--color-text-muted)]">B360</span>
+              <div className="w-full md:w-[180px] h-[120px] rounded-lg bg-[var(--color-bg-surface-alt)] flex items-center justify-center shrink-0 overflow-hidden relative">
+                {post.image ? (
+                  <Image src={post.image} alt={post.title} fill className="object-cover" sizes="180px" />
+                ) : (
+                  <span className="font-serif text-xl font-bold text-[var(--color-text-muted)]">B360</span>
+                )}
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
