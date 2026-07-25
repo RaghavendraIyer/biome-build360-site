@@ -3,22 +3,38 @@ export interface BrandChild {
   href: string;
 }
 
-export interface NavChild {
+export interface ProductCategory {
   label: string;
   href: string;
-  type?: 'link' | 'section-header';
-  brands?: BrandChild[];
+  brands: BrandChild[];
 }
 
-export interface NavLink {
+export interface SimpleNavLink {
+  type: 'link';
   label: string;
   href: string;
-  children?: NavChild[];
 }
+
+export interface DropdownNavLink {
+  type: 'dropdown';
+  label: string;
+  href: string;
+  children: Array<{ label: string; href: string }>;
+}
+
+export interface ProductsNavLink {
+  type: 'products';
+  label: string;
+  href: string;
+  categories: ProductCategory[];
+}
+
+export type NavLink = SimpleNavLink | DropdownNavLink | ProductsNavLink;
 
 export const navLinks: NavLink[] = [
-  { label: 'Who We Are', href: '/about' },
+  { type: 'link', label: 'Who We Are', href: '/about' },
   {
+    type: 'dropdown',
     label: 'Platform',
     href: '/',
     children: [
@@ -27,9 +43,10 @@ export const navLinks: NavLink[] = [
     ],
   },
   {
+    type: 'products',
     label: 'Products',
     href: '/products',
-    children: [
+    categories: [
       {
         label: 'Tile Adhesives & Grouts',
         href: '/products/adhesives',
@@ -49,10 +66,10 @@ export const navLinks: NavLink[] = [
       { label: 'Plumbing & Sanitaryware', href: '#', brands: [] },
     ],
   },
-  { label: 'Bid', href: '/bid' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'Insights', href: '/insights' },
-  { label: 'Contact', href: '/#contact' },
+  { type: 'link', label: 'Bid', href: '/bid' },
+  { type: 'link', label: 'Careers', href: '/careers' },
+  { type: 'link', label: 'Insights', href: '/insights' },
+  { type: 'link', label: 'Contact', href: '/#contact' },
 ];
 
 export const companyInfo = {
