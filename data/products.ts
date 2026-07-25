@@ -29,7 +29,7 @@ export const products: Product[] = [
   { id: 'myk-111-73', brand: 'myk', name: '111 + 73', description: 'Standard tile adhesive system with 111 adhesive and 73 additive for enhanced performance.', image: '/adhesives/myk-111-73.jpg' },
   { id: 'myk-111-4237', brand: 'myk', name: '111 + 4237', description: 'Premium adhesive system with advanced polymer additive for superior adhesion.', image: '/adhesives/myk-111-4237.jpg' },
   { id: 'myk-345', brand: 'myk', name: '345 Super Flex', description: 'Flexible tile adhesive for substrates with movement and thermal expansion.', image: '/adhesives/myk-345.jpg' },
-  { id: 'myk-epoxy-grout', brand: 'myk', name: 'LATICRETE Epoxy Grout', description: 'Premium epoxy grout for stain-proof, waterproof, and crack-resistant joints.' },
+  { id: 'myk-epoxy-grout', brand: 'myk', name: 'LATICRETE Epoxy Grout', description: 'Premium epoxy grout for stain-proof, waterproof, and crack-resistant joints.', image: '/adhesives/LATICRETE%20Epoxy%20Grout%20.png' },
   { id: 'myk-sp-100', brand: 'myk', name: 'SP-100', description: 'Self-leveling underlayment for preparing floors before tiling.' },
 
   // Saint Gobain Weber
