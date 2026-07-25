@@ -82,7 +82,8 @@ export const blogPosts = [
     excerpt: 'A well-structured Bill of Quantities saves you 12-15% on procurement. Here\'s the format suppliers actually want to see.',
     category: 'Best Practices',
     readTime: '4 min read',
-    comingSoon: true,
+    comingSoon: false,
+    image: '/blog-how-to-boq.png',
   },
   {
     slug: 'hyderabad-builder-cost-savings',
@@ -90,6 +91,7 @@ export const blogPosts = [
     excerpt: 'By switching to consolidated procurement across 3 brands, one mid-size developer saved Rs. 2.4 Cr on a single residential tower project.',
     category: 'Case Study',
     readTime: '6 min read',
-    comingSoon: true,
+    comingSoon: false,
+    image: '/blog-hyderabad-builder-saved.png',
   },
 ];
