@@ -2,7 +2,7 @@ import { processSteps } from '@/data/metrics';
 
 export function ProcessSteps() {
   return (
-    <section className="py-20 md:py-28 px-[var(--gutter)]"
+    <section className="py-16 md:py-20 px-[var(--gutter)]"
       style={{
         background: 'linear-gradient(135deg, #1A0A08 0%, #0A0A0A 50%, #1A0A08 100%)',
       }}

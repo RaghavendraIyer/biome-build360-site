@@ -1,6 +1,6 @@
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 md:py-28 px-[var(--gutter)] overflow-hidden relative">
+    <section id="contact" className="py-16 md:py-20 px-[var(--gutter)] overflow-hidden relative">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/contact%20section%20BG%20new.png)' }}
       />

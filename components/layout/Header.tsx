@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-9 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
           ? 'bg-[var(--color-bg-app)]/95 backdrop-blur-md shadow-sm'
           : 'bg-transparent'
@@ -35,7 +35,7 @@ export function Header() {
       <div className="mx-auto grid grid-cols-[auto_1fr_auto] gap-x-8 items-center px-[var(--gutter)] h-16 md:h-20">
         <Link
           href="/"
-          className="font-serif text-xl md:text-2xl font-extrabold tracking-tight text-[var(--color-text-main)] no-underline"
+          className="font-serif text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] no-underline"
         >
           Build<span className="text-[var(--color-primary)]">360</span>.Online
         </Link>
@@ -50,11 +50,11 @@ export function Header() {
             className="flex items-center gap-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-main)] transition-colors no-underline"
           >
             <Phone size={16} />
-            <span className="hidden xl:inline text-xs">+91 90325 14441</span>
+            <span className="hidden xl:inline text-sm font-medium">+91 90325 14441</span>
           </a>
           <Link
             href="/partners"
-            className="px-4 py-2 text-sm font-medium bg-[#1E293B] text-white rounded-[var(--radius)] hover:bg-[#0F172A] transition-colors no-underline"
+            className="px-5 py-2.5 text-sm md:text-base font-semibold bg-[#1E293B] text-white rounded-[var(--radius)] hover:bg-[#0F172A] transition-colors no-underline"
           >
             Partner Signup
           </Link>

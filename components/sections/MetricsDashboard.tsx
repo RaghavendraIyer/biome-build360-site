@@ -38,10 +38,10 @@ function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix?: st
 
   return (
     <div ref={ref} className="text-center">
-      <strong className="font-serif text-[clamp(32px,4vw,48px)] font-extrabold text-[var(--color-primary)] block leading-none">
-        {prefix}{count}{suffix}
+      <strong className="block font-serif text-[clamp(38px,5vw,56px)] font-extrabold leading-none text-[var(--color-text-main)]">
+        {prefix}{count.toLocaleString('en-IN')}{suffix}
       </strong>
-      <span className="text-xs md:text-sm text-[var(--color-text-muted)] mt-2 block">
+      <span className="block text-[11px] md:text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-text-muted)] mt-2 leading-tight">
         {metrics.find((m) => m.value === value)?.label}
       </span>
     </div>
@@ -50,17 +50,17 @@ function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix?: st
 
 export function MetricsDashboard() {
   return (
-    <section className="py-20 px-[var(--gutter)] bg-[var(--color-bg-surface-alt)]">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
-          {metrics.map((m) => (
+    <section className="py-14 md:py-16 px-[var(--gutter)] bg-[#c8c4bc]">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-2 md:grid-cols-5">
+          {metrics.map((m, i) => (
             <div
               key={m.label}
-              className="relative"
+              className="relative py-4 md:py-6 px-3 md:px-5 flex items-center justify-center"
             >
               <AnimatedCounter value={m.value} prefix={m.prefix} suffix={m.suffix} />
-              {m.label !== metrics[metrics.length - 1].label && (
-                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-10 w-px bg-[var(--color-border-light)] last:hidden" />
+              {i < metrics.length - 1 && (
+                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-12 w-px bg-[rgba(0,0,0,0.15)]" />
               )}
             </div>
           ))}
