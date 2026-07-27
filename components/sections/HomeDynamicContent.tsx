@@ -12,17 +12,11 @@ const MetricsDashboard = dynamic(
   { ssr: false },
 );
 
-const AiRfqUpload = dynamic(
-  () => import('@/components/sections/AiRfqUpload').then((m) => m.AiRfqUpload),
-  { ssr: false },
-);
-
 export function HomeDynamicContent() {
   return (
     <>
       <Hero />
       <MetricsDashboard />
-      <AiRfqUpload />
     </>
   );
 }

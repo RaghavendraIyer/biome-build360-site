@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Careers : Build360.online',
@@ -32,9 +31,9 @@ export default function CareersPage() {
         <p className="text-xs text-[var(--color-text-muted)] mb-8">
           No open positions right now, but we&apos;re always looking for great talent.
         </p>
-        <Button href="mailto:careers@build360.online" external variant="outline" className="px-8 py-3">
+        <a href="mailto:careers@build360.online" className="inline-flex items-center justify-center text-sm font-medium px-8 py-3 rounded-lg border border-[var(--color-primary-18)] bg-transparent text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] transition-colors no-underline">
           Send Your Resume
-        </Button>
+        </a>
       </div>
     </section>
   );

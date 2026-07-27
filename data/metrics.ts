@@ -1,9 +1,9 @@
 export const metrics = [
-  { value: 15, suffix: '+', label: 'Verified Supplier Partners' },
-  { value: 4, prefix: '<', suffix: ' hrs', label: 'Average Quote Response' },
-  { value: 28, suffix: '', label: 'States & UTs Covered' },
-  { value: 100, suffix: '%', label: 'Verified Product Quality' },
-  { value: 34, suffix: '+', label: 'SKUs Across 3 Brands' },
+  { value: 50, prefix: '', suffix: '+', label: 'Delighted Consumers' },
+  { value: 100, prefix: '', suffix: '+', label: 'Trusted Supply Partners' },
+  { value: 1000, prefix: '', suffix: '+', label: 'Orders Fulfilled' },
+  { value: 10000, prefix: '', suffix: '+', label: 'Metric Tons Delivered' },
+  { value: 100000, prefix: '', suffix: '+', label: 'SKUs Delivered' },
 ];
 
 export const stepFlow = [
