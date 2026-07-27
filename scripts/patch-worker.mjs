@@ -32,7 +32,11 @@ const ASSETS_BLOCK =
                     const prefixedUrl = new URL(\`/assets\${assetPath}\`, request.url);
                     prefixedUrl.search = url.search;
                     const assetResponse = await env.ASSETS.fetch(new Request(prefixedUrl, request));
-                    if (assetResponse.status !== 404) return assetResponse;
+                    if (assetResponse.status !== 404) {
+                        const enriched = new Response(assetResponse.body, assetResponse);
+                        enriched.headers.set('Link', '</sitemap.xml>; rel="sitemap"');
+                        return enriched;
+                    }
                 } catch {
                     // ASSETS binding unavailable — fall through to Next.js server.
                 }
