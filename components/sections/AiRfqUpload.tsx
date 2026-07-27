@@ -18,7 +18,7 @@ export function AiRfqUpload() {
   const handleDragOver = (e: React.DragEvent) => e.preventDefault();
 
   return (
-    <section className="py-20 md:py-28 px-[var(--gutter)] bg-gradient-to-br from-[rgba(222,90,63,0.04)] to-transparent border-t border-[var(--color-primary-18)] border-b border-[var(--color-primary-18)]">
+    <section className="py-16 md:py-20 px-[var(--gutter)] bg-gradient-to-br from-[rgba(222,90,63,0.04)] to-transparent border-t border-[var(--color-primary-18)] border-b border-[var(--color-primary-18)]">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="bg-gradient-to-br from-[rgba(222,90,63,0.08)] to-[rgba(30,41,59,0.04)] border border-[var(--color-primary-18)] rounded-[var(--radius)] p-10 md:p-12 text-center relative overflow-hidden order-2 lg:order-1">

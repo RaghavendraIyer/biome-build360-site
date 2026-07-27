@@ -82,26 +82,26 @@ export function Hero() {
         />
       ))}
       <div className="absolute inset-0 z-[1] opacity-[0.07] pointer-events-none" style={{ backgroundImage: 'radial-gradient(var(--color-primary) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-      <div className="relative z-10 w-full px-[var(--gutter)] py-24 md:py-32">
+        <div className="relative z-10 w-full px-[var(--gutter)] py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-primary)] border border-[var(--color-primary-18)] bg-[var(--color-primary-10)] px-4 py-2 rounded-full inline-block mb-6">
+          <span className="font-mono text-xs md:text-sm uppercase tracking-[0.22em] text-[var(--color-primary)] border border-[var(--color-primary-18)] bg-[var(--color-primary-10)] px-5 py-2 rounded-full inline-block mb-8">
             {slides[current].badge}
           </span>
           <h1
             key={`h-${current}`}
-            className="font-serif text-[clamp(36px,7vw,64px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white mb-5 animate-[fadeUp_0.5s_ease_both]"
+            className="font-serif text-[clamp(44px,8vw,76px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white mb-6 animate-[fadeUp_0.5s_ease_both]"
           >
             {slides[current].heading}
           </h1>
           <p
             key={`b-${current}`}
-            className="text-sm md:text-[16px] text-white/85 max-w-2xl mx-auto leading-relaxed font-light mb-8 animate-[fadeUp_0.5s_0.1s_ease_both]"
+            className="text-base md:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed font-light mb-8 animate-[fadeUp_0.5s_0.1s_ease_both]"
           >
             {slides[current].body}
           </p>
           <p
             key={`s-${current}`}
-            className="text-xs md:text-sm text-[var(--color-text-muted)] max-w-xl mx-auto leading-relaxed mb-10 animate-[fadeUp_0.5s_0.2s_ease_both]"
+            className="text-sm md:text-base text-[var(--color-text-muted)] max-w-xl mx-auto leading-relaxed mb-10 animate-[fadeUp_0.5s_0.2s_ease_both]"
           >
             {slides[current].sub}
           </p>

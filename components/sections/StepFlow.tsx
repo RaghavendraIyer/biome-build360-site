@@ -8,7 +8,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function StepFlow() {
   return (
-    <section className="relative py-20 md:py-28 px-[var(--gutter)] bg-[var(--color-bg-surface)] overflow-hidden">
+    <section className="relative py-16 md:py-20 px-[var(--gutter)] bg-[var(--color-bg-surface)] overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-0 hidden lg:flex items-center justify-center" aria-hidden="true">
         <svg
           className="w-full h-full max-w-6xl"

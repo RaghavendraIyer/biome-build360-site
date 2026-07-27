@@ -4,7 +4,7 @@ import { audienceSegments } from '@/data/metrics';
 
 export function AudienceSegments() {
   return (
-    <section className="py-20 md:py-28 px-[var(--gutter)]">
+    <section className="py-16 md:py-20 px-[var(--gutter)]">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">
