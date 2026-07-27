@@ -1,4 +1,5 @@
 import { StepFlow } from '@/components/sections/StepFlow';
+import { AiRfqUpload } from '@/components/sections/AiRfqUpload';
 import { ProductGrid } from '@/components/sections/ProductGrid';
 import { ProcessSteps } from '@/components/sections/ProcessSteps';
 import { AudienceSegments } from '@/components/sections/AudienceSegments';
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <HomeDynamicContent />
       <StepFlow />
+      <AiRfqUpload />
       <ProductGrid />
       <ProcessSteps />
       <AudienceSegments />
