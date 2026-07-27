@@ -38,7 +38,7 @@ function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix?: st
 
   return (
     <div ref={ref} className="text-center">
-      <strong className="block font-serif text-[clamp(38px,5vw,56px)] font-extrabold leading-none text-[var(--color-text-main)]">
+      <strong className="block font-serif text-[clamp(22px,3.2vw,34px)] font-extrabold leading-none text-[var(--color-text-main)]">
         {prefix}{count.toLocaleString('en-IN')}{suffix}
       </strong>
       <span className="block text-[11px] md:text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-text-muted)] mt-2 leading-tight">
