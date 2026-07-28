@@ -1,0 +1,10 @@
+name: Keep Warm
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sI https://build360.online > /dev/null 2>&1
