@@ -43,7 +43,7 @@ export function Header() {
         <DesktopNav links={navLinks} />
 
         <div className="hidden lg:flex items-center gap-3">
-          <span className="text-sm text-[var(--color-text-secondary)] whitespace-nowrap">Planning to build?</span>
+          <span className="text-sm text-[var(--color-text-secondary)] whitespace-nowrap italic font-bold">Ready to source your next build?</span>
           <a
             href="https://wa.me/919032514441"
             target="_blank"

@@ -6,11 +6,11 @@ export const metrics = [
 ];
 
 export const stepFlow = [
-  { step: 1, title: 'WhatsApp Your Needs', desc: 'Send a message with your material requirements.', icon: 'MessageSquare' },
-  { step: 2, title: 'Share Your Location', desc: 'Tell us your delivery site for accurate logistics.', icon: 'MapPin' },
-  { step: 3, title: 'Choose Your Product', desc: 'Select from brand-grade options with pricing.', icon: 'Package' },
-  { step: 4, title: 'Confirm Your Order', desc: 'Approve the quote and lock in your delivery.', icon: 'CheckCircle' },
-  { step: 5, title: 'Material Delivered', desc: 'Track delivery from warehouse to your site.', icon: 'Truck' },
+  { step: 1, title: 'Scan QR', icon: 'QrCode' },
+  { step: 2, title: 'Share Your Location', icon: 'MapPin' },
+  { step: 3, title: 'Choose Product', icon: 'Package' },
+  { step: 4, title: 'Make Payment', icon: 'IndianRupee' },
+  { step: 5, title: 'Product Delivered', icon: 'Truck' },
 ];
 
 export const audienceSegments = [

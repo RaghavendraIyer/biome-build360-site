@@ -7,27 +7,35 @@ export function UtilityBar() {
       <div className="w-full max-w-7xl mx-auto px-[var(--gutter)] flex items-center justify-between">
         <a
           href="mailto:info@build360.online"
-          className="flex items-center gap-1.5 text-xs text-white/80 hover:text-white transition-colors no-underline"
+          className="flex items-center gap-1.5 text-xs text-white/85 hover:text-white transition-colors no-underline"
         >
           <Mail size={12} />
           info@build360.online
         </a>
+
         <div className="flex items-center gap-3 text-xs text-white/85">
-          <Link
-            href="/bid"
-            className="text-white/80 hover:text-white no-underline transition-colors"
-          >
-            Login
-          </Link>
-          <span className="w-px h-3 bg-white/20" />
-          <Link
-            href="/partners"
-            className="text-white/80 hover:text-white no-underline transition-colors"
-          >
-            Partner With Us
-          </Link>
-          <span className="w-px h-3 bg-white/20" />
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-3">
+            <span className="w-px h-4 bg-white/25 rounded-full" />
+            <Link
+              href="/bid"
+              className="text-white/80 hover:text-white no-underline transition-colors"
+            >
+              Login
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="w-px h-4 bg-white/25 rounded-full" />
+            <Link
+              href="/partners"
+              className="text-white/80 hover:text-white no-underline transition-colors"
+            >
+              Partner With Us
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="w-px h-4 bg-white/25 rounded-full" />
             <span className="text-[10px] text-white/50 uppercase tracking-wider">Follow</span>
             <a href="https://www.instagram.com/build360.online/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors flex" title="Instagram">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
