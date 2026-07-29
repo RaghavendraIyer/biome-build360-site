@@ -12,11 +12,11 @@ export function SectionTitle({ label, title, lead, align = 'center', className }
   return (
     <div className={cn(align === 'center' ? 'text-center' : 'text-left', 'max-w-2xl', align === 'center' && 'mx-auto', className)}>
       {label && (
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">
+        <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">
           {label}
         </span>
       )}
-      <h2 className="font-serif text-3xl md:text-[40px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[var(--color-text-main)]">
+      <h2 className="font-serif text-[clamp(40px,5.5vw,72px)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[var(--color-text-main)]">
         {title}
       </h2>
       {lead && (

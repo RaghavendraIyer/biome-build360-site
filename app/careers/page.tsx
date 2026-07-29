@@ -18,7 +18,7 @@ export default function CareersPage() {
         }}
       />
       <div className="relative z-10 max-w-xl">
-        <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-primary)] border border-[var(--color-primary-18)] bg-[var(--color-primary-10)] px-4 py-2 rounded-full inline-block mb-6">
+        <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] border border-[var(--color-primary-18)] bg-[var(--color-primary-10)] px-5 py-2 rounded-full inline-block mb-6">
           Join Us
         </span>
         <h1 className="font-serif text-[clamp(36px,6vw,60px)] font-extrabold leading-[1.08] tracking-[-0.02em] text-white mb-5">

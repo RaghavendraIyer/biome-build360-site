@@ -8,10 +8,10 @@ export function ProcessSteps() {
       }}
     >
       <div className="mx-auto max-w-6xl text-center">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">
+        <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">
           Procurement Process
         </span>
-        <h2 className="font-serif text-[clamp(28px,4vw,40px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white mb-14">
+        <h2 className="font-serif text-[clamp(40px,5.5vw,72px)] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mb-12">
           Making Procurement{' '}
           <em className="not-italic text-[var(--color-primary)]">Easier.</em>
         </h2>

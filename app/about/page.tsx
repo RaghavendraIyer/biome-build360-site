@@ -61,8 +61,8 @@ export default function AboutPage() {
       <section className="py-20 px-[var(--gutter)]">
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-14">
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">Why Build360</span>
-            <h2 className="font-serif text-[clamp(28px,4vw,40px)] font-extrabold text-[var(--color-text-main)]">
+            <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">Why Build360</span>
+            <h2 className="font-serif text-[clamp(28px,4vw,36px)] font-extrabold text-[var(--color-text-main)]">
               What Makes Us{' '}
               <em className="not-italic text-[var(--color-primary)]">Different.</em>
             </h2>

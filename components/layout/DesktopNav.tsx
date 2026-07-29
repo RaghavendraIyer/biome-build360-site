@@ -36,7 +36,7 @@ export function DesktopNav({ links }: DesktopNavProps) {
   }, []);
 
   return (
-    <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+    <nav className="hidden lg:flex items-center justify-center gap-8" aria-label="Main navigation">
       {links.map((link) => (
         <div
           key={link.label}

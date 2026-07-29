@@ -20,16 +20,16 @@ const items = [
 function TickerItem({ item }: { item: typeof items[number] }) {
   if (item.type === 'announcement') {
     return (
-      <span className="inline-flex items-center gap-3 px-6 whitespace-nowrap text-xs text-[var(--color-text-secondary)]">
+      <span className="inline-flex items-center gap-3 px-6 whitespace-nowrap text-sm text-[var(--color-text-secondary)]">
         <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-success)] animate-pulse shrink-0" />
         {item.text}
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-3 px-6 whitespace-nowrap text-xs">
+    <span className="inline-flex items-center gap-3 px-6 whitespace-nowrap text-sm">
       <span className="font-medium text-[var(--color-text-main)]">{item.brand}</span>
-      <span className="font-mono text-[var(--color-primary)]">₹{item.price}/{item.unit}</span>
+      <span className="font-mono font-semibold text-[var(--color-primary)]">₹{item.price}/{item.unit}</span>
     </span>
   );
 }
@@ -73,7 +73,7 @@ export function TickerBar() {
   }, []);
 
   return (
-    <div className="h-[52px] flex items-center border-t border-[var(--color-primary-18)] border-b border-[var(--color-primary-10)] bg-gradient-to-r from-[rgba(222,90,63,0.06)] via-[var(--color-bg-surface)] to-[rgba(222,90,63,0.06)] overflow-hidden relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:pointer-events-none">
+    <div className="h-[52px] flex items-center border-t border-[var(--color-primary-18)] border-b border-[var(--color-primary-10)] bg-gradient-to-r from-[var(--color-primary-10)] via-[var(--color-bg-surface)] to-[var(--color-primary-10)] overflow-hidden relative before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:pointer-events-none">
       <div className="flex items-center gap-2 shrink-0 h-full px-6 bg-[var(--color-bg-surface)] border-r border-[var(--color-primary-18)] z-[2]">
         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shrink-0" />
         <span className="font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-[var(--color-primary)]">

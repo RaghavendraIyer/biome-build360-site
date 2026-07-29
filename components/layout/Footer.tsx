@@ -40,7 +40,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <Link href="/" className="font-serif text-xl font-extrabold tracking-tight text-[var(--color-text-main)] no-underline">
+            <Link href="/" className="font-serif text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--color-text-main)] no-underline">
               Build<span className="text-[var(--color-primary)]">360</span>.Online
             </Link>
             <p className="mt-3 text-sm text-[var(--color-text-muted)] leading-relaxed">

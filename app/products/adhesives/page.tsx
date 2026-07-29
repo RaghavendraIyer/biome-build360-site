@@ -26,7 +26,7 @@ export default function AdhesivesPage() {
         return (
           <section key={brandId} className="py-20 px-[var(--gutter)] relative overflow-hidden" style={{ background: brandGradients[brandId] }}>
             <div className="mx-auto max-w-5xl text-center">
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] bg-[var(--color-primary-10)] px-4 py-2 rounded-full mb-4 inline-block">
+              <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] bg-[var(--color-primary-10)] px-5 py-2 rounded-full mb-4 inline-block">
                 {brand.name}
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
@@ -60,7 +60,7 @@ export default function AdhesivesPage() {
 
       <section className="py-20 px-[var(--gutter)] bg-[var(--color-bg-surface)]">
         <div className="mx-auto max-w-5xl text-center">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">Tools</span>
+          <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">Tools</span>
           <h2 className="font-serif text-[clamp(28px,4vw,36px)] font-extrabold text-[var(--color-text-main)] mb-4">
             Grout Volume &amp; Weight{' '}
             <em className="not-italic text-[var(--color-primary)]">Calculator</em>

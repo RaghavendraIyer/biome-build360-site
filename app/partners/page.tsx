@@ -24,7 +24,7 @@ export default function PartnersPage() {
       <section className="py-20 px-[var(--gutter)] bg-[var(--color-bg-surface)]">
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-14">
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">Ecosystem</span>
+            <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">Ecosystem</span>
             <h2 className="font-serif text-[clamp(28px,4vw,36px)] font-extrabold text-[var(--color-text-main)]">
               Trusted by Manufacturers,{' '}
               <em className="not-italic text-[var(--color-primary)]">Powered by Partners.</em>

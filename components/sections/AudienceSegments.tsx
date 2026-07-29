@@ -7,10 +7,10 @@ export function AudienceSegments() {
     <section className="py-16 md:py-20 px-[var(--gutter)]">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-14">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-primary)] mb-3 block">
+          <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">
             Who We Serve
           </span>
-          <h2 className="font-serif text-[clamp(28px,4vw,40px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[var(--color-text-main)]">
+          <h2 className="font-serif text-[clamp(40px,5.5vw,72px)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[var(--color-text-main)]">
             Built for{' '}
             <em className="not-italic text-[var(--color-primary)]">Every Buyer.</em>
           </h2>

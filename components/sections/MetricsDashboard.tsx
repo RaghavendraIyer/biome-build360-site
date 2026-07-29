@@ -50,9 +50,9 @@ function AnimatedCounter({ value, prefix, suffix }: { value: number; prefix?: st
 
 export function MetricsDashboard() {
   return (
-    <section className="py-14 md:py-16 px-[var(--gutter)] bg-[#c8c4bc]">
+    <section className="py-10 md:py-12 px-[var(--gutter)] bg-[#c8c4bc]">
       <div className="mx-auto max-w-6xl">
-        <div className="grid grid-cols-2 md:grid-cols-5">
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {metrics.map((m, i) => (
             <div
               key={m.label}

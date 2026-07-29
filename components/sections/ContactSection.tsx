@@ -1,14 +1,22 @@
 export function ContactSection() {
   return (
     <section id="contact" className="py-16 md:py-20 px-[var(--gutter)] overflow-hidden relative">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/contact%20section%20BG%20new.png)' }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-[#0A0A0A]">
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23BC4A3C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#BC4A3C]/20 via-transparent to-[#1E252B]/40" />
+        <div className="absolute right-0 bottom-0 w-1/2 h-1/2 opacity-[0.04] pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(188,74,60,0.5) 0%, transparent 70%)',
+          }}
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
       <div className="mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
           <div>
-            <h2 className="font-serif text-[clamp(28px,4vw,48px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white mt-6">
+            <h2 className="font-serif text-[clamp(40px,5.5vw,72px)] font-extrabold leading-[1.08] tracking-[-0.03em] text-white mt-6">
               Let&apos;s Discuss{' '}
               <em className="not-italic text-[var(--color-primary)]">Your Project.</em>
             </h2>
