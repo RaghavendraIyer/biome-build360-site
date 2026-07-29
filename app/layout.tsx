@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Manrope, JetBrains_Mono } from "next/font/google";
+import { Outfit, Manrope } from "next/font/google";
 import { UtilityBar } from "@/components/layout/UtilityBar";
 import { Header } from "@/components/layout/Header";
 import { TickerBar } from "@/components/sections/TickerBar";
@@ -19,11 +19,6 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Build360.online : India's Premium Construction Procurement Network",
@@ -55,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <UtilityBar />
