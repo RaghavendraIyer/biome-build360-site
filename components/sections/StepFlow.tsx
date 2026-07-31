@@ -70,25 +70,22 @@ export function StepFlow() {
           href="https://wa.me/919032514441"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 block no-underline group"
+          className="mt-8 block no-underline group w-full lg:w-[217px] mx-auto"
         >
-          <div className="flex items-center justify-center gap-5 md:gap-6 p-5 md:p-6 rounded-[var(--radius)] bg-[var(--color-primary)] text-white transition-all duration-300 hover:bg-[var(--color-primary-hover)] hover:shadow-md hover:-translate-y-0.5">
-            <div className="relative w-14 h-14 shrink-0 rounded-lg overflow-hidden ring-2 ring-white/20">
+          <div className="flex flex-col items-center text-center p-5 md:p-6 rounded-[var(--radius)] bg-[var(--color-bg-surface-alt)] border border-[var(--color-border-light)] hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-06)] transition-all duration-500 hover:shadow-md hover:-translate-y-0.5">
+            <div className="w-36 h-36 rounded-lg overflow-hidden ring-1 ring-[var(--color-border-light)] transition-transform duration-300 group-hover:scale-[1.02]">
               <Image
                 src="/qr-code.png"
                 alt="QR"
-                width={56}
-                height={56}
+                width={360}
+                height={360}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="text-left">
-              <span className="block text-[13px] font-bold leading-tight">Scan to Order</span>
-              <span className="block text-[10px] text-white/70 mt-0.5">WhatsApp &rarr; Send &ldquo;Hi&rdquo; &rarr; Done</span>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:bg-white/25 transition-colors shrink-0">
-              <ArrowRight size={18} className="text-white" />
-            </div>
+            <span className="font-mono text-[13px] uppercase tracking-[0.15em] text-[var(--color-primary)] mt-4">
+              Scan to Order
+            </span>
+            <span className="text-[10px] text-[var(--color-text-muted)] mt-1">WhatsApp &rarr; Send &ldquo;Hi&rdquo; &rarr; Done</span>
           </div>
         </Link>
       </div>
