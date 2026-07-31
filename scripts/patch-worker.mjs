@@ -32,7 +32,7 @@ const ASSETS_BLOCK =
                     const prefixedUrl = new URL(\`/assets\${assetPath}\`, request.url);
                     prefixedUrl.search = url.search;
                     const assetResponse = await env.ASSETS.fetch(new Request(prefixedUrl, request));
-                    if (assetResponse.status !== 404) {
+                    if (assetResponse.status < 400) {
                         const enriched = new Response(assetResponse.body, assetResponse);
                         enriched.headers.set('Link', '</sitemap.xml>; rel="sitemap"');
                         return enriched;
