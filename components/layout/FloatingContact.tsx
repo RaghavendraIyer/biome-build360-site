@@ -1,9 +1,14 @@
+'use client';
+
+import posthog from 'posthog-js';
+
 export function FloatingContact() {
   return (
     <a
       href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20source%20construction%20materials."
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => posthog.capture('whatsapp_floating_clicked')}
       className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-[var(--color-whatsapp)] text-white shadow-lg hover:bg-[var(--color-whatsapp-hover)] transition-colors no-underline animate-[pulse-glow_2s_ease-in-out_infinite]"
       aria-label="Contact on WhatsApp"
     >

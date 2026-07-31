@@ -1,11 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import posthog from 'posthog-js';
 import { AuthTabs } from '@/components/bid/AuthTabs';
 import { VendorDashboard } from '@/components/bid/VendorDashboard';
 
 export default function BidPage() {
   const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    posthog.capture('bid_page_viewed');
+  }, []);
 
   return (
     <>
@@ -70,6 +75,7 @@ export default function BidPage() {
               href="https://wa.me/919032514441"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => posthog.capture('vendor_whatsapp_registration_clicked')}
               className="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium bg-[var(--color-whatsapp)] text-white rounded-[var(--radius)] hover:bg-[var(--color-whatsapp-hover)] transition-colors no-underline"
             >
               Register on WhatsApp

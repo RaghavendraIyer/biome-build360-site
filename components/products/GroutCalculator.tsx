@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import posthog from 'posthog-js';
 
 type GroutType = 'cement' | 'epoxy';
 
@@ -46,7 +47,18 @@ export function GroutCalculator() {
           <label className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-muted)] block mb-1">Grout Type</label>
           <select
             value={type}
-            onChange={(e) => setType(e.target.value as GroutType)}
+            onChange={(e) => {
+              const newType = e.target.value as GroutType;
+              setType(newType);
+              posthog.capture('grout_calculator_calculated', {
+                grout_type: newType,
+                tile_length_cm: length,
+                tile_width_cm: width,
+                joint_width_mm: jointWidth,
+                joint_depth_mm: depth,
+                total_area_sqm: area,
+              });
+            }}
             className="w-full bg-[var(--color-bg-surface-alt)] border border-[var(--color-border-light)] rounded-lg px-3 py-2 text-sm text-[var(--color-text-main)] outline-none focus:border-[var(--color-primary)]"
           >
             <option value="cement">Cement Grout</option>
