@@ -21,7 +21,9 @@ content = content.replace("handleCdnCgiImageRequest, ", "");
 // ---------------------------------------------------------------------------
 const ASSETS_BLOCK =
 `            // Serve static assets from the Pages ASSETS binding (for _worker.js advanced mode).
-            if (env.ASSETS) {
+            // GET/HEAD only: passing a request with a body to ASSETS.fetch consumes the body
+            // stream, so POSTs would later throw when Next.js reads request.json().
+            if (env.ASSETS && (request.method === "GET" || request.method === "HEAD")) {
                 try {
                     let assetPath = url.pathname;
                     if (assetPath === "/" || assetPath === "") {
