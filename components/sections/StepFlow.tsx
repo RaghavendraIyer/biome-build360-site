@@ -5,6 +5,8 @@ import { stepFlow } from '@/data/metrics';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState, useEffect } from 'react';
+import posthog from 'posthog-js';
+import { useFeatureFlag } from '@/lib/use-feature-flag';
 
 const iconMap: Record<string, React.ElementType> = {
   QrCode, MapPin, Package, IndianRupee, Truck,
@@ -13,6 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
 export function StepFlow() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const qrEnabled = useFeatureFlag('qr_card', true);
 
   useEffect(() => {
     const el = ref.current;
@@ -66,28 +69,31 @@ export function StepFlow() {
           })}
         </div>
 
-        <Link
-          href="https://wa.me/919032514441"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 block no-underline group w-full lg:w-[217px] mx-auto"
-        >
-          <div className="flex flex-col items-center text-center p-5 md:p-6 rounded-[var(--radius)] bg-[var(--color-bg-surface-alt)] border border-[var(--color-border-light)] hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-06)] transition-all duration-500 hover:shadow-md hover:-translate-y-0.5">
-            <div className="w-36 h-36 rounded-lg overflow-hidden ring-1 ring-[var(--color-border-light)] transition-transform duration-300 group-hover:scale-[1.02]">
-              <Image
-                src="/qr-code.png"
-                alt="QR"
-                width={360}
-                height={360}
-                className="w-full h-full object-cover"
-              />
+        {qrEnabled && (
+          <Link
+            href="https://wa.me/919032514441"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => posthog.capture('stepflow_qr_clicked')}
+            className="mt-8 block no-underline group w-full lg:w-[217px] mx-auto"
+          >
+            <div className="flex flex-col items-center text-center p-5 md:p-6 rounded-[var(--radius)] bg-[var(--color-bg-surface-alt)] border border-[var(--color-border-light)] hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-06)] transition-all duration-500 hover:shadow-md hover:-translate-y-0.5">
+              <div className="w-36 h-36 rounded-lg overflow-hidden ring-1 ring-[var(--color-border-light)] transition-transform duration-300 group-hover:scale-[1.02]">
+                <Image
+                  src="/qr-code.png"
+                  alt="QR"
+                  width={360}
+                  height={360}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="font-mono text-[13px] uppercase tracking-[0.15em] text-[var(--color-primary)] mt-4">
+                Scan to Order
+              </span>
+              <span className="text-[10px] text-[var(--color-text-muted)] mt-1">WhatsApp &rarr; Send &ldquo;Hi&rdquo; &rarr; Done</span>
             </div>
-            <span className="font-mono text-[13px] uppercase tracking-[0.15em] text-[var(--color-primary)] mt-4">
-              Scan to Order
-            </span>
-            <span className="text-[10px] text-[var(--color-text-muted)] mt-1">WhatsApp &rarr; Send &ldquo;Hi&rdquo; &rarr; Done</span>
-          </div>
-        </Link>
+          </Link>
+        )}
       </div>
     </section>
   );

@@ -15,5 +15,14 @@ if (!process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN) {
     defaults: "2026-01-30",
     capture_exceptions: true,
     debug: process.env.NODE_ENV === "development",
+    loaded: (ph) => {
+      try {
+        if (ph.get_explicit_consent_status() === "pending") {
+          ph.opt_out_capturing();
+        }
+      } catch {
+        // never block the site if consent tracking fails
+      }
+    },
   });
 }

@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { TickerBar } from "@/components/sections/TickerBar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
+import { ConsentBanner } from "@/components/shared/ConsentBanner";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -62,6 +63,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingContact />
+        <ConsentBanner />
       </body>
     </html>
   );
