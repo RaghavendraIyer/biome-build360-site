@@ -1,3 +1,7 @@
+'use client';
+
+import posthog from 'posthog-js';
+
 export function ContactSection() {
   return (
     <section id="contact" className="py-16 md:py-20 px-[var(--gutter)] overflow-hidden relative">
@@ -73,6 +77,7 @@ export function ContactSection() {
                 href="https://wa.me/919032514441?text=Hi%20Srikar%2C%20I%27d%20like%20to%20inquire%20about%20materials."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture('whatsapp_contact_clicked', { section: 'contact' })}
                 className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium bg-[var(--color-primary)] text-white rounded-[var(--radius)] hover:bg-[var(--color-primary-hover)] transition-colors no-underline"
               >
                 WhatsApp Now

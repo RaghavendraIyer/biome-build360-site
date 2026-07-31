@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import posthog from 'posthog-js';
 import { TurnstileWidget } from '@/components/shared/TurnstileWidget';
 
 const SITE_KEY = '0x4AAAAAAD8BznFFwtYj9ED9';
@@ -30,6 +31,9 @@ export function AuthTabs({ onLogin }: AuthTabsProps) {
       });
       const result = await resp.json();
       if (result.success) {
+        posthog.capture(tab === 'login' ? 'vendor_logged_in' : 'vendor_registered', {
+          flow: tab,
+        });
         onLogin();
       } else {
         setError('Security check failed. Please try again.');
@@ -39,7 +43,7 @@ export function AuthTabs({ onLogin }: AuthTabsProps) {
     } finally {
       setVerifying(false);
     }
-  }, [turnstileToken, onLogin]);
+  }, [turnstileToken, onLogin, tab]);
 
   return (
     <div className="max-w-md mx-auto bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] overflow-hidden shadow-md">

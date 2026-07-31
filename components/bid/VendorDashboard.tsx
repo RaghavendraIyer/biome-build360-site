@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import posthog from 'posthog-js';
 import { RFQCard } from './RFQCard';
 
 interface RFQ {
@@ -35,6 +36,12 @@ export function VendorDashboard() {
     setRfqs(prev => prev.map(rfq => {
       if (rfq.id !== id || !rfq.yourBid) return rfq;
       const newRank = rfq.yourBid < rfq.currentBid ? 1 : Math.floor(Math.random() * 4) + 2;
+      posthog.capture('bid_placed', {
+        rfq_id: rfq.id,
+        bid_amount: rfq.yourBid,
+        rank_achieved: newRank,
+        is_demo: true,
+      });
       return { ...rfq, currentBid: Math.min(rfq.currentBid, rfq.yourBid), rank: newRank };
     }));
   };

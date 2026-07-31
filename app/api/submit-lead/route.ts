@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getPostHogClient } from '@/lib/posthog-server';
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,6 +15,18 @@ export async function POST(request: NextRequest) {
 
     if (!NOTION_TOKEN) {
       console.warn('NOTION_API_TOKEN not configured — logging lead locally');
+      const posthog = getPostHogClient();
+      if (posthog) {
+        posthog.capture({
+          distinctId: lead_id || 'anonymous',
+          event: 'lead_submitted',
+          properties: {
+            material_category: material || 'General',
+            source: source || 'web-enquiry',
+          },
+        });
+        await posthog.flush();
+      }
       return NextResponse.json({ success: true, note: 'Lead captured, CRM pending config' });
     }
 
@@ -46,6 +59,19 @@ export async function POST(request: NextRequest) {
     if (!resp.ok) {
       console.error('Notion API error:', result);
       return NextResponse.json({ success: false, error: result }, { status: 500 });
+    }
+
+    const posthog = getPostHogClient();
+    if (posthog) {
+      posthog.capture({
+        distinctId: lead_id || 'anonymous',
+        event: 'lead_submitted',
+        properties: {
+          material_category: material || 'General',
+          source: source || 'web-enquiry',
+        },
+      });
+      await posthog.flush();
     }
 
     return NextResponse.json({ success: true, notion_id: result.id });
