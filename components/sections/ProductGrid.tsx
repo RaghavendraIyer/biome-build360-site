@@ -17,7 +17,7 @@ const categories: Category[] = [
     href: '/products/adhesives',
     badge: '3 Brands · 34 SKUs',
     status: 'live',
-    image: '/images/categories-jpg/tile-adhesives.jpg',
+    image: '/images/categories-jpg/Professional_product_photography_of_construction-grade_tile-0.jpg',
   },
   {
     title: 'Cement & Concrete',
@@ -25,7 +25,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon',
     status: 'coming-soon',
-    image: '/images/categories-jpg/cement-concrete.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Realistic_photograph_of_cement_bags_plain_grey_brown_sacks_-2.jpg',
   },
   {
     title: 'Steel & TMT Bars',
@@ -33,7 +33,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon',
     status: 'coming-soon',
-    image: '/images/categories-jpg/steel-tmt.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Photorealistic_image_of_bundled_TMT_steel_rebar_rods_stacke-3.jpg',
   },
   {
     title: 'Blocks & Bricks',
@@ -41,7 +41,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon',
     status: 'coming-soon',
-    image: '/images/categories-jpg/blocks-bricks.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Realistic_photograph_of_AAC_blocks_and_red_clay_bricks_stac-2.jpg',
   },
   {
     title: 'Finishing Supplies',
@@ -49,7 +49,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon',
     status: 'coming-soon',
-    image: '/images/categories-jpg/finishing-supplies.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Realistic_product_photography_of_construction_finishing_sup-2.jpg',
   },
   {
     title: 'Waterproofing & Sealants',
@@ -57,7 +57,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon',
     status: 'coming-soon',
-    image: '/images/categories-jpg/waterproofing-sealants.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Professional_photograph_of_waterproofing_membrane_rolls_and-3.jpg',
   },
   {
     title: 'Water Treatment Solutions',
@@ -65,7 +65,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon · Venus',
     status: 'coming-soon',
-    image: '/images/categories-jpg/water-treatment.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Realistic_photograph_of_an_industrial_water_softener_and_RO-3.jpg',
   },
   {
     title: 'Power Backups & Gensets',
@@ -73,7 +73,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon · Cummins',
     status: 'coming-soon',
-    image: '/images/categories-jpg/power-backups.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_Professional_photograph_of_an_industrial_diesel_generator_g-0.jpg',
   },
   {
     title: 'Plumbing & Sanitaryware',
@@ -81,7 +81,7 @@ const categories: Category[] = [
     href: '/products',
     badge: 'Coming Soon',
     status: 'coming-soon',
-    image: '/images/categories-jpg/plumbing-sanitaryware.jpg',
+    image: '/images/categories-jpg/cinematic_photo_of_High-end_realistic_photograph_of_modern_bathroom_sanitarywa-1.jpg',
   },
 ];
 
@@ -108,7 +108,7 @@ export function ProductGrid() {
               href={cat.href}
               className="group block bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] overflow-hidden hover:shadow-md hover:border-[var(--color-primary-18)] transition-all no-underline"
             >
-              <div className="aspect-[4/3] relative overflow-hidden bg-[var(--color-bg-surface)]">
+              <div className="aspect-square relative overflow-hidden bg-[var(--color-bg-surface)]">
                 <img
                   src={cat.image}
                   alt={cat.title}
