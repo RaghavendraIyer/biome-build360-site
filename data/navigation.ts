@@ -66,10 +66,9 @@ export const navLinks: NavLink[] = [
       { label: 'Business Partners', href: '/partners' },
     ],
   },
+  { type: 'link', label: 'Service Providers', href: '/service-providers' },
   { type: 'link', label: 'Bid', href: '/bid' },
-  { type: 'link', label: 'Careers', href: '/careers' },
   { type: 'link', label: 'Insights', href: '/insights' },
-  { type: 'link', label: 'Contact', href: '/#contact' },
 ];
 
 export const companyInfo = {

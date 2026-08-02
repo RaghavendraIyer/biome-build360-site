@@ -4,6 +4,7 @@ import { companyInfo } from '@/data/navigation';
 const footerLinks = {
   about: [
     { label: 'Who We Are', href: '/about' },
+    { label: 'Contact', href: '/#contact' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms & Conditions', href: '/terms' },
     { label: 'Refund Policy', href: '/refund' },
