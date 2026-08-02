@@ -34,15 +34,6 @@ export type NavLink = SimpleNavLink | DropdownNavLink | ProductsNavLink;
 export const navLinks: NavLink[] = [
   { type: 'link', label: 'Who We Are', href: '/about' },
   {
-    type: 'dropdown',
-    label: 'Platform',
-    href: '/',
-    children: [
-      { label: 'Consumer Platform', href: '/consumers' },
-      { label: 'Business Partners', href: '/partners' },
-    ],
-  },
-  {
     type: 'products',
     label: 'Products',
     href: '/products',
@@ -64,6 +55,15 @@ export const navLinks: NavLink[] = [
       { label: 'Water Treatment Solutions', href: '#', brands: [] },
       { label: 'Power Backups & Gensets', href: '#', brands: [] },
       { label: 'Plumbing & Sanitaryware', href: '#', brands: [] },
+    ],
+  },
+  {
+    type: 'dropdown',
+    label: 'Platform',
+    href: '/',
+    children: [
+      { label: 'Consumer Platform', href: '/consumers' },
+      { label: 'Business Partners', href: '/partners' },
     ],
   },
   { type: 'link', label: 'Bid', href: '/bid' },
