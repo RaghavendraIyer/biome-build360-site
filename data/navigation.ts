@@ -50,6 +50,7 @@ export const navLinks: NavLink[] = [
       { label: 'Cement & Concrete', href: '#', brands: [] },
       { label: 'Steel & TMT Bars', href: '#', brands: [] },
       { label: 'Blocks & Bricks', href: '#', brands: [] },
+      { label: 'Plywood', href: '#', brands: [] },
       { label: 'Finishing Supplies', href: '#', brands: [] },
       { label: 'Waterproofing & Sealants', href: '#', brands: [] },
       { label: 'Water Treatment Solutions', href: '#', brands: [] },
