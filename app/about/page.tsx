@@ -39,8 +39,8 @@ export default function AboutPage() {
                 <Image
                   src="/founder-headshot.jpg"
                   alt="Srikar Jaji — Founder of Build360.online"
-                  width={280}
-                  height={280}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
