@@ -1,6 +1,6 @@
 export interface Product {
   id: string;
-  brand: 'ultratech' | 'myk' | 'weber';
+  brand: 'ultratech' | 'myk' | 'weber' | 'kerakoll';
   name: string;
   description: string;
   image?: string;
@@ -38,10 +38,32 @@ export const products: Product[] = [
   { id: 'weber-set-premier', brand: 'weber', name: 'Weber Set Premier', description: 'Premium grade adhesive with enhanced adhesion and extended open time.', image: '/adhesives/weberset-premier.jpg' },
   { id: 'weber-epoxy', brand: 'weber', name: 'Weber Epoxy Grout', description: 'High-performance epoxy grout for demanding commercial and industrial applications.', image: '/adhesives/weber-epoxy-grout-1000x1000.webp' },
   { id: 'weber-firm', brand: 'weber', name: 'Weber Set Firm', description: 'Non-sag adhesive for heavy and large-format tiles.', image: '/adhesives/weber-set-firm-tile-adhesive-1000x1000.webp' },
+
+  // Kerakoll
+  { id: 'kerakoll-superflex', brand: 'kerakoll', name: 'Superflex', description: 'Highly deformable organic mineral adhesive for installation of any covering on any substrate.', specs: { Grade: 'C2TES2', 'Pack Size': '4 kg' } },
+  { id: 'kerakoll-h40-gel', brand: 'kerakoll', name: 'H40 Gel', description: 'Multipurpose flexible gel-adhesive for fixing tiles and stones of all types and formats.', specs: { Grade: 'C2TE S1', 'Pack Size': '20 kg' } },
+  { id: 'kerakoll-bioflex-s1', brand: 'kerakoll', name: 'Bioflex S1', description: 'High-performance deformable adhesive for bonding large-format tiles and natural stones.', specs: { Grade: 'C2TE S1', 'Pack Size': '25 kg' } },
+  { id: 'kerakoll-bioflex', brand: 'kerakoll', name: 'Bioflex', description: 'High-performance adhesive used for fixing large-format tiles and natural stones.', specs: { Grade: 'C2TE', 'Pack Size': '20 kg / 30 kg' } },
+  { id: 'kerakoll-biofix', brand: 'kerakoll', name: 'Biofix', description: 'Mineral adhesive for fixing ceramic tiles, vitrified tiles, and stones on the floor and wall.', specs: { Grade: 'C2TE', 'Pack Size': '20 kg / 30 kg' } },
+  { id: 'kerakoll-biotile', brand: 'kerakoll', name: 'Biotile', description: 'Adhesive for fixing tiles in indoor and outdoor areas.', specs: { Grade: 'Type 1', 'Pack Size': '20 kg / 30 kg' } },
+  { id: 'kerakoll-biotack', brand: 'kerakoll', name: 'Biotack', description: 'Mineral slurry adhesive for fixing tiles and stones using wet-on-wet technique. Open time > 30 min.', specs: { Grade: 'Slurry', 'Pack Size': '25 kg' } },
+  { id: 'kerakoll-biocem', brand: 'kerakoll', name: 'Biocem', description: 'Mineral binder for screeds to fix vitrified tiles and natural stones using wet-on-wet technique with Biotack, and as a dry screed for underlay application.', specs: { Grade: 'Binder', 'Pack Size': '25 kg' } },
+  { id: 'kerakoll-fugalite-color', brand: 'kerakoll', name: 'Fugalite Color', description: 'Waterproof, stain-proof resin grout for joint widths up to 10 mm. Available in 50 colours.', specs: { Grade: 'Resin Grout', 'Pack Size': '4 kg' } },
+  { id: 'kerakoll-fugalite-invisibile', brand: 'kerakoll', name: 'Fugalite Invisibile', description: 'Waterproof, photochromatic resin grout for joint widths up to 3 mm.', specs: { Grade: 'Resin Grout', 'Pack Size': '3 kg' } },
+  { id: 'kerakoll-fugabella-eco', brand: 'kerakoll', name: 'Fugabella Eco Porcelana 0-5', description: 'Mineral grout for color-fast joints up to 5 mm. Available in 20 colours.', specs: { Grade: 'Mineral Grout', 'Pack Size': '5 kg / 1 kg' } },
+  { id: 'kerakoll-biocolor', brand: 'kerakoll', name: 'Biocolor', description: 'Extra fine mineral grout for joints up to 3 mm. Available in 10 colours.', specs: { Grade: 'Mineral Grout', 'Pack Size': '5 kg / 1 kg' } },
+  { id: 'kerakoll-silmat-color', brand: 'kerakoll', name: 'Silmat Color', description: 'Ultra-matt, elastic decorative sealant for joint widths up to 30 mm.', specs: { Grade: 'Sealant', 'Pack Size': '290 ml cartridge' } },
+  { id: 'kerakoll-silicone-color', brand: 'kerakoll', name: 'Silicone Color', description: 'Decorative sealant for tiles, mosaics, and swimming pools, with joint widths up to 25 mm. Available in 50 colours.', specs: { Grade: 'Sealant', 'Pack Size': '310 ml cartridge' } },
+  { id: 'kerakoll-aquastop-nanoflex', brand: 'kerakoll', name: 'Aquastop Nanoflex', description: 'Single component breathable, anti-alkali and chlorine resistant mineral waterproofing membrane.', specs: { Grade: 'Waterproofing', 'Pack Size': '20 kg' } },
+  { id: 'kerakoll-aquastop-p6', brand: 'kerakoll', name: 'Aquastop P6', description: 'Multi-purpose SBR latex, ideal for waterproofing and polymer-modified mortar.', specs: { Grade: 'Latex', 'Pack Size': '1 kg / 5 kg / 25 kg' } },
+  { id: 'kerakoll-aquastop-flex', brand: 'kerakoll', name: 'Aquastop Flex', description: 'Two component, cementitious waterproofing membrane for bathrooms and balconies.', specs: { Grade: 'Waterproofing', 'Pack Size': 'Part A 15 kg + Part B 7.5 kg' } },
+  { id: 'kerakoll-aquastop-ar1', brand: 'kerakoll', name: 'Aquastop AR1', description: 'Special reinforcing mesh made of alkali-resistant glass fibre to strengthen the waterproofing membrane on horizontal surfaces.', specs: { Grade: 'Reinforcing Mesh', 'Pack Size': '50 m x 1 m' } },
+  { id: 'kerakoll-aquastop-120', brand: 'kerakoll', name: 'Aquastop 120', description: 'Flexible NBR waterproof joint for corner treatment of perimeter and fractioning joints.', specs: { Grade: 'Waterproof Joint', 'Pack Size': '50 m x 120 mm' } },
 ];
 
 export const brands = [
   { id: 'ultratech' as const, name: 'UltraTech Tilefixo', slug: '/products/ultratech-tilefixo', description: 'India\'s leading tile adhesive and grout brand under the UltraTech Cement umbrella. Trusted by contractors nationwide for consistent quality, innovative formulations, and comprehensive project support.', gradient: 'from-zinc-900 to-zinc-800' },
   { id: 'myk' as const, name: 'MYK Laticrete', slug: '/products/myk-laticrete', description: 'A joint venture between MYK India and Laticrete International (USA), bringing global tile installation technology to Indian construction sites.', gradient: 'from-zinc-900 to-zinc-800' },
   { id: 'weber' as const, name: 'Saint Gobain Weber', slug: '/products/saint-gobain-weber', description: 'Part of the global Saint-Gobain group — the world\'s largest building materials company with over 350 years of expertise.', gradient: 'from-zinc-900 to-zinc-800' },
+  { id: 'kerakoll' as const, name: 'Kerakoll', slug: '/products/kerakoll', description: 'Italian green-building leader since 1968 — tile adhesives, grouts, sealants, and waterproofing with eco-sustainable formulations.', gradient: 'from-zinc-900 to-zinc-800' },
 ];

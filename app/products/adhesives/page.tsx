@@ -9,11 +9,12 @@ export const metadata: Metadata = {
   description: 'Explore the complete range of tile adhesives, epoxy grouts, and cleaners. Calculate grout joints and preview colors.',
 };
 
-const brandOrder = ['ultratech', 'myk', 'weber'];
+const brandOrder = ['ultratech', 'myk', 'weber', 'kerakoll'];
 const brandGradients: Record<string, string> = {
   ultratech: 'linear-gradient(135deg, #2E1A17 0%, #1A0D0B 100%)',
   myk: 'linear-gradient(135deg, #1A2E1A 0%, #0D1A0B 100%)',
   weber: 'linear-gradient(135deg, #1A1A2E 0%, #0B0B1A 100%)',
+  kerakoll: 'linear-gradient(135deg, #1F2A1A 0%, #0A120A 100%)',
 };
 
 export default function AdhesivesPage() {

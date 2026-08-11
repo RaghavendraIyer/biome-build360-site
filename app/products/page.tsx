@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const liveDescriptions: Record<string, string> = {
-  'Tile Adhesives & Grouts': 'UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber adhesives, epoxy grouts, and specialty tiling solutions. 40+ SKUs across 3 brands.',
+  'Tile Adhesives & Grouts': 'UltraTech Tilefixo, MYK Laticrete, Saint Gobain Weber, and Kerakoll adhesives, grouts, sealants, and waterproofing. 44 SKUs across 4 brands.',
   'Steel & TMT Bars': 'Fe-500, Fe-550, and Fe-600 TMT bars. Primary mills — JSW, Vizag, SAIL, TATA — and secondary mills such as Shree, Radha, Suguna, Vinayaka, Kamadhenu.',
   'Water Treatment Solutions': 'Heat pumps, water softeners, RO plants, pressure pumps, and geysers from verified manufacturers.',
   'Power Backups & Gensets': 'Industrial and commercial gensets and solar power backup solutions.',

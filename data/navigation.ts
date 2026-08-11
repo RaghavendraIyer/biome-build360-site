@@ -52,6 +52,7 @@ export const navLinks: NavLink[] = [
           { label: 'UltraTech Tilefixo', href: '/products/ultratech-tilefixo' },
           { label: 'MYK Laticrete', href: '/products/myk-laticrete' },
           { label: 'Saint Gobain Weber', href: '/products/saint-gobain-weber' },
+          { label: 'Kerakoll', href: '/products/kerakoll' },
         ],
       },
       {
