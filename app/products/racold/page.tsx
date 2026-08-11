@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 };
 
 const lines = [
-  { id: 'mnis', name: 'MNIS Slim & DG', description: 'Slim, space-saving storage geysers with Wi-Fi control, voice commands, quick heating, and auto diagnosis.', chips: ['Wi-Fi', '15L–25L'] },
-  { id: 'mnis-r', name: 'MNIS R', description: 'Italian-designed storage geyser with rust-proof Duronox coating, consistent hot water, and Flexomix temperature control.', chips: ['Italian Design', '10L–25L'] },
-  { id: 'dr-series', name: 'DR DLX / DLX Plus / Swift', description: 'Classic storage geysers with digital temperature display, anti-corrosion tanks, and HPR heating technology.', chips: ['Comfort Storage', '6L–35L'] },
-  { id: 'platinum', name: 'Platinum NXT / Plus / Eco', description: 'Large-capacity storage geysers for high-demand homes — 50L to 100L with faster heating and safety plus.', chips: ['Large Storage', '50L–100L'] },
-  { id: 'litro', name: 'Litro I+ / Pronto Neo', description: 'Instant water heaters that heat water on demand — compact, hard-water resistant, and fast heating.', chips: ['Instant', '1L–5L'] },
-  { id: 'ures', name: 'Ures Pro / Ures Multi', description: 'Tankless instant heaters with powerful heating elements and digital display — 5kW to 24kW variants.', chips: ['Tankless', '5kW–24kW'] },
-  { id: 'ids', name: 'IDS-ECO+ / CO', description: 'Gas-fired instant water heaters (LPG/PNG) with oxygen depletion safety and digital display.', chips: ['Gas', 'LPG/PNG'] },
-  { id: 'heatpump', name: 'Heat Pump Domestic', description: 'Sustainable water heating that saves up to 70% power by transferring heat from air instead of generating it.', chips: ['70% Power Saving', '150L–300L'] },
-  { id: 'solar', name: 'Solar — Mega Max / Alpha', description: 'High-pressure and non-pressured solar water heaters from 100 LPD to 500 LPD, with anti-corrosion INOX tanks.', chips: ['Solar', '100–500 LPD'] },
-  { id: 'commercial', name: 'Commercial — Heat Pump & Solar', description: 'End-to-end hot water solutions for commercial buildings — large-capacity heat pumps and solar arrays.', chips: ['Commercial'] },
+  { id: 'mnis', image: '/images/products/racold/mnis-slim-dg.jpg', name: 'MNIS Slim & DG', description: 'Slim, space-saving storage geysers with Wi-Fi control, voice commands, quick heating, and auto diagnosis.', chips: ['Wi-Fi', '15L–25L'] },
+  { id: 'mnis-r', image: '/images/products/racold/mnis-r.jpg', name: 'MNIS R', description: 'Italian-designed storage geyser with rust-proof Duronox coating, consistent hot water, and Flexomix temperature control.', chips: ['Italian Design', '10L–25L'] },
+  { id: 'dr-series', image: '/images/products/racold/dr-dlx.jpg', name: 'DR DLX / DLX Plus / Swift', description: 'Classic storage geysers with digital temperature display, anti-corrosion tanks, and HPR heating technology.', chips: ['Comfort Storage', '6L–35L'] },
+  { id: 'platinum', image: '/images/products/racold/platinum.jpg', name: 'Platinum NXT / Plus / Eco', description: 'Large-capacity storage geysers for high-demand homes — 50L to 100L with faster heating and safety plus.', chips: ['Large Storage', '50L–100L'] },
+  { id: 'litro', image: '/images/products/racold/litro-pronto.jpg', name: 'Litro I+ / Pronto Neo', description: 'Instant water heaters that heat water on demand — compact, hard-water resistant, and fast heating.', chips: ['Instant', '1L–5L'] },
+  { id: 'ures', image: '/images/products/racold/ures.jpg', name: 'Ures Pro / Ures Multi', description: 'Tankless instant heaters with powerful heating elements and digital display — 5kW to 24kW variants.', chips: ['Tankless', '5kW–24kW'] },
+  { id: 'ids', image: '/images/products/racold/ids-eco.jpg', name: 'IDS-ECO+ / CO', description: 'Gas-fired instant water heaters (LPG/PNG) with oxygen depletion safety and digital display.', chips: ['Gas', 'LPG/PNG'] },
+  { id: 'heatpump', image: '/images/products/racold/heat-pump-domestic.jpg', name: 'Heat Pump Domestic', description: 'Sustainable water heating that saves up to 70% power by transferring heat from air instead of generating it.', chips: ['70% Power Saving', '150L–300L'] },
+  { id: 'solar', image: '/images/products/racold/solar-mega-max.jpg', name: 'Solar — Mega Max / Alpha', description: 'High-pressure and non-pressured solar water heaters from 100 LPD to 500 LPD, with anti-corrosion INOX tanks.', chips: ['Solar', '100–500 LPD'] },
+  { id: 'commercial', image: '/images/products/racold/commercial.jpg', name: 'Commercial — Heat Pump & Solar', description: 'End-to-end hot water solutions for commercial buildings — large-capacity heat pumps and solar arrays.', chips: ['Commercial'] },
 ];
 
 export default function RacoldPage() {
@@ -44,7 +44,7 @@ export default function RacoldPage() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {lines.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>

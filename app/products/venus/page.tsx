@@ -8,21 +8,21 @@ export const metadata: Metadata = {
 };
 
 const heatPumps = [
-  { id: 'hp-domestic', name: 'Heat Pump Domestic', description: 'Non-stop hot water anywhere in the house while saving up to 75–80% on heating costs. COP up to 4.2.', chips: ['75–80% Saving', 'COP 4.2'] },
-  { id: 'hp-commercial', name: 'Heat Pump Commercial', description: 'Uses heat from the air to heat water, saving 60–80% on energy vs diesel boilers. Ideal for hotels, hospitals, hostels.', chips: ['Commercial', '500L+'] },
-  { id: 'hp-high-temp', name: 'High Temperature Heat Pump', description: 'Heats water up to 80°C for industrial applications and food processing industries.', chips: ['Up to 80°C', 'Industrial'] },
-  { id: 'hp-pool', name: 'Swimming Pool Heat Pump', description: 'High-capacity pool heating from ambient to set temperature — for clubs, resorts, and bungalows.', chips: ['Pool Heating'] },
-  { id: 'hp-all-in-one', name: 'All-in-One Heat Pump', description: 'Heats water to 75°C with smart touch control, enamel tank, and 7-bar pressure rating.', chips: ['75°C', '200L'] },
+  { id: 'hp-domestic', image: '/images/products/venus/heat-pump-domestic.jpg', name: 'Heat Pump Domestic', description: 'Non-stop hot water anywhere in the house while saving up to 75–80% on heating costs. COP up to 4.2.', chips: ['75–80% Saving', 'COP 4.2'] },
+  { id: 'hp-commercial', image: '/images/products/venus/heat-pump-commercial.jpg', name: 'Heat Pump Commercial', description: 'Uses heat from the air to heat water, saving 60–80% on energy vs diesel boilers. Ideal for hotels, hospitals, hostels.', chips: ['Commercial', '500L+'] },
+  { id: 'hp-high-temp', image: '/images/products/venus/high-temp.jpg', name: 'High Temperature Heat Pump', description: 'Heats water up to 80°C for industrial applications and food processing industries.', chips: ['Up to 80°C', 'Industrial'] },
+  { id: 'hp-pool', image: '/images/products/venus/pool.jpg', name: 'Swimming Pool Heat Pump', description: 'High-capacity pool heating from ambient to set temperature — for clubs, resorts, and bungalows.', chips: ['Pool Heating'] },
+  { id: 'hp-all-in-one', image: '/images/products/venus/all-in-one.jpg', name: 'All-in-One Heat Pump', description: 'Heats water to 75°C with smart touch control, enamel tank, and 7-bar pressure rating.', chips: ['75°C', '200L'] },
 ];
 
 const solar = [
-  { id: 'solar-vtc', name: 'Solar VTC (Non-Pressure)', description: 'Vacuum tube collectors with triple-layer coating, PUF insulation, and optional electric backup. 100–300 LPD.', chips: ['VTC', '100–300 LPD'] },
-  { id: 'solar-vtc-enamel', name: 'Solar VTC Enamel', description: 'Porcelain enamel glass-lined tank in an automated European-tech plant with 7-year inner tank guarantee.', chips: ['Enamel Tank', '7 Yr Guarantee'] },
-  { id: 'solar-flatplate', name: 'Solar Flat Plate (Pressure)', description: '100% copper fin collectors, pressure-pump compatible up to 5 bar, PUF insulated tanks. 100–200 LPD.', chips: ['Flat Plate', '5 bar'] },
-  { id: 'solar-jacketed', name: 'Jacketed Flat Plate', description: 'Copper-fin collector with corrosion-resistant porcelain enamel tank and 7-bar pressure rating.', chips: ['Pressure', '7 bar'] },
-  { id: 'solar-commercial', name: 'Solar Commercial', description: 'Vacuum tube and flat plate commercial systems from 300 LPD to 3000 LPD for hotels, hospitals, and hostels.', chips: ['Commercial', '300–3000 LPD'] },
-  { id: 'solar-combo', name: 'Combo Solar & Heat Pump', description: 'Solar heats water in sun, heat pump takes over on cloudy days — uninterrupted hot water year-round.', chips: ['Hybrid'] },
-  { id: 'solar-on-grid', name: 'Solar On-Grid Rooftop', description: 'On-grid rooftop solar plants from 1kW to 15kW with reputed panels, quality inverters, and net-metering.', chips: ['1–15 kW', 'On-Grid'] },
+  { id: 'solar-vtc', image: '/images/products/venus/vtc.jpg', name: 'Solar VTC (Non-Pressure)', description: 'Vacuum tube collectors with triple-layer coating, PUF insulation, and optional electric backup. 100–300 LPD.', chips: ['VTC', '100–300 LPD'] },
+  { id: 'solar-vtc-enamel', image: '/images/products/venus/vtc-enamel.jpg', name: 'Solar VTC Enamel', description: 'Porcelain enamel glass-lined tank in an automated European-tech plant with 7-year inner tank guarantee.', chips: ['Enamel Tank', '7 Yr Guarantee'] },
+  { id: 'solar-flatplate', image: '/images/products/venus/flat-plate.jpg', name: 'Solar Flat Plate (Pressure)', description: '100% copper fin collectors, pressure-pump compatible up to 5 bar, PUF insulated tanks. 100–200 LPD.', chips: ['Flat Plate', '5 bar'] },
+  { id: 'solar-jacketed', image: '/images/products/venus/jacketed.jpg', name: 'Jacketed Flat Plate', description: 'Copper-fin collector with corrosion-resistant porcelain enamel tank and 7-bar pressure rating.', chips: ['Pressure', '7 bar'] },
+  { id: 'solar-commercial', image: '/images/products/venus/solar-commercial.jpg', name: 'Solar Commercial', description: 'Vacuum tube and flat plate commercial systems from 300 LPD to 3000 LPD for hotels, hospitals, and hostels.', chips: ['Commercial', '300–3000 LPD'] },
+  { id: 'solar-combo', image: '/images/products/venus/combo.jpg', name: 'Combo Solar & Heat Pump', description: 'Solar heats water in sun, heat pump takes over on cloudy days — uninterrupted hot water year-round.', chips: ['Hybrid'] },
+  { id: 'solar-on-grid', image: '/images/products/venus/on-grid.jpg', name: 'Solar On-Grid Rooftop', description: 'On-grid rooftop solar plants from 1kW to 15kW with reputed panels, quality inverters, and net-metering.', chips: ['1–15 kW', 'On-Grid'] },
 ];
 
 export default function VenusPage() {
@@ -53,7 +53,7 @@ export default function VenusPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {heatPumps.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function VenusPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {solar.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>

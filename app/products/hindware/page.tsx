@@ -8,23 +8,23 @@ export const metadata: Metadata = {
 };
 
 const sanitaryware = [
-  { id: 'one-piece', name: 'One-Piece Toilets', description: 'Sleek one-piece WC with concealed cisterns, wall-mount options, and intelligent toilet variants.', chips: ['One-Piece', 'Wall Mount'] },
-  { id: 'coupled-toilets', name: 'Coupled & Standard Toilets', description: 'Classic coupled and standard two-piece toilets in a wide range of Italian designs.', chips: ['Coupled', 'Standard'] },
-  { id: 'wall-hung', name: 'Wall-Hung Toilets', description: 'Space-saving wall-mounted toilets with concealed cisterns for a minimalist bathroom.', chips: ['Wall Hung', 'Concealed'] },
-  { id: 'concealed-cisterns', name: 'Concealed Cisterns', description: 'Pneumatic and dual-flush concealed cisterns with ceramic and PVC options.', chips: ['Concealed', 'Dual Flush'] },
-  { id: 'wash-basins', name: 'Wash Basins', description: 'Self-rimming, counter-top, pedestal, wall-hung, and integrated pedestal basins.', chips: ['Pedestal', 'Counter-Top', 'Wall Hung'] },
-  { id: 'urinals', name: 'Urinals', description: 'Waterless and wall-hung urinals with sensor and standard flushing options.', chips: ['Waterless', 'Wall Hung'] },
-  { id: 'bathtubs', name: 'Bath Tubs', description: 'Full and freestanding bathtubs from the Italian collection for premium bathrooms.', chips: ['Bathtub'] },
-  { id: 'sensor-faucets', name: 'Sensor Faucets', description: 'Touch-free sensor faucets and tap options for total hygiene in bathrooms.', chips: ['Touch-Free', 'Sensor'] },
+  { id: 'one-piece', image: '/images/products/hindware/one-piece.jpg', name: 'One-Piece Toilets', description: 'Sleek one-piece WC with concealed cisterns, wall-mount options, and intelligent toilet variants.', chips: ['One-Piece', 'Wall Mount'] },
+  { id: 'coupled-toilets', image: '/images/products/hindware/coupled.jpg', name: 'Coupled & Standard Toilets', description: 'Classic coupled and standard two-piece toilets in a wide range of Italian designs.', chips: ['Coupled', 'Standard'] },
+  { id: 'wall-hung', image: '/images/products/hindware/wall-hung.jpg', name: 'Wall-Hung Toilets', description: 'Space-saving wall-mounted toilets with concealed cisterns for a minimalist bathroom.', chips: ['Wall Hung', 'Concealed'] },
+  { id: 'concealed-cisterns', image: '/images/products/hindware/concealed-cisterns.jpg', name: 'Concealed Cisterns', description: 'Pneumatic and dual-flush concealed cisterns with ceramic and PVC options.', chips: ['Concealed', 'Dual Flush'] },
+  { id: 'wash-basins', image: '/images/products/hindware/wash-basins.jpg', name: 'Wash Basins', description: 'Self-rimming, counter-top, pedestal, wall-hung, and integrated pedestal basins.', chips: ['Pedestal', 'Counter-Top', 'Wall Hung'] },
+  { id: 'urinals', image: '/images/products/hindware/urinals.jpg', name: 'Urinals', description: 'Waterless and wall-hung urinals with sensor and standard flushing options.', chips: ['Waterless', 'Wall Hung'] },
+  { id: 'bathtubs', image: '/images/products/hindware/bath-tubs.jpg', name: 'Bath Tubs', description: 'Full and freestanding bathtubs from the Italian collection for premium bathrooms.', chips: ['Bathtub'] },
+  { id: 'sensor-faucets', image: '/images/products/hindware/sensor-faucets.jpg', name: 'Sensor Faucets', description: 'Touch-free sensor faucets and tap options for total hygiene in bathrooms.', chips: ['Touch-Free', 'Sensor'] },
 ];
 
 const bathFittings = [
-  { id: 'basin-mixers', name: 'Basin Mixers & Taps', description: 'Single-lever and centre-hole basin mixers in chrome, black, and gold finishes.', chips: ['Single Lever', 'Centre Hole'] },
-  { id: 'kitchen-mixers', name: 'Flexible Kitchen Mixers', description: 'Table-mounted and wall-mounted flexible kitchen mixers for every kitchen layout.', chips: ['Kitchen', 'Flexible'] },
-  { id: 'showers', name: 'Showers & Multi-Function', description: 'Overhead, rain, ceiling, and hand showers — including 3-, 5-, and 6-flow multi-function variants.', chips: ['Overhead', 'Rain', 'Hand'] },
-  { id: 'thermostats', name: 'Thermostats & Showers', description: 'Thermostatic diverters and shower mixers for precise, safe temperature control.', chips: ['Thermostatic'] },
-  { id: 'health-faucets', name: 'Health Faucets & Add-ons', description: 'Health faucets, shower arms, shower drains, and bathroom accessories.', chips: ['Health Faucet', 'Accessories'] },
-  { id: 'shower-enclosures', name: 'Shower Enclosures', description: 'Shower doors and enclosures that lend an elegant, premium look to the bathroom.', chips: ['Enclosure'] },
+  { id: 'basin-mixers', image: '/images/products/hindware/basin-mixers.jpg', name: 'Basin Mixers & Taps', description: 'Single-lever and centre-hole basin mixers in chrome, black, and gold finishes.', chips: ['Single Lever', 'Centre Hole'] },
+  { id: 'kitchen-mixers', image: '/images/products/hindware/kitchen-mixers.jpg', name: 'Flexible Kitchen Mixers', description: 'Table-mounted and wall-mounted flexible kitchen mixers for every kitchen layout.', chips: ['Kitchen', 'Flexible'] },
+  { id: 'showers', image: '/images/products/hindware/showers.jpg', name: 'Showers & Multi-Function', description: 'Overhead, rain, ceiling, and hand showers — including 3-, 5-, and 6-flow multi-function variants.', chips: ['Overhead', 'Rain', 'Hand'] },
+  { id: 'thermostats', image: '/images/products/hindware/thermostats.jpg', name: 'Thermostats & Showers', description: 'Thermostatic diverters and shower mixers for precise, safe temperature control.', chips: ['Thermostatic'] },
+  { id: 'health-faucets', image: '/images/products/hindware/health-faucets.jpg', name: 'Health Faucets & Add-ons', description: 'Health faucets, shower arms, shower drains, and bathroom accessories.', chips: ['Health Faucet', 'Accessories'] },
+  { id: 'shower-enclosures', image: '/images/products/hindware/shower-enclosures.jpg', name: 'Shower Enclosures', description: 'Shower doors and enclosures that lend an elegant, premium look to the bathroom.', chips: ['Enclosure'] },
 ];
 
 export default function HindwarePage() {
@@ -55,7 +55,7 @@ export default function HindwarePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sanitaryware.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function HindwarePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {bathFittings.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>

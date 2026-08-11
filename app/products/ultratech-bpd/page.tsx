@@ -8,33 +8,33 @@ export const metadata: Metadata = {
 };
 
 const waterproofing = [
-  { id: 'weatherpro-flex', name: 'WeatherPro Flex', description: 'Single-component waterproofer for general waterproofing of roofs, terraces, and wet areas. 3/15/30 kg.', chips: ['Flex', 'Roofs & Terraces'] },
-  { id: 'weatherpro-hi-flex', name: 'WeatherPro Hi-Flex', description: 'Superior waterproofing coat for critical moisture and stress areas — bridges cracks and enhances durability.', chips: ['Hi-Flex', 'High Performance'] },
-  { id: 'weatherpro-wp200', name: 'WeatherPro WP+ 200', description: 'Preventive waterproofing system from the WeatherPro range — one chance to build your home waterproof from within.', chips: ['Preventive', 'WP+ 200'] },
-  { id: 'weatherpro-top-shield', name: 'WeatherPro Top-Shield', description: 'Acrylic-based triple-coat waterproofing system delivering superior protection for roofs.', chips: ['Acrylic', 'Triple Coat'] },
-  { id: 'pop-shield', name: 'POP-Shield', description: '3x protection for your roof from dampness — with crack bridging up to 10%.', chips: ['Crack Bridging', 'Roof'] },
-  { id: 'bitupo', name: 'Bitupo', description: 'Repair waterproofing system for effective protection of horizontal and vertical surfaces.', chips: ['Repair WP'] },
-  { id: 'seal-dry', name: 'Seal & Dry SBR / S+', description: 'SBR latex and polymer additives for waterproofing and polymer-modified mortar.', chips: ['SBR Latex'] },
-  { id: 'bathroom-kit', name: 'Bathroom Waterproofing Kit', description: 'Complete kit for waterproofing bathrooms — membrane plus accessories in one solution.', chips: ['Bathroom Kit'] },
+  { id: 'weatherpro-flex', image: '/images/products/bpd/weatherpro-flex.jpg', name: 'WeatherPro Flex', description: 'Single-component waterproofer for general waterproofing of roofs, terraces, and wet areas. 3/15/30 kg.', chips: ['Flex', 'Roofs & Terraces'] },
+  { id: 'weatherpro-hi-flex', image: '/images/products/bpd/weatherpro-hi-flex.jpg', name: 'WeatherPro Hi-Flex', description: 'Superior waterproofing coat for critical moisture and stress areas — bridges cracks and enhances durability.', chips: ['Hi-Flex', 'High Performance'] },
+  { id: 'weatherpro-wp200', image: '/images/products/bpd/weatherpro-wp200.jpg', name: 'WeatherPro WP+ 200', description: 'Preventive waterproofing system from the WeatherPro range — one chance to build your home waterproof from within.', chips: ['Preventive', 'WP+ 200'] },
+  { id: 'weatherpro-top-shield', image: '/images/products/bpd/weatherpro-top-shield.jpg', name: 'WeatherPro Top-Shield', description: 'Acrylic-based triple-coat waterproofing system delivering superior protection for roofs.', chips: ['Acrylic', 'Triple Coat'] },
+  { id: 'pop-shield', image: '/images/products/bpd/pop-shield.jpg', name: 'POP-Shield', description: '3x protection for your roof from dampness — with crack bridging up to 10%.', chips: ['Crack Bridging', 'Roof'] },
+  { id: 'bitupo', image: '/images/products/bpd/bitupo.jpg', name: 'Bitupo', description: 'Repair waterproofing system for effective protection of horizontal and vertical surfaces.', chips: ['Repair WP'] },
+  { id: 'seal-dry', image: '/images/products/bpd/seal-dry.jpg', name: 'Seal & Dry SBR / S+', description: 'SBR latex and polymer additives for waterproofing and polymer-modified mortar.', chips: ['SBR Latex'] },
+  { id: 'bathroom-kit', image: '/images/products/bpd/bathroom-kit.jpg', name: 'Bathroom Waterproofing Kit', description: 'Complete kit for waterproofing bathrooms — membrane plus accessories in one solution.', chips: ['Bathroom Kit'] },
 ];
 
 const plasterRepair = [
-  { id: 'readiplast-rp', name: 'Readiplast RP', description: 'Specialist ready-mix plaster system — strong plastering in just 2 days with self-curing and dampness prevention.', chips: ['Ready-Mix', '2-Day'] },
-  { id: 'repair2day', name: 'Repair2Day', description: 'Rapid repair mortar that gains strength in 2 days — restores surfaces fast.', chips: ['Rapid Repair'] },
-  { id: 'super-stucco', name: 'Super Stucco', description: 'Smooth finishing plaster for premium interiors and exterior surfaces.', chips: ['Finishing Plaster'] },
-  { id: 'sprayoplast', name: 'Sprayoplast', description: 'Spray-applied plaster for fast, large-area wall finishing.', chips: ['Spray Applied'] },
-  { id: 'microkrete', name: 'Microkrete', description: 'Structural repair and rehabilitation mortar for concrete repairs.', chips: ['Repair & Rehab'] },
-  { id: 'mykrofill', name: 'Mykrofill', description: 'Non-shrink repair mortar for filling and patching of concrete surfaces.', chips: ['Non-Shrink'] },
-  { id: 'basekrete', name: 'Basekrete', description: 'Base coat plaster and repair mortar for masonry and concrete.', chips: ['Base Coat'] },
-  { id: 'krackfil', name: 'Krackfil', description: 'Crack-filling compound for repairing hairline and structural cracks.', chips: ['Crack Filler'] },
-  { id: 'rpm', name: 'RPM', description: 'Repair and plaster mortar range for general masonry repairs.', chips: ['Repair'] },
-  { id: 'smartop', name: 'Smartop', description: 'Flooring system for self-levelling and decorative concrete toppings.', chips: ['Flooring'] },
-  { id: 'floorkrete-hs2', name: 'Floorkrete HS2', description: 'High-strength flooring mortar for industrial and commercial floors.', chips: ['High Strength'] },
+  { id: 'readiplast-rp', image: '/images/products/bpd/readiplast.jpg', name: 'Readiplast RP', description: 'Specialist ready-mix plaster system — strong plastering in just 2 days with self-curing and dampness prevention.', chips: ['Ready-Mix', '2-Day'] },
+  { id: 'repair2day', image: '/images/products/bpd/repair2day.jpg', name: 'Repair2Day', description: 'Rapid repair mortar that gains strength in 2 days — restores surfaces fast.', chips: ['Rapid Repair'] },
+  { id: 'super-stucco', image: '/images/products/bpd/super-stucco.jpg', name: 'Super Stucco', description: 'Smooth finishing plaster for premium interiors and exterior surfaces.', chips: ['Finishing Plaster'] },
+  { id: 'sprayoplast', image: '/images/products/bpd/sprayoplast.jpg', name: 'Sprayoplast', description: 'Spray-applied plaster for fast, large-area wall finishing.', chips: ['Spray Applied'] },
+  { id: 'microkrete', image: '/images/products/bpd/microkrete.jpg', name: 'Microkrete', description: 'Structural repair and rehabilitation mortar for concrete repairs.', chips: ['Repair & Rehab'] },
+  { id: 'mykrofill', image: '/images/products/bpd/mykrofill.jpg', name: 'Mykrofill', description: 'Non-shrink repair mortar for filling and patching of concrete surfaces.', chips: ['Non-Shrink'] },
+  { id: 'basekrete', image: '/images/products/bpd/basekrete.jpg', name: 'Basekrete', description: 'Base coat plaster and repair mortar for masonry and concrete.', chips: ['Base Coat'] },
+  { id: 'krackfil', image: '/images/products/bpd/krackfil.jpg', name: 'Krackfil', description: 'Crack-filling compound for repairing hairline and structural cracks.', chips: ['Crack Filler'] },
+  { id: 'rpm', image: '/images/products/bpd/rpm.jpg', name: 'RPM', description: 'Repair and plaster mortar range for general masonry repairs.', chips: ['Repair'] },
+  { id: 'smartop', image: '/images/products/bpd/smartop.jpg', name: 'Smartop', description: 'Flooring system for self-levelling and decorative concrete toppings.', chips: ['Flooring'] },
+  { id: 'floorkrete-hs2', image: '/images/products/bpd/floorkrete.jpg', name: 'Floorkrete HS2', description: 'High-strength flooring mortar for industrial and commercial floors.', chips: ['High Strength'] },
 ];
 
 const blocks = [
-  { id: 'xtralite', name: 'Xtralite AAC Blocks', description: 'Autoclaved aerated concrete blocks — building accuracy, superior acoustics, and faster construction. IS 2185 Part 3 certified.', chips: ['AAC', 'IS 2185'] },
-  { id: 'fixoblock', name: 'Fixoblock', description: 'Thin-layer jointing mortar for AAC block masonry — high tensile adhesion with no shrinkage cracks.', chips: ['Thin Layer', '40 kg'] },
+  { id: 'xtralite', image: '/images/products/bpd/xtralite.jpg', name: 'Xtralite AAC Blocks', description: 'Autoclaved aerated concrete blocks — building accuracy, superior acoustics, and faster construction. IS 2185 Part 3 certified.', chips: ['AAC', 'IS 2185'] },
+  { id: 'fixoblock', image: '/images/products/bpd/fixoblock.jpg', name: 'Fixoblock', description: 'Thin-layer jointing mortar for AAC block masonry — high tensile adhesion with no shrinkage cracks.', chips: ['Thin Layer', '40 kg'] },
 ];
 
 export default function UltratechBpdPage() {
@@ -65,7 +65,7 @@ export default function UltratechBpdPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {waterproofing.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function UltratechBpdPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {plasterRepair.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function UltratechBpdPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {blocks.map((line) => (
-              <ProductLineCard key={line.id} name={line.name} description={line.description} chips={line.chips} />
+              <ProductLineCard key={line.id} name={line.name} image={line.image} description={line.description} chips={line.chips} />
             ))}
           </div>
         </div>
