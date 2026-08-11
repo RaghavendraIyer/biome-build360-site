@@ -12,12 +12,12 @@ const footerLinks = {
   products: [
     { label: 'Tile Adhesives & Grouts', href: '/products/adhesives' },
     { label: 'Cement & Concrete', href: '/products' },
-    { label: 'Steel & TMT Bars', href: '/products' },
+    { label: 'Steel & TMT Bars', href: '/products/steel' },
     { label: 'Blocks & Bricks', href: '/products' },
     { label: 'Finishing Supplies', href: '/products' },
     { label: 'Waterproofing & Sealants', href: '/products' },
-    { label: 'Water Treatment Solutions', href: '/products' },
-    { label: 'Power Backups & Gensets', href: '/products' },
+    { label: 'Water Treatment Solutions', href: '/products/water-treatment' },
+    { label: 'Power Backups & Gensets', href: '/products/power-backup' },
     { label: 'Plumbing & Sanitaryware', href: '/products' },
   ],
   company: [

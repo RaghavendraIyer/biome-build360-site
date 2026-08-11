@@ -13,53 +13,107 @@ interface MobileNavProps {
 
 export function MobileNav({ links, onClose }: MobileNavProps) {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
 
   const renderChildren = (link: NavLink) => {
     if (link.type === 'products') {
       return (
         <div className="pl-4 pb-2 space-y-1">
-          {link.categories.map((cat, idx) => (
-            <div key={idx}>
-              <button
-                className={cn(
-                  'flex items-center justify-between w-full py-2 text-sm text-left no-underline transition-colors',
-                  cat.brands.length > 0
-                    ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]'
-                    : 'text-[var(--color-text-muted)] cursor-default'
-                )}
-                onClick={() => {
-                  if (cat.brands.length > 0) {
-                    setExpandedCategory(expandedCategory === cat.label ? null : cat.label);
-                  }
-                }}
-              >
-                {cat.label}
-                {cat.brands.length > 0 && (
-                  <ChevronRight
-                    size={14}
-                    className={cn(
-                      'text-[var(--color-text-muted)] shrink-0 transition-transform',
-                      expandedCategory === cat.label && 'rotate-90'
+          {link.categories.map((cat, idx) => {
+            const hasCatChildren = (cat.brands?.length ?? 0) > 0 || (cat.groups?.length ?? 0) > 0;
+            return (
+              <div key={idx}>
+                <button
+                  className={cn(
+                    'flex items-center justify-between w-full py-2 text-sm text-left no-underline transition-colors',
+                    hasCatChildren
+                      ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]'
+                      : 'text-[var(--color-text-muted)] cursor-default'
+                  )}
+                  onClick={() => {
+                    if (hasCatChildren) {
+                      setExpandedCategory(expandedCategory === cat.label ? null : cat.label);
+                    }
+                  }}
+                >
+                  {cat.label}
+                  {hasCatChildren && (
+                    <ChevronRight
+                      size={14}
+                      className={cn(
+                        'text-[var(--color-text-muted)] shrink-0 transition-transform',
+                        expandedCategory === cat.label && 'rotate-90'
+                      )}
+                    />
+                  )}
+                </button>
+                {expandedCategory === cat.label && hasCatChildren && (
+                  <div className="pl-4 space-y-1 pb-2">
+                    {cat.brands && cat.brands.length > 0 && (
+                      cat.brands.map((brand, i) => (
+                        <Link
+                          key={i}
+                          href={brand.href}
+                          className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                          onClick={onClose}
+                        >
+                          {brand.label}
+                        </Link>
+                      ))
                     )}
-                  />
+                    {cat.groups && cat.groups.length > 0 && (
+                      cat.groups.map((group, gi) => {
+                        const hasGroupBrands = (group.brands?.length ?? 0) > 0;
+                        return (
+                          <div key={gi}>
+                            {hasGroupBrands ? (
+                              <button
+                                className="flex items-center justify-between w-full py-2 text-sm text-left text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                                onClick={() =>
+                                  setExpandedGroup(expandedGroup === group.label ? null : group.label)
+                                }
+                              >
+                                {group.label}
+                                <ChevronRight
+                                  size={14}
+                                  className={cn(
+                                    'text-[var(--color-text-muted)] shrink-0 transition-transform',
+                                    expandedGroup === group.label && 'rotate-90'
+                                  )}
+                                />
+                              </button>
+                            ) : (
+                              <Link
+                                href={group.href}
+                                className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                                onClick={onClose}
+                              >
+                                {group.label}
+                              </Link>
+                            )}
+                            {hasGroupBrands && expandedGroup === group.label && (
+                              <div className="pl-4 space-y-1 pb-2">
+                                {group.brands!.map((brand, i) => (
+                                  <Link
+                                    key={i}
+                                    href={brand.href}
+                                    className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
+                                    onClick={onClose}
+                                  >
+                                    {brand.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
                 )}
-              </button>
-              {expandedCategory === cat.label && cat.brands.length > 0 && (
-                <div className="pl-4 space-y-1 pb-2">
-                  {cat.brands.map((brand, i) => (
-                    <Link
-                      key={i}
-                      href={brand.href}
-                      className="block py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] no-underline transition-colors"
-                      onClick={onClose}
-                    >
-                      {brand.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       );
     }

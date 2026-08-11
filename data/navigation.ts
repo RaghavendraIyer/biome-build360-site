@@ -3,10 +3,17 @@ export interface BrandChild {
   href: string;
 }
 
+export interface ProductGroup {
+  label: string;
+  href: string;
+  brands?: BrandChild[];
+}
+
 export interface ProductCategory {
   label: string;
   href: string;
-  brands: BrandChild[];
+  brands?: BrandChild[];
+  groups?: ProductGroup[];
 }
 
 export interface SimpleNavLink {
@@ -47,15 +54,61 @@ export const navLinks: NavLink[] = [
           { label: 'Saint Gobain Weber', href: '/products/saint-gobain-weber' },
         ],
       },
-      { label: 'Cement & Concrete', href: '#', brands: [] },
-      { label: 'Steel & TMT Bars', href: '#', brands: [] },
-      { label: 'Blocks & Bricks', href: '#', brands: [] },
-      { label: 'Plywood', href: '#', brands: [] },
-      { label: 'Finishing Supplies', href: '#', brands: [] },
-      { label: 'Waterproofing & Sealants', href: '#', brands: [] },
-      { label: 'Water Treatment Solutions', href: '#', brands: [] },
-      { label: 'Power Backups & Gensets', href: '#', brands: [] },
-      { label: 'Plumbing & Sanitaryware', href: '#', brands: [] },
+      {
+        label: 'Cement & Concrete',
+        href: '#',
+      },
+      {
+        label: 'Steel & TMT Bars',
+        href: '/products/steel',
+        groups: [
+          {
+            label: 'Primary',
+            href: '/products/steel#primary',
+            brands: [
+              { label: 'JSW', href: '/products/steel#primary' },
+              { label: 'Vizag', href: '/products/steel#primary' },
+              { label: 'SAIL', href: '/products/steel#primary' },
+              { label: 'TATA', href: '/products/steel#primary' },
+            ],
+          },
+          {
+            label: 'Secondary',
+            href: '/products/steel#secondary',
+            brands: [
+              { label: 'Shree', href: '/products/steel#secondary' },
+              { label: 'Radha', href: '/products/steel#secondary' },
+              { label: 'Suguna', href: '/products/steel#secondary' },
+              { label: 'Vinayaka', href: '/products/steel#secondary' },
+              { label: 'Kamadhenu', href: '/products/steel#secondary' },
+            ],
+          },
+        ],
+      },
+      { label: 'Blocks & Bricks', href: '#' },
+      { label: 'Plywood', href: '#' },
+      { label: 'Finishing Supplies', href: '#' },
+      { label: 'Waterproofing & Sealants', href: '#' },
+      {
+        label: 'Water Treatment Solutions',
+        href: '/products/water-treatment',
+        groups: [
+          { label: 'Heat Pumps', href: '/products/water-treatment#heat-pumps' },
+          { label: 'Water Softeners', href: '/products/water-treatment#water-softeners' },
+          { label: 'RO Plants', href: '/products/water-treatment#ro-plants' },
+          { label: 'Pressure Pumps', href: '/products/water-treatment#pressure-pumps' },
+          { label: 'Geysers', href: '/products/water-treatment#geysers' },
+        ],
+      },
+      {
+        label: 'Power Backups & Gensets',
+        href: '/products/power-backup',
+        groups: [
+          { label: 'Genset', href: '/products/power-backup#genset' },
+          { label: 'Solar', href: '/products/power-backup#solar' },
+        ],
+      },
+      { label: 'Plumbing & Sanitaryware', href: '#' },
     ],
   },
   {

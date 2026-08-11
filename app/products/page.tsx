@@ -1,18 +1,31 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { navLinks } from '@/data/navigation';
 
 export const metadata: Metadata = {
   title: 'Products : Build360.online',
-  description: 'Browse Build360\'s product verticals: tile adhesives, epoxy grouts, and more.',
+  description: 'Browse Build360\'s product verticals: tile adhesives, steel, water treatment, power backup, and more.',
 };
 
-const categories = [
-  { name: 'Tile Adhesives & Grouts', desc: 'UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber adhesives, epoxy grouts, and specialty tiling solutions. 40+ SKUs across 3 brands.', href: '/products/adhesives', available: true },
-  { name: 'Water Solutions', desc: 'Waterproofing membranes, sealants, and drainage solutions for residential and commercial construction projects.', href: '#', available: false },
-  { name: 'Power & Gensets', desc: 'Industrial generators, power backup solutions, and electrical distribution equipment for construction sites.', href: '#', available: false },
-  { name: 'Furniture & Interiors', desc: 'Modular furniture, interior fit-out materials, and finishing supplies for commercial and residential projects.', href: '#', available: false },
-];
+const liveDescriptions: Record<string, string> = {
+  'Tile Adhesives & Grouts': 'UltraTech Tilefixo, MYK Laticrete, and Saint Gobain Weber adhesives, epoxy grouts, and specialty tiling solutions. 40+ SKUs across 3 brands.',
+  'Steel & TMT Bars': 'Fe-500, Fe-550, and Fe-600 TMT bars. Primary mills — JSW, Vizag, SAIL, TATA — and secondary mills such as Shree, Radha, Suguna, Vinayaka, Kamadhenu.',
+  'Water Treatment Solutions': 'Heat pumps, water softeners, RO plants, pressure pumps, and geysers from verified manufacturers.',
+  'Power Backups & Gensets': 'Industrial and commercial gensets and solar power backup solutions.',
+};
+
+const comingSoonDescriptions: Record<string, string> = {
+  'Cement & Concrete': 'OPC, PPC, and specialty cement for all construction grades.',
+  'Blocks & Bricks': 'AAC blocks, fly ash bricks, red bricks, and concrete blocks.',
+  Plywood: 'Marine, BWR, and commercial plywood for structural and interior use.',
+  'Finishing Supplies': 'POP, putty, paints, sealants, and interior finishing materials.',
+  'Waterproofing & Sealants': 'Membrane waterproofing, liquid sealants, and drainage solutions.',
+  'Plumbing & Sanitaryware': 'CPVC pipes, fittings, sanitaryware, and bathroom solutions.',
+};
+
+const productsLink = navLinks.find((link) => link.type === 'products');
+const categories = productsLink?.type === 'products' ? productsLink.categories : [];
 
 export default function ProductsPage() {
   return (
@@ -24,7 +37,7 @@ export default function ProductsPage() {
             <em className="not-italic text-[var(--color-primary)]">Build.</em>
           </h1>
           <p className="text-sm md:text-[15px] text-[var(--color-text-secondary)] max-w-xl mx-auto leading-relaxed">
-            From tile adhesives and epoxy grouts to cement, steel, and finishing supplies — source every category through Build360&apos;s verified partner network.
+            From tile adhesives and epoxy grouts to steel, water treatment, and power backup — source every category through Build360&apos;s verified partner network.
           </p>
         </div>
       </section>
@@ -32,21 +45,23 @@ export default function ProductsPage() {
       <section className="pb-20 px-[var(--gutter)]">
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {categories.map((cat) => (
-              cat.available ? (
-                <Link key={cat.name} href={cat.href} className="group block p-8 rounded-[var(--radius)] bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] hover:border-[var(--color-primary-18)] transition-colors no-underline">
-                  <h3 className="font-serif text-xl font-bold text-[var(--color-text-main)] group-hover:text-[var(--color-primary)] transition-colors mb-3">{cat.name}</h3>
-                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{cat.desc}</p>
+            {categories.map((cat) => {
+              const isLive = Boolean(liveDescriptions[cat.label]);
+              const desc = liveDescriptions[cat.label] ?? comingSoonDescriptions[cat.label] ?? '';
+              return isLive ? (
+                <Link key={cat.label} href={cat.href} className="group block p-8 rounded-[var(--radius)] bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] hover:border-[var(--color-primary-18)] transition-colors no-underline">
+                  <h3 className="font-serif text-xl font-bold text-[var(--color-text-main)] group-hover:text-[var(--color-primary)] transition-colors mb-3">{cat.label}</h3>
+                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{desc}</p>
                   <span className="inline-flex items-center gap-1 mt-4 text-xs font-medium text-[var(--color-primary)] group-hover:gap-2 transition-all">Browse Products <ArrowRight size={14} /></span>
                 </Link>
               ) : (
-                <div key={cat.name} className="p-8 rounded-[var(--radius)] bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] opacity-60">
-                  <h3 className="font-serif text-xl font-bold text-[var(--color-text-main)] mb-3">{cat.name}</h3>
-                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-3">{cat.desc}</p>
+                <div key={cat.label} className="p-8 rounded-[var(--radius)] bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] opacity-60">
+                  <h3 className="font-serif text-xl font-bold text-[var(--color-text-main)] mb-3">{cat.label}</h3>
+                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-3">{desc}</p>
                   <span className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-muted)]">Coming Soon</span>
                 </div>
-              )
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
