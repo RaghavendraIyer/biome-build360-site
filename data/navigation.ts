@@ -86,19 +86,47 @@ export const navLinks: NavLink[] = [
           },
         ],
       },
-      { label: 'Blocks & Bricks', href: '#' },
+      {
+        label: 'Blocks & Bricks',
+        href: '/products/blocks-bricks',
+        brands: [
+          { label: 'UltraTech BPD', href: '/products/ultratech-bpd#blocks' },
+        ],
+      },
       { label: 'Plywood', href: '#' },
-      { label: 'Finishing Supplies', href: '#' },
-      { label: 'Waterproofing & Sealants', href: '#' },
+      {
+        label: 'Finishing Supplies',
+        href: '/products/finishing-supplies',
+        brands: [
+          { label: 'UltraTech BPD', href: '/products/ultratech-bpd#plaster-repair' },
+          { label: 'Kerakoll', href: '/products/kerakoll' },
+        ],
+      },
+      {
+        label: 'Waterproofing & Sealants',
+        href: '/products/waterproofing-sealants',
+        brands: [
+          { label: 'UltraTech BPD', href: '/products/ultratech-bpd#waterproofing' },
+          { label: 'Kerakoll', href: '/products/kerakoll' },
+        ],
+      },
       {
         label: 'Water Treatment Solutions',
         href: '/products/water-treatment',
         groups: [
-          { label: 'Heat Pumps', href: '/products/water-treatment#heat-pumps' },
+          {
+            label: 'Heat Pumps',
+            href: '/products/venus#heat-pumps',
+            brands: [{ label: 'Venus', href: '/products/venus#heat-pumps' }],
+          },
           { label: 'Water Softeners', href: '/products/water-treatment#water-softeners' },
           { label: 'RO Plants', href: '/products/water-treatment#ro-plants' },
           { label: 'Pressure Pumps', href: '/products/water-treatment#pressure-pumps' },
-          { label: 'Geysers', href: '/products/water-treatment#geysers' },
+          {
+            label: 'Geysers',
+            href: '/products/racold',
+            brands: [{ label: 'Racold', href: '/products/racold' }],
+          },
         ],
       },
       {
@@ -106,10 +134,27 @@ export const navLinks: NavLink[] = [
         href: '/products/power-backup',
         groups: [
           { label: 'Genset', href: '/products/power-backup#genset' },
-          { label: 'Solar', href: '/products/power-backup#solar' },
+          {
+            label: 'Solar',
+            href: '/products/venus#solar',
+            brands: [{ label: 'Venus', href: '/products/venus#solar' }],
+          },
         ],
       },
-      { label: 'Plumbing & Sanitaryware', href: '#' },
+      {
+        label: 'Plumbing & Sanitaryware',
+        href: '/products/plumbing-sanitaryware',
+        brands: [
+          { label: 'Hindware', href: '/products/hindware' },
+        ],
+      },
+      {
+        label: 'Furniture & Interiors',
+        href: '/products/furniture-interiors',
+        brands: [
+          { label: 'Rockworth', href: '/products/rockworth' },
+        ],
+      },
     ],
   },
   {

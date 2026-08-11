@@ -11,17 +11,18 @@ export const metadata: Metadata = {
 const liveDescriptions: Record<string, string> = {
   'Tile Adhesives & Grouts': 'UltraTech Tilefixo, MYK Laticrete, Saint Gobain Weber, and Kerakoll adhesives, grouts, sealants, and waterproofing. 44 SKUs across 4 brands.',
   'Steel & TMT Bars': 'Fe-500, Fe-550, and Fe-600 TMT bars. Primary mills — JSW, Vizag, SAIL, TATA — and secondary mills such as Shree, Radha, Suguna, Vinayaka, Kamadhenu.',
-  'Water Treatment Solutions': 'Heat pumps, water softeners, RO plants, pressure pumps, and geysers from verified manufacturers.',
-  'Power Backups & Gensets': 'Industrial and commercial gensets and solar power backup solutions.',
+  'Water Treatment Solutions': 'Heat pumps (Venus), geysers (Racold), water softeners, RO plants, and pressure pumps from verified manufacturers.',
+  'Power Backups & Gensets': 'Industrial and commercial gensets and solar power backup solutions — including Venus on-grid rooftop solar.',
+  'Blocks & Bricks': 'Xtralite AAC blocks and Fixoblock thin-layer jointing mortar from UltraTech Building Products.',
+  'Finishing Supplies': 'Readiplast plaster, repair mortars, flooring systems, and Kerakoll adhesives and grouts for flawless finishes.',
+  'Waterproofing & Sealants': 'WeatherPro and Aquastop membrane waterproofing, liquid sealants, and bathroom kits from UltraTech BPD and Kerakoll.',
+  'Plumbing & Sanitaryware': 'Hindware sanitaryware, faucets, showers, and bath fittings from the Italian Collection.',
+  'Furniture & Interiors': 'Rockworth ergonomic and task chairs for modern, productive workspaces.',
 };
 
 const comingSoonDescriptions: Record<string, string> = {
   'Cement & Concrete': 'OPC, PPC, and specialty cement for all construction grades.',
-  'Blocks & Bricks': 'AAC blocks, fly ash bricks, red bricks, and concrete blocks.',
   Plywood: 'Marine, BWR, and commercial plywood for structural and interior use.',
-  'Finishing Supplies': 'POP, putty, paints, sealants, and interior finishing materials.',
-  'Waterproofing & Sealants': 'Membrane waterproofing, liquid sealants, and drainage solutions.',
-  'Plumbing & Sanitaryware': 'CPVC pipes, fittings, sanitaryware, and bathroom solutions.',
 };
 
 const productsLink = navLinks.find((link) => link.type === 'products');

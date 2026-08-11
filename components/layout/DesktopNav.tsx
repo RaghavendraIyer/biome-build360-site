@@ -85,7 +85,13 @@ export function DesktopNav({ links }: DesktopNavProps) {
           )}
 
           {link.type === 'products' && openDropdown === link.label && (
-            <div className="absolute top-full left-0 -mt-2 pt-2 flex">
+            <div
+              className="absolute top-full left-0 -mt-2 pt-2 flex"
+              onMouseEnter={() => {
+                if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+              }}
+              onMouseLeave={handleClose}
+            >
               <ProductsSubmenu categories={link.categories} />
             </div>
           )}

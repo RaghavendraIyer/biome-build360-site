@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import type { ProductCategory } from '@/data/navigation';
@@ -17,28 +17,10 @@ const hasChildren = (cat: ProductCategory) => hasGroups(cat) || hasBrands(cat);
 export function ProductsSubmenu({ categories }: ProductsSubmenuProps) {
   const [flyoutCategory, setFlyoutCategory] = useState<string | null>(null);
   const [flyoutGroup, setFlyoutGroup] = useState<string | null>(null);
-  const flyoutTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleCategoryOpen = (label: string) => {
-    if (flyoutTimeoutRef.current) clearTimeout(flyoutTimeoutRef.current);
     setFlyoutCategory(label);
     setFlyoutGroup(null);
-  };
-
-  const handleGroupOpen = (label: string) => {
-    if (flyoutTimeoutRef.current) clearTimeout(flyoutTimeoutRef.current);
-    setFlyoutGroup(label);
-  };
-
-  const handleStay = () => {
-    if (flyoutTimeoutRef.current) clearTimeout(flyoutTimeoutRef.current);
-  };
-
-  const handleFlyoutClose = () => {
-    flyoutTimeoutRef.current = setTimeout(() => {
-      setFlyoutCategory(null);
-      setFlyoutGroup(null);
-    }, 200);
   };
 
   const active = categories.find(c => c.label === flyoutCategory);
@@ -50,72 +32,54 @@ export function ProductsSubmenu({ categories }: ProductsSubmenuProps) {
         {categories.map((cat, idx) => {
           const clickable = hasChildren(cat);
           return (
-            <div
+            <Link
               key={idx}
-              className="relative"
+              href={cat.href}
+              className={cn(
+                'flex items-center justify-between px-4 py-2 text-sm no-underline transition-colors',
+                clickable
+                  ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)]'
+                  : 'text-[var(--color-text-muted)] cursor-default pointer-events-none'
+              )}
               onMouseEnter={() => clickable && handleCategoryOpen(cat.label)}
-              onMouseLeave={handleFlyoutClose}
+              onClick={(e) => {
+                if (!clickable) e.preventDefault();
+              }}
             >
-              <Link
-                href={cat.href}
-                className={cn(
-                  'flex items-center justify-between px-4 py-2 text-sm no-underline transition-colors',
-                  clickable
-                    ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)]'
-                    : 'text-[var(--color-text-muted)] cursor-default pointer-events-none'
-                )}
-                onClick={(e) => {
-                  if (!clickable) e.preventDefault();
-                }}
-              >
-                {cat.label}
-                {clickable && (
-                  <ChevronRight size={14} className="text-[var(--color-text-muted)] shrink-0" />
-                )}
-              </Link>
-            </div>
+              {cat.label}
+              {clickable && (
+                <ChevronRight size={14} className="text-[var(--color-text-muted)] shrink-0" />
+              )}
+            </Link>
           );
         })}
       </div>
 
       {active && hasGroups(active) && (
-        <div
-          className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start"
-          onMouseEnter={handleStay}
-          onMouseLeave={handleFlyoutClose}
-        >
+        <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start">
           <div className="px-4 py-1.5">
             <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
               {active.label}
             </span>
           </div>
           {active.groups!.map((group, i) => (
-            <div
+            <Link
               key={i}
-              className="relative"
-              onMouseEnter={() => (group.brands?.length ?? 0) > 0 && handleGroupOpen(group.label)}
-              onMouseLeave={handleFlyoutClose}
+              href={group.href}
+              className="flex items-center justify-between px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
+              onMouseEnter={() => (group.brands?.length ?? 0) > 0 && setFlyoutGroup(group.label)}
             >
-              <Link
-                href={group.href}
-                className="flex items-center justify-between px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-10)] no-underline transition-colors"
-              >
-                {group.label}
-                {(group.brands?.length ?? 0) > 0 && (
-                  <ChevronRight size={14} className="text-[var(--color-text-muted)] shrink-0" />
-                )}
-              </Link>
-            </div>
+              {group.label}
+              {(group.brands?.length ?? 0) > 0 && (
+                <ChevronRight size={14} className="text-[var(--color-text-muted)] shrink-0" />
+              )}
+            </Link>
           ))}
         </div>
       )}
 
       {active && activeGroup && (
-        <div
-          className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start"
-          onMouseEnter={handleStay}
-          onMouseLeave={handleFlyoutClose}
-        >
+        <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start">
           <div className="px-4 py-1.5">
             <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
               {activeGroup.label}
@@ -134,11 +98,7 @@ export function ProductsSubmenu({ categories }: ProductsSubmenuProps) {
       )}
 
       {active && !hasGroups(active) && hasBrands(active) && (
-        <div
-          className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start"
-          onMouseEnter={handleStay}
-          onMouseLeave={handleFlyoutClose}
-        >
+        <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] shadow-lg py-2 w-48 ml-2 self-start">
           <div className="px-4 py-1.5">
             <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
               {active.label}
