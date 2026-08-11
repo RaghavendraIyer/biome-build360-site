@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "cf-build": "opennextjs-cloudflare build && node scripts/patch-worker.mjs",
-    "cf-deploy": "opennextjs-cloudflare build && node scripts/patch-worker.mjs && cp .open-next/worker.js .open-next/_worker.js && npx wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=main",
-    "cf-deploy:staging": "opennextjs-cloudflare build && node scripts/patch-worker.mjs && cp .open-next/worker.js .open-next/_worker.js && npx wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=dev/staging",
+    "dev": "node scripts/generate-image-manifest.mjs && next dev",
+    "build": "node scripts/generate-image-manifest.mjs && next build",
+    "cf-build": "node scripts/generate-image-manifest.mjs && opennextjs-cloudflare build && node scripts/patch-worker.mjs",
+    "cf-deploy": "node scripts/generate-image-manifest.mjs && opennextjs-cloudflare build && node scripts/patch-worker.mjs && cp .open-next/worker.js .open-next/_worker.js && npx wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=main",
+    "cf-deploy:staging": "node scripts/generate-image-manifest.mjs && opennextjs-cloudflare build && node scripts/patch-worker.mjs && cp .open-next/worker.js .open-next/_worker.js && npx wrangler pages deploy .open-next/ --project-name=muddy-sunset-8bed --branch=dev/staging",
     "start": "next start",
     "lint": "eslint"
   },
