@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
+import { VendorRegistrationWizard } from '@/components/partners/VendorRegistrationWizard';
 
 export const metadata: Metadata = {
   title: 'For Partners : Build360.online',
@@ -49,6 +50,23 @@ export default function PartnersPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-[var(--gutter)] bg-[var(--color-bg-app)]">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <span className="font-mono text-[20px] uppercase tracking-[0.15em] text-[var(--color-primary)] mb-3 block">Vendor Onboarding</span>
+            <h2 className="font-serif text-[clamp(28px,4vw,36px)] font-extrabold text-[var(--color-text-main)]">
+              Register Your Company in{' '}
+              <em className="not-italic text-[var(--color-primary)]">Two Minutes.</em>
+            </h2>
+            <p className="text-sm md:text-[15px] text-[var(--color-text-secondary)] max-w-xl mx-auto leading-relaxed mt-4">
+              Share your company & compliance details, Aadhaar eSign the vendor agreement, and start quoting buyer
+              requirements once our team verifies your documents — usually within 48 hours.
+            </p>
+          </div>
+          <VendorRegistrationWizard />
         </div>
       </section>
 
