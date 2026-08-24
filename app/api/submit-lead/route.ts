@@ -31,9 +31,9 @@ function buildVendorProperties(body: Record<string, unknown>) {
     Stage: { select: { name: 'New' } },
   };
 
-  if (body.esign_date) {
-    props['eSign Agreement'] = { date: { start: String(body.esign_date) } };
-  }
+  props['eSign Agreement'] = {
+    date: { start: body.esign_date ? String(body.esign_date) : new Date().toISOString().slice(0, 10) },
+  };
 
   if (body.website && String(body.website).trim()) {
     props.Website = { url: String(body.website).trim() };
