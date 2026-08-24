@@ -21,45 +21,37 @@ const PRODUCT_CATEGORIES = [
 ];
 
 interface VendorForm {
+  business_type: string;
   company: string;
   contact_person: string;
   phone: string;
   email: string;
+  website: string;
   pincodes: string;
   product_categories: string[];
+  other_materials: string;
   brand_affiliations: string;
   gstin: string;
   pan: string;
   udyam: string;
-  bank_verified: boolean;
-  bis_cert: boolean;
-  iso_9001: boolean;
-  spcb_consent: boolean;
-  eway_bill: boolean;
-  legal_metrology: boolean;
   dpdp_consent: boolean;
-  esign_date: string;
 }
 
 const initialForm: VendorForm = {
+  business_type: '',
   company: '',
   contact_person: '',
   phone: '',
   email: '',
+  website: '',
   pincodes: '',
   product_categories: [],
+  other_materials: '',
   brand_affiliations: '',
   gstin: '',
   pan: '',
   udyam: '',
-  bank_verified: false,
-  bis_cert: false,
-  iso_9001: false,
-  spcb_consent: false,
-  eway_bill: false,
-  legal_metrology: false,
   dpdp_consent: false,
-  esign_date: '',
 };
 
 const GSTIN_RE = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
@@ -94,6 +86,7 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
   };
 
   const validateStep1 = useCallback((): string | null => {
+    if (!form.business_type) return 'Select your business type';
     if (!form.company.trim()) return 'Company name is required';
     if (!form.contact_person.trim()) return 'Contact person is required';
     if (!/^[6-9]\d{9}$/.test(form.phone.replace(/\D/g, '').slice(-10))) return 'Enter a valid 10-digit Indian mobile number';
@@ -103,7 +96,7 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
     if (pincodes.some((p) => !/^\d{6}$/.test(p))) return 'Pincodes must be 6-digit numbers, comma separated';
     if (form.product_categories.length === 0) return 'Select at least one product category';
     return null;
-  }, [form.company, form.contact_person, form.phone, form.email, form.pincodes, form.product_categories]);
+  }, [form.business_type, form.company, form.contact_person, form.phone, form.email, form.pincodes, form.product_categories]);
 
   const validateStep2 = useCallback((): string | null => {
     if (form.gstin && !GSTIN_RE.test(form.gstin.trim().toUpperCase())) return 'GSTIN looks invalid — expected 15 characters (e.g. 36ABCDE1234F1Z5)';
@@ -147,7 +140,7 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
         pincodes,
         source: 'vendor-registration',
         lead_id: `vendor-${Date.now()}`,
-        esign_date: form.esign_date || new Date().toISOString().slice(0, 10),
+        esign_date: new Date().toISOString().slice(0, 10),
       };
 
       const resp = await fetch('/api/submit-lead', {
@@ -160,6 +153,7 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
       if (result.success) {
         posthog.capture('vendor_registration_submitted', {
           company: form.company,
+          business_type: form.business_type,
           categories: form.product_categories,
           source: 'vendor-registration',
         });
@@ -191,9 +185,10 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
           Registration Received
         </h3>
         <p className="text-sm text-[var(--color-text-secondary)] max-w-md mx-auto leading-relaxed mb-8">
-          Thank you, {form.company}. Our team will reach out within{' '}
-          <strong className="text-[var(--color-text-main)]">48 hours</strong> to verify your GSTIN, PAN, Udyam, and
-          bank details, and complete your onboarding. Meanwhile, explore live RFQs on the Bid board.
+          Thank you, {form.company}. Our team will call you within{' '}
+          <strong className="text-[var(--color-text-main)]">48 hours</strong> to verify your documents (GSTIN, PAN,
+          Udyam, bank details), complete your Aadhaar eSign agreement, and activate your vendor profile. Meanwhile,
+          explore live RFQs on the Bid board.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
@@ -219,8 +214,8 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
     <div className="max-w-2xl mx-auto bg-[var(--color-bg-surface)] border border-[var(--color-border-light)] rounded-[var(--radius)] overflow-hidden shadow-md">
       <div className="flex border-b border-[var(--color-border-light)]">
         {[
-          { n: 1, label: 'Company & Contact' },
-          { n: 2, label: 'Compliance & Statutory' },
+          { n: 1, label: 'Business Profile' },
+          { n: 2, label: 'Consent & Verification' },
         ].map((s) => (
           <div
             key={s.n}
@@ -244,6 +239,25 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
         {step === 1 ? (
           <div className="space-y-4">
             <div>
+              <label className={labelCls}>Business Type *</label>
+              <div className="grid grid-cols-3 gap-2">
+                {['Supplier', 'Manufacturer', 'Both'].map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    onClick={() => set('business_type', t)}
+                    className={`py-2.5 text-[11px] font-mono uppercase tracking-wider rounded-lg border transition-colors ${
+                      form.business_type === t
+                        ? 'bg-[var(--color-primary-10)] text-[var(--color-primary)] border-[var(--color-primary-18)]'
+                        : 'bg-[var(--color-bg-surface-alt)] text-[var(--color-text-secondary)] border-[var(--color-border-light)] hover:border-[var(--color-primary-18)]'
+                    }`}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
               <label className={labelCls}>Company Name *</label>
               <input type="text" value={form.company} onChange={(e) => set('company', e.target.value)} placeholder="Legal company name (as per GSTIN)" className={inputCls} />
             </div>
@@ -257,9 +271,15 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
                 <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} placeholder="10-digit mobile" className={inputCls} />
               </div>
             </div>
-            <div>
-              <label className={labelCls}>Email</label>
-              <input type="email" value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="you@company.com" className={inputCls} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className={labelCls}>Email</label>
+                <input type="email" value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="you@company.com" className={inputCls} />
+              </div>
+              <div>
+                <label className={labelCls}>Website / Social Link</label>
+                <input type="url" value={form.website} onChange={(e) => set('website', e.target.value)} placeholder="www.yourcompany.com" className={inputCls} />
+              </div>
             </div>
             <div>
               <label className={labelCls}>Service Pincodes *</label>
@@ -286,6 +306,10 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
               </div>
             </div>
             <div>
+              <label className={labelCls}>Other Materials (optional)</label>
+              <input type="text" value={form.other_materials} onChange={(e) => set('other_materials', e.target.value)} placeholder="Anything not listed above — e.g. AAC blocks, shuttering material" className={inputCls} />
+            </div>
+            <div>
               <label className={labelCls}>Brand Affiliations</label>
               <input type="text" value={form.brand_affiliations} onChange={(e) => set('brand_affiliations', e.target.value)} placeholder="e.g. UltraTech, MYK Laticrete (comma separated)" className={inputCls} />
             </div>
@@ -293,43 +317,23 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
         ) : (
           <div className="space-y-4">
             <p className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed pb-2 border-b border-[var(--color-border-light)]">
-              We verify these before you go live as an Active vendor: GSTIN & PAN validation, Udyam/MSME registration,
-              bank penny-drop test, BIS/ISO/SPCB certification as applicable, and your digital agreement via Aadhaar eSign.
+              Our team verifies GSTIN &amp; PAN, Udyam/MSME registration, bank details, and applicable certifications
+              (BIS / ISO / SPCB) on a 48-hour onboarding call — then activates your profile via Aadhaar eSign. Share
+              these now if handy; it speeds up verification.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className={labelCls}>GSTIN</label>
+                <label className={labelCls}>GSTIN (optional)</label>
                 <input type="text" value={form.gstin} onChange={(e) => set('gstin', e.target.value.toUpperCase())} placeholder="36ABCDE1234F1Z5" className={inputCls} />
               </div>
               <div>
-                <label className={labelCls}>PAN</label>
+                <label className={labelCls}>PAN (optional)</label>
                 <input type="text" value={form.pan} onChange={(e) => set('pan', e.target.value.toUpperCase())} placeholder="ABCDE1234F" className={inputCls} />
               </div>
             </div>
             <div>
-              <label className={labelCls}>Udyam / MSME Registration No.</label>
+              <label className={labelCls}>Udyam / MSME Registration No. (optional)</label>
               <input type="text" value={form.udyam} onChange={(e) => set('udyam', e.target.value.toUpperCase())} placeholder="UDYAM-AP-00-0000000" className={inputCls} />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              {[
-                { key: 'bank_verified', label: 'Bank account verified (penny-drop)' },
-                { key: 'bis_cert', label: 'BIS certification (if supplying cement / steel / bricks)' },
-                { key: 'iso_9001', label: 'ISO 9001 quality certification' },
-                { key: 'spcb_consent', label: 'State Pollution Control Board consent' },
-                { key: 'eway_bill', label: 'E-way bill generation enabled' },
-                { key: 'legal_metrology', label: 'Legal Metrology (weights & measures) compliant' },
-              ].map((c) => (
-                <label key={c.key} className="flex items-start gap-2 text-[12px] text-[var(--color-text-secondary)] cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={Boolean(form[c.key as keyof VendorForm])}
-                    onChange={(e) => set(c.key as keyof VendorForm, e.target.checked)}
-                    className="mt-0.5 accent-[var(--color-primary)]"
-                  />
-                  <span>{c.label}</span>
-                </label>
-              ))}
             </div>
 
             <div className="pt-3 border-t border-[var(--color-border-light)]">
@@ -345,12 +349,6 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
                   agree to execute the vendor agreement via Aadhaar eSign.
                 </span>
               </label>
-              {form.dpdp_consent && (
-                <div className="mt-3">
-                  <label className={labelCls}>Agreement Date (Aadhaar eSign)</label>
-                  <input type="date" value={form.esign_date} onChange={(e) => set('esign_date', e.target.value)} className={inputCls} />
-                </div>
-              )}
             </div>
           </div>
         )}
@@ -365,7 +363,7 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
               onClick={goNext}
               className="w-full py-3 text-sm font-medium bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors"
             >
-              Continue to Compliance
+              Continue
             </button>
           ) : (
             <>

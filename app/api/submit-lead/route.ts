@@ -11,6 +11,7 @@ function buildVendorProperties(body: Record<string, unknown>) {
 
   const props: Record<string, unknown> = {
     Company: { title: [{ text: { content: String(body.company || '') } }] },
+    'Business Type': { select: { name: String(body.business_type || 'Supplier') } },
     'Contact Person': { rich_text: [{ text: { content: String(body.contact_person || '') } }] },
     Phone: { phone_number: String(body.phone || '') },
     Email: { rich_text: [{ text: { content: String(body.email || '') } }] },
@@ -18,16 +19,11 @@ function buildVendorProperties(body: Record<string, unknown>) {
     'Product Categories': {
       multi_select: categories.map((c) => ({ name: String(c) })),
     },
+    'Other Materials': { rich_text: [{ text: { content: String(body.other_materials || '') } }] },
     'Brand Affiliations': { rich_text: [{ text: { content: brands.join(', ') } }] },
     GSTIN: { rich_text: [{ text: { content: String(body.gstin || '') } }] },
     PAN: { rich_text: [{ text: { content: String(body.pan || '') } }] },
     'Udyam No': { rich_text: [{ text: { content: String(body.udyam || '') } }] },
-    'Bank Account Verified': { checkbox: Boolean(body.bank_verified) },
-    'BIS Cert': { checkbox: Boolean(body.bis_cert) },
-    'ISO 9001': { checkbox: Boolean(body.iso_9001) },
-    'SPCB Consent': { checkbox: Boolean(body.spcb_consent) },
-    'E-way Bill Enabled': { checkbox: Boolean(body.eway_bill) },
-    'Legal Metrology': { checkbox: Boolean(body.legal_metrology) },
     'DPDP Consent': { checkbox: Boolean(body.dpdp_consent) },
     'Lead ID': { rich_text: [{ text: { content: String(body.lead_id || '') } }] },
     Source: { select: { name: 'vendor-registration' } },
@@ -37,6 +33,10 @@ function buildVendorProperties(body: Record<string, unknown>) {
 
   if (body.esign_date) {
     props['eSign Agreement'] = { date: { start: String(body.esign_date) } };
+  }
+
+  if (body.website && String(body.website).trim()) {
+    props.Website = { url: String(body.website).trim() };
   }
 
   return props;
