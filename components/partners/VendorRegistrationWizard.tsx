@@ -25,11 +25,12 @@ interface VendorForm {
   company: string;
   contact_person: string;
   phone: string;
+  whatsapp_same: boolean;
   email: string;
   website: string;
   pincodes: string;
-  product_categories: string[];
   other_materials: string;
+  supplier_type: string;
   brand_affiliations: string;
   gstin: string;
   pan: string;
@@ -42,11 +43,12 @@ const initialForm: VendorForm = {
   company: '',
   contact_person: '',
   phone: '',
+  whatsapp_same: true,
   email: '',
   website: '',
-  pincodes: '',
-  product_categories: [],
+  pincodes: "",
   other_materials: '',
+  supplier_type: '',
   brand_affiliations: '',
   gstin: '',
   pan: '',
@@ -75,16 +77,6 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
     setError(null);
   }, []);
 
-  const toggleCategory = (cat: string) => {
-    setForm((f) => ({
-      ...f,
-      product_categories: f.product_categories.includes(cat)
-        ? f.product_categories.filter((c) => c !== cat)
-        : [...f.product_categories, cat],
-    }));
-    setError(null);
-  };
-
   const validateStep1 = useCallback((): string | null => {
     if (!form.business_type) return 'Select your business type';
     if (!form.company.trim()) return 'Company name is required';
@@ -94,9 +86,8 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
     const pincodes = form.pincodes.split(',').map((p) => p.trim()).filter(Boolean);
     if (pincodes.length === 0) return 'At least one service pincode is required';
     if (pincodes.some((p) => !/^\d{6}$/.test(p))) return 'Pincodes must be 6-digit numbers, comma separated';
-    if (form.product_categories.length === 0) return 'Select at least one product category';
     return null;
-  }, [form.business_type, form.company, form.contact_person, form.phone, form.email, form.pincodes, form.product_categories]);
+  }, [form.business_type, form.company, form.contact_person, form.phone, form.email, form.pincodes]);
 
   const validateStep2 = useCallback((): string | null => {
     if (form.gstin && !GSTIN_RE.test(form.gstin.trim().toUpperCase())) return 'GSTIN looks invalid — expected 15 characters (e.g. 36ABCDE1234F1Z5)';
@@ -154,7 +145,6 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
         posthog.capture('vendor_registration_submitted', {
           company: form.company,
           business_type: form.business_type,
-          categories: form.product_categories,
           source: 'vendor-registration',
         });
         setDone(true);
@@ -266,9 +256,26 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
                 <label className={labelCls}>Contact Person *</label>
                 <input type="text" value={form.contact_person} onChange={(e) => set('contact_person', e.target.value)} placeholder="Full name" className={inputCls} />
               </div>
-              <div>
-                <label className={labelCls}>Phone Number *</label>
-                <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} placeholder="10-digit mobile" className={inputCls} />
+<div>
+              <label className={labelCls}>Phone Number *</label>
+              <div className="grid grid-cols-2 gap-2">
+                <input
+                  type="tel"
+                  value={form.phone}
+                  onChange={(e) => set('phone', e.target.value)}
+                  placeholder="10-digit mobile"
+                  className={inputCls}
+                />
+                <label className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)] cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={form.whatsapp_same}
+                    onChange={(e) => set('whatsapp_same', e.target.checked)}
+                    className="accent-[var(--color-primary)]"
+                  />
+                  Same number for WhatsApp
+                </label>
+              </div>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -287,30 +294,7 @@ export function VendorRegistrationWizard({ onComplete }: VendorRegistrationWizar
               <p className="text-[10px] text-[var(--color-text-muted)] mt-1">Comma-separated 6-digit pincodes you can deliver to.</p>
             </div>
             <div>
-              <label className={labelCls}>Product Categories *</label>
-              <div className="flex flex-wrap gap-2">
-                {PRODUCT_CATEGORIES.map((cat) => (
-                  <button
-                    key={cat}
-                    type="button"
-                    onClick={() => toggleCategory(cat)}
-                    className={`px-3 py-1.5 text-[11px] font-mono uppercase tracking-wider rounded-full border transition-colors ${
-                      form.product_categories.includes(cat)
-                        ? 'bg-[var(--color-primary-10)] text-[var(--color-primary)] border-[var(--color-primary-18)]'
-                        : 'bg-[var(--color-bg-surface-alt)] text-[var(--color-text-secondary)] border-[var(--color-border-light)] hover:border-[var(--color-primary-18)]'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <label className={labelCls}>Other Materials (optional)</label>
-              <input type="text" value={form.other_materials} onChange={(e) => set('other_materials', e.target.value)} placeholder="Anything not listed above — e.g. AAC blocks, shuttering material" className={inputCls} />
-            </div>
-            <div>
-              <label className={labelCls}>Brand Affiliations</label>
+                <label className={labelCls}>Brand Affiliations</label>
               <input type="text" value={form.brand_affiliations} onChange={(e) => set('brand_affiliations', e.target.value)} placeholder="e.g. UltraTech, MYK Laticrete (comma separated)" className={inputCls} />
             </div>
           </div>

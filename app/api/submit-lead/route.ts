@@ -20,6 +20,7 @@ function buildVendorProperties(body: Record<string, unknown>) {
       multi_select: categories.map((c) => ({ name: String(c) })),
     },
     'Other Materials': { rich_text: [{ text: { content: String(body.other_materials || '') } }] },
+    'Supplier type': { rich_text: [{ text: { content: String(body.supplier_type || '') } }] },
     'Brand Affiliations': { rich_text: [{ text: { content: brands.join(', ') } }] },
     GSTIN: { rich_text: [{ text: { content: String(body.gstin || '') } }] },
     PAN: { rich_text: [{ text: { content: String(body.pan || '') } }] },
